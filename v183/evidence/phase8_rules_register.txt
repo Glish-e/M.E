@@ -1,0 +1,5 @@
+RULES REGISTER: 83 live / 3 disclosed-not-read / 0 dead (total 86)
+RULES REGISTER CHECK: PASS (every key is live or disclosed as not-read)
+  DEAD      ZZ_PLANTED_DEAD_KEY          no production reference and no disclosure in rationale
+RULES REGISTER: 83 live / 3 disclosed-not-read / 1 dead (total 87)
+FAIL: dead CONFIG keys (no production read, no disclosure): ZZ_PLANTED_DEAD_KEY

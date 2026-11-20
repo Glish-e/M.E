@@ -1,0 +1,14 @@
+baseline: /tmp/p4base/wip/master.py (85 entries)
+current : master.py (86 entries)
+VALUE CHANGED MAX_TERM_WIDTH:
+  base=110
+  curr=160
+VALUE CHANGED STALE_STATUS_DAYS:
+  base='<absent>'
+  curr=7
+RATIONALE CHANGED MAX_TERM_WIDTH:
+  base='Terminal width ceiling.'
+  curr="Terminal width ceiling. Phase 5 (C-3) raised 110 -> 160: the owner's terminal runs at 96 cols and the tested tier ladder is 40/70/110/160; disclosed as a VALUE CHANGE in evidence/rules_changes.md (phase 8 CONFIG diff must verify it). Display only; never a fusion input."
+RATIONALE CHANGED STALE_STATUS_DAYS:
+  base='<absent>'
+  curr='Phase 5 (C-2) DISPLAY staleness threshold: a served source older than this shows yellow STALE + age in the report (e.g. macro > 7d), never a green OK. Display-only label — the FRESHNESS_* gates that actually gate logic/decisions are untouched and stay the pre-registered values; this key never feeds a decision.'

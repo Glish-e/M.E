@@ -1,0 +1,16 @@
+=== F2 greps: 63 vs 21 trading-day windows ===
+evidence/preregistration.md:69:  which encodes 63 trading days for q, 63+30 for e, 21 for macro).
+master.py:6309:_BT_WINDOW_TD = 63.0                      # the pilot label horizon (63 trading days)
+master.py:6432:    """The per-window series metrics on overlapping 63-td windows —
+master.py:6708:                 f"{rows[-1]['date']} · 63-td overlapping label windows · "
+master.py:6734:    lines.append("per-date (gross 63-td window returns; entry at the "
+evidence/phase6_backtest_report.md:6:dates      12 month-ends 2025-08-31..2026-07-31 · 63-td overlapping label windows · ~4 independent label windows (stated per prereg §6: every metric above carries this n)
+evidence/phase6_backtest_report.md:14:per-date (gross 63-td window returns; entry at the next window open — the label window starts the trading day after as-of):
+
+  which encodes 63 trading days for q, 63+30 for e, 21 for macro).
+_BT_WINDOW_TD = 63.0                      # the pilot label horizon (63 trading days)
+    n_indep = max(1, round(len(rows) * 21.0 / _BT_WINDOW_TD))
+
+=== any 21-day-window backtest? ===
+evidence/plan_v18.md:59:   backtest used 21-day windows. Reason unknown."
+rc=0

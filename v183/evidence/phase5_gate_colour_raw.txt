@@ -1,0 +1,34 @@
+=== GATE CAPTURE 1: COLOUR output, raw bytes via cat -v (width 110) ===
+command: MASTER_STUBS=1 MASTER_NET=offline python3 master.py MU NVDA AAPL --as-of 2026-11-13 --width 110 --color always 2>/dev/null | cat -v
+^[[91m*** STUBBED RUN (SYNTHETIC stub layers) M-bM-^@M-^T NOT real engine data M-bM-^@M-^T never for any decision ***^[[0m
+
+M-bM-^UM--M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^UM-.
+^[[96mM-bM-^TM-^B MASTER v1.7.0-dev M-BM-7 mode standard M-BM-7 net offline (MASTER_NET=offline (override)) M-BM-7 as of 2026-11-13 M-BM-7 stubs M-bM-^TM-^B^[[0m
+^[[96mM-bM-^TM-^B yes                                                                                                        M-bM-^TM-^B^[[0m
+^[[96mM-bM-^TM-^B engines: meds v14.7.0 M-BM-7 quality v3.4.1 M-BM-7 earnings v3 M-BM-7 ml_train SYNTHETIC-stub M-BM-7 master SYNTHETIC-stub     M-bM-^TM-^B^[[0m
+^[[96mM-bM-^TM-^B chain: macroM-bM-^FM-^RqualityM-bM-^FM-^RearningsM-bM-^FM-^RmlM-bM-^FM-^Rrisk                                                                      M-bM-^TM-^B^[[0m
+^[[96mM-bM-^TM-^B RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)                                                  M-bM-^TM-^B^[[0m
+^[[96mM-bM-^TM-^B data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a                       M-bM-^TM-^B^[[0m
+^[[96mM-bM-^TM-^B data: ml stub n/a OK n/a  |  risk stub n/a OK n/a                                                          M-bM-^TM-^B^[[0m
+M-bM-^UM-0M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^TM-^@M-bM-^UM-/
+
+^[[93mVERDICT 3 LONG / 0 WATCH / 0 AVOID M-bM-^@M-^T 4 warning(s): credit OFF M-bM-^@M-^T not trade-grade (macro damped; excluded: CREDM-bM-^@M-&^[[0m
+
+ ^[[92mM-bM-^WM-^O^[[0m ^[[96mL1 macro     ^[[0mmeds v14.7.0      0.0s    warm ^[[92mM-bM-^WM-^O OK         ^[[0m
+^[[90m     data stub M-BM-7 as-of n/a M-BM-7 OK n/a^[[0m
+ ^[[92mM-bM-^WM-^O^[[0m ^[[96mL2 quality   ^[[0mquality v3.4.1    0.0s    warm ^[[92mM-bM-^WM-^O OK         ^[[0m3/3 scored  ^[[92mM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^H^[[0m
+^[[90m     data stub M-BM-7 as-of n/a M-BM-7 OK n/a^[[0m
+ ^[[93mM-bM-^VM-2^[[0m ^[[96mL3 earnings  ^[[0mearnings v3       0.0s    warm ^[[93mM-bM-^VM-2 DEGRADED   ^[[0m1 no data
+^[[90m     data stub M-BM-7 as-of n/a M-BM-7 OK n/a^[[0m
+ ^[[93mM-bM-^VM-2^[[0m ^[[96mL4 ml        ^[[0mml_train SYNTHETIM-bM-^@M-&0.0s    n/a  ^[[93mM-bM-^VM-2 DEGRADED   ^[[0m
+^[[90m     data stub M-BM-7 as-of n/a M-BM-7 OK n/a^[[0m
+ ^[[92mM-bM-^WM-^O^[[0m ^[[96mL5 risk      ^[[0mmaster SYNTHETIC-M-bM-^@M-&0.0s    n/a  ^[[92mM-bM-^WM-^O OK         ^[[0mportfolio
+^[[90m     data stub M-BM-7 as-of n/a M-BM-7 OK n/a^[[0m
+
+ L1 MACRO M-bM-^TM-^@M-bM-^TM-^@ Soft Landing / Policy Pivot M-BM-7 Mid Cycle
+   conf ^[[92mM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^HM-bM-^VM-^QM-bM-^VM-^Q^[[0m 0.82 M-BM-7 lev 1.35x M-BM-7 risk budget 1.00
+eff 2026-10-31 M-BM-7 data public M-BM-7 PIT approximate_pit_lag M-BM-7 credit OFF M-bM-^VM-2 not trade-grade M-BM-7 next month
+     2026-12
+   LONG  SPY QQQ XLY    SHORT  M-bM-^@M-^S          sleeve: M-bM-^@M-^S
+
+[...] full bytes in goldens/golden_colour_110.txt (masked dates/durations)

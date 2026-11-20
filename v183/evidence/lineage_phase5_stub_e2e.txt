@@ -1,0 +1,49 @@
+=== STUB END-TO-END RUN (MASTER_STUBS=1, 5 layers, no network) ===
+*** STUBBED RUN - deterministic stub layers - NOT real engine data - not for any decision ***
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ MASTER v1.4.0 · mode standard · as of 2026-11-08 (live) · offline no · stubs yes                           │
+│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train vstub · master vstub                       │
+│ chain: macro→quality→earnings→ml→risk                                                                      │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ ✓ L1 macro     meds v14.7.0        0.0s  warm ● OK        
+ ✓ L2 quality   quality v3.4.1      0.0s  warm ● OK        5/5 scored  ████████████ 5/5
+ ✓ L3 earnings  earnings v3         0.0s  warm ▲ DEGRADED  1 no data
+ ✓ L4 ml        ml_train vstub      0.0s  n/a  ▲ DEGRADED  
+ ✓ L5 risk      master vstub        0.0s  n/a  ● OK        portfolio
+
+ L1 MACRO ── Soft Landing / Policy Pivot · Mid Cycle
+   conf ████████░░ 0.82 · lev 1.35x · risk budget 1.00
+eff 2026-10-31 · data public · PIT approximate_pit_lag · credit OFF ▲ not trade-grade · next month
+     2026-12
+   LONG  SPY QQQ XLY    SHORT  –          sleeve: –
+   excluded (credit OFF): CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION
+sector tilt tech +1.0 · comm +1.0 · cons +1.0 · indu +0.5 · energy +0.5 · util +0.5 · mats +0.5 · health
+     – · fin – · reits – · spec – · macro credit OFF: tilt damped ×0.5
+
+ SECTOR      tilt   scored   median-Q
+ tech        +1.0   3/3      80
+ consumer    +1.0   1/1      86
+ financials  –      1/1      76
+
+ML OVERLAY q UNTRAINED · e UNTRAINED · macro UNTRAINED — probabilities logged, no decision changed
+
+  #  TICKER SECTOR  ACTION CONV             Q     E         WT    MACRO  FLAGS REASONS
+  1  COST   cons    LONG   ██████████░░ 85 A86 A  71 A      3%    +1.0   – Q 86 (A) rank 3/30 consumer; macro…
+  2  AAPL   tech    LONG   ██████████░░ 83 A88 A  nodata    3%    +1.0   – Q 88 (A) rank 3/41 tech; macro +1.…
+  3  MU     tech    LONG   █████████░░░ 79 A72 B  81 A·NOW  3%    +1.0   – Q 72 (B) rank 3/41 tech; macro +1.…
+  4  NVDA   tech    LONG   ████████░░░░ 71 B80 A  44 C      3%    +1.0   HIGH_ACCRUA… Q 80 (A) rank 3/41 tech…
+  5  JPM    fin     LONG   ████████░░░░ 69 B76 B  55 B      3%    –      – Q 76 (B) rank 3/30 financials; mac…
+ 5 LONG · 0 WATCH · 0 AVOID
+
+risk: gross 13% of 1.00 budget · cash 87% · est max DD ~9% (2x ann vol — estimate, not a probability) · eff
+   bets 2.1
+risk caps: correlation cap (eff bets 2.1)
+warnings: credit OFF — not trade-grade (macro damped; excluded: CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION)
+   · 1 ticker(s) no earnings history · earnings accuracy: SIGNAL: high-rated names hit big beats 1.80x more
+   often than base · UNTRAINED (stub): no models — train with ml_train.py
+conviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt — score, not probability
+research screener, not investment advice · survivorship-biased universe · timings 0.3s (macro 0.0s ·
+   quality 0.0s · earnings 0.0s · ml 0.0s · risk 0.0s)
+exit=0

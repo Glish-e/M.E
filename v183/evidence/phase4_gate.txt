@@ -1,0 +1,95 @@
+PHASE 4 GATE EVIDENCE — B-7 close-out (P-1..P-6 + hunt)
+Date: 2026-11-14 · tree: work/wip (v1.7.0-dev, phase 4)
+
+==========================================================================
+GATE 1 — MISSING-E INVARIANT TESTS (P-1), pasted from the green run
+==========================================================================
+test_legacy_header_label (test_master.TestPhase4Ruleset.test_legacy_header_label) ... cache dirs writable (online run will refresh stale items only)
+test_v2_header_label (test_master.TestPhase4Ruleset.test_v2_header_label) ... cache dirs writable (online run will refresh stale items only)
+test_v2_missing_never_outranks_observed (test_master.TestPhase4Ruleset.test_v2_missing_never_outranks_observed) ... ok
+test_v2_missing_never_outranks_observed_through_fuse (test_master.TestPhase4Ruleset.test_v2_missing_never_outranks_observed_through_fuse) ... ok
+
+-- fuzz invariant (scripts/fuzz_decisions.py, seed 88117):
+NOTE I5 structural probe: missing-E beats bad-E in 20/20 (q, e_bad) combos — the E_MISSING_HAIRCUT 0.90 subsidy for missing data vs bad data (judged a rules finding, not a crash).
+NOTE I5b v2 invariant (phase 4): 4800 (q, e, weak) cases fuzzed under ruleset v2 — missing-E outranks observed-E in 0 (must be 0; the E_MISSING_V2=0.0 fill guarantees it).
+
+==========================================================================
+GATE 2 — DD-GUARD-CAN-FIRE TESTS (P-2), pasted from the green run
+==========================================================================
+test_vol_target_keeps_the_dd_veto (test_master.TestPhase4VolTarget.test_vol_target_keeps_the_dd_veto) ... ok
+test_vol_target_veto_can_fire_too (test_master.TestPhase4VolTarget.test_vol_target_veto_can_fire_too) ... ok
+
+-- live stub-run proof (MASTER_STUBS=1, --sizing vol_target):
+risk caps: vol_target: deploys 48% of budget (target ann vol 15% absolute; full-deploy vol 15.6%; rho
+   real), vol_target deploys 48% of budget vs legacy 13% — looser than norm by 270%
+warnings: credit OFF — not trade-grade (macro damped; excluded: CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION)
+   · 1 ticker(s) no earnings history · earnings accuracy: SIGNAL: high-rated names hit big beats 1.80x more
+
+-- legacy-mode hostile book (12 names, vols 300%, rho 0.10) — the veto fires:
+veto: est max DD ~169% > 30% after caps — portfolio veto
+gross: 0.0
+codes: ['W_DD_VETO']
+
+==========================================================================
+GATE 3 — DOOR FLIP COUNT (P-6), from evidence/phase4_sensitivity_sweep.txt
+==========================================================================
+PHASE 4 (P-6) DOOR ROUNDING — how many decisions change when the LONG/WATCH doors compare UNROUNDED conviction (ruleset v2) instead of the rounded display value (legacy)
+  stub universe (71 cases): 0/56 door-comparable decisions flip on the unrounded comparison (isolated rounding effect)
+  stub universe FULL v2 (conservative fill + unrounded doors): 5/71 actions change vs legacy
+  real pilot rows (latest date, 76 names): 2/60 door-comparable decisions flip on the unrounded comparison
+  real pilot rows FULL v2 (fill + doors): 10/76 actions change vs legacy
+
+PHASE 4 (P-5) WEAK-E ABLATION — EARNINGS_WEAK_SCALE 0.5 (shipped) vs alternatives
+
+==========================================================================
+GATE 4 — ADV PROBE RESULT (P-4), full paste: evidence/phase4_adv_probe.txt
+==========================================================================
+============================================================================
+ADV PROBE — P-4 feasibility (spec 3.3): is dollar volume readable?
+============================================================================
+
+1) earnings engine price cache (/home/z/.earnings_engine_cache)
+   no px_*.csv cache files found (cold cache — nothing to inspect)
+   cached price files with a Volume column: 0/0
+
+2) engine source price paths
+   earnings_engine.py: Volume column references 0 (none — yahoo_prices() extracts Close only, cached as a single close column)
+   quality.py:          Volume column references 0 (none — the price client extracts Close / Adj Close / Stock Splits only)
+
+----------------------------------------------------------------------------
+ADV PROBE VERDICT: ADV UNAVAILABLE [W_ADV_UNAVAILABLE]
+  [... full consequences in the file ...]
+
+==========================================================================
+GATE 5 — ENV MATRIX RE-RUN: MATRIX VERDICT: ALL CELLS GREEN
+==========================================================================
+baseline (no ambient pins)                 ran=348  failures=0 errors=0 skipped=0
+env MASTER_NET=offline                     ran=348  failures=0 errors=0 skipped=0
+env MASTER_STUBS=1                         ran=348  failures=0 errors=0 skipped=0
+env MASTER_NET=offline MASTER_STUBS=1      ran=348  failures=0 errors=0 skipped=0
+sklearn+joblib import blocked              ran=333  failures=0 errors=0 skipped=2
+date pinned 2027-03-01 (Monday)            ran=348  failures=0 errors=0 skipped=0
+date pinned 2026-12-31 (year end)          ran=348  failures=0 errors=0 skipped=0
+date pinned 2025-02-01 (Sunday)            ran=348  failures=0 errors=0 skipped=0
+date pinned 2028-02-29 (leap)              ran=348  failures=0 errors=0 skipped=0
+MATRIX VERDICT: ALL CELLS GREEN
+
+==========================================================================
+GATE 6 — ENGINES.sha256 CHECK (no engine file touched)
+==========================================================================
+meds.py: MATCH
+quality.py: MATCH
+earnings_engine.py: MATCH
+
+==========================================================================
+GATE 7 — RULES REGISTER + CONFIG DIFF (only disclosed additions)
+==========================================================================
+RULES REGISTER: 82 live / 3 disclosed-not-read / 0 dead (total 85)
+RULES REGISTER CHECK: PASS (every key is live or disclosed as not-read)
+config VALUE changes vs v1.5.0 baseline: 6 lines (all '<absent>' -> addition; zero existing values changed)
+EARNINGS_STOP_K:
+E_MISSING_V2:
+RISK_FALLBACK_RHO:
+RISK_SIZING_MODE:
+RISK_VOL_TARGET:
+RULESET:

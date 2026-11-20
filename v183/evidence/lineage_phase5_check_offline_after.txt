@@ -1,0 +1,12 @@
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.0h — caches warm, expect ≈1-5 min
+ok
+test_stubbed_offline_run_no_sockets (test_master.TestOfflineNoSockets.test_stubbed_offline_run_no_sockets) ... ok
+test_offline_run_no_sockets_with_shadow_models (test_master.TestRiskLayer.test_offline_run_no_sockets_with_shadow_models) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.0h — caches warm, expect ≈1-5 min
+ok
+test_stub_run_has_five_layers_and_weights (test_master.TestStubFiveLayers.test_stub_run_has_five_layers_and_weights) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.232s
+
+OK

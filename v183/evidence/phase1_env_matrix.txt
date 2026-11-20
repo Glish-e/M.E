@@ -1,0 +1,162 @@
+TEST ENV MATRIX — v1.7.0-dev phase 1 (B-2 gate): dates pinned ON THE MODULES (C-2 fixed), deps blocked, env pinned
+============================================================================
+interpreter: python 3.12.16 · numpy 2.1.3
+            sklearn 1.5.2
+            joblib 1.5.3
+============================================================================
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpkcyjhcal/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpuub1ykr9/models/head_q.npz
+baseline (no ambient pins)                 ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpeagytyv4/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpw6zb6sxz/models/head_q.npz
+env MASTER_NET=offline                     ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpo84l7eq6/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpauv3w2f9/models/head_q.npz
+env MASTER_STUBS=1                         ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpyodb0ytb/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpvvgbu_qa/models/head_q.npz
+env MASTER_NET=offline MASTER_STUBS=1      ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+ml_train: head q -> ACTIVE (validation report on file)
+sklearn+joblib import blocked              ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-09-30..2026-11-30, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpeudxgapv/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpztl0m5rb/models/head_q.npz
+date pinned 2027-03-01 (Monday)            ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-07-31..2026-09-30, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpv45gv3hb/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpk2qthnc9/models/head_q.npz
+date pinned 2026-12-31 (year end)          ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2024-08-31..2024-10-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmppidjynrw/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmp4md0kfj6/models/head_q.npz
+date pinned 2025-02-01 (Sunday)            ran=263  failures=0 errors=0 skipped=0
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2027-09-30..2027-11-30, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmp9mi2xn6d/models/head_q.npz
+ml_train: head q -> ACTIVE (validation report on file)
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpoafy1ld3/models/head_q.npz
+date pinned 2028-02-29 (leap)              ran=263  failures=0 errors=0 skipped=0
+============================================================================
+MATRIX VERDICT: ALL CELLS GREEN

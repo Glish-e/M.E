@@ -1,0 +1,268 @@
+DECISION PATH — audit scope (AST closure, read-only; v1.4.1 port)
+========================================================================
+base: master.py v1.7.0-dev
+
+[1] CLOSURE SIZE
+  master.py      :  104 functions/methods,  3024 lines (53% of 5748)
+  meds.py        :   39 functions/methods,  1119 lines (12% of 9605)  entries: from 2 adapter call(s)
+  quality.py     :   38 functions/methods,  1008 lines (6% of 15995)  entries: from 3 adapter call(s)
+  earnings_engine.py:   21 functions/methods,   514 lines (45% of 1135)  entries: from 1 adapter call(s)
+  ml_dataset.py  :    7 functions/methods,   163 lines (17% of 986)
+  ml_train.py    :   19 functions/methods,   489 lines (59% of 828)  [label/split/embargo/calib/pin]
+  TOTAL          : 228 functions, 6317 lines audited of 34297 lines (7 files)
+
+[2] EXTERNAL ENGINE CALLS FROM master.py CLOSURE
+  earnings_engine: EarningsEngine
+  meds: now, regime_now
+  ml_dataset: date_features, macro_feature_names, macro_features, record_from_parts
+  np: array, asarray, diff, errstate, exp, isnan, load, where
+  pd: DataFrame
+  quality: TickerRef, build_inline_universe, get_quality_score
+
+[3] CONFIG KEYS READ INSIDE THE master.py CLOSURE (68 of 80)
+  ACTION_LONG_AT, ACTION_WATCH_AT, COLD_S_PER_NAME, CYCLICAL_SECTORS, DEFAULT_WATCHLIST, DEFAULT_WORKERS, DEFENSIVE_SCENARIOS, DISCRETIONARY_SET, EARNINGS_HOLD_DAYS, EARNINGS_MAX_AGE, EARNINGS_PLAN_MIN, EARNINGS_QUARTERS, EARNINGS_TOP_K, EARNINGS_TP, EARNINGS_WEAK_SCALE, ENGINE_VERSION_ATTRS, ETF_TO_SECTORS, EXPLAIN_METRICS, E_MISSING_HAIRCUT, FRESHNESS_EARNINGS_EVENT_MAX_D, FRESHNESS_EARNINGS_PRICE_MAX_AGE_D, FRESHNESS_MACRO_MAX_AGE_D, FRESHNESS_QUALITY_MAX_AGE_D, LAYER_TIMEOUT_S, MACRO_DEGRADED_DAMP, MACRO_SNAPSHOT_MAX_AGE_H, MACRO_TILT_GAIN, MASTER_GRADES, MAX_REASONS, MIN_QUALITY, ML_ADJ_MAX, ML_FORBIDDEN_FEATURES, ML_MODELS_DIR, MODES, MODE_DEFAULT, NET_MODES, NET_MODE_DEFAULT, NEUTRAL_KEY, OVERLAY_MAX_ADJ, PREFETCH_ALL_MAX, PRICE_TTL_H, PROBE_BUDGET_S, PROBE_HOST, PROBE_PORT, QUALITY_NATIVE_GRADES, QUALITY_SECTORS, RETRY_BACKOFF_S, RETRY_MAX_ATTEMPTS, RISK_CAP_DEGRADED, RISK_CORR_LOOKBACK_TD, RISK_DD_FACTOR, RISK_FALLBACK_RHO, RISK_MAX_EST_DD, RISK_MAX_NAME_W, RISK_MAX_PRICE_NAMES, RISK_MAX_SECTOR_W, RISK_MIN_BUDGET, RISK_MIN_EFFECTIVE_BETS, RISK_MIN_HISTORY_TD, RISK_VOL_LOOKBACK_TD, SLEEVE_ETFS, STAPLES_SET, TESTED_VERSIONS, VETO_FLAGS, WARM_ETA_RANGE_S, WARM_TIMEOUT_S, W_E, W_Q
+  CONFIG keys NOT in the closure: BAR_COLS, CONF_DIGITS, DEFAULT_MIN_CONV, DEFAULT_TOP, EARNINGS_NATIVE_GRADES, FREEZE_MAX_BYTES, MAX_TERM_WIDTH, MIN_TERM_WIDTH, PROBE_TIMEOUT_S, SECTOR_ABBR, SECTOR_ORDER, STUB_WARM_BUDGET_S
+
+[4] MODULE CONSTANTS REFERENCED BY THE CLOSURE
+  CONFIG, LAYER_REGISTRY, _BUCKET_ETF, _CAP_BANDS, _CSV_DANGER, _NET_PROBE_MEMO, _PAREN_RE, _PLAIN_ETF_RE, _REDACT_RE, _SECRET_VARS, _TICKER_RE, __version__
+
+[5.1] master.py CLOSURE FUNCTIONS
+    EarningsLayer.__init__
+    EarningsLayer._engine
+    EarningsLayer._plan_map
+    EarningsLayer.prefetch
+    EarningsLayer.run
+    LayerBase.__init__
+    LayerBase._begin
+    LayerBase._salvage
+    LayerBase.prefetch
+    MLLayer.__init__
+    MLLayer.run
+    MacroLayer.__init__
+    MacroLayer.prefetch
+    MacroLayer.run
+    QualityLayer.__init__
+    QualityLayer._build_refs
+    QualityLayer._redirect_quality_paths
+    QualityLayer.peek_refs
+    QualityLayer.prefetch
+    QualityLayer.run
+    RiskLayer.__init__
+    RiskLayer._engine
+    RiskLayer._price_data
+    RiskLayer.run
+    _accuracy_verdict
+    _age_days_from
+    _aggregate_warnings
+    _ann_vol
+    _apply_mode
+    _apply_overlays
+    _assert_cache_writable
+    _atomic_write_bytes
+    _backtest_summary
+    _base_conviction
+    _build_context
+    _cache_age_h
+    _cap_avoid_conviction
+    _csv_safe
+    _ctx_note
+    _dir_file_count
+    _dir_stamp
+    _dstr
+    _earnings_px_date
+    _earnings_signal
+    _engine_version
+    _etf_of
+    _exc
+    _fin_int
+    _finite
+    _json_num
+    _layer_cache_dirs
+    _macro_signal
+    _map_plan_row
+    _materialise_meds_snapshot
+    _mcap_map
+    _meds_snapshot_root
+    _ml_adjustment
+    _ml_load_head
+    _ml_predict
+    _ml_scaled
+    _native_grade
+    _net_probe
+    _newest_file_date
+    _norm_ticker
+    _num
+    _offline_yfinance_reason
+    _parse_layers
+    _parse_macro
+    _plan_banner
+    _prepare_meds_snapshot
+    _quality_signal
+    _reasons
+    _redact
+    _refresh_plan_line
+    _resolve_exit
+    _resolve_net_mode
+    _restore_all
+    _retry_sleep
+    _retrying_fetch
+    _retrying_quality_transport
+    _rho_bar
+    _risk_budget
+    _run_pipeline_inner
+    _sector_scope
+    _snapshot_results
+    _soft_deadline_call
+    _stubbed_registry
+    _timeout_hint
+    _touched
+    _universe_probe
+    _validate_ns
+    _watchlist_rows
+    _write_csv
+    build_layers
+    funnel_shortlist
+    fuse
+    fuse_candidate
+    json_payload
+    layer_provenance
+    macro_tilt
+    macro_view
+    risk_ctx_out
+    run_pipeline
+    size_portfolio
+
+[5.2] meds.py CLOSURE FUNCTIONS
+    FeatureEngine.build_full_panel
+    _apply_pit_lags
+    _auto_window
+    _capture_diagnostics
+    _card_quality
+    _card_runner_up
+    _card_status
+    _coerce
+    _credit_need_date
+    _credit_off_cfg
+    _decision_month_end
+    _decision_row
+    _diag
+    _emit
+    _fred_panel_memo_key
+    _json_safe_values
+    _json_scalar
+    _load_history_csv
+    _max_pit_lag_days
+    _memo_get
+    _memo_put
+    _mrs
+    _patch_record
+    _pit_fetch_floor
+    _pit_mode_label
+    _repair_history_series
+    _run
+    _scenario_retained_weight
+    _scenarios_for
+    apply_hysteresis
+    assert_core_series
+    conviction_leverage_v2
+    ensure_history
+    extract_tickers
+    get_macro_regime
+    now
+    parse_signals
+    regime_now
+    resolve_credit_mode
+
+[5.3] quality.py CLOSURE FUNCTIONS
+    YfinancePriceClient.available
+    _as_of_date
+    _assign_sector_ranks
+    _coverage_below_minimum
+    _days
+    _detect_sector_yfinance
+    _ensure_env
+    _fingerprint
+    _load_dotenv
+    _midranks
+    _normalize_sector
+    _provider_error_note
+    _quantile
+    _rank_pool
+    _red_flags
+    _scored_universe
+    _sector_fallback_pools
+    _spec_for
+    _split_product
+    _unresolved_result
+    _validate_as_of
+    build_inline_universe
+    build_market
+    build_source_chain
+    compute_raw_metrics
+    fetch_companies
+    finnhub_token
+    get_quality_score
+    get_universe
+    load_overrides
+    load_universe_file
+    metric_weights
+    model_for_sector
+    normalize_ticker
+    percentile_scores
+    resolve_model
+    score_universe
+    winsorize
+
+[5.4] earnings_engine.py CLOSURE FUNCTIONS
+    EarningsEngine.__init__
+    EarningsEngine._window
+    EarningsEngine.analyze
+    EarningsEngine.backtest
+    EarningsEngine.history
+    EarningsEngine.prices
+    EarningsEngine.score
+    EarningsEngine.signals
+    EarningsEngine.validate
+    _abs_score
+    _asof_val
+    _calibrate
+    _clean
+    _metrics
+    _metrics_arr
+    _norm
+    _rating
+    _simulate
+    _surprise_pct
+    _trade_stats
+    _welch
+
+[5.5] ml_dataset.py CLOSURE FUNCTIONS
+    _days_since
+    _nan
+    _state_like
+    date_features
+    macro_feature_names
+    macro_features
+    record_from_parts
+
+[5.6] ml_train.py CLOSURE FUNCTIONS
+    _decile_spread
+    _ece
+    _fit_z
+    _gbm
+    _inner_oof
+    _pipe
+    _platt
+    _rankdata
+    _sigmoid
+    _spearman
+    _test_offsets
+    head_rows
+    load_dataset
+    load_model
+    metrics_block
+    save_model
+    select_features
+    train_head
+    walk_forward_splits
+

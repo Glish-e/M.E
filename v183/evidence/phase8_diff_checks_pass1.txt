@@ -1,0 +1,47 @@
+DIFF CHECKS — differential and consistency (v1.4.1 port)
+============================================================================
+D1 stub --json run: exit=1
+   JSON decisions: 8
+D1 stub --csv run: exit=1
+   CSV rows: 8
+D1 stub table run: exit=1, 84 lines
+   table / JSON / CSV agree on every shared decision field (8 decisions, 8 CSV rows)
+   determinism (two identical stub --json runs): IDENTICAL
+
+D2 adapter vs real engine API shapes (import only, zero sockets)
+   OK  meds.now
+   OK  meds.regime_now
+   OK  quality.build_inline_universe
+   OK  quality.get_quality_score
+   OK  quality.TickerRef
+   OK  quality.GROUPS
+   OK  quality.default_transport
+   OK  EarningsEngine.analyze
+   OK  EarningsEngine.signals
+   OK  EarningsEngine.history
+   OK  EarningsEngine.prices
+   EarningsEngine.history: 1 positional params (ticker)
+   EarningsEngine.prices: 2 positional params (ticker, start)
+   EarningsEngine.signals: 6 positional params (tickers, hold_days, take_profit, stop_loss, min_score, entry_lag)
+   EarningsEngine.analyze: 10 positional params (tickers, as_of, accuracy, trade, hold_days, take_profit, stop_loss, min_score, entry_lag, benchmark)
+
+D3 online vs offline, same cache (phase 7 scripted it: scripts/phase7_online_offline.py)
+names: MU NVDA AAPL AMD META
+[online] exit 1 · 11.7s · timings 11.4s · 5 decisions
+[offline] exit 1 · 2.9s · timings 2.6s · 5 decisions
+IDENTICAL: 5 decisions (ticker, action, conviction) match bit-for-bit between the online run and the offline replay of the cache it wrote
+   ('AAPL', 'WATCH', 48.8)
+   ('AMD', 'AVOID', 35.9)
+   ('META', 'WATCH', 46.8)
+   ('MU', 'WATCH', 66.3)
+   ('NVDA', 'WATCH', 60.5)
+   D3 VERIFIED (real cache): online run vs its offline replay — decisions identical. Full log: evidence/phase7_online_offline_identity.txt
+
+D4 freeze/replay parity (v1.5.0 features PRESENT on this base)
+   features present in this base: ['--freeze', '--replay']
+   NOTE (phase-2 port): unlike the v1.4.1 base, THIS tree HAS the
+   v1.5.0 freeze/replay features. The parity harness is IN the
+   suite: TestFreezeReplay (stub freeze -> offline replay verifies
+   ranking+convictions, exit 65 on any difference; tampered-manifest
+   and missing-manifest negative controls) + the phase-2 atomic-
+   write crash test on the manifest itself (TestAtomicWritesB8).

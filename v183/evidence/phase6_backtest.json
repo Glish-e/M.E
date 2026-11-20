@@ -1,0 +1,245 @@
+{
+ "verdict": "no edge demonstrated",
+ "q5": "PARTLY",
+ "dates": [
+  {
+   "date": "2025-08-31",
+   "n_elig": 87,
+   "n_long": 10,
+   "ic": -0.09594993566222103,
+   "long_gross": 0.02429519109427929,
+   "ew_gross": 0.11669487279475849,
+   "traded_frac": 1.0,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2025-09-30",
+   "n_elig": 87,
+   "n_long": 11,
+   "ic": -0.0951634420104723,
+   "long_gross": 0.026093669320372017,
+   "ew_gross": 0.06481409196851604,
+   "traded_frac": 0.09090909090909091,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2025-10-31",
+   "n_elig": 87,
+   "n_long": 0,
+   "ic": -0.2514008983447644,
+   "long_gross": null,
+   "ew_gross": 0.029080025659039103,
+   "traded_frac": 1.0,
+   "regime": "defensive"
+  },
+  {
+   "date": "2025-11-30",
+   "n_elig": 87,
+   "n_long": 0,
+   "ic": -0.21355506492197268,
+   "long_gross": null,
+   "ew_gross": 0.07420924535233944,
+   "traded_frac": 0.0,
+   "regime": "defensive"
+  },
+  {
+   "date": "2025-12-31",
+   "n_elig": 87,
+   "n_long": 0,
+   "ic": -0.2476579376158941,
+   "long_gross": null,
+   "ew_gross": 0.07319990991368547,
+   "traded_frac": 0.0,
+   "regime": "defensive"
+  },
+  {
+   "date": "2026-01-31",
+   "n_elig": 87,
+   "n_long": 0,
+   "ic": -0.23038271201279573,
+   "long_gross": null,
+   "ew_gross": 0.19733926684906086,
+   "traded_frac": 0.0,
+   "regime": "defensive"
+  },
+  {
+   "date": "2026-02-28",
+   "n_elig": 87,
+   "n_long": 13,
+   "ic": -0.13936036109678124,
+   "long_gross": 0.3884507105327569,
+   "ew_gross": 0.3786514211424637,
+   "traded_frac": 1.0,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2026-03-31",
+   "n_elig": 87,
+   "n_long": 13,
+   "ic": -0.15052646783357918,
+   "long_gross": 0.4661973738469757,
+   "ew_gross": 0.42556753307152756,
+   "traded_frac": 0.15384615384615385,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2026-04-30",
+   "n_elig": 87,
+   "n_long": 13,
+   "ic": 0.17620477961364603,
+   "long_gross": 0.22181811129960877,
+   "ew_gross": 0.11629773765045015,
+   "traded_frac": 0.15384615384615385,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2026-05-31",
+   "n_elig": 87,
+   "n_long": 10,
+   "ic": 0.3062061471441614,
+   "long_gross": 0.07085271663963795,
+   "ew_gross": 0.001978291487642403,
+   "traded_frac": 0.4076923076923077,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2026-06-30",
+   "n_elig": 87,
+   "n_long": 10,
+   "ic": 0.27114423414294525,
+   "long_gross": 0.12427850067615509,
+   "ew_gross": 0.04870407337499461,
+   "traded_frac": 0,
+   "regime": "risk_on"
+  },
+  {
+   "date": "2026-07-31",
+   "n_elig": 87,
+   "n_long": 11,
+   "ic": 0.09201877179650522,
+   "long_gross": 0.05283853343941949,
+   "ew_gross": 0.08856990900835365,
+   "traded_frac": 0.4727272727272727,
+   "regime": "risk_on"
+  }
+ ],
+ "metrics": {
+  "net": {
+   "5.0": {
+    "n_windows": 12,
+    "mean": 0.1143904413633079,
+    "sd": 0.16078485726733274,
+    "sharpe": 1.4229006799205466,
+    "sortino": null,
+    "max_dd": 0.0004999999999999449,
+    "mdd_peak_i": 1,
+    "mdd_trough_i": 2,
+    "win_rate": 0.6666666666666666,
+    "profit_factor": null,
+    "ann_mean": 0.4575617654532316,
+    "n_neg": 1
+   },
+   "10.0": {
+    "n_windows": 12,
+    "mean": 0.11421214882251535,
+    "sd": 0.16076134889454452,
+    "sharpe": 1.4208906507426198,
+    "sortino": null,
+    "max_dd": 0.0010000000000000009,
+    "mdd_peak_i": 1,
+    "mdd_trough_i": 2,
+    "win_rate": 0.6666666666666666,
+    "profit_factor": null,
+    "ann_mean": 0.4568485952900614,
+    "n_neg": 1
+   },
+   "25.0": {
+    "n_windows": 12,
+    "mean": 0.11367727120013772,
+    "sd": 0.1606924319957937,
+    "sharpe": 1.41484287453081,
+    "sortino": null,
+    "max_dd": 0.0025000000000000577,
+    "mdd_peak_i": 1,
+    "mdd_trough_i": 2,
+    "win_rate": 0.6666666666666666,
+    "profit_factor": null,
+    "ann_mean": 0.4547090848005509,
+    "n_neg": 1
+   },
+   "50.0": {
+    "n_windows": 12,
+    "mean": 0.11278580849617503,
+    "sd": 0.16058293805133916,
+    "sharpe": 1.4047047571158133,
+    "sortino": null,
+    "max_dd": 0.004999999999999893,
+    "mdd_peak_i": 1,
+    "mdd_trough_i": 2,
+    "win_rate": 0.6666666666666666,
+    "profit_factor": null,
+    "ann_mean": 0.45114323398470013,
+    "n_neg": 1
+   }
+  },
+  "ew": {
+   "n_windows": 12,
+   "mean": 0.13459219818940263,
+   "sd": 0.13461120176118482,
+   "sharpe": 1.9997176524459546,
+   "sortino": null,
+   "max_dd": 0.0,
+   "mdd_peak_i": 0,
+   "mdd_trough_i": 0,
+   "win_rate": 1.0,
+   "profit_factor": null,
+   "ann_mean": 0.5383687927576105,
+   "n_neg": 0
+  },
+  "ic_mean": -0.04820190723343523,
+  "ic_ci": [
+   -0.15470631723411318,
+   0.06616086823762875
+  ],
+  "avg_holding_dates": 3.033333333333333,
+  "cash_dates": 4
+ },
+ "gates": {
+  "1_rebalances_ge_36": {
+   "pass": false,
+   "detail": "12/36 month-end rebalances"
+  },
+  "2_ic_lower_bound_positive": {
+   "pass": false,
+   "detail": "mean rank IC -0.0482 \u00b7 95% CI [-0.1547, +0.0662] \u00b7 positive 4/12"
+  },
+  "3_beats_ew_and_spy": {
+   "pass": false,
+   "detail": "vs EW: Sharpe 1.421 vs 2.000, MDD 0.001 vs 0.000 \u2014 does not beat EW; SPY: NOT AVAILABLE (gate unanswerable \u2014 Q5 capped; only 0 of the dataset's dates in the file)"
+  },
+  "4_excess_3_groups": {
+   "pass": false,
+   "detail": "positive net excess vs EW in 2 distinct year/regime groups (2 years, 2 regimes)"
+  },
+  "5_survives_25bps": {
+   "pass": true,
+   "detail": "net mean @25bps +0.1137 \u00b7 Sharpe 1.415 (low power, n=4)"
+  },
+  "6_lockbox_consistent": {
+   "pass": true,
+   "detail": "last 6 dates: net sign + vs full + \u00b7 IC +0.0926"
+  }
+ },
+ "config": {
+  "earnings_tp": 0.15,
+  "ruleset": "legacy",
+  "build_hash": "16abf8cdc21f21a9",
+  "current_hash": "59961633d3e77380"
+ },
+ "provenance": [
+  "REAL-DERIVED (cached)"
+ ],
+ "skipped": [],
+ "dataset": "/home/glishe/Documents/v183/ml_data/dataset_v1.npz",
+ "prereg": "evidence/preregistration.md"
+}

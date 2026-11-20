@@ -1,0 +1,16 @@
+release gate — /home/z/my-project/work/wip
+[PASS] HANDOFF <= 3500 ASCII chars — 3131 chars (3131 ASCII)
+[PASS] HANDOFF has no "PLACEHOLDER"
+[PASS] HANDOFF ZIP SHA256 line carries the release wording — ZIP SHA256: printed in the delivery message (a zip cannot contain its
+[PASS] ml_train version readable — v1.1.0
+[PASS] sidecar head_e.npz pins ml_train 1.1.0 — 1.1.0
+[PASS] sidecar head_macro.npz pins ml_train 1.1.0 — 1.1.0
+[PASS] sidecar head_q.npz pins ml_train 1.1.0 — 1.1.0
+[PASS] CHANGELOG top ml_train claim agrees — 1.1.0
+[PASS] HANDOFF top ml_train claim agrees — 1.1.0
+[PASS] RUNBOOK <= 120 lines — 116 lines
+[PASS] MANIFEST hashes all match
+[PASS] MANIFEST lists every file (excl. itself)
+[PASS] no final_master_d.zip nested in the tree
+RESULT: PASS
+rc=0

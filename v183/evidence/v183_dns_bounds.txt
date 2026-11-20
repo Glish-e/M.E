@@ -1,0 +1,15 @@
+# evidence/v183_dns_bounds.txt — F1 (v1.8.3) DNS-watchdog measurement
+# Shipped knobs: NET_PREFLIGHT_S=2.0, NET_PREFLIGHT_RETRIES=2,
+# NET_PREFLIGHT_TOTAL_S=10.0, 6 hosts (the default terminal run).
+# Pre-fix truth (stage 1, v1.8.2): CASE A UNBOUNDED (still running at
+# the 8 s watchdog); CASE B 5.00 s wall on a 2.0 s total budget.
+
+CASE A permanent resolver block, 6 hosts, budget 2.0, retries 2, total 10.0: wall 10.00 s, all dead=True, notes=['probe failed: dns timeout after 2.0s (resolver abandoned; 1/8 this run)', 'probe failed: dns timeout after 2.0s (resolver abandoned; 2/8 this run)', 'probe failed: dns timeout after 2.0s (resolver abandoned; 3/8 this run)', 'probe failed: dns timeout after 2.0s (resolver abandoned; 4/8 this run)', 'probe failed: dns timeout after 2.0s (resolver abandoned; 5/8 this run)', 'total budget']
+CASE B 5 s resolver stall x6 hosts, total 10.0: wall 10.00 s, all dead=True
+CASE C mixed fast/refused + one 30 s stall, total 10.0: wall 2.75 s, all dead=True
+CASE D 11 permanent blocks, budget 0.05, no total: wall 0.40 s, cap-note hosts=3, abandoned=8 (max 8)
+
+# Verdict: a permanent resolver hang is now bounded by DESIGN at the
+# preflight total (10 s + slack), not by claim; the v1.8.2 line
+# 'stops the pass at 10 s' is finally TRUE, and the stage-1 measured
+# UNBOUNDED pre-fix behaviour is the disclosed history.

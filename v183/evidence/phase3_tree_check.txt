@@ -1,0 +1,71 @@
+# evidence/phase3_tree_check.txt — PHASE 3 end-of-phase checks
+# Date: 2026-11-13 22:58:47 UTC
+
+## 1. ENGINES.sha256 check (the engines must be byte-identical to
+##    phase 2 — no engine file was opened for editing this phase)
+$ sha256sum -c ENGINES.sha256
+meds.py: OK
+quality.py: OK
+earnings_engine.py: OK
+
+$ sha256sum meds.py quality.py earnings_engine.py
+5e64b60da86d2e759f1f506e8c9dfdc5acfed32ce6958a204f172242cefc437b  meds.py
+f123fb4e36ad298d0c662d0b36d71bb98ea80ef42760714d3b7133bac1b31215  quality.py
+8e31e53248531584898ebfd266347775874b93d3440d12830cdb7f5a4545b0e0  earnings_engine.py
+
+## 2. the engines were never edited: current hashes vs ENGINES.sha256
+  meds.py              MATCH  5e64b60da86d2e75…
+  quality.py           MATCH  f123fb4e36ad298d…
+  earnings_engine.py   MATCH  8e31e53248531584…
+  ALL ENGINES MATCH
+
+## 3. suite + retrained artifacts (the phase gate pastes)
+$ python3 -m unittest test_master 2>&1 | tail -3
+Ran 309 tests in 8.409s
+
+OK
+
+## 4. retrained heads ship SHADOW (activation is manual-only)
+  head_q.npz state=SHADOW model_type=gbm_joblib
+  head_e.npz state=SHADOW model_type=logistic_np
+  head_macro.npz state=SHADOW model_type=logistic_np
+
+## 5. CONFIG diff vs v1.5.0-as-shipped (the phase-2 tool; NO new CONFIG
+##    key this phase — MIN_OOS_PERIODS and FEATURE_CAP are ml_train
+##    module constants, not CONFIG)
+$ python3 scripts/config_diff.py ../v15/master.py master.py
+baseline: ../v15/master.py (79 entries)
+current : master.py (80 entries)
+VALUE CHANGED RISK_FALLBACK_RHO:
+  base='<absent>'
+  curr=0.5
+RATIONALE CHANGED CONF_DIGITS:
+  base='Render precision per quantity (stable across --json).'
+  curr="INTENDED render precision per quantity. NOT currently read: the renderer hardcodes its formats (conviction 1dp, score 0dp, mult 3dp, time 1dp — the same values, kept stable across --json). Kept as the register's honest statement of intent, disclosed not-read per v1.4.1 (B6); scripts/rules_register_check.py carries it as DISCLOSED."
+RATIONALE CHANGED EARNINGS_NATIVE_GRADES:
+  base="earnings_engine's _rating bands — shown only on the earnings layer."
+  curr="earnings_engine's own _rating bands (documented vocabulary). The production adapter shows the engine's OWN rating string verbatim and never re-scores through these bands; they are consumed by the test suite's signal builders and the band-ordering gate, and by any future adapter that must derive a letter from a numeric engine score. v1.4.1 (B6) port: documented as not-read-in-production — the rules register (scripts/rules_register_check.py) carries it as DISCLOSED."
+RATIONALE CHANGED EARNINGS_TOP_K:
+  base='L3 runs only on the K best L1+L2 survivors — saves most Yahoo calls and avoids 429s.'
+  curr='L3 runs only on the K best L1+L2 survivors — saves most Yahoo calls and avoids 429s. v1.4.1 (B6) port, phase 2: this key IS the standard-mode --earnings-top default (MODES reads it at import AND at _apply_mode time; quick/deep keep their own presets 10/40).'
+RATIONALE CHANGED LAYER_TIMEOUT_S:
+  base='STANDARD-mode per-layer wall-clock budget (prefetch + run); --mode quick/deep use their own presets.'
+  curr='STANDARD-mode per-layer wall-clock budget (prefetch + run); --mode quick/deep use their own presets. v1.4.1 (B6) port, phase 2: this key IS the standard-mode --timeout default (MODES reads it at import AND at _apply_mode time), so the key and the preset can never drift apart.'
+RATIONALE CHANGED MODES:
+  base='Run presets: what each --mode sets unless the user passes the flag explicitly. quick trades exact sector ranks for a small comparison pool (the watchlist itself); standard keeps honest sector pools; deep is the long research pass. standard mirrors the v1.0.0 defaults exactly.'
+  curr='Run presets: what each --mode sets unless the user passes the flag explicitly. quick trades exact sector ranks for a small comparison pool (the watchlist itself); standard keeps honest sector pools; deep is the long research pass. standard mirrors the v1.0.0 defaults exactly and v1.4.1 (B6) resolves from CONFIG[EARNINGS_TOP_K]/[LAYER_TIMEOUT_S] at import AND at _apply_mode time, so the two formerly dead keys are now the single source of truth for the standard preset.'
+RATIONALE CHANGED RISK_FALLBACK_RHO:
+  base='<absent>'
+  curr='v1.4.1 port (B2, phase 2): the conservative equicorrelation used by the est-DD estimate when vols exist but rho is unavailable (1-2 names, <42 overlapping rows, a correlation error, or a non-finite rho_bar). The correlation cap itself stays OFF in that state — both facts are DISCLOSED (note + footer + JSON rho_fallback/rho_used + the stable W_RHO_FALLBACK code), never silent. 0.5 is a documented conservative assumption, not a rule change: books with a real rho are untouched (asserted by test_b2_*).'
+RATIONALE CHANGED STUB_WARM_BUDGET_S:
+  base='Regression guard: a warm MASTER_STUBS run on the default watchlist must finish in well under this (measured 0.3s; 10s = 30x headroom) or the suite fails — stub runs are the fast tier by contract.'
+  curr="Regression guard: a warm MASTER_STUBS run on the default watchlist must finish in well under this (measured 0.3s; 10s = 30x headroom) or the suite fails — stub runs are the fast tier by contract. NOT currently read by PRODUCTION master.py: the budget is enforced by the test suite (TestStubWarmBudget), so the register discloses it as not-read-in-production rather than counting it live (phase-2 census finding on the v1.5.0 tree; v1.4.1's register never saw this key)."
+exit=1
+
+Reading the diff above: ZERO key-value changes vs v1.5.0-as-shipped;
+the only lines are 7 RATIONALE updates — exactly the phase-2 disclosure
+set recorded in evidence/phase2_config_diff.txt (RISK_FALLBACK_RHO added
+with its rationale + the six not-read/re-live disclosure notes). Phase 3
+added/changed NOTHING in CONFIG: MIN_OOS_PERIODS and FEATURE_CAP are
+ml_train module constants, not CONFIG keys. The v1.1.0-vs-current
+lineage diff is in the phase-2 evidence set.

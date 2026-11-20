@@ -1,0 +1,132 @@
+.....FFFFFFF                                                             [100%]
+=================================== FAILURES ===================================
+___________ TestSidecarPin.test_wrong_joblib_marks_head_unavailable ____________
+
+self = <test_master.TestSidecarPin testMethod=test_wrong_joblib_marks_head_unavailable>
+
+    def test_wrong_joblib_marks_head_unavailable(self):
+        with tempfile.TemporaryDirectory() as td:
+            models = self._head(td, joblib="0.0.1-fake")
+            b, note = _ml_load_head(models, "e")
+>           self.assertIsNone(b)
+E           AssertionError: {'model_type': array('gbm_joblib', dtype='<U10'), 'state': 'SHADOW', 'n_train': array(10), 'feature_names': ['e_score'], 'base_rate': array(0.5), 'sklearn_version': array('1.5.2', dtype='<U5'), 'numpy_version': array('2.1.3', dtype='<U5'), 'joblib_version': array('0.0.1-fake', dtype='<U10'), 'python_version': array('3.12.16', dtype='<U7'), 'sidecar_sha256': array('c0b2de2e8e756d898070e74850771179c0fa438b5eb1d2650dd187dc8c224ecd',
+E                 dtype='<U64'), '_joblib': '/tmp/tmpdroapfwf/head_e.joblib', '_pin_note': ''} is not None
+
+test_master.py:4145: AssertionError
+____________ TestSidecarPin.test_wrong_numpy_marks_head_unavailable ____________
+
+self = <test_master.TestSidecarPin testMethod=test_wrong_numpy_marks_head_unavailable>
+
+    def test_wrong_numpy_marks_head_unavailable(self):
+        with tempfile.TemporaryDirectory() as td:
+            models = self._head(td, numpy="0.0.1-fake")
+            b, note = _ml_load_head(models, "e")
+>           self.assertIsNone(b)
+E           AssertionError: {'model_type': array('gbm_joblib', dtype='<U10'), 'state': 'SHADOW', 'n_train': array(10), 'feature_names': ['e_score'], 'base_rate': array(0.5), 'sklearn_version': array('1.5.2', dtype='<U5'), 'numpy_version': array('0.0.1-fake', dtype='<U10'), 'joblib_version': array('1.5.3', dtype='<U5'), 'python_version': array('3.12.16', dtype='<U7'), 'sidecar_sha256': array('c0b2de2e8e756d898070e74850771179c0fa438b5eb1d2650dd187dc8c224ecd',
+E                 dtype='<U64'), '_joblib': '/tmp/tmp46_ch_a5/head_e.joblib', '_pin_note': ''} is not None
+
+test_master.py:4135: AssertionError
+___________ TestSidecarPin.test_wrong_python_marks_head_unavailable ____________
+
+self = <test_master.TestSidecarPin testMethod=test_wrong_python_marks_head_unavailable>
+
+    def test_wrong_python_marks_head_unavailable(self):
+        with tempfile.TemporaryDirectory() as td:
+            models = self._head(td, python="0.0.1-fake")
+            b, note = _ml_load_head(models, "e")
+>           self.assertIsNone(b)
+E           AssertionError: {'model_type': array('gbm_joblib', dtype='<U10'), 'state': 'SHADOW', 'n_train': array(10), 'feature_names': ['e_score'], 'base_rate': array(0.5), 'sklearn_version': array('1.5.2', dtype='<U5'), 'numpy_version': array('2.1.3', dtype='<U5'), 'joblib_version': array('1.5.3', dtype='<U5'), 'python_version': array('0.0.1-fake', dtype='<U10'), 'sidecar_sha256': array('c0b2de2e8e756d898070e74850771179c0fa438b5eb1d2650dd187dc8c224ecd',
+E                 dtype='<U64'), '_joblib': '/tmp/tmprsywrj34/head_e.joblib', '_pin_note': ''} is not None
+
+test_master.py:4155: AssertionError
+___________ TestSidecarPin.test_wrong_sklearn_marks_head_unavailable ___________
+
+self = <test_master.TestSidecarPin testMethod=test_wrong_sklearn_marks_head_unavailable>
+
+    def test_wrong_sklearn_marks_head_unavailable(self):
+        """B-1: sklearn mismatch (the 1.9.1-vs-1.5.2 '_loss' case) ->
+        UNAVAILABLE with the reason; the head is skipped, not crashed."""
+        with tempfile.TemporaryDirectory() as td:
+            models = self._head(td, sklearn="0.0.1-fake")
+            b, note = _ml_load_head(models, "e")
+            self.assertIsNone(b)
+>           self.assertIn("UNAVAILABLE", note)
+E           AssertionError: 'UNAVAILABLE' not found in 'head e: sklearn 1.5.2 != trained-on 0.0.1-fake — UNTRAINED (pin the training environment or retrain here)'
+
+test_master.py:4126: AssertionError
+_________ TestMLUnavailable.test_all_heads_unavailable_still_a_result __________
+
+self = <test_master.TestMLUnavailable testMethod=test_all_heads_unavailable_still_a_result>
+
+    def test_all_heads_unavailable_still_a_result(self):
+        """all three heads version-mismatched: exit 1, decisions still
+        produced (quality/earnings carry the run); never exit 2."""
+        with tempfile.TemporaryDirectory() as tmp:
+            models = Path(tmp) / "models"
+            models.mkdir()
+            for head in ("q", "e", "macro"):
+                self._gbm_head(models, head)
+            log: dict = {}
+            out = _run(["MU", "NVDA", "AAPL", "--ml-models", str(models),
+                        "--min-conviction", "0"], mods={
+                            "meds": _fake_meds(log), "quality": _fake_quality(log),
+                            "earnings": _fake_earnings(log)})
+>           self.assertEqual(out.exit_code, 1)
+E           AssertionError: 0 != 1
+
+test_master.py:4270: AssertionError
+----------------------------- Captured stderr call -----------------------------
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+________ TestMLUnavailable.test_version_mismatch_run_continues_exit_one ________
+
+self = <test_master.TestMLUnavailable testMethod=test_version_mismatch_run_continues_exit_one>
+
+    def test_version_mismatch_run_continues_exit_one(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            models = Path(tmp) / "models"
+            models.mkdir()
+            self._gbm_head(models)
+            log: dict = {}
+            mods = {"meds": _fake_meds(log), "quality": _fake_quality(log),
+                    "earnings": _fake_earnings(log)}
+            out = _run(["MU", "NVDA", "AAPL", "--ml-models", str(models),
+                        "--min-conviction", "0"], mods=mods)
+>           self.assertEqual(out.exit_code, 1, out.exit_reason)
+E           AssertionError: 0 != 1 :
+
+test_master.py:4243: AssertionError
+----------------------------- Captured stderr call -----------------------------
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+_________ TestVersionSurfaces.test_ml_train_version_agrees_everywhere __________
+
+self = <test_master.TestVersionSurfaces testMethod=test_ml_train_version_agrees_everywhere>
+
+    def test_ml_train_version_agrees_everywhere(self):
+        import ml_train
+        import numpy as np
+        code = str(ml_train.__version__)
+        models = sorted(Path("ml_data/models").glob("head_*.npz"))
+        self.assertTrue(models, "shipped heads expected in ml_data/models")
+        for p in models:
+            z = np.load(p, allow_pickle=False)
+            self.assertEqual(str(z["ml_train_version"]), code, p.name)
+>       self.assertEqual(self._claim(self._changelog_top()), code,
+                         "CHANGELOG top-section ml_train claim")
+E       AssertionError: None != '1.0.0' : CHANGELOG top-section ml_train claim
+
+test_master.py:4310: AssertionError
+=========================== short test summary info ============================
+FAILED test_master.py::TestSidecarPin::test_wrong_joblib_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_numpy_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_python_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_sklearn_marks_head_unavailable
+FAILED test_master.py::TestMLUnavailable::test_all_heads_unavailable_still_a_result
+FAILED test_master.py::TestMLUnavailable::test_version_mismatch_run_continues_exit_one
+FAILED test_master.py::TestVersionSurfaces::test_ml_train_version_agrees_everywhere
+7 failed, 5 passed in 3.34s

@@ -1,0 +1,6 @@
+=== B-9 item 3: ZERO-INET-sockets offline re-run (the hermeticity proof) ===
+$ python3 -m unittest test_master.TestOfflineNoSockets test_master.TestRiskLayer.test_offline_run_no_sockets_with_shadow_models
+----------------------------------------------------------------------
+Ran 3 tests in 0.440s
+
+OK

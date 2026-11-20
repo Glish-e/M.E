@@ -1,0 +1,214 @@
+evidence/phase0_baseline.txt — PHASE 0 baseline record (task 5 of the phase-0 prompt,
+mirroring spec Section "Step 0" items 2-3).
+
+Every line below is real output produced in THIS session, in THIS sandbox,
+unless marked otherwise. No number was carried over from any handoff.
+
+------------------------------------------------------------------------------
+ENVIRONMENT (recorded 2026-11-13, UTC; sandbox date Fri Nov 13 18:59:12 UTC 2026)
+------------------------------------------------------------------------------
+$ python3 --version
+Python 3.12.16            (interpreter: /home/z/.venv/bin/python3)
+$ python3 -c "import numpy, sklearn, joblib, scipy, pandas; print(...)"
+numpy 2.1.3
+scikit-learn 1.5.2
+joblib 1.5.3
+scipy 1.14.1
+pandas 2.2.3
+$ python3 -c "import yfinance"
+ModuleNotFoundError: No module named 'yfinance'      <- NOT installed here
+network: reachable — `master.py --doctor` probe: "network   reachable (9 ms)"
+OS: Linux sandbox (no /usr/bin/time; timings via date +%s%N)
+
+Spec 1.2's environment note (Python 3.12, scikit-learn 1.9.1, numpy 2.5.4,
+221/221 on v1.4.1) could NOT be reproduced verbatim: this sandbox has
+sklearn 1.5.2 / numpy 2.1.3. sklearn 1.5.2 is exactly the version the GBM
+sidecars were pickled with, so the B-1 '_loss' load failure does NOT
+manifest here (see phase0_fact_checks.md, F4).
+
+------------------------------------------------------------------------------
+INPUT HASHES (task 1)
+------------------------------------------------------------------------------
+$ sha256sum upload/master_final.zip
+70004fdc15e5b5d88d7f5c81bc970005e4c9e8f6417523b913532e35438d6807  master_final.zip
+$ sha256sum "upload/master_v1_4_1 (1).zip"
+d085c7839ad7e0a9430ce39061de3019e800f002fad5703be8ebfe111cbc2e05  master_v1_4_1 (1).zip
+
+NOTE: master_v1_4_1.zip and Master_Engine_MASTER_PROMPT.md were NOT in
+upload/ when phase 0 started (only master_final.zip). They arrived
+mid-phase (upload timestamps Nov 13 18:55, before 18:59). Disclosed as
+defect C-1 in defects.md. Nothing below depends on arrival order.
+
+------------------------------------------------------------------------------
+TREE INTEGRITY + ENGINES GATE (task 1 / GATE)
+------------------------------------------------------------------------------
+$ python3 /home/z/my-project/scripts/verify_manifest.py     (in work/wip)
+full output: evidence/phase0_tree_check.txt
+files on disk (excl MANIFEST.txt): 99
+files in MANIFEST.txt:             99
+verified OK:                       99
+MISMATCH:                          0
+MISSING from tree:                 0
+UNLISTED in tree:                  0
+
+--- ENGINES.sha256 gate ---
+meds.py                MATCH  5e64b60da86d2e759f1f506e8c9dfdc5acfed32ce6958a204f172242cefc437b
+quality.py             MATCH  f123fb4e36ad298d0c662d0b36d71bb98ea80ef42760714d3b7133bac1b31215
+earnings_engine.py     MATCH  8e31e53248531584898ebfd266347775874b93d3440d12830cdb7f5a4545b0e0
+ENGINES.sha256 GATE: PASS
+
+Same three hashes verify in the v1.4.1 tree as well (work/v141):
+$ sha256sum meds.py quality.py earnings_engine.py   (in work/v141)
+5e64b60da86d2e759f1f506e8c9dfdc5acfed32ce6958a204f172242cefc437b  meds.py
+f123fb4e36ad298d0c662d0b36d71bb98ea80ef42760714d3b7133bac1b31215  quality.py
+8e31e53248531584898ebfd266347775874b93d3440d12830cdb7f5a4545b0e0  earnings_engine.py
+-> the two siblings are byte-identical on all three engine files.
+   No engine file was edited at any point in phase 0 (phase 0 changes
+   ONLY files under evidence/).
+
+------------------------------------------------------------------------------
+BASELINE TEST SUITE ON v1.5.0 AS-IS (task 5; "do not fix anything yet")
+------------------------------------------------------------------------------
+$ cd work/wip && python3 test_master.py
+----------------------------------------------------------------------
+Ran 256 tests in 11.165s
+
+OK
+
+$ cd work/wip && python3 master.py --selftest
+----------------------------------------------------------------------
+Ran 256 tests in 11.182s
+
+OK
+
+For the port record — v1.4.1's suite in the SAME environment:
+$ cd work/v141 && python3 test_master.py
+----------------------------------------------------------------------
+Ran 221 tests in 8.947s
+
+OK
+
+Suite size accounting (name-level diff of test_master.py, real diff):
+  common tests (the v1.4.0 base):      186
+  v1.4.1-only tests (to PORT):          35   (test_b1_*..test_b8_*, test_m1_*..test_m5_*,
+                                               test_weak_e_states_effective_weight — full
+                                               list in evidence/port_map.md)
+  v1.5.0-only tests (final phase):      69
+  v1.5.0 unique test functions 255, suite reports 256 ran (one parametrised extra)
+
+------------------------------------------------------------------------------
+SUITE UNDER NON-DEFAULT CONDITIONS (B-2 / B7-relevant; all real runs)
+------------------------------------------------------------------------------
+$ MASTER_STUBS=1 python3 test_master.py
+Ran 256 tests in 11.366s
+FAILED (failures=1)
+  FAIL: test_stdout_results_stderr_progress_and_piped_plain (TestStreams)
+
+$ MASTER_NET=offline python3 test_master.py
+Ran 256 tests in 11.136s
+FAILED (failures=6)
+  FAIL: test_default_dir_cold_fetch_reported_cold          (TestCacheStatusRealDir)
+  FAIL: test_readonly_cache_is_clear_error_online          (TestDegradationMatrixFinal)
+  FAIL: test_header_rows_present                           (TestManifestHeader)
+  FAIL: test_explicit_online_without_network_exits_3       (TestNetModes)
+  FAIL: test_probe_skipped_for_offline                     (TestNetModes)
+  FAIL: test_same_json_schema_every_mode                   (TestProvenanceSurfaces)
+
+$ MASTER_NET=offline MASTER_STUBS=1 python3 test_master.py
+Ran 256 tests in 10.678s
+FAILED (failures=7)
+  the 6 above + test_stdout_results_stderr_progress_and_piped_plain (TestStreams)
+
+-> the "7 named fragile tests" of defect B-2 are exactly these seven: the
+   v1.5.0 suite is written against a default ambient environment and is
+   not green under the section-9 / B7 conditions. v1.4.1 fixed this class
+   on ITS base (its suite is green under the same ambient vars — its
+   HANDOFF documents "MASTER_NET=offline MASTER_STUBS=1 ... ran=221 ... OK").
+
+sklearn+joblib import blocked (run via an in-process matrix harness,
+partial log evidence/phase0_env_matrix_partial.txt):
+  ran=256 failures=4 errors=3 skipped=0
+  genuine (not harness artifacts):
+    FAIL test_pin_ok_loads                  (TestSidecarPin)
+    FAIL test_no_pin_refused                (TestSidecarPin)
+    FAIL test_tampered_sidecar_untrained    (TestSidecarPin)
+    ERROR test_activate_refused_without_passing_report (TestMLTrain)  ModuleNotFoundError
+    ERROR test_train_save_reload_and_predict_parity (TestMLTrain)     ModuleNotFoundError
+  -> same defect class v1.4.1 fixed as NEW-2/B7 (ml_train classes must SKIP
+     cleanly; sidecar-pin tests must accept the sklearn-absent message path).
+
+Date-pinned runs (harness swaps datetime.date for a FakeDate subclass; the
+swap itself breaks two tests via pandas Timestamp interop — disclosed as a
+harness artifact, NOT a v1.5.0 defect):
+  date pinned 2026-11-13 (today)  ran=256 failures=1 errors=1
+        artifact: test_month_floor_parity (TypeError: Cannot convert Timestamp to
+                  FakeDate), test_real_meds_offline_is_honest_error_no_sockets
+  date pinned 2027-03-01 (Monday) ran=256 failures=3 errors=1
+        + genuine: test_quality_boundaries, test_earnings_price_boundaries (TestFreshness)
+  date pinned 2026-12-31 (year end) ran=256 failures=3 errors=1
+        + same two TestFreshness failures
+  date pinned 2025-02-01 (Sunday) ran=256 failures=3 errors=4
+        + test_propagation_and_floor (TestAsOfPropagation),
+          test_future_dated_earnings_rejected (TestNoLookahead),
+          test_build_ns_opens_funnel_and_uses_standard_pool (TestMlDataset)
+  -> v1.5.0 has genuine date-fragile tests beyond the harness artifact, and
+     pinned non-today dates flip cache freshness so online-mode tests attempt
+     REAL network refreshes (the [plan] lines in the partial log) — the suite
+     is not date-hermetic. Recorded as C-3.
+  2026-02-29 skipped: invalid date (2026 is not a leap year).
+  The full matrix run was killed at the sandbox 600 s command limit while
+     still executing the ambient-env section (the three direct runs above
+     supply that data instead). Partial log kept: phase0_env_matrix_partial.txt.
+
+Meta-finding on the v1.4.1 evidence: its scripts/test_env_matrix.py defines
+FakeDate but NEVER installs it (no `_dt.date = FakeDate` assignment) — its
+"date pinned" rows were plain re-runs. The v1.4.1 date-independence claim
+is therefore unproven by that artifact. Recorded as C-2; the Phase-1 port
+must pin dates for real (and handle the pandas Timestamp interop).
+
+------------------------------------------------------------------------------
+SHORT OFFLINE SMOKE RUN (spec Step 0 item 2; real last lines)
+------------------------------------------------------------------------------
+$ cd work/wip && python3 master.py --mode quick --offline   (stdout tail)
+risk caps: no LONG names — all cash
+warnings: quality ranks are relative to the 22-name watchlist only (--peers watchlist /
+   --mode quick) — rough percentiles, not sector pools · earnings accuracy: not run (empty
+   shortlist) · empty shortlist: nothing passed the quality gate
+conviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt — score, not
+   probability
+research screener, not investment advice · survivorship-biased universe · timings 33.4s
+   (macro 31.6s · quality 31.6s · earnings 0.0s · ml 1.7s · risk 0.0s)
+exit=0
+(honest degradation: this sandbox has no quality/earnings caches and offline never
+ fetches — "nothing passed the quality gate" is the correct behaviour, exit 0.)
+HANDOFF claimed 5.8 s for quick+offline on the build machine; THIS machine: 33.4 s.
+Real number recorded; machine differs; no tuning done.
+
+------------------------------------------------------------------------------
+DOCTOR + VERSION + IMPORT TIMING (real outputs)
+------------------------------------------------------------------------------
+$ python3 master.py --doctor
+master v1.5.0 doctor
+engines   meds ok v14.7.0  quality ok v3.4.1  earnings ok v3  (hashes match)
+libs      python 3.12.16 · numpy 2.1.3 · sklearn 1.5.2 · joblib 1.5.3
+cache     macro cold | quality cold | earnings cold
+network   reachable (9 ms)
+ml        q SHADOW · e SHADOW · macro SHADOW  (all fail validation — SHADOW, no decision changed)
+disk      8.0 GB free of 10 GB
+NEXT: python3 master.py --warm (first cache fill)
+
+$ python3 master.py --version
+master v1.5.0 · tested engines: meds 14.7.0, quality 3.4.1, earnings 3
+
+import+version wall time, 3 runs (date +%s%N): 132 ms / 130 ms / 128 ms
+(HANDOFF claimed 16 ms on the build machine; this sandbox is slower — real
+ numbers only, B-8 baseline.)
+
+------------------------------------------------------------------------------
+WHAT WAS **NOT** RUN IN PHASE 0 (and why)
+------------------------------------------------------------------------------
+- ml_train.py retrain (would overwrite shipped sidecars; belongs to Phase 1+)
+- ml_dataset.py full-universe build (hours; preregistration written first,
+  per task 7 and spec 5.8 — this is exactly what preregistration.md locks)
+- scripts/bench.py full run (~6 min network benchmark; Phase 8 work)
+- any live trading, any engine edit, any CONFIG change: none occurred.

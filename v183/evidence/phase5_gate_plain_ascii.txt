@@ -1,0 +1,33 @@
+=== GATE CAPTURE 2: PLAIN (--plain, width 70) ===
+*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data —
+  never for any decision ***
+
+╭────────────────────────────────────────────────────────────────────╮
+│ MASTER v1.7.0-dev · mode standard · net offline                    │
+│ (MASTER_NET=offline (override)) · as of 2026-11-13 · stubs yes     │
+│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train    │
+│ SYNTHETIC-stub · master SYNTHETIC-stub                             │
+│ chain: macro→quality→earnings→ml→risk                              │
+│ RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)          │
+│ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a            │
+│ data: earnings stub n/a OK n/a  |  ml stub n/a OK n/a              │
+│ data: risk stub n/a OK n/a                                         │
+╰────────────────────────────────────────────────────────────────────╯
+
+VERDICT 2 LONG / 0 WATCH / 0 AVOID — 3 warning(s): credit OFF — not t…
+
+ ● L1 macro     meds v14.7.0      0.0s    warm ● OK         
+     data stub · as-of n/a · OK n/a
+ ● L2 quality   quality v3.4.1    0.0s    warm ● OK         2/2 scored
+     data stub · as-of n/a · OK n/a
+ ● L3 earnings  earnings v3       0.0s    warm ● OK         OK
+
+=== GATE CAPTURE 3: ASCII (--ascii, width 70) — no Unicode at all ===
+*** STUBBED RUN (SYNTHETIC stub layers) - NOT real engine data -
+  never for any decision ***
+
++--------------------------------------------------------------------+
+| MASTER v1.7.0-dev . mode standard . net offline                    |
+| (MASTER_NET=offline (override)) . as of 2026-11-13 . stubs yes     |
+| engines: meds v14.7.0 . quality v3.4.1 . earnings v3 . ml_train    |
+| SYNTHETIC-stub . master SYNTHETIC-stub                             |

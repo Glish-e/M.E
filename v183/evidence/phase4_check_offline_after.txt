@@ -1,0 +1,12 @@
+[plan] mode standard · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality 0.3h · macro 0.9h · earnings 0.1h — caches warm, expect ≈1-5 min
+test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets) ... ok
+test_stubbed_offline_run_no_sockets (test_master.TestOfflineNoSockets.test_stubbed_offline_run_no_sockets) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.319s
+
+OK
+
+phase-4 H6 evidence: offline suite (self-blocking sockets: any AF_INET/6
+socket() raises OSError and is recorded as a failure) — 2 tests, OK

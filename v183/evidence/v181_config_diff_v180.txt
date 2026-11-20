@@ -1,0 +1,25 @@
+v1.8.0 -> v1.8.1 CONFIG DIFF (each side loaded in its own process;
+values canonicalised through me.core._canonical_json — sets sorted,
+so PYTHONHASHSEED frozenset order can never fake a change)
+baseline 89 keys -> current 102 keys
+ADDED (13):
+  FETCH_LEDGER_PATH = "data/fetch_ledger.jsonl"
+  NET_BREAKER_COOLDOWN_S = 30.0
+  NET_BREAKER_K = 5
+  NET_CALL_CAP_S = 30.0
+  NET_DEFER_COOLDOWN_S = 1.5
+  NET_NEG_CACHE_PATH = "data/negative_cache.json"
+  NET_NEG_CACHE_TTL_S = 21600.0
+  NET_PREFLIGHT_HOSTS = [["api.stlouisfed.org", 443], ["fred.stlouisfed.org", 443], ["www.sec.gov", 443], ["data.s
+  NET_PREFLIGHT_RETRIES = 2
+  NET_PREFLIGHT_S = 2.0
+  NET_RETRY_BUDGET_S = 45.0
+  RUN_BUDGET_S = 1200.0
+  WIZARD_RETRIES = 6
+REMOVED (0): []
+VALUE CHANGED (1):
+  PREFETCH_ALL_MAX: 60 -> 150
+RATIONALE CHANGED (1): ['PREFETCH_ALL_MAX']
+
+Register: evidence/rules_changes.md v1.8.1 append lists exactly these
+14 additions + the one F6 value change. Diff discipline: PASS.

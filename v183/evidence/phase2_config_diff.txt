@@ -1,0 +1,16 @@
+CONFIG DIFF — v1.5.0-as-shipped (work/v15) -> phase-2 tree (v1.7.0-dev)
+========================================================================
+keys: v1.5.0 79 -> phase 2 80
+ADDED (1): RISK_FALLBACK_RHO
+REMOVED (0): NONE
+CHANGED VALUES (0):
+
+rationale-only changes (value identical, rationale text updated):
+  CONF_DIGITS: rationale updated (disclosure added)
+  EARNINGS_NATIVE_GRADES: rationale updated (disclosure added)
+  EARNINGS_TOP_K: rationale updated (disclosure added)
+  LAYER_TIMEOUT_S: rationale updated (disclosure added)
+  MODES: rationale updated (disclosure added)
+  STUB_WARM_BUDGET_S: rationale updated (disclosure added)
+
+MODES standard preset: v1.5.0 {'timeout': 900.0, 'peers': 'builtin', 'earnings_top': 25, 'earnings_prefetch': 'none'} -> phase 2 {'timeout': 900.0, 'peers': 'builtin', 'earnings_top': 25, 'earnings_prefetch': 'none'}

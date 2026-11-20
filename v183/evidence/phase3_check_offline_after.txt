@@ -1,0 +1,15 @@
+master v1.3.0 --check
+[importable]
+  meds      v14.7.0   tested
+  quality   v3.4.1    tested
+  earnings  IMPORT FAILED — ModuleNotFoundError: No module named 'earnings_engine'
+  required engine(s) missing: earnings — the default pipeline needs all three; --only runs without them stay possible
+[configured]
+  env (names only, never values): FREDAPI=absent · FRED_API_KEY=absent · SEC_USER_AGENT=absent · FINNHUB_API_KEY=absent
+[cache-ready]
+  meds_cache     /home/z/my-project/work/p3/meds_cache — present (0.3h old)
+  quality cache  data/cache — present (0.3h old)
+  earnings cache /home/z/.earnings_engine_cache — absent (new)
+  quality universe: 682 entries (671 active) — a watchlist spanning all sectors scores all of them (standard mode)
+[provider-ready]
+  probes skipped (--offline)

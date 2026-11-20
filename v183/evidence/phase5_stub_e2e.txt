@@ -1,0 +1,5 @@
+=== phase5 stub e2e (MASTER_STUBS run via CLI, exit + banner) ===
+*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data — never for any decision ***
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+exit=1 (1 = degraded stub run with warnings — the new contract)

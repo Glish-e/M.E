@@ -1,0 +1,79 @@
+test_conviction_raw_carried (test_master.TestPhase4Ruleset.test_conviction_raw_carried) ... ERROR
+test_door_rounding_long_flips_under_v2 (test_master.TestPhase4Ruleset.test_door_rounding_long_flips_under_v2) ... FAIL
+test_door_rounding_watch_flips_under_v2 (test_master.TestPhase4Ruleset.test_door_rounding_watch_flips_under_v2) ... FAIL
+test_legacy_header_label (test_master.TestPhase4Ruleset.test_legacy_header_label) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+FAIL
+test_legacy_subsidy_still_reproduces_and_is_the_default (test_master.TestPhase4Ruleset.test_legacy_subsidy_still_reproduces_and_is_the_default) ... FAIL
+test_ruleset_flag_choices_and_default (test_master.TestPhase4Ruleset.test_ruleset_flag_choices_and_default) ... FAIL
+test_ruleset_flag_rejects_unknown (test_master.TestPhase4Ruleset.test_ruleset_flag_rejects_unknown) ... ok
+test_ruleset_run_no_config_leak (test_master.TestPhase4Ruleset.test_ruleset_run_no_config_leak) ... ERROR
+test_v2_funnel_prior_uses_the_fill (test_master.TestPhase4Ruleset.test_v2_funnel_prior_uses_the_fill) ... FAIL
+test_v2_header_label (test_master.TestPhase4Ruleset.test_v2_header_label) ... ERROR
+test_v2_missing_never_outranks_observed (test_master.TestPhase4Ruleset.test_v2_missing_never_outranks_observed) ... FAIL
+test_v2_missing_never_outranks_observed_through_fuse (test_master.TestPhase4Ruleset.test_v2_missing_never_outranks_observed_through_fuse) ... FAIL
+test_v2_overlay_regate_uses_unrounded (test_master.TestPhase4Ruleset.test_v2_overlay_regate_uses_unrounded) ... ERROR
+test_v2_reason_names_the_fill (test_master.TestPhase4Ruleset.test_v2_reason_names_the_fill) ... FAIL
+test_live_plan_stop_integration (test_master.TestPhase4Stops.test_live_plan_stop_integration) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+FAIL
+test_no_position_no_stop_no_warning (test_master.TestPhase4Stops.test_no_position_no_stop_no_warning) ... ERROR
+test_no_stop_warning_silent_none_is_gone (test_master.TestPhase4Stops.test_no_stop_warning_silent_none_is_gone) ... ERROR
+test_stop_formula (test_master.TestPhase4Stops.test_stop_formula) ... ERROR
+test_stop_key_defaults (test_master.TestPhase4Stops.test_stop_key_defaults) ... FAIL
+test_stop_none_when_no_vol_WITH_warning (test_master.TestPhase4Stops.test_stop_none_when_no_vol_WITH_warning) ... ERROR
+test_stop_surfaces_in_signal_and_explain (test_master.TestPhase4Stops.test_stop_surfaces_in_signal_and_explain) ... ERROR
+test_analyze_and_signals_read_the_same_config_value (test_master.TestPhase4TPSingleSource.test_analyze_and_signals_read_the_same_config_value) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ERROR
+test_master_has_no_second_tp_source (test_master.TestPhase4TPSingleSource.test_master_has_no_second_tp_source) ... FAIL
+test_tp_change_flows_to_both_calls (test_master.TestPhase4TPSingleSource.test_tp_change_flows_to_both_calls) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+FAIL
+test_legacy_mode_is_unchanged (test_master.TestPhase4VolTarget.test_legacy_mode_is_unchanged) ... ERROR
+test_looser_than_norm_label_and_arithmetic (test_master.TestPhase4VolTarget.test_looser_than_norm_label_and_arithmetic) ... ERROR
+test_sizing_flag_flows_to_the_sizer (test_master.TestPhase4VolTarget.test_sizing_flag_flows_to_the_sizer) ... ERROR
+test_sizing_mode_keys_and_flag (test_master.TestPhase4VolTarget.test_sizing_mode_keys_and_flag) ... FAIL
+test_vol_target_edge_inputs (test_master.TestPhase4VolTarget.test_vol_target_edge_inputs) ... ERROR
+test_vol_target_keeps_the_dd_veto (test_master.TestPhase4VolTarget.test_vol_target_keeps_the_dd_veto) ... ok
+test_vol_target_solves_the_target_vol (test_master.TestPhase4VolTarget.test_vol_target_solves_the_target_vol) ... ERROR
+test_vol_target_veto_can_fire_too (test_master.TestPhase4VolTarget.test_vol_target_veto_can_fire_too) ... ERROR
+test_doctor_carries_the_adv_status (test_master.TestPhase4ADV.test_doctor_carries_the_adv_status) ... FAIL
+test_probe_never_invents_numbers (test_master.TestPhase4ADV.test_probe_never_invents_numbers) ... ERROR
+test_probe_runs_and_verdict_is_loud (test_master.TestPhase4ADV.test_probe_runs_and_verdict_is_loud) ... ERROR
+test_damped_reason_label_interpolates (test_master.TestPhase4Hunt.test_damped_reason_label_interpolates) ... FAIL
+test_weak_reason_label_interpolates (test_master.TestPhase4Hunt.test_weak_reason_label_interpolates) ... FAIL
+
+======================================================================
+ERROR: test_conviction_raw_carried (test_master.TestPhase4Ruleset.test_conviction_raw_carried)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/z/my-project/work/wip/test_master.py", line 6146, in test_conviction_raw_carried
+    self.assertIsNotNone(d.conviction_raw)
+                         ^^^^^^^^^^^^^^^^
+AttributeError: 'Decision' object has no attribute 'conviction_raw'. Did you mean: 'conviction'?
+
+======================================================================
+ERROR: test_ruleset_run_no_config_leak (test_master.TestPhase4Ruleset.test_ruleset_run_no_config_leak)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/z/my-project/work/wip/test_master.py", line 6067, in test_ruleset_run_no_config_leak
+    _run(["MU", "--ruleset", "v2"],
+  File "/home/z/my-project/work/wip/test_master.py", line 555, in _run
+    ns = _ns(argv, **over)
+         ^^^^^^^^^^^^^^^^^
+  File "/home/z/my-project/work/wip/test_master.py", line 523, in _ns
+    ns = _apply_mode(build_parser().parse_args(argv))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------------------------
+Ran 37 tests in 2.356s
+
+FAILED (failures=17, errors=18)

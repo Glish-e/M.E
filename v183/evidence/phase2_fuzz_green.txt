@@ -1,0 +1,13 @@
+FUZZ DECISIONS — invariant fuzz (seed 88117)
+============================================================================
+cases executed: 22000  (fuse=12000, sizer=4000, overlay=2000, ml=2000, plan=2000, mono=2400, det/order=120)
+invariant suites with violations: 1
+
+-- I1-ml-scaled-range: 1231 violation(s), first 5:
+     case 0: s=nan
+     case 1: s=nan
+     case 2: s=2.0000010000010002
+     case 6: s=nan
+     case 7: s=2.0000010000010002
+
+NOTE I5 structural probe: missing-E beats bad-E in 20/20 (q, e_bad) combos — the E_MISSING_HAIRCUT 0.90 subsidy for missing data vs bad data (judged a rules finding, not a crash).

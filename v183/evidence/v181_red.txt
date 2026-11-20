@@ -1,0 +1,14 @@
+# v1.8.1 RED evidence (R14 red-first) — captured 2026-11-19
+# new tests written FIRST; implementation absent; every new test fails.
+
+## run 1: netguard unit classes
+Ran 19 tests in 3.023s
+
+FAILED (errors=19)
+
+## run 2: wiring/F classes
+Ran 51 tests in 57.631s
+
+FAILED (failures=21, errors=26)
+
+# new test count: 544 def-test minus 474 baseline = 70; all RED above.

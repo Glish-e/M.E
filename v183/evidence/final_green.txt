@@ -1,0 +1,614 @@
+test_build_inline_shape (__main__.RealEngineContract.test_build_inline_shape) ... ok
+test_month_floor_parity (__main__.RealEngineContract.test_month_floor_parity) ... ok
+test_normalize_parity (__main__.RealEngineContract.test_normalize_parity) ... ok
+test_versions_match_tested (__main__.RealEngineContract.test_versions_match_tested) ... ok
+test_propagation_and_floor (__main__.TestAsOfPropagation.test_propagation_and_floor) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_bucket_tilts (__main__.TestBucketMacroSplit.test_bucket_tilts) ... ok
+test_stub_run_bucket_keeps_macro_apart (__main__.TestBucketMacroSplit.test_stub_run_bucket_keeps_macro_apart) ... ok
+test_default_dir_cold_fetch_reported_cold (__main__.TestCacheStatusRealDir.test_default_dir_cold_fetch_reported_cold) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h
+[plan] refresh plan: macro fresh · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_all_engines_present_is_exit_0 (__main__.TestCheckSections.test_all_engines_present_is_exit_0) ... ok
+test_missing_engine_is_exit_2_with_sections (__main__.TestCheckSections.test_missing_engine_is_exit_2_with_sections) ... ok
+test_bad_as_of_is_64 (__main__.TestCli.test_bad_as_of_is_64) ... ok
+test_bad_flag_is_64 (__main__.TestCli.test_bad_flag_is_64) ... ok
+test_help_version (__main__.TestCli.test_help_version) ... ok
+test_json_exit0_and_parses (__main__.TestCli.test_json_exit0_and_parses) ... ok
+test_h2_pins_frozen (__main__.TestConfigGateFinal.test_h2_pins_frozen) ... ok
+test_new_keys_have_rationales (__main__.TestConfigGateFinal.test_new_keys_have_rationales) ... ok
+test_only_additions_plus_width (__main__.TestConfigGateFinal.test_only_additions_plus_width) ... ok
+test_bands_ordered (__main__.TestConfigSanity.test_bands_ordered) ... ok
+test_vocab (__main__.TestConfigSanity.test_vocab) ... ok
+test_weights (__main__.TestConfigSanity.test_weights) ... ok
+test_dry_run_output (__main__.TestDatasetDryRun.test_dry_run_output) ... ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 5.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+ok
+test_dry_run_reports_cached_dates (__main__.TestDatasetDryRun.test_dry_run_reports_cached_dates) ... ok
+test_conviction_definition_in_table_explain_and_json (__main__.TestDefinitionsAndLabels.test_conviction_definition_in_table_explain_and_json) ... ok
+test_missing_e_still_long_disclosed (__main__.TestDefinitionsAndLabels.test_missing_e_still_long_disclosed) ... ok
+test_scorecard_labels_p_next (__main__.TestDefinitionsAndLabels.test_scorecard_labels_p_next) ... ok
+test_earnings_missing_keeps_haircut (__main__.TestDegradationMatrixFinal.test_earnings_missing_keeps_haircut) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_macro_cache_missing_is_missing_data (__main__.TestDegradationMatrixFinal.test_macro_cache_missing_is_missing_data) ... [plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h
+ok
+test_offline_never_writes_cache (__main__.TestDegradationMatrixFinal.test_offline_never_writes_cache) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings COLD — caches warm, expect ≈1-5 min
+ok
+test_offline_serves_cached_earnings_any_age (__main__.TestDegradationMatrixFinal.test_offline_serves_cached_earnings_any_age) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_quality_cache_missing_per_name (__main__.TestDegradationMatrixFinal.test_quality_cache_missing_per_name) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_readonly_cache_is_clear_error_online (__main__.TestDegradationMatrixFinal.test_readonly_cache_is_clear_error_online) ... ok
+test_sklearn_absent_gbm_head_untrained (__main__.TestDegradationMatrixFinal.test_sklearn_absent_gbm_head_untrained) ... ok
+test_damp (__main__.TestDegradedDamp.test_damp) ... ok
+test_doctor_hash_mismatch_is_2 (__main__.TestDoctor.test_doctor_hash_mismatch_is_2) ... ok
+test_doctor_next_line_actionable (__main__.TestDoctor.test_doctor_next_line_actionable) ... ok
+test_doctor_screen_shape (__main__.TestDoctor.test_doctor_screen_shape) ... ok
+test_backtest_summary_maps_v3_series (__main__.TestEarningsAdapterV3Contract.test_backtest_summary_maps_v3_series) ... ok
+test_backtest_uses_v3_result (__main__.TestEarningsAdapterV3Contract.test_backtest_uses_v3_result) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_dstr_handles_real_engine_timestamps (__main__.TestEarningsAdapterV3Contract.test_dstr_handles_real_engine_timestamps)
+P4-D1: the REAL engine returns pd.Timestamp dates; _dstr used to ... ok
+test_plan_now_chip_via_signals (__main__.TestEarningsAdapterV3Contract.test_plan_now_chip_via_signals) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 3/3 histories cached
+ok
+test_plan_stale_report_is_open_not_now (__main__.TestEarningsAdapterV3Contract.test_plan_stale_report_is_open_not_now) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_verdict_ladder_without_auc (__main__.TestEarningsAdapterV3Contract.test_verdict_ladder_without_auc) ... ok
+test_missing_score_shows_no_data_and_dash_probability (__main__.TestEarningsScorecard.test_missing_score_shows_no_data_and_dash_probability) ... ok
+test_one_bad_ticker_does_not_kill_layer (__main__.TestEarningsTickerIsolation.test_one_bad_ticker_does_not_kill_layer) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_full_run (__main__.TestEndToEnd.test_full_run) ... ok
+test_engines_sha256_matches_phase5 (__main__.TestEnginesUntouched.test_engines_sha256_matches_phase5) ... ok
+test_docstring_documents_codes (__main__.TestExitCodesFinal.test_docstring_documents_codes) ... ok
+test_replay_mismatch_code (__main__.TestExitCodesFinal.test_replay_mismatch_code) ... ok
+test_no_go_reason_names_real_blocker (__main__.TestExitReason.test_no_go_reason_names_real_blocker) ... ok
+test_useful_macro_still_exits_zero (__main__.TestExitReason.test_useful_macro_still_exits_zero) ... ok
+test_all_fail_exit2 (__main__.TestFailureIsolation.test_all_fail_exit2) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+ok
+test_meds_error_rest_runs (__main__.TestFailureIsolation.test_meds_error_rest_runs) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_one_ticker_quality_error (__main__.TestFailureIsolation.test_one_ticker_quality_error) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+quality MU: RuntimeError: quality boom MU
+ok
+test_retrained_heads_respect_cap (__main__.TestFeatureCap.test_retrained_heads_respect_cap)
+G8: the shipped heads (retrained on the pilot dataset) each use ... ok
+test_select_features_cap_and_train_only (__main__.TestFeatureCap.test_select_features_cap_and_train_only) ... ok
+test_small_feature_set_untouched (__main__.TestFeatureCap.test_small_feature_set_untouched) ... ok
+test_earnings_signal_sanitises (__main__.TestFiniteSanitisation.test_earnings_signal_sanitises) ... ok
+test_earnings_top_zero_is_explicit_idle (__main__.TestFiniteSanitisation.test_earnings_top_zero_is_explicit_idle) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_fuse_matrix_never_long (__main__.TestFiniteSanitisation.test_fuse_matrix_never_long) ... ok
+test_nan_cli_flags_exit_64 (__main__.TestFiniteSanitisation.test_nan_cli_flags_exit_64) ... ok
+test_parse_macro_sanitises (__main__.TestFiniteSanitisation.test_parse_macro_sanitises) ... ok
+test_quality_signal_rejects_bad_scores (__main__.TestFiniteSanitisation.test_quality_signal_rejects_bad_scores) ... ok
+test_zero_confidence_and_leverage_survive (__main__.TestFiniteSanitisation.test_zero_confidence_and_leverage_survive) ... ok
+test_colored_equals_plain_at_narrow_width (__main__.TestFitVisibleWidth.test_colored_equals_plain_at_narrow_width) ... ok
+test_fit_counts_visible_chars_only (__main__.TestFitVisibleWidth.test_fit_counts_visible_chars_only) ... ok
+test_exactly_one_score_not_probability (__main__.TestFooterOne.test_exactly_one_score_not_probability) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_freeze_replay_stub_identical (__main__.TestFreezeReplay.test_freeze_replay_stub_identical) ... replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+ok
+test_replay_needs_manifest (__main__.TestFreezeReplay.test_replay_needs_manifest) ... ok
+test_tampered_manifest_fails_loudly (__main__.TestFreezeReplay.test_tampered_manifest_fails_loudly) ... REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+ok
+test_earnings_event_passed_flag (__main__.TestFreshness.test_earnings_event_passed_flag) ... ok
+test_earnings_price_boundaries (__main__.TestFreshness.test_earnings_price_boundaries) ... ok
+test_macro_boundaries (__main__.TestFreshness.test_macro_boundaries) ... ok
+test_macro_missing_data (__main__.TestFreshness.test_macro_missing_data) ... ok
+test_macro_source_from_tier (__main__.TestFreshness.test_macro_source_from_tier) ... ok
+test_quality_boundaries (__main__.TestFreshness.test_quality_boundaries) ... ok
+test_stale_never_silently_ok (__main__.TestFreshness.test_stale_never_silently_ok) ... ok
+test_topk (__main__.TestFunnel.test_topk) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 17/17 cached (stale/missing names are the only network calls) · earnings 5/7 histories cached
+ok
+test_exact_thresholds (__main__.TestFusionBoundaries.test_exact_thresholds) ... ok
+test_trigger_mode_blocks_long (__main__.TestFusionBoundaries.test_trigger_mode_blocks_long) ... ok
+test_veto_cap_and_degraded_damp (__main__.TestFusionBoundaries.test_veto_cap_and_degraded_damp) ... ok
+test_weak_renormalisation (__main__.TestFusionBoundaries.test_weak_renormalisation) ... ok
+test_at_gate_boundary (__main__.TestFusionGates.test_at_gate_boundary) ... ok
+test_below_gate (__main__.TestFusionGates.test_below_gate) ... ok
+test_no_score_never_imputed (__main__.TestFusionGates.test_no_score_never_imputed) ... ok
+test_other_flags_are_warnings_only (__main__.TestFusionGates.test_other_flags_are_warnings_only) ... ok
+test_vetoes (__main__.TestFusionGates.test_vetoes) ... ok
+test_help_cli (__main__.TestHelpAndExamples.test_help_cli) ... ok
+test_help_examples (__main__.TestHelpAndExamples.test_help_examples) ... ok
+test_env_unchanged (__main__.TestImportPurity.test_env_unchanged) ... ok
+test_import_no_side_effects (__main__.TestImportPurity.test_import_no_side_effects) ... ok
+test_only_quality_imports_nothing_else (__main__.TestImportPurity.test_only_quality_imports_nothing_else) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_keys (__main__.TestJsonSchema.test_keys) ... ok
+test_mu_long_math (__main__.TestJsonSchema.test_mu_long_math) ... ok
+test_version_imports_no_heavy_libs (__main__.TestLazyImports.test_version_imports_no_heavy_libs) ... ok
+test_bounds (__main__.TestMLConfig.test_bounds) ... ok
+test_h2_frozen_pins_unchanged (__main__.TestMLConfig.test_h2_frozen_pins_unchanged) ... ok
+test_new_keys_have_rationales (__main__.TestMLConfig.test_new_keys_have_rationales) ... ok
+test_model_with_future_dated_feature_refused (__main__.TestMLLeakage.test_model_with_future_dated_feature_refused) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_trainer_embargo_is_enforced (__main__.TestMLLeakage.test_trainer_embargo_is_enforced) ... ok
+test_active_applies_bounded_adjustment (__main__.TestMLStates.test_active_applies_bounded_adjustment) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+ok
+test_active_without_report_refused (__main__.TestMLStates.test_active_without_report_refused) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+ok
+test_probability_only_with_sample_size_and_footer_intact (__main__.TestMLStates.test_probability_only_with_sample_size_and_footer_intact) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+ok
+test_shadow_logged_and_changes_no_decision (__main__.TestMLStates.test_shadow_logged_and_changes_no_decision) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+ok
+test_untrained_runs_loud_and_changes_nothing (__main__.TestMLStates.test_untrained_runs_loud_and_changes_nothing) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+ok
+test_activate_refused_without_passing_report (__main__.TestMLTrain.test_activate_refused_without_passing_report) ... [ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpqv20bjmt/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: head q -> ACTIVE (validation report on file)
+ok
+test_forbidden_dataset_feature_refused (__main__.TestMLTrain.test_forbidden_dataset_feature_refused) ... ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ok
+test_too_few_groups_refused_honestly (__main__.TestMLTrain.test_too_few_groups_refused_honestly) ... ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+ok
+test_train_save_reload_and_predict_parity (__main__.TestMLTrain.test_train_save_reload_and_predict_parity) ... [ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmp7uc0x4be/models/head_q.npz
+ok
+test_ml_models_flag_parses (__main__.TestMLWizardAndFlags.test_ml_models_flag_parses) ... ok
+test_only_accepts_ml_and_risk (__main__.TestMLWizardAndFlags.test_only_accepts_ml_and_risk) ... ok
+test_wizard_layers_prompt_lists_five (__main__.TestMLWizardAndFlags.test_wizard_layers_prompt_lists_five) ... ok
+test_empty_snapshot_is_degraded (__main__.TestMacroSnapshotRejects.test_empty_snapshot_is_degraded) ... ok
+test_fresh_snapshot_stays_ok (__main__.TestMacroSnapshotRejects.test_fresh_snapshot_stays_ok) ... ok
+test_stale_snapshot_is_degraded (__main__.TestMacroSnapshotRejects.test_stale_snapshot_is_degraded) ... ok
+test_header_rows_present (__main__.TestManifestHeader.test_header_rows_present) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 3/3 histories cached
+ok
+test_missing_engine_printed_missing (__main__.TestManifestHeader.test_missing_engine_printed_missing) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 3/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+ok
+test_build_ns_opens_funnel_and_uses_standard_pool (__main__.TestMlDataset.test_build_ns_opens_funnel_and_uses_standard_pool) ... ok
+test_date_features_missing_flags_and_ranks (__main__.TestMlDataset.test_date_features_missing_flags_and_ranks) ... ok
+test_default_end_excludes_unlabelable_months (__main__.TestMlDataset.test_default_end_excludes_unlabelable_months) ... ok
+test_forward_return_and_gaps (__main__.TestMlDataset.test_forward_return_and_gaps) ... ok
+test_month_grid_monthly_and_quarterly (__main__.TestMlDataset.test_month_grid_monthly_and_quarterly) ... ok
+test_next_event_window (__main__.TestMlDataset.test_next_event_window) ... ok
+test_verify_embargo_statement (__main__.TestMlDataset.test_verify_embargo_statement) ... ok
+test_verify_passes_on_wellformed_and_catches_violations (__main__.TestMlDataset.test_verify_passes_on_wellformed_and_catches_violations) ... ok
+test_e_monotone (__main__.TestMonotonicity.test_e_monotone) ... ok
+test_q_monotone (__main__.TestMonotonicity.test_q_monotone) ... ok
+test_tilt_monotone (__main__.TestMonotonicity.test_tilt_monotone) ... ok
+test_auto_picks_offline_when_probe_fails (__main__.TestNetModes.test_auto_picks_offline_when_probe_fails) ... [plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+ok
+test_auto_picks_online_when_probe_ok (__main__.TestNetModes.test_auto_picks_online_when_probe_ok) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_explicit_online_without_network_exits_3 (__main__.TestNetModes.test_explicit_online_without_network_exits_3) ... ok
+test_mode_split_depth_and_net (__main__.TestNetModes.test_mode_split_depth_and_net) ... ok
+test_no_probe_at_import (__main__.TestNetModes.test_no_probe_at_import) ... ok
+test_offline_flag_is_alias (__main__.TestNetModes.test_offline_flag_is_alias) ... ok
+test_probe_skipped_for_offline (__main__.TestNetModes.test_probe_skipped_for_offline) ... ok
+test_stub_runs_resolve_offline_without_probe (__main__.TestNetModes.test_stub_runs_resolve_offline_without_probe) ... ok
+test_stubs_banner_never_silent (__main__.TestNetModes.test_stubs_banner_never_silent) ... ok
+test_provenance_frozen_at_snapshot (__main__.TestNoLateWrites.test_provenance_frozen_at_snapshot) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_floor (__main__.TestNoLookahead.test_floor) ... ok
+test_future_as_of_rejected (__main__.TestNoLookahead.test_future_as_of_rejected) ... ok
+test_future_dated_earnings_rejected (__main__.TestNoLookahead.test_future_dated_earnings_rejected) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_partial_quality_still_exits_0 (__main__.TestNoQualityScoresExitTwo.test_partial_quality_still_exits_0) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+quality MU: RuntimeError: quality boom MU
+ok
+test_quality_zero_ok_exits_2 (__main__.TestNoQualityScoresExitTwo.test_quality_zero_ok_exits_2) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+ok
+test_identical_runs_identical_decisions (__main__.TestNoStateLeakBetweenRuns.test_identical_runs_identical_decisions) ... ok
+test_two_cache_dir_runs_restore_everything (__main__.TestNoStateLeakBetweenRuns.test_two_cache_dir_runs_restore_everything) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings COLD — caches warm, expect ≈1-5 min
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings COLD — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_offline_cache_miss_fails_fast (__main__.TestOfflineFastFail.test_offline_cache_miss_fails_fast) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+ok
+test_offline_yfinance_path_disabled (__main__.TestOfflineFastFail.test_offline_yfinance_path_disabled)
+§2.4: with yfinance installed, offline still blocks its sockets — ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+ok
+test_offline_flag_in_json_manifest (__main__.TestOfflineGuard.test_offline_flag_in_json_manifest) ... ok
+test_quality_transport_patched_only_during_offline_run (__main__.TestOfflineGuard.test_quality_transport_patched_only_during_offline_run) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+ok
+test_real_meds_offline_is_honest_error_no_sockets (__main__.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+ok
+test_stubbed_offline_run_no_sockets (__main__.TestOfflineNoSockets.test_stubbed_offline_run_no_sockets) ... ok
+test_macro_elapsed_is_own (__main__.TestPerLayerTiming.test_macro_elapsed_is_own) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_prefetch_pool_uses_workers_flag (__main__.TestPrefetchWorkers.test_prefetch_pool_uses_workers_flag) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_kill_and_stop (__main__.TestProgressSilencing.test_kill_and_stop) ... ok
+test_json_layers_provenance (__main__.TestProvenanceSurfaces.test_json_layers_provenance) ... ok
+test_report_header_and_layer_lines (__main__.TestProvenanceSurfaces.test_report_header_and_layer_lines) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 3/3 histories cached
+ok
+test_same_json_schema_every_mode (__main__.TestProvenanceSurfaces.test_same_json_schema_every_mode) ... [plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_end_to_end_ordering (__main__.TestRankingAndCap.test_end_to_end_ordering) ... ok
+test_gate_failed_conviction_capped_when_high (__main__.TestRankingAndCap.test_gate_failed_conviction_capped_when_high) ... ok
+test_rank_key_orders_actions (__main__.TestRankingAndCap.test_rank_key_orders_actions) ... ok
+test_vetoed_conviction_capped_with_reason (__main__.TestRankingAndCap.test_vetoed_conviction_capped_with_reason) ... ok
+test_plan_counts (__main__.TestRefreshPlan.test_plan_counts) ... ok
+test_offline_no_refresh (__main__.TestRefreshReport.test_offline_no_refresh) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+ok
+test_online_refresh_report_fields (__main__.TestRefreshReport.test_online_refresh_report_fields) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_bucket_split (__main__.TestRefsIdentity.test_bucket_split) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_same_object (__main__.TestRefsIdentity.test_same_object) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 3/3 histories cached
+ok
+test_watchlist_peers_targets_only (__main__.TestRefsIdentity.test_watchlist_peers_targets_only) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 2/2 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_dummy_overlay_runs_end_to_end (__main__.TestRegistryReal.test_dummy_overlay_runs_end_to_end) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_dummy_sizer_fills_weights_and_portfolio_footer (__main__.TestRegistryReal.test_dummy_sizer_fills_weights_and_portfolio_footer) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 3/3 histories cached
+ok
+test_explicit_only_still_excludes_registered_layers (__main__.TestRegistryReal.test_explicit_only_still_excludes_registered_layers) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_overlay_adj_is_bounded (__main__.TestRegistryReal.test_overlay_adj_is_bounded) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_registered_extra_layer_runs_without_any_code_mentioning_it (__main__.TestRegistryReal.test_registered_extra_layer_runs_without_any_code_mentioning_it) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_registry_order_drives_build_order (__main__.TestRegistryReal.test_registry_order_drives_build_order) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 21/21 cached (stale/missing names are the only network calls) · earnings 4/4 histories cached
+ok
+test_unknown_layer_name_64 (__main__.TestRegistryReal.test_unknown_layer_name_64) ... ok
+test_ascii_is_ascii (__main__.TestRender.test_ascii_is_ascii) ... ok
+test_bar (__main__.TestRender.test_bar) ... ok
+test_color_stripped_equals_plain (__main__.TestRender.test_color_stripped_equals_plain) ... ok
+test_width_bounds (__main__.TestRender.test_width_bounds) ... ok
+test_4xx_not_retried (__main__.TestRetryPolicy.test_4xx_not_retried) ... ok
+test_failed_refresh_keeps_engine_fallback (__main__.TestRetryPolicy.test_failed_refresh_keeps_engine_fallback)
+§3.3: the wrapper returns the engine's own failure tuple after ... ok
+test_fetch_wrapper_retries_429_and_transient (__main__.TestRetryPolicy.test_fetch_wrapper_retries_429_and_transient) ... ok
+test_fetch_wrapper_stops_on_4xx (__main__.TestRetryPolicy.test_fetch_wrapper_stops_on_4xx) ... ok
+test_provider_error_gives_up_after_three (__main__.TestRetryPolicy.test_provider_error_gives_up_after_three) ... ok
+test_rate_limit_left_to_engine (__main__.TestRetryPolicy.test_rate_limit_left_to_engine) ... ok
+test_transient_retried_then_succeeds (__main__.TestRetryPolicy.test_transient_retried_then_succeeds) ... ok
+test_layer_error_leaves_weights_untouched (__main__.TestRiskLayer.test_layer_error_leaves_weights_untouched) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+risk failed: RuntimeError: boom
+ok
+test_offline_run_no_sockets_with_shadow_models (__main__.TestRiskLayer.test_offline_run_no_sockets_with_shadow_models) ... [plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+ok
+test_weights_filled_end_to_end (__main__.TestRiskLayer.test_weights_filled_end_to_end) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 25/25 cached (stale/missing names are the only network calls) · earnings 5/6 histories cached
+ok
+test_dd_veto_zeroes_the_book (__main__.TestRiskProps.test_dd_veto_zeroes_the_book) ... ok
+test_fallback_equal_weight_without_vols (__main__.TestRiskProps.test_fallback_equal_weight_without_vols) ... ok
+test_high_correlation_caps_gross (__main__.TestRiskProps.test_high_correlation_caps_gross) ... ok
+test_low_budget_is_a_veto (__main__.TestRiskProps.test_low_budget_is_a_veto) ... ok
+test_no_longs_means_all_cash (__main__.TestRiskProps.test_no_longs_means_all_cash) ... ok
+test_single_name_hits_name_cap (__main__.TestRiskProps.test_single_name_hits_name_cap) ... ok
+test_weights_nonneg_budget_and_caps (__main__.TestRiskProps.test_weights_nonneg_budget_and_caps) ... ok
+test_bad_mode_is_64 (__main__.TestRunModes.test_bad_mode_is_64) ... ok
+test_explicit_flag_beats_mode (__main__.TestRunModes.test_explicit_flag_beats_mode) ... ok
+test_mode_presets (__main__.TestRunModes.test_mode_presets) ... ok
+test_plan_banner_prints_pool_and_caches (__main__.TestRunModes.test_plan_banner_prints_pool_and_caches) ... ok
+test_plan_banner_silent_when_quiet (__main__.TestRunModes.test_plan_banner_silent_when_quiet) ... ok
+test_standard_mirrors_v100_defaults (__main__.TestRunModes.test_standard_mirrors_v100_defaults) ... ok
+test_warm_respects_skip (__main__.TestRunModes.test_warm_respects_skip) ... cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h
+[plan] refresh plan: macro fresh · quality 47/47 cached (stale/missing names are the only network calls) · earnings 14/22 histories cached
+ok
+test_warm_selects_macro_quality (__main__.TestRunModes.test_warm_selects_macro_quality) ... cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h
+[plan] refresh plan: macro fresh · quality 47/47 cached (stale/missing names are the only network calls) · earnings 14/22 histories cached
+ok
+test_watchlist_peers_warning_present (__main__.TestRunModes.test_watchlist_peers_warning_present) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 2/2 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_no_sector_table_without_quality (__main__.TestSectorTable.test_no_sector_table_without_quality) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h
+[plan] refresh plan: macro fresh · quality 0/0 cached (stale/missing names are the only network calls) · earnings 1/1 histories cached
+ok
+test_sector_table_rows_and_values (__main__.TestSectorTable.test_sector_table_rows_and_values) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_cap_bad_band_64 (__main__.TestSectorsCapDiscover.test_cap_bad_band_64) ... ok
+test_cap_filters_and_discloses_excluded (__main__.TestSectorsCapDiscover.test_cap_filters_and_discloses_excluded) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 11/11 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_cap_unavailable_without_mcap_data_64 (__main__.TestSectorsCapDiscover.test_cap_unavailable_without_mcap_data_64) ... ok
+test_discover_sets_top_and_warns_when_few_qualify (__main__.TestSectorsCapDiscover.test_discover_sets_top_and_warns_when_few_qualify) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 10/10 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_sectors_bad_group_64 (__main__.TestSectorsCapDiscover.test_sectors_bad_group_64) ... ok
+test_sectors_probe_failure_64 (__main__.TestSectorsCapDiscover.test_sectors_probe_failure_64) ... ok
+test_sectors_scopes_candidates_to_groups (__main__.TestSectorsCapDiscover.test_sectors_scopes_candidates_to_groups) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 21/21 cached (stale/missing names are the only network calls) · earnings 4/4 histories cached
+ok
+test_missing_sidecar_untrained (__main__.TestSidecarPin.test_missing_sidecar_untrained) ... ok
+test_no_pin_refused (__main__.TestSidecarPin.test_no_pin_refused) ... ok
+test_pin_ok_loads (__main__.TestSidecarPin.test_pin_ok_loads) ... ok
+test_tampered_sidecar_untrained (__main__.TestSidecarPin.test_tampered_sidecar_untrained) ... ok
+test_wrong_sklearn_untrained (__main__.TestSidecarPin.test_wrong_sklearn_untrained) ... ok
+test_disabled (__main__.TestSignalVocabulary.test_disabled) ... ok
+test_missing_data_reason_and_cell (__main__.TestSignalVocabulary.test_missing_data_reason_and_cell) ... ok
+test_not_selected (__main__.TestSignalVocabulary.test_not_selected) ... ok
+test_late_worker_cannot_write_after_fusion (__main__.TestSoftDeadline.test_late_worker_cannot_write_after_fusion) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h
+[plan] refresh plan: macro fresh · quality 0/0 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+ok
+test_soft_deadline_exists_and_documents_itself (__main__.TestSoftDeadline.test_soft_deadline_exists_and_documents_itself) ... ok
+test_layer_stale_provenance_becomes_warning (__main__.TestStaleNames.test_layer_stale_provenance_becomes_warning) ... ok
+test_plain_missing_reason_carries_cause (__main__.TestStaleNames.test_plain_missing_reason_carries_cause) ... ok
+test_stale_flag_reason_line (__main__.TestStaleNames.test_stale_flag_reason_line) ... ok
+test_stale_name_ranks_below_scored (__main__.TestStaleNames.test_stale_name_ranks_below_scored) ... ok
+test_stdout_results_stderr_progress_and_piped_plain (__main__.TestStreams.test_stdout_results_stderr_progress_and_piped_plain) ... ok
+test_csv_escapes_formula_cells (__main__.TestStrictJsonAndCsv.test_csv_escapes_formula_cells) ... ok
+test_payload_sanitises_nan (__main__.TestStrictJsonAndCsv.test_payload_sanitises_nan) ... ok
+test_stubbed_json_flag (__main__.TestStubBanner.test_stubbed_json_flag) ... ok
+test_stubbed_render_shows_banner (__main__.TestStubBanner.test_stubbed_render_shows_banner) ... ok
+test_stub_run_has_five_layers_and_weights (__main__.TestStubFiveLayers.test_stub_run_has_five_layers_and_weights) ... ok
+test_stub_run_within_budget (__main__.TestStubWarmBudget.test_stub_run_within_budget) ... ok
+test_defensive_caps (__main__.TestTiltMapping.test_defensive_caps) ... ok
+test_inflation_shock (__main__.TestTiltMapping.test_inflation_shock) ... ok
+test_sleeve_split (__main__.TestTiltMapping.test_sleeve_split) ... ok
+test_soft_landing (__main__.TestTiltMapping.test_soft_landing) ... ok
+test_warm_skip_all_raises_64 (__main__.TestWarmGuard.test_warm_skip_all_raises_64) ... ok
+test_warm_skip_one_still_works (__main__.TestWarmGuard.test_warm_skip_one_still_works) ... ok
+test_ascii_renders_at_all_widths (__main__.TestWidths.test_ascii_renders_at_all_widths) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_colour_equals_plain_at_every_width (__main__.TestWidths.test_colour_equals_plain_at_every_width) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_lines_bounded_at_40_70_110 (__main__.TestWidths.test_lines_bounded_at_40_70_110) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_bounded_and_tiered (__main__.TestWidthsWithSizer.test_bounded_and_tiered) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 24/24 cached (stale/missing names are the only network calls) · earnings 5/5 histories cached
+ok
+test_cap_any_is_no_flag (__main__.TestWizard.test_cap_any_is_no_flag) ... ok
+test_cap_step_offered_when_data_exists (__main__.TestWizard.test_cap_step_offered_when_data_exists) ... ok
+test_cap_step_says_unavailable_when_no_data (__main__.TestWizard.test_cap_step_says_unavailable_when_no_data) ... ok
+test_decline_aborts_with_rerun_hint (__main__.TestWizard.test_decline_aborts_with_rerun_hint) ... ok
+test_eof_aborts (__main__.TestWizard.test_eof_aborts) ... ok
+test_layers_subset_becomes_only (__main__.TestWizard.test_layers_subset_becomes_only) ... ok
+test_market_flow_uses_all (__main__.TestWizard.test_market_flow_uses_all) ... ok
+test_sectors_flow_builds_flag_equivalent_namespace (__main__.TestWizard.test_sectors_flow_builds_flag_equivalent_namespace) ... ok
+test_three_invalid_answers_raise_64 (__main__.TestWizard.test_three_invalid_answers_raise_64) ... ok
+test_tickers_flow_positional (__main__.TestWizard.test_tickers_flow_positional) ... ok
+test_main_no_args_non_tty_runs_default (__main__.TestWizardEntry.test_main_no_args_non_tty_runs_default) ... ok
+test_main_no_args_tty_runs_wizard_end_to_end (__main__.TestWizardEntry.test_main_no_args_tty_runs_wizard_end_to_end) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality 1.4h · macro 2.0h · earnings 0.0h — caches warm, expect ≈1-5 min
+[plan] refresh plan: macro fresh · quality 2/2 cached (stale/missing names are the only network calls) · earnings 2/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+ok
+test_wants_wizard_truth_table (__main__.TestWizardEntry.test_wants_wizard_truth_table) ... ok
+
+----------------------------------------------------------------------
+Ran 256 tests in 18.592s
+
+OK

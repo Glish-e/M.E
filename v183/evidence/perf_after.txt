@@ -1,0 +1,79 @@
+bench after · 2026-11-08 22:36:24 · python 3.12.16 · cwd /home/z/my-project/work/final
+
+[a] import cost  (python3 -X importtime master.py --version)
+  wall 0.1s (exit 0)
+  cumulative total (max) 16 ms; top 15:
+        16.2 ms  urllib.request
+        12.2 ms  http.client
+         8.4 ms  statistics
+         7.9 ms  email.parser
+         7.8 ms  email.feedparser
+         7.6 ms  concurrent.futures
+         7.1 ms  concurrent.futures._base
+         7.1 ms  email._policybase
+         6.3 ms  argparse
+         5.3 ms  dataclasses
+         5.2 ms  email.utils
+         4.8 ms  inspect
+         4.6 ms  re
+         4.2 ms  logging
+         3.2 ms  site
+
+[b] --selftest wall time
+  wall 18.8s (exit 0)
+  
+
+[c] stub run (MASTER_STUBS=1, default watchlist)
+  wall 0.6s (exit 0)
+  pipeline total 0.4s · layers {'total': 0.4, 'macro': 0.0, 'quality': 0.0, 'earnings': 0.0, 'ml': 0.0, 'risk': 0.0}
+  cProfile (cumulative, top 15):
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    3    0.002    0.001    0.030    0.010 /home/z/my-project/work/final/master.py:719(_dir_stamp)
+    2001    0.001    0.000    0.017    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    2001    0.001    0.000    0.016    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    2005    0.003    0.000    0.014    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    2006    0.003    0.000    0.010    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    3996    0.001    0.000    0.010    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    3996    0.007    0.000    0.008    0.000 {built-in method posix.stat}
+    1998    0.001    0.000    0.007    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    2011    0.001    0.000    0.006    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    2/1    0.000    0.000    0.006    0.006 /home/z/my-project/work/final/scripts/bench.py:130(_stub_run)
+    2/1    0.000    0.000    0.006    0.006 /home/z/my-project/work/final/master.py:3332(run_pipeline)
+    2/1    0.000    0.000    0.006    0.006 /home/z/my-project/work/final/master.py:3346(_run_pipeline_inner)
+    2016    0.001    0.000    0.004    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    11/10    0.000    0.000    0.004    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    5    0.000    0.000    0.003    0.001 /home/z/my-project/work/final/master.py:2957(_soft_deadline_call)
+
+[d] warm offline run (default watchlist; caches as-is)
+  wall 76.0s (exit 0)
+  subprocess wall (incl. startup): 76.0s
+  timings: {'total': 75.2, 'macro': 73.23, 'quality': 73.24, 'earnings': 0.17, 'ml': 1.77, 'risk': 0.0}
+  layer statuses: macro=OK, quality=DEGRADED, earnings=OK, ml=OK, risk=OK
+  render_report: 0.0s
+  cProfile (cumulative, top 15):
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    24/10    0.001    0.000  242.386   24.239 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    51/23    0.000    0.000  126.599    5.504 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    8    0.007    0.001  118.231   14.779 /home/z/my-project/work/final/master.py:719(_dir_stamp)
+    7940    0.002    0.000  118.200    0.015 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    7940    0.003    0.000  118.198    0.015 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    1    0.000    0.000  118.194  118.194 /home/z/my-project/work/final/scripts/bench.py:175(_one)
+    1    0.000    0.000  118.194  118.194 /home/z/my-project/work/final/master.py:3332(run_pipeline)
+    1    0.000    0.000  118.193  118.193 /home/z/my-project/work/final/master.py:3346(_run_pipeline_inner)
+    5    0.000    0.000  118.156   23.631 /home/z/my-project/work/final/master.py:3174(layer_provenance)
+    1    0.000    0.000  118.155  118.155 /home/z/my-project/work/final/master.py:3152(_newest_file_date)
+    5    0.000    0.000  118.122   23.624 /home/z/my-project/work/final/master.py:2957(_soft_deadline_call)
+    24/6    0.000    0.000  118.119   19.687 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    13/8    0.001    0.000  115.908   14.488 {method 'get' of '_queue.SimpleQueue' objects}
+    12/5    0.000    0.000  115.788   23.158 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    12/5    0.000    0.000  115.788   23.158 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+
+[e] cold online run (folded in from a saved --json run)
+  timings: {'total': 156.2, 'macro': 153.24, 'quality': 153.24, 'earnings': 1.02, 'ml': 1.54, 'risk': 0.0}
+
+== summary ==
+import total        16 ms
+selftest wall       18.8 s
+stub run total      0.4 s
+warm offline total  75.2 s (render 0.0 s)
+cold online total   156.2 s

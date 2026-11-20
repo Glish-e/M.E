@@ -1,0 +1,71 @@
+baseline: /home/z/my-project/work/v15/master.py (79 entries)
+current : master.py (86 entries)
+VALUE CHANGED EARNINGS_STOP_K:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED E_MISSING_V2:
+  base='<absent>'
+  curr=0.0
+VALUE CHANGED MAX_TERM_WIDTH:
+  base=110
+  curr=160
+VALUE CHANGED RISK_FALLBACK_RHO:
+  base='<absent>'
+  curr=0.5
+VALUE CHANGED RISK_SIZING_MODE:
+  base='<absent>'
+  curr='legacy'
+VALUE CHANGED RISK_VOL_TARGET:
+  base='<absent>'
+  curr=0.15
+VALUE CHANGED RULESET:
+  base='<absent>'
+  curr='legacy'
+VALUE CHANGED STALE_STATUS_DAYS:
+  base='<absent>'
+  curr=7
+RATIONALE CHANGED CONF_DIGITS:
+  base='Render precision per quantity (stable across --json).'
+  curr="INTENDED render precision per quantity. NOT currently read: the renderer hardcodes its formats (conviction 1dp, score 0dp, mult 3dp, time 1dp — the same values, kept stable across --json). Kept as the register's honest statement of intent, disclosed not-read per v1.4.1 (B6); scripts/rules_register_check.py carries it as DISCLOSED."
+RATIONALE CHANGED EARNINGS_NATIVE_GRADES:
+  base="earnings_engine's _rating bands — shown only on the earnings layer."
+  curr="earnings_engine's own _rating bands (documented vocabulary). The production adapter shows the engine's OWN rating string verbatim and never re-scores through these bands; they are consumed by the test suite's signal builders and the band-ordering gate, and by any future adapter that must derive a letter from a numeric engine score. v1.4.1 (B6) port: documented as not-read-in-production — the rules register (scripts/rules_register_check.py) carries it as DISCLOSED."
+RATIONALE CHANGED EARNINGS_STOP_K:
+  base='<absent>'
+  curr="P-3 (spec 3.4, phase 4): live-plan stop = entry x (1 - k x annualised vol x sqrt(hold_days/365)) with k from this key (hold_days calendar = EARNINGS_HOLD_DAYS, vol = the sizer's 126-td trailing annualised vol off the engine's price cache — the same estimate the risk layer uses). 2.0 is the pre-registered MID-grid value of the spec's {off,1.5,2.0,3.0} grid; the grid backtest (spec 5.8, later phase) chooses by pre-registered OOS rules — no result has been used to pick 2.0. No vol -> no stop, with a visible W_NO_VOL_NO_STOP warning (code + fix command), never a silent None."
+RATIONALE CHANGED EARNINGS_TOP_K:
+  base='L3 runs only on the K best L1+L2 survivors — saves most Yahoo calls and avoids 429s.'
+  curr='L3 runs only on the K best L1+L2 survivors — saves most Yahoo calls and avoids 429s. v1.4.1 (B6) port, phase 2: this key IS the standard-mode --earnings-top default (MODES reads it at import AND at _apply_mode time; quick/deep keep their own presets 10/40).'
+RATIONALE CHANGED EARNINGS_TP:
+  base='eng.plan take-profit.'
+  curr="eng.plan take-profit. Phase 4 (B-7c): the ONE source of truth for the take-profit — passed to BOTH the engine's live signals() call and the analyze(trade=True) backtest, so the live plan and the backtest can never disagree (the engine's own 0.20 default is never reached because master always supplies this value; the engine file stays untouched)."
+RATIONALE CHANGED E_MISSING_V2:
+  base='<absent>'
+  curr="P-1 (spec 3.2, phase 4): the FIXED conservative E a missing-E name is scored at under ruleset v2. 0.0 = the floor of the engine's 0-100 E scale, and the ONLY value for which base(missing E) <= base(any observed E) holds for EVERY observed E >= 0 (the spec 3.2 invariant); any higher fill would let a name with observed E below the fill rank below the missing name — the exact subsidy legacy exhibits at e < 0.714*q. Chosen a priori (the invariant IS the choice), not tuned on any result."
+RATIONALE CHANGED LAYER_TIMEOUT_S:
+  base='STANDARD-mode per-layer wall-clock budget (prefetch + run); --mode quick/deep use their own presets.'
+  curr='STANDARD-mode per-layer wall-clock budget (prefetch + run); --mode quick/deep use their own presets. v1.4.1 (B6) port, phase 2: this key IS the standard-mode --timeout default (MODES reads it at import AND at _apply_mode time), so the key and the preset can never drift apart.'
+RATIONALE CHANGED MAX_TERM_WIDTH:
+  base='Terminal width ceiling.'
+  curr="Terminal width ceiling. Phase 5 (C-3) raised 110 -> 160: the owner's terminal runs at 96 cols and the tested tier ladder is 40/70/110/160; disclosed as a VALUE CHANGE in evidence/rules_changes.md (phase 8 CONFIG diff must verify it). Display only; never a fusion input."
+RATIONALE CHANGED MODES:
+  base='Run presets: what each --mode sets unless the user passes the flag explicitly. quick trades exact sector ranks for a small comparison pool (the watchlist itself); standard keeps honest sector pools; deep is the long research pass. standard mirrors the v1.0.0 defaults exactly.'
+  curr='Run presets: what each --mode sets unless the user passes the flag explicitly. quick trades exact sector ranks for a small comparison pool (the watchlist itself); standard keeps honest sector pools; deep is the long research pass. standard mirrors the v1.0.0 defaults exactly and v1.4.1 (B6) resolves from CONFIG[EARNINGS_TOP_K]/[LAYER_TIMEOUT_S] at import AND at _apply_mode time, so the two formerly dead keys are now the single source of truth for the standard preset.'
+RATIONALE CHANGED RISK_FALLBACK_RHO:
+  base='<absent>'
+  curr='v1.4.1 port (B2, phase 2): the conservative equicorrelation used by the est-DD estimate when vols exist but rho is unavailable (1-2 names, <42 overlapping rows, a correlation error, or a non-finite rho_bar). The correlation cap itself stays OFF in that state — both facts are DISCLOSED (note + footer + JSON rho_fallback/rho_used + the stable W_RHO_FALLBACK code), never silent. 0.5 is a documented conservative assumption, not a rule change: books with a real rho are untouched (asserted by test_b2_*).'
+RATIONALE CHANGED RISK_SIZING_MODE:
+  base='<absent>'
+  curr="P-2 (spec 3.3, phase 4): the sizing mode. legacy = the shipped sizer: inverse-vol weights, name cap, sector cap, correlation-aware gross cap eff/8, est-DD veto. vol_target = the opt-in mode: the SAME weights/caps, but the correlation-aware scaling is expressed as a volatility target — gross is solved so the estimated portfolio vol (equicorrelation, the same inputs) hits RISK_VOL_TARGET, capped at the budget (no leverage); name cap, sector cap and the DD veto are kept. Any looser-than-legacy deployment prints a 'looser than norm by X%' note with X computed from the actual numbers. Default legacy; --sizing vol_target opts in."
+RATIONALE CHANGED RISK_VOL_TARGET:
+  base='<absent>'
+  curr='P-2 (spec 3.3, phase 4): target annualised portfolio vol for the vol_target sizing mode (fraction of budget deployed x vol). 0.15 coheres with the legacy risk envelope by construction: at target, est max DD = RISK_DD_FACTOR x 0.15 = 0.30 = exactly RISK_MAX_EST_DD (the legacy veto line). Pre-registered coherence, not a result-tuned value.'
+RATIONALE CHANGED RULESET:
+  base='<absent>'
+  curr='P-1 / P-6 (spec 3.2, phase 4): the ruleset selector. legacy = the shipped v1.5.0 rules: missing-E keeps the x0.90 advantage (missing beats observed E whenever e < 0.714*q) and the LONG/WATCH doors compare ROUNDED conviction. v2 = missing-E is scored as the fixed conservative fill E_MISSING_V2 through the SAME blend (invariant-tested: missing never outranks an observed E) and the doors compare UNROUNDED conviction (display stays rounded). Default legacy until backtest evidence + owner approval; --ruleset v2 is the opt-in and the header labels the active ruleset either way.'
+RATIONALE CHANGED STALE_STATUS_DAYS:
+  base='<absent>'
+  curr='Phase 5 (C-2) DISPLAY staleness threshold: a served source older than this shows yellow STALE + age in the report (e.g. macro > 7d), never a green OK. Display-only label — the FRESHNESS_* gates that actually gate logic/decisions are untouched and stay the pre-registered values; this key never feeds a decision.'
+RATIONALE CHANGED STUB_WARM_BUDGET_S:
+  base='Regression guard: a warm MASTER_STUBS run on the default watchlist must finish in well under this (measured 0.3s; 10s = 30x headroom) or the suite fails — stub runs are the fast tier by contract.'
+  curr="Regression guard: a warm MASTER_STUBS run on the default watchlist must finish in well under this (measured 0.3s; 10s = 30x headroom) or the suite fails — stub runs are the fast tier by contract. NOT currently read by PRODUCTION master.py: the budget is enforced by the test suite (TestStubWarmBudget), so the register discloses it as not-read-in-production rather than counting it live (phase-2 census finding on the v1.5.0 tree; v1.4.1's register never saw this key)."

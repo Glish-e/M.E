@@ -1,0 +1,25 @@
+PASS loads with allow_pickle=False (0.1 MB)
+PASS key parity: required keys present (extras: ['event_date', 'label_end_63', 'macro_ret_1m'])
+PASS shapes: X (1080, 47) == (1080, 47) rows/tickers/features
+PASS shape parity: as_of has 1080 rows
+PASS shape parity: sector has 1080 rows
+PASS shape parity: y_q has 1080 rows
+PASS shape parity: y_e has 1080 rows
+PASS shape parity: ret_21 has 1080 rows
+PASS shape parity: ret_63 has 1080 rows
+PASS shape parity: group has 1080 rows
+PASS X dtype float32 == float32
+PASS as_of dtype datetime64[D]
+PASS group dtype is integer
+PASS as_of rows are non-decreasing (build order = time order)
+PASS group == as-of month id
+PASS days_since_last_earnings >= 0 or NaN (no future-dated reports)
+PASS y_e event dates are strictly AFTER their as-of (no lookahead)
+PASS label_end_63 >= as_of (windows point forward)
+PASS monthly grid: 11/11 consecutive date pairs share label price windows (63 td > 1 month) — REQUIRED purge+embargo >= 63 trading days (3 monthly periods); never shuffle across `group`
+PASS class balance y_q: 539/1044 positive (51.6%) — both classes present
+PASS class balance y_e: 508/974 positive (52.2%) — both classes present
+PASS class balance y_m: 37/84 positive (44.0%) — both classes present
+PASS NaN rates match the manifest (drift: none)
+PASS manifest carries pit_verified, survivorship warning + embargo
+verify: OK

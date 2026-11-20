@@ -1,0 +1,44 @@
+baseline: /home/z/my-project/work/v181 (102 entries)
+current : /home/z/my-project/work/v182 (108 entries)
+
+VALUE CHANGED NET_BREAKER_RATE:
+  v1.8.1='<absent>'
+  v1.8.2=0.5
+VALUE CHANGED NET_BREAKER_TIMEOUT_WEIGHT:
+  v1.8.1='<absent>'
+  v1.8.2=2.0
+VALUE CHANGED NET_BREAKER_WINDOW_N:
+  v1.8.1='<absent>'
+  v1.8.2=20
+VALUE CHANGED NET_BROWNOUT_S:
+  v1.8.1='<absent>'
+  v1.8.2=120.0
+VALUE CHANGED NET_PREFLIGHT_TOTAL_S:
+  v1.8.1='<absent>'
+  v1.8.2=10.0
+VALUE CHANGED RUN_BUDGET_BY_DEPTH:
+  v1.8.1='<absent>'
+  v1.8.2={'deep': 4500.0, 'quick': 600.0, 'standard': 1200.0}
+RATIONALE CHANGED NET_BREAKER_RATE:
+  v1.8.1='<absent>'
+  v1.8.2='v1.8.2 (W1): trip when weighted failures in the rolling window reach RATE * WINDOW (timeouts count NET_BREAKER_TIMEOUT_WEIGHTx). 0.5 with N=20: 10 plain failures — or 5 timeouts — inside the last 20 calls.'
+RATIONALE CHANGED NET_BREAKER_TIMEOUT_WEIGHT:
+  v1.8.1='<absent>'
+  v1.8.2='v1.8.2 (W1): a TIMEOUT failure counts this much in the rate rule (a timeout burned a full NET_CALL_CAP_S of wall; a fast 5xx did not).'
+RATIONALE CHANGED NET_BREAKER_WINDOW_N:
+  v1.8.1='<absent>'
+  v1.8.2="v1.8.2 (W1): the breaker's SECOND trip rule — the rolling window of the last N calls per host over which the weighted failure RATE is compared to NET_BREAKER_RATE (intermittent ok/fail hosts never accumulate K consecutive failures; the consecutive rule stays)."
+RATIONALE CHANGED NET_BROWNOUT_S:
+  v1.8.1='<absent>'
+  v1.8.2='v1.8.2 (W1): the GLOBAL brownout budget — the total wall time the run may spend inside FAILED attempts (successful attempts never count) before EVERY breaker is force-opened and all further calls fail fast. Measured per-host brownout trip (cap 30 s, K 5, 3 attempts): 184.4 s, x3 sequential host fami'
+RATIONALE CHANGED NET_PREFLIGHT_TOTAL_S:
+  v1.8.1='<absent>'
+  v1.8.2='v1.8.2 (W1): the WHOLE preflight pass is capped at this wall time — hosts not probed before it runs out are marked dead (breaker open, fail fast, honest note): a DNS-hang outage cannot stretch preflight to hosts x 3 x NET_PREFLIGHT_S. Bounds the outage case: 10 + 1.5 + slack = 12.5 s < the 15 s targ'
+RATIONALE CHANGED RUN_BUDGET_BY_DEPTH:
+  v1.8.1='<absent>'
+  v1.8.2='v1.8.2 (W1): the OVERALL run budget derived from the depth preset (MASTER_RUN_BUDGET_S env still wins; RUN_BUDGET_S is the fallback for unknown depths). quick 600 s = 2x its 300 s per-layer preset (measured real quick runs 6-25 s, stub 0.3 s: 24x+ headroom); standard 1200 s = the unchanged v1.8.1 RU'
+RATIONALE CHANGED RUN_BUDGET_S:
+  v1.8.1='N1: the OVERALL run wall-clock budget (disclosed): after it the run renders what it has, salvages unfinished layers and the process exits within seconds even if a worker is stuck ( MASTER_RUN_BUDGET_S env overrides it for tests/CI). 1200 s = 20 min comfortably bounds a cold standard run (~minutes) w'
+  v1.8.2='N1: the OVERALL run wall-clock budget for a STANDARD-depth run (and the fallback for unknown depths): after it the run renders what it has, salvages unfinished layers and the process exits within seconds even if a worker is stuck (MASTER_RUN_BUDGET_S env overrides it for tests/CI). v1.8.2 (W1): the '
+
+summary: 6 value change(s), 7 rationale change(s) — every change is a disclosed runtime knob (S7); no decision input changed (proof: evidence/v182_decision_hash.txt)

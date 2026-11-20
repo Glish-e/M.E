@@ -1,0 +1,8 @@
+  File "/home/z/my-project/work/w18/test_master.py", line 8037, in test_me_modules_no_master_import_at_module_level
+    self.assertTrue(me_dir.is_dir(), "me/ package missing")
+AssertionError: False is not true : me/ package missing
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=1, errors=2)

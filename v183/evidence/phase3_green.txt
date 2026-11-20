@@ -1,0 +1,11 @@
+# evidence/phase3_green.txt — PHASE 3, full suite after the port
+# Date: 2026-11-13 22:58:30 UTC
+# Tree state: after the M1-M5/B8-ML ports, the honest retrain, AND the
+# C-6 fixes (the selection-test skip guard + the matrix submodule purge).
+# Command: python3 -m unittest test_master (baseline cell; the full
+# 9-cell matrix is evidence/phase3_env_matrix.txt)
+
+----------------------------------------------------------------------
+Ran 309 tests in 7.525s
+
+OK

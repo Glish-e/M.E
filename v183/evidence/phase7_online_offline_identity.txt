@@ -1,0 +1,10 @@
+B-9 item 1 (D3): online-vs-offline decision identity on a real cache
+names: MU NVDA AAPL AMD META
+[online] exit 1 · 14.1s · timings 13.7s · 5 decisions
+[offline] exit 1 · 2.8s · timings 2.5s · 5 decisions
+IDENTICAL: 5 decisions (ticker, action, conviction) match bit-for-bit between the online run and the offline replay of the cache it wrote
+   ('AAPL', 'WATCH', 48.8)
+   ('AMD', 'AVOID', 35.9)
+   ('META', 'WATCH', 46.8)
+   ('MU', 'WATCH', 66.3)
+   ('NVDA', 'WATCH', 60.5)

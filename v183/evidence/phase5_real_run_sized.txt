@@ -1,0 +1,58 @@
+[plan] mode standard · 5 tickers · quality pool 226 names · L3 top-25 · budget 240s/layer
+[plan] caches: quality 0.0h · macro 0.4h · earnings 0.0h — caches warm, expect ≈1-5 min
+[quality] cold cache: scoring the whole universe (226 names, a few provider calls per name, rate-limited); results are memoized for this process.
+Crumb fetch rate-limited (HTTP 429), continuing without crumb
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+$SKX: possibly delisted; no timezone found
+$HBI: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$K: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+$SPTN: possibly delisted; no timezone found
+$CMA: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$SNV: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$MMC: possibly delisted; no timezone found
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ MASTER v1.4.0 · mode standard · as of 2026-11-08 (live) · offline no · stubs no                            │
+│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train v1.0.0 · master v1.4.0                     │
+│ chain: macro→quality→earnings→ml→risk                                                                      │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ ✓ L1 macro     meds v14.7.0       77.9s  warm ● OK        
+ ✓ L2 quality   quality v3.4.1     77.9s  cold ▲ DEGRADED  4/5 scored  ██████████░░ 4/5
+ ✓ L3 earnings  earnings v3         2.4s  cold ▲ DEGRADED  OK · weak
+ ✓ L4 ml        ml_train v1.0.0     1.6s  n/a  ● OK        
+ ✓ L5 risk      master v1.4.0       0.0s  n/a  ● OK        portfolio
+
+ L1 MACRO ── Credit Crunch & Liquidity Squeeze · Crisis
+   conf █████████░ 0.92 · lev 1.35x · risk budget 1.35
+eff 2026-10-31 · data cache · PIT approximate_pit_lag · credit ON · next month 2026-11
+   LONG  XLU XLP        SHORT  –          sleeve: TLT BIL
+sector tilt tech -0.5 · comm -0.5 · cons +1.0 · indu -0.5 · energy 0 · util +1.0 · mats -0.5 · health – ·
+     fin – · reits – · spec –
+
+ SECTOR      tilt   scored   median-Q
+ consumer    +1.0   3/3      54
+ utilities   +1.0   0/1      –
+ financials  –      1/1      41
+
+ML OVERLAY q SHADOW(n 1044) · e SHADOW(n 974) · macro SHADOW(n 84) — probabilities logged, no decision
+   changed
+
+  #  TICKER SECTOR  ACTION CONV             Q     E         WT    MACRO  FLAGS REASONS
+  1  KO     cons    WATCH  ██████░░░░░░ 50 C55 C  9 F       0%    +1.0   – Q 55 (C) rank 26/75 consumer; macr…
+  2  WMT    cons    WATCH  ██████░░░░░░ 50 C54 C  12 D      0%    +1.0   – Q 54 (C) rank 28/75 consumer; macr…
+  3  COST   cons    WATCH  ██████░░░░░░ 49 C54 C  9 F       0%    +1.0   – Q 54 (C) rank 29/75 consumer; macr…
+  4  JPM    fin     AVOID  ████░░░░░░░░ 36 D41 C  17 D      0%    –      HIGH_ACCRUA… Q 41 (C) rank 77/119 fi…
+  5  NEE    util    AVOID  ░░░░░░░░░░░░ 0 F STALE n/sel     0%    +1.0   no quality… no quality score: STALE_…
+ 0 LONG · 3 WATCH · 2 AVOID
+
+risk: gross 0% of 1.35 budget · cash 100%
+risk caps: no LONG names — all cash
+warnings: earnings accuracy: NOT ENOUGH DATA to judge (only 6 high-rated tests, want 30+). Add more
+   tickers.
+conviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt — score, not probability
+research screener, not investment advice · survivorship-biased universe · timings 78.1s (macro 77.9s ·
+   quality 77.9s · earnings 2.4s · ml 1.6s · risk 0.0s)
+exit=0

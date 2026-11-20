@@ -1,0 +1,103 @@
+PHASE 5 DISCOVERY — facts locked BEFORE any code change (2026-11-14)
+Input verified: wip_phase4.zip sha256
+2f48c8afb42f1de325c7dec12a985002c2801d93bab5a4b7afd5a793b9a437eb
+= the working tree, 156/156 files byte-identical (sha256 per file, no
+extras, zero differing). PHASE_STATE.md ends "PHASE 4 STATUS:
+COMPLETE". ENGINES.sha256 gate re-run on the tree:
+  meds.py: OK / quality.py: OK / earnings_engine.py.py -> earnings_engine.py: OK
+
+A. COLOUR SURFACE TODAY (C-1)
+- make_style (master.py:4306-4325): colour = stdout.isatty() AND NO_COLOR
+  unset AND TERM != dumb; --no-color flag only. NO --color choice, NO
+  FORCE_COLOR / CLICOLOR_FORCE, NO depth detection, NO Windows VT, NO
+  reason line when colour silently turns off. This is the owner's
+  plain-white run, root cause confirmed at the exact site the task names.
+- _COLORS (4277): head 36 / ok 32 / warn 33 / err 31 / dim 90 / bold 1.
+  No cyan-vs-header distinction beyond 36; no magenta; normal (dark)
+  variants only — the low-contrast complaint stands.
+- Style.mark wraps with SGR + reset; strip_ansi(colour)==plain already
+  an invariant (P1-8/A14) — kept as the golden test's backbone.
+
+B. WHY THE REPORT WAS HARD TO READ (C-2/C-3)
+- green check next to DEGRADED: master.py:4470 lead = "✓" for any status
+  != ERROR — DEGRADED gets the green lead. CONFIRMED in code.
+- glued cells: _decisions_table (4576-4626) lays Q/E with f"{x:<6}"
+  fields and NO separator — a 6-char Q cell ("NODATA") touches the E
+  cell ("n/sel") at any width. CONFIRMED.
+- bare "?": header provenance cells (4420), layer provenance line
+  (4480-4481) print '?' for unknown as-of/age; _E_CELL_WORD has "n/sel".
+- "14-day-old macro cache labelled OK": FRESHNESS_MACRO_MAX_AGE_D=45
+  (CONFIG 523) gates the OK/STALE label — 14d < 45d -> OK. The display
+  needs its own CONFIG staleness threshold (spec example 7d), separate
+  from the untouched freshness gates.
+- "SHADOW(n 974)": _ml_line (4727-4746) prints "q SHADOW(n 974)" —
+  cryptic wording, no colour.
+- header lone-OK wrap: _wrap splits the provenance row on spaces, so a
+  status word can strand alone on the next line inside the box.
+- "vstub": NOT FOUND in this tree (grep over all *.py = no hits). The
+  owner's token came from their build; our equivalent surface is the
+  STUBBED banner (4754-4757), which does not say SYNTHETIC. Disclosed;
+  the banner + stub provenance will say SYNTHETIC.
+- MAX_TERM_WIDTH=110 (573) — widths up to 160 are refused by
+  _validate_ns ("--width out of range 40..110"). Must become 160
+  (disclosed CONFIG value change).
+
+C. ERRORS TODAY (C-5)
+- quality.py:6508 formats 'provider_errors:<classes>; <provider>=<detail>'
+  (e.g. the owner's "provider_errors:NETWORK_ERROR;
+  sec_edgar=cik_map_failed; yahoo_chart=net:offline") — engines emit
+  these into layer warnings; master never renders a structured block.
+- No ERRORS & WARNINGS section exists: _footer (4705-4724) prints
+  " warnings: ..." dim only; errors surface as exit_reason on stderr
+  only when exit==2 (5967-5968). A 0-of-2-scored run's cryptic tail is
+  the raw quality warning string — CONFIRMED as the owner experienced.
+- W_ codes live scattered in text: W_RHO_FALLBACK, W_UNUSABLE_VOL,
+  W_EQW_FALLBACK, W_BUDGET_STANDDOWN, W_DD_VETO, W_FUTURE_REPORT,
+  W_BLOCKED_REASSERT, W_NO_VOL_NO_STOP, W_ADV_UNAVAILABLE (plus CONFIG
+  keys W_E/W_Q which are NOT codes). No central registry module, no docs
+  table, no fix commands.
+- macro path served: MacroState.data_tier carries meds' tier label; FREDAPI
+  env presence readable without touching meds (redaction machinery
+  already exists, _SECRET_VARS 738).
+
+D. EXIT CODES TODAY (contract change mandated)
+- _resolve_exit (4231-4271): 2 = no-result/NO-GO (incl. quality 0 scored),
+  1 = ml heads UNAVAILABLE, 0 = everything else (DEGRADED included).
+- MasterError usage sites: ~25 raises with code 64 (list in discovery
+  greps below); main() unexpected Exception -> 1 (6190-6195);
+  KeyboardInterrupt -> 130; replay mismatch -> 65; network-required ->
+  MasterError code 3 (3743); unwritable cache -> MasterError (3646).
+- run_doctor returns 2 when engines missing/hash mismatch (5922);
+  run_check returns 2 when engines missing (5452/5460).
+- NEW contract (owner's mandate): 0 clean · 1 degraded (warnings/ml
+  UNAVAILABLE, result produced) · 2 usage/config (was 64) · 3 network ·
+  4 no-result/NO-GO (was 2) · 65 replay · 70 unexpected internal (was
+  1) · 130 Ctrl-C. Doctor/check failure -> 1 (degraded health,
+  documented). CHANGELOG must carry the old->new map (deliberate
+  contract change, tests re-pointed under R2 justification).
+
+E. TESTS THAT THE CONTRACT CHANGE WILL TOUCH (updated, never deleted)
+- TestNoQualityScoresExitTwo (exit 2 -> 4), TestFailureIsolation
+  (:910 exit 2 -> 4), TestExitReason direct _resolve_exit asserts
+  (1337-1346), n/sel assert (2041), width-bound test (2662-2695 extend
+  to 160), doctor exits. Each updated with a comment naming the phase-5
+  mandate; no test weakened — they assert the NEW contract exactly.
+
+F. GOLDEN FEASIBILITY (C-4)
+- Stub layers live in test_master.py (StubMacroLayer..StubRiskLayer,
+  586-693), deterministic given the pinned as-of (_pin_today machinery,
+  test_master.py:160-176); MASTER_STUBS=1 + MASTER_NET=offline gives a
+  network-free, sklearn-free pipeline (stub ML layer imports nothing).
+- Volatile bytes that goldens must NOT contain: dates (mandated) and
+  wall-clock durations (timings footer + layer elapsed_s) — both are
+  masked to fixed tokens by the golden harness, disclosed; nothing else
+  varies (no locale-dependent rendering; stub data is fixed).
+- strip_ansi(colour)==plain holds per B, so the 3x4 golden matrix can
+  be byte-checked both ways.
+
+G. LINEAGE COLLISION (same discipline as P4-H8)
+- The v1.5.0 lineage shipped its own phase5_* evidence (8 files +
+  analysis_phase5.md). They were byte-copied to lineage_phase5_* BEFORE
+  this phase writes its own phase5_* files (this file is the first).
+  Pristine originals also remain inside master_final.zip and
+  wip_phase0..3.zip. defects.md will carry this as P5-H1.

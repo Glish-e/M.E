@@ -1,0 +1,85 @@
+# STEP A discovery greps — run 2026-11-08T14:58Z in work/p4 (master.py, meds.py, quality.py, earnings_engine.py, test_master.py)
+# pattern -> file:match_count (rg -c)
+## backtest
+earnings_engine.py:15
+quality.py:1
+meds.py:81
+master.py:17
+## walk
+earnings_engine.py:3
+quality.py:5
+master.py:5
+meds.py:21
+## forward
+earnings_engine.py:4
+quality.py:68
+master.py:4
+meds.py:39
+## accuracy
+earnings_engine.py:14
+master.py:7
+## history
+earnings_engine.py:26
+quality.py:41
+master.py:8
+meds.py:121
+## snapshot
+quality.py:81
+master.py:17
+meds.py:108
+## scan
+quality.py:87
+master.py:2
+meds.py:4
+## export
+quality.py:4
+earnings_engine.py:1
+master.py:2
+meds.py:5
+## dump
+quality.py:30
+meds.py:15
+master.py:1
+## np\.save
+meds.py:1
+## savez
+meds.py:1
+## to_csv
+earnings_engine.py:7
+meds.py:2
+## to_parquet
+earnings_engine.py:1
+## pickle
+## sklearn
+## joblib
+## fit\(
+master.py:12
+## predict
+earnings_engine.py:1
+meds.py:30
+## label
+meds.py:57
+quality.py:169
+master.py:10
+## target
+earnings_engine.py:10
+meds.py:22
+quality.py:101
+master.py:5
+## feature
+meds.py:30
+## as_of
+earnings_engine.py:30
+quality.py:179
+meds.py:47
+master.py:34
+## point-in-time
+earnings_engine.py:1
+quality.py:17
+meds.py:13
+master.py:2
+## cache
+earnings_engine.py:19
+quality.py:225
+meds.py:108
+master.py:101

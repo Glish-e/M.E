@@ -1,0 +1,47 @@
+=== GATE CAPTURE 4: error-block run WITH stderr (real engines, offline, cold caches) ===
+command: MASTER_NET=offline python3 master.py MU --mode offline --color never --width 110 (stdout/stderr captured SEPARATELY)
+--- STDOUT (report tail: ERRORS & WARNINGS + DATA SOURCES) ---
+
+ERRORS & WARNINGS
+ ✗ quality   E_LAYER              a layer ended in ERROR state
+why: provider_errors:NETWORK_ERROR; sec_edgar=cik_map_failed; yahoo_chart=net:offline mode: network
+      disabled by master
+fix: python3 master.py --doctor (engine/health probe names the real blocker)
+ ✗ quality   E_NET_OFFLINE        providers failed with NETWORK_ERROR under offline mode
+why: provider_errors:NETWORK_ERROR; sec_edgar=cik_map_failed; yahoo_chart=net:offline mode: network
+      disabled by master
+fix: python3 master.py --warm (fill caches) or --mode online
+ ▲ earnings  W_STALE_CACHE        a served cache is stale for its display threshold
+why: earnings mixed as-of n/a MISSING_DATA n/a
+fix: python3 master.py --warm (refresh the caches)
+ ▲ earnings  W_UNUSUAL            a warning could not be classified
+why: earnings engine exposes no __version__; reporting docstring v3 (drift undetectable)
+fix: python3 master.py --debug (capture the exact text and report it)
+ ▲ macro     W_STALE_CACHE        a served cache is stale for its display threshold
+why: macro cache as-of 2026-10-31 STALE 14
+fix: python3 master.py --warm (refresh the caches)
+ ▲ net       W_NET_OFFLINE        offline mode selected: zero sockets, cache truth only
+why: MASTER_NET=offline (override)
+fix: python3 master.py --warm --mode online (refresh the caches)
+ ▲ pipeline  W_UNUSUAL            a warning could not be classified
+why: earnings accuracy: not run (empty shortlist)
+fix: python3 master.py --debug (capture the exact text and report it)
+ ▲ quality   W_STALE_CACHE        a served cache is stale for its display threshold
+why: quality mixed as-of n/a ERROR n/a
+fix: python3 master.py --warm (refresh the caches)
+DATA SOURCES: macro cache 14d STALE · quality mixed n/a · earnings mixed n/a · ml cache 1d · risk none n/a
+macro path: no FRED key → public fredgraph.csv
+
+--- STDERR (error mirror + exit line) ---
+[plan] mode standard · net offline · 1 tickers · quality pool 92 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-3 min · faster now: --mode quick · fill caches first: --warm
+[quality] cold cache: scoring the whole universe (92 names, a few provider calls per name, rate-limited); results are memoized for this process.
+ ✗ quality   E_LAYER              a layer ended in ERROR state
+why: provider_errors:NETWORK_ERROR; sec_edgar=cik_map_failed; yahoo_chart=net:offline mode: network
+      disabled by master
+fix: python3 master.py --doctor (engine/health probe names the real blocker)
+ ✗ quality   E_NET_OFFLINE        providers failed with NETWORK_ERROR under offline mode
+why: provider_errors:NETWORK_ERROR; sec_edgar=cik_map_failed; yahoo_chart=net:offline mode: network
+      disabled by master
+fix: python3 master.py --warm (fill caches) or --mode online
+master: exit 4 — no result / NO-GO: quality scored 0/1 names — provider_errors:NETWORK_ERROR; sec_edgar=cik_map_failed; yahoo_chart=net:offline mode: network disabled by master

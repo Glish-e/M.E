@@ -1,0 +1,1 @@
+backtest: W_BT_FIXTURE_ONLY — the backtest ran on fixture-class evidence only fix: python3 ml_dataset.py --dates 36 --sectors all (owner: full network build, hours) then python3 master.py --backtest

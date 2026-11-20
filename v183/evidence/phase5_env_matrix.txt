@@ -1,0 +1,10 @@
+baseline (no ambient pins)                 ran=419  failures=0 errors=0 skipped=0
+env MASTER_NET=offline                     ran=419  failures=0 errors=0 skipped=0
+env MASTER_STUBS=1                         ran=419  failures=0 errors=0 skipped=0
+env MASTER_NET=offline MASTER_STUBS=1      ran=419  failures=0 errors=0 skipped=0
+sklearn+joblib import blocked              ran=404  failures=0 errors=0 skipped=2
+date pinned 2027-03-01 (Monday)            ran=419  failures=0 errors=0 skipped=0
+date pinned 2026-12-31 (year end)          ran=419  failures=0 errors=0 skipped=0
+date pinned 2025-02-01 (Sunday)            ran=419  failures=0 errors=0 skipped=0
+date pinned 2028-02-29 (leap)              ran=419  failures=0 errors=0 skipped=0
+MATRIX VERDICT: ALL CELLS GREEN

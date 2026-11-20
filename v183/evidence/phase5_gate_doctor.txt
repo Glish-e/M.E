@@ -1,0 +1,18 @@
+=== GATE CAPTURE 5: --doctor colour diagnostic + exit table ===
+command: env -u NO_COLOR TERM=xterm-256color COLORTERM=truecolor python3 master.py --doctor --mode offline
+master v1.7.0-dev doctor
+colour    stdout isatty=0 stderr isatty=0 · TERM=xterm-256color · COLORTERM=truecolor · NO_COLOR= · FORCE_COLOR= · CLICOLOR_FORCE= · platform=linux · depth=truecolor
+          decision: OFF — colour off: stdout is not a TTY — use --color always
+exit      0 clean · 1 degraded (warnings/ml UNAVAILABLE) · 2 usage/config · 3 network · 4 no result/NO-GO · 65 replay mismatch · 70 unexpected · 130 interrupted
+engines   meds ok v14.7.0  quality ok v3.4.1  earnings ok v3  (hashes match)
+libs      python 3.12.16 · numpy 2.1.3 · sklearn 1.5.2 · joblib 1.5.3
+
+=== same doctor under NO_COLOR=1 (auto -> OFF with the reason) ===
+colour    stdout isatty=0 stderr isatty=0 · TERM=xterm · COLORTERM= · NO_COLOR=1 · FORCE_COLOR= · CLICOLOR_FORCE=0 · platform=linux · depth=16
+          decision: OFF — colour off: NO_COLOR is set — unset NO_COLOR or use --color always
+exit      0 clean · 1 degraded (warnings/ml UNAVAILABLE) · 2 usage/config · 3 network · 4 no result/NO-GO · 65 replay mismatch · 70 unexpected · 130 interrupted
+
+=== doctor with FORCE_COLOR=1 through a pipe (auto -> ON) ===
+colour    stdout isatty=0 stderr isatty=0 · TERM=dumb · COLORTERM= · NO_COLOR= · FORCE_COLOR=1 · CLICOLOR_FORCE=0 · platform=linux · depth=16
+          decision: ON — colour on: FORCE_COLOR forces colour on (auto)
+exit      0 clean · 1 degraded (warnings/ml UNAVAILABLE) · 2 usage/config · 3 network · 4 no result/NO-GO · 65 replay mismatch · 70 unexpected · 130 interrupted

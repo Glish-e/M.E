@@ -1,0 +1,18 @@
+bench p7partial · 2026-11-14 14:53:14 · python 3.12.16 · cwd /home/z/my-project/work/wip
+
+[a] import cost  (python3 -X importtime master.py --version)
+  wall 0.2s (exit 0)
+  cumulative total (max) 18 ms; top 15:
+        18.4 ms  urllib.request
+        14.1 ms  http.client
+         9.0 ms  email.parser
+         8.8 ms  email.feedparser
+         8.0 ms  email._policybase
+         6.7 ms  dataclasses
+         6.4 ms  argparse
+...
+(section [d] warm offline default-watchlist run exceeded the session's
+ 560 s command budget and was killed by timeout; its per-piece numbers
+ are in evidence/perf_p7.txt from direct measurements; bench was run
+ twice with identical behaviour — the second run's [a][b][c] sections
+ match this paste. exit: timeout 124)

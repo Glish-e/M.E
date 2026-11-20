@@ -1,0 +1,132 @@
+--- /tmp/goldens_before/golden_ascii_110.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_ascii_110.txt	2026-11-17 20:40:40.912349045 +0000
+@@ -1,7 +1,7 @@
+ *** STUBBED RUN (SYNTHETIC stub layers) - NOT real engine data - never for any decision ***
+ 
+ +------------------------------------------------------------------------------------------------------------+
+-| MASTER v1.7.0-dev . mode standard . net offline (MASTER_NET=offline (override)) . as of FROZEN-DATE . stubs |
++| MASTER v1.8.0-dev . mode standard . net offline (MASTER_NET=offline (override)) . as of FROZEN-DATE . stubs |
+ | yes                                                                                                        |
+ | engines: meds v14.7.0 . quality v3.4.1 . earnings v3 . ml_train SYNTHETIC-stub . master SYNTHETIC-stub     |
+ | chain: macro>quality>earnings>ml>risk                                                                      |
+--- /tmp/goldens_before/golden_ascii_160.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_ascii_160.txt	2026-11-17 20:40:41.379351395 +0000
+@@ -1,7 +1,7 @@
+ *** STUBBED RUN (SYNTHETIC stub layers) - NOT real engine data - never for any decision ***
+ 
+ +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+-| MASTER v1.7.0-dev . mode standard . net offline (MASTER_NET=offline (override)) . as of FROZEN-DATE . stubs yes                                               |
++| MASTER v1.8.0-dev . mode standard . net offline (MASTER_NET=offline (override)) . as of FROZEN-DATE . stubs yes                                               |
+ | engines: meds v14.7.0 . quality v3.4.1 . earnings v3 . ml_train SYNTHETIC-stub . master SYNTHETIC-stub                                                       |
+ | chain: macro>quality>earnings>ml>risk                                                                                                                        |
+ | RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)                                                                                                    |
+--- /tmp/goldens_before/golden_ascii_40.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_ascii_40.txt	2026-11-17 20:40:39.953344218 +0000
+@@ -3,7 +3,7 @@
+   for any decision ***
+ 
+ +--------------------------------------+
+-| MASTER v1.7.0-dev . mode standard .  |
++| MASTER v1.8.0-dev . mode standard .  |
+ | net offline (MASTER_NET=offline      |
+ | (override)) . as of FROZEN-DATE .     |
+ | stubs yes                            |
+--- /tmp/goldens_before/golden_ascii_70.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_ascii_70.txt	2026-11-17 20:40:40.419346563 +0000
+@@ -2,7 +2,7 @@
+   never for any decision ***
+ 
+ +--------------------------------------------------------------------+
+-| MASTER v1.7.0-dev . mode standard . net offline                    |
++| MASTER v1.8.0-dev . mode standard . net offline                    |
+ | (MASTER_NET=offline (override)) . as of FROZEN-DATE . stubs yes     |
+ | engines: meds v14.7.0 . quality v3.4.1 . earnings v3 . ml_train    |
+ | SYNTHETIC-stub . master SYNTHETIC-stub                             |
+--- /tmp/goldens_before/golden_colour_110.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_colour_110.txt	2026-11-17 20:40:37.192330262 +0000
+@@ -1,7 +1,7 @@
+ [91m*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data — never for any decision ***[0m
+ 
+ ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+-[96m│ MASTER v1.7.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs │[0m
++[96m│ MASTER v1.8.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs │[0m
+ [96m│ yes                                                                                                        │[0m
+ [96m│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train SYNTHETIC-stub · master SYNTHETIC-stub     │[0m
+ [96m│ chain: macro→quality→earnings→ml→risk                                                                      │[0m
+--- /tmp/goldens_before/golden_colour_160.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_colour_160.txt	2026-11-17 20:40:37.633332503 +0000
+@@ -1,7 +1,7 @@
+ [91m*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data — never for any decision ***[0m
+ 
+ ╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+-[96m│ MASTER v1.7.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes                                               │[0m
++[96m│ MASTER v1.8.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes                                               │[0m
+ [96m│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train SYNTHETIC-stub · master SYNTHETIC-stub                                                       │[0m
+ [96m│ chain: macro→quality→earnings→ml→risk                                                                                                                        │[0m
+ [96m│ RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)                                                                                                    │[0m
+--- /tmp/goldens_before/golden_colour_40.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_colour_40.txt	2026-11-17 20:40:36.292325689 +0000
+@@ -3,7 +3,7 @@
+ [91m  for any decision ***[0m
+ 
+ ╭──────────────────────────────────────╮
+-[96m│ MASTER v1.7.0-dev · mode standard ·  │[0m
++[96m│ MASTER v1.8.0-dev · mode standard ·  │[0m
+ [96m│ net offline (MASTER_NET=offline      │[0m
+ [96m│ (override)) · as of FROZEN-DATE ·     │[0m
+ [96m│ stubs yes                            │[0m
+--- /tmp/goldens_before/golden_colour_70.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_colour_70.txt	2026-11-17 20:40:36.733327930 +0000
+@@ -2,7 +2,7 @@
+ [91m  never for any decision ***[0m
+ 
+ ╭────────────────────────────────────────────────────────────────────╮
+-[96m│ MASTER v1.7.0-dev · mode standard · net offline                    │[0m
++[96m│ MASTER v1.8.0-dev · mode standard · net offline                    │[0m
+ [96m│ (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes     │[0m
+ [96m│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train    │[0m
+ [96m│ SYNTHETIC-stub · master SYNTHETIC-stub                             │[0m
+--- /tmp/goldens_before/golden_plain_110.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_plain_110.txt	2026-11-17 20:40:39.019339517 +0000
+@@ -1,7 +1,7 @@
+ *** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data — never for any decision ***
+ 
+ ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+-│ MASTER v1.7.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs │
++│ MASTER v1.8.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs │
+ │ yes                                                                                                        │
+ │ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train SYNTHETIC-stub · master SYNTHETIC-stub     │
+ │ chain: macro→quality→earnings→ml→risk                                                                      │
+--- /tmp/goldens_before/golden_plain_160.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_plain_160.txt	2026-11-17 20:40:39.488341878 +0000
+@@ -1,7 +1,7 @@
+ *** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data — never for any decision ***
+ 
+ ╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+-│ MASTER v1.7.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes                                               │
++│ MASTER v1.8.0-dev · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes                                               │
+ │ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train SYNTHETIC-stub · master SYNTHETIC-stub                                                       │
+ │ chain: macro→quality→earnings→ml→risk                                                                                                                        │
+ │ RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)                                                                                                    │
+--- /tmp/goldens_before/golden_plain_40.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_plain_40.txt	2026-11-17 20:40:38.100334875 +0000
+@@ -3,7 +3,7 @@
+   for any decision ***
+ 
+ ╭──────────────────────────────────────╮
+-│ MASTER v1.7.0-dev · mode standard ·  │
++│ MASTER v1.8.0-dev · mode standard ·  │
+ │ net offline (MASTER_NET=offline      │
+ │ (override)) · as of FROZEN-DATE ·     │
+ │ stubs yes                            │
+--- /tmp/goldens_before/golden_plain_70.txt	2026-11-17 20:40:32.185304821 +0000
++++ goldens/golden_plain_70.txt	2026-11-17 20:40:38.545337132 +0000
+@@ -2,7 +2,7 @@
+   never for any decision ***
+ 
+ ╭────────────────────────────────────────────────────────────────────╮
+-│ MASTER v1.7.0-dev · mode standard · net offline                    │
++│ MASTER v1.8.0-dev · mode standard · net offline                    │
+ │ (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes     │
+ │ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train    │
+ │ SYNTHETIC-stub · master SYNTHETIC-stub                             │

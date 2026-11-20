@@ -1,0 +1,12 @@
+[ml_train] head q: gbm_joblib · 1044 train rows · 435 OOS rows over 5 fold(s) · embargo 3m
+[ml_train]   monthly rank IC -0.284 · decile spread -0.279 · Brier skill -0.407 · verdict fails
+[ml_train]   baseline raw score IC +0.186
+[ml_train]   shipped SHADOW -> ml_data/models/head_q.npz
+[ml_train] head e: gbm_joblib · 974 train rows · 381 OOS rows over 5 fold(s) · embargo 3m
+[ml_train]   monthly rank IC -0.183 · decile spread -0.395 · Brier skill -0.135 · verdict fails
+[ml_train]   baseline raw score IC -0.150
+[ml_train]   shipped SHADOW -> ml_data/models/head_e.npz
+[ml_train] head macro: logistic_np · 84 train rows · 35 OOS rows over 5 fold(s) · embargo 3m
+[ml_train]   monthly rank IC +0.368 · decile spread +0.333 · Brier skill +0.006 · verdict fails
+[ml_train]   baseline raw score IC +0.105
+[ml_train]   shipped SHADOW -> ml_data/models/head_macro.npz

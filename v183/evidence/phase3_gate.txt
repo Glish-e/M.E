@@ -1,0 +1,101 @@
+
+========================================================================
+GATE 1 · wizard with scripted stdin (3 flows + aborts)
+========================================================================
+--- sectors flow (cap unavailable today, honest line)
+    stdin   : 's\ntech, healthcare\n8\n\nq\ny\n'
+    aborted : False
+    argv    : ['--sectors', 'tech,healthcare', '--discover', '8', '--mode', 'quick']
+    confirms the command: True
+    parse equal (wizard argv == its own flags): True
+--- market flow
+    stdin   : 'm\n5\n\nq\ny\n'
+    aborted : False
+    argv    : ['--sectors', 'all', '--discover', '5', '--mode', 'quick']
+    confirms the command: True
+    parse equal (wizard argv == its own flags): True
+--- cap offered when data exists (fake universe with mcap)
+    stdin   : 's\ntech\nl\n7\n\nq\ny\n'
+    aborted : False
+    argv    : ['--sectors', 'tech', '--cap', 'large', '--discover', '7', '--mode', 'quick']
+    confirms the command: True
+    parse equal (wizard argv == its own flags): True
+--- decline: aborted=True argv=[] hint=True eof=False
+--- EOF: aborted=True argv=[] hint=False eof=True
+
+========================================================================
+GATE 2 · width renders at 40 / 70 / 110 (colour == plain, lines bounded)
+========================================================================
+--- width 40: 48 lines, 0 over-budget
+    head: │ MASTER v1.3.0 · mode standard · as   │
+    rank row:   1  COST   LONG   ████ 89 A86 A  71 A  
+    colour == plain at 40: True
+--- width 70: 39 lines, 0 over-budget
+    head: │ MASTER v1.3.0 · mode standard · as of 2026-11-08 (live) · offline  │
+    rank row:   1  COST   cons    LONG   ███████░ 89 A86 A  71 A      –
+    colour == plain at 70: True
+--- width 110: 35 lines, 0 over-budget
+    head: │ MASTER v1.3.0 · mode standard · as of 2026-11-08 (live) · offline no
+    rank row:   1  COST   cons    LONG   ███████████░ 89 A86 A  71 A      +1.0   – Q 86 (A) rank 3/10 consumer; macro +1.0:…
+    colour == plain at 110: True
+full 40-col render (first 22 lines):
+╭──────────────────────────────────────╮
+│ MASTER v1.3.0 · mode standard · as   │
+│ of 2026-11-08 (live) · offline no ·  │
+│ stubs no                             │
+│ engines: meds v14.7.0 · quality      │
+│ v3.4.1 · earnings v3                 │
+│ chain: macro→quality→earnings        │
+╰──────────────────────────────────────╯
+
+ ✓ L1 macro     meds v14.7.0        0.0…
+ ✓ L2 quality   quality v3.4.1      0.0…
+ ✓ L3 earnings  earnings v3         0.0…
+
+ L1 MACRO ── Soft Landing / Policy Pivo…
+   conf ████████░░ 0.82 · lev 1.35x · r…
+eff 2026-10-31 · data public · PIT
+     approximate_pit_lag · credit ON ·
+     next month 2026-12
+   LONG  SPY QQQ XLY    SHORT  –…
+sector tilt tech +1.0 · comm +1.0 ·
+     cons +1.0 · indu +0.5 · energy +0.5
+     · util +0.5 · mats +0.5 · health –
+
+========================================================================
+GATE 3 · a dummy registered layer runs end to end (overlay + sizer)
+========================================================================
+results keys        : ['dummy', 'earnings', 'macro', 'quality', 'sizer_dummy']
+dummy status        : OK (stage overlay, order 4)
+sizer weights       : [0.02, 0.02, 0.02]
+    AAPL   LONG->LONG  conv 87.1->92.1 (+5.0)  overlay_reason=overlay dummy: +5 (bounded ±10)
+    MU     LONG->LONG  conv 82.7->87.7 (+5.0)  overlay_reason=overlay dummy: +5 (bounded ±10)
+    NVDA   LONG->LONG  conv 74.1->79.1 (+5.0)  overlay_reason=overlay dummy: +5 (bounded ±10)
+json layers         : macro, quality, earnings, dummy, sizer_dummy
+json overlays on MU : {"dummy": {"status": "OK", "score": null, "grade": "-"}}
+chain row           : │ chain: macro→quality→earnings→dummy→sizer_dummy                                                            │
+portfolio footer    : sizer dummy: 3 positions, 6.0% gross
+
+========================================================================
+GATE 4 · results on stdout, progress on stderr, piped => no ANSI
+========================================================================
+exit code           : 0
+stdout: report? True  wizard prompts? False  ANSI escapes? False
+stderr: [plan]? True  progress/notes only? True
+
+========================================================================
+GATE 5 · item 4 line counts (before -> after)
+========================================================================
+phase-2 output : master.py 4,579 lines (incl. ~1,675 embedded tests+fakes)
+                       test_master.py 25 lines (thin runner)
+phase-3 output : master.py 3545 lines (ZERO test code)
+                       test_master.py 2293 lines (1,675 moved + phase-3 tests + STUB_LAYERS)
+moved block    : 1,675 lines (master.py §8 -> test_master.py, verbatim except 3 mock.patch targets + the __main__ runner)
+
+========================================================================
+ENTRY POINTS (after all changes)
+========================================================================
+master.py --selftest           exit=0  
+test_master.py                 exit=0  
+master.py --version            exit=0  master v1.3.0 · tested engines: meds 14.7.0, quality 3.4.1, 
+MASTER_STUBS=1 --json    exit=0  stubbed=True layers=['macro', 'quality', 'earnings'] banner-on-stderr=True

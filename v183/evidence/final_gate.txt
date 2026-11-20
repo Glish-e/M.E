@@ -1,0 +1,68 @@
+# final_gate.txt — G1..G8, each with its evidence file (final phase)
+
+G1 Socket-blocked offline run PASSES.
+    Real engines, INET sockets blocked at the OS level, --mode offline:
+    exit 0, zero network sockets, macro served from the materialised
+    snapshot (cache, as-of 2026-10-31, 8d), decisions identical to the
+    online run (MU WATCH 70.7 / NVDA 56.0 / AAPL 49.1).
+    Evidence: final_real_runs.txt R3, /tmp/gate_socket.txt transcript in
+    this file's history; suite: TestOfflineNoSockets.
+
+G2 Degradation matrix PASSES (every row tested + real-run observed).
+    macro cache missing -> L1 MISSING_DATA/ERROR, tilt neutral, one
+    warning; quality cache missing per name -> existing no-score path
+    (NEE row shows the CAUSE, ranks below scored names); earnings
+    missing -> x0.90 haircut unchanged; sklearn absent / wrong version /
+    tampered sidecar / model file missing -> that GBM head UNTRAINED with
+    a one-line warning (never unpickled on trust); cache dir missing or
+    read-only in ONLINE mode -> clear exit-2 error naming the fix, never
+    a traceback (offline only reads and is unaffected).
+    Evidence: final_real_runs.txt (cik_map_failed cold run observed live),
+    TestDegradationMatrixFinal, TestSidecarPin, TestOfflineFastFail.
+
+G3 Auto mode picks the right mode and the banner says why — PASSES.
+    probe ok -> net online (probe ok 8 ms) in the banner (real run,
+    final_real_runs.txt R1); probe failed -> net offline (probe failed:
+    ...) (test + real simulated-down run exit 3); the online half is
+    VERIFIED for real (this sandbox has network); explicit --mode online
+    without network exits 3 with the fix in the message (R4).
+    Evidence: TestNetModes, final_real_runs.txt R1/R4.
+
+G4 perf_before vs perf_after PASSES (honest table).
+    import 17->16 ms · stub 0.3->0.4 s · warm offline standard
+    77.9->75.2 s · quick+offline (new fast tier) 5.8 s · cold online
+    148.3->156.2 s (network-bound, +-5% variance). No master-side
+    optimisation cleared the 10% bar on the warm path (the floor is
+    quality's engine-internal universe pass, H1) — examined and
+    documented, none applied dishonestly. All 256 tests green after.
+    Evidence: perf_before.txt, perf_after.txt, perf_delta.md.
+
+G5 Every command in RUNBOOK.md executed — PASSES.
+    All 13 cookbook recipes + the quick-start sequence ran on this build;
+    times and last lines in the runbook are real outputs (see
+    final_real_runs.txt R1-R9 and the /tmp transcripts). Section 2
+    runs start to finish (quick offline 5.8 s -> quick online -> standard).
+
+G6 CONFIG diff vs ORIGINAL v1.1.0 PASSES.
+    28 additions + the disclosed MIN_TERM_WIDTH 72->40 ONLY; weights and
+    thresholds byte-identical (W_Q .65, W_E .35, E_MISSING_HAIRCUT .90,
+    EARNINGS_WEAK_SCALE .5, MACRO_TILT_GAIN .10, MIN_QUALITY 40,
+    ACTION_LONG_AT 60, ACTION_WATCH_AT 45). ENGINES.sha256 equals the
+    phase-5 values (meds 5e64b60d..., quality f123fb4e...,
+    earnings 8e31e532...).
+    Evidence: final_config_diff.txt, TestConfigGateFinal,
+    TestEnginesUntouched, ENGINES.sha256.
+
+G7 Tests: 256 run (186 carry-over + 70 new), 0 failed, 0 skipped — PASSES.
+    Both entry points agree: python3 test_master.py AND
+    python3 master.py --selftest -> "Ran 256 tests ... OK".
+    Evidence: final_green.txt, final_red.txt (the red-first history).
+
+G8 No head ACTIVE — PASSES.
+    All three heads retrained with the 20-feature cap on the pilot
+    dataset; verdicts reported as they are: q IC -0.284 (baseline +0.186)
+    fails, e IC -0.183 fails, macro IC +0.368 but n_oos 35 < 100 fails.
+    --activate q REFUSED exit 2. All ship SHADOW; probabilities logged,
+    no decision changed.
+    Evidence: final_train_report.txt, ml_data/models/validation_*.json,
+    TestFeatureCap, TestMLStates.

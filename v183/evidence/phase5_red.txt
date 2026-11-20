@@ -1,0 +1,86 @@
+PHASE 5 RED RUN — captured BEFORE any implementation (2026-11-14)
+Command: python3 -m unittest test_master
+
+----------------------------------------------------------------------
+Ran 71 tests in 2.499s
+
+FAILED (failures=19, errors=46)
+
+=== per-test status of the 71 phase-5 tests (classes only) ===
+test_auto_piped_emits_no_escapes_and_one_reason_line TestColourSwitchC1.test_auto_piped_emits_no_escapes_and_one_reason_line) ... FAIL
+test_color_always_escapes_even_through_a_pipe TestColourSwitchC1.test_color_always_escapes_even_through_a_pipe) ... ERROR
+test_depth_detection TestColourSwitchC1.test_depth_detection) ... ERROR
+test_doctor_colour_diagnostic TestColourSwitchC1.test_doctor_colour_diagnostic) ... FAIL
+test_doctor_exit_code_table TestColourSwitchC1.test_doctor_exit_code_table) ... FAIL
+test_explicit_off_is_silent_and_plain_equals_no_color TestColourSwitchC1.test_explicit_off_is_silent_and_plain_equals_no_color) ... ERROR
+test_no_color_conflicts_with_color_always TestColourSwitchC1.test_no_color_conflicts_with_color_always) ... ok
+test_parser_has_color_choices_and_plain TestColourSwitchC1.test_parser_has_color_choices_and_plain) ... FAIL
+test_precedence_table TestColourSwitchC1.test_precedence_table) ... ERROR
+test_windows_vt_enable TestColourSwitchC1.test_windows_vt_enable) ... ERROR
+test_windows_vt_fake_success_and_failure TestColourSwitchC1.test_windows_vt_fake_success_and_failure) ... ERROR
+test_bar_zone_colour TestReadableC2.test_bar_zone_colour) ... ERROR
+test_degraded_never_green_lead TestReadableC2.test_degraded_never_green_lead) ... ERROR
+test_layers_block_colours_layer_names_cyan TestReadableC2.test_layers_block_colours_layer_names_cyan) ... ERROR
+test_legend_line TestReadableC2.test_legend_line) ... FAIL
+test_ml_line_plain_english_and_magenta TestReadableC2.test_ml_line_plain_english_and_magenta) ... ERROR
+test_no_bare_question_mark_or_nsel TestReadableC2.test_no_bare_question_mark_or_nsel) ... FAIL
+test_palette_bright_and_extended TestReadableC2.test_palette_bright_and_extended) ... FAIL
+test_stale_is_a_status_with_age TestReadableC2.test_stale_is_a_status_with_age) ... ERROR
+test_status_glyph_word_pairs TestReadableC2.test_status_glyph_word_pairs) ... ERROR
+test_stub_banner_says_synthetic TestReadableC2.test_stub_banner_says_synthetic) ... FAIL
+test_verdict_line_names_no_data_when_quality_blank TestReadableC2.test_verdict_line_names_no_data_when_quality_blank) ... ERROR
+test_verdict_line_under_header TestReadableC2.test_verdict_line_under_header) ... ERROR
+test_ascii_mode_pure_ascii TestLayoutC3.test_ascii_mode_pure_ascii) ... ok
+test_column_drop_priority TestLayoutC3.test_column_drop_priority) ... ERROR
+test_ellipsis_truncation_all_widths TestLayoutC3.test_ellipsis_truncation_all_widths) ... ERROR
+test_header_never_wraps_a_lone_status TestLayoutC3.test_header_never_wraps_a_lone_status) ... ERROR
+test_pad_display_width TestLayoutC3.test_pad_display_width) ... ERROR
+test_q_e_cells_never_glue TestLayoutC3.test_q_e_cells_never_glue) ... ERROR
+test_wide_char_rows_pad_to_display_width TestLayoutC3.test_wide_char_rows_pad_to_display_width) ... ERROR
+test_width_160_supported TestLayoutC3.test_width_160_supported) ... FAIL
+test_date_checker_negative_control TestGoldensC4.test_date_checker_negative_control) ... ERROR
+test_golden_files_exist TestGoldensC4.test_golden_files_exist) ... FAIL
+test_goldens_byte_exact TestGoldensC4.test_goldens_byte_exact) ... ERROR
+test_goldens_do_not_depend_on_sklearn TestGoldensC4.test_goldens_do_not_depend_on_sklearn) ... ERROR
+test_goldens_locale_and_terminal_independent TestGoldensC4.test_goldens_locale_and_terminal_independent) ... ERROR
+test_goldens_say_synthetic TestGoldensC4.test_goldens_say_synthetic) ... ERROR
+test_no_golden_contains_date TestGoldensC4.test_no_golden_contains_date) ... ERROR
+test_regolden_requires_explicit_flag TestGoldensC4.test_regolden_requires_explicit_flag) ... ok
+test_strip_ansi_colour_equals_plain TestGoldensC4.test_strip_ansi_colour_equals_plain) ... ERROR
+test_adv_unavailable_entry TestErrorsBlockC5.test_adv_unavailable_entry) ... ERROR
+test_block_shows_ruleset_legacy_label_warning TestErrorsBlockC5.test_block_shows_ruleset_legacy_label_warning) ... ERROR
+test_clean_run_block TestErrorsBlockC5.test_clean_run_block) ... ERROR
+test_data_sources_line_and_macro_path TestErrorsBlockC5.test_data_sources_line_and_macro_path) ... ERROR
+test_engine_hash_mismatch_entry TestErrorsBlockC5.test_engine_hash_mismatch_entry) ... ERROR
+test_error_entry_full_shape TestErrorsBlockC5.test_error_entry_full_shape) ... ERROR
+test_errors_mirrored_to_stderr TestErrorsBlockC5.test_errors_mirrored_to_stderr) ... ERROR
+test_head_unavailable_entry_missing_sklearn TestErrorsBlockC5.test_head_unavailable_entry_missing_sklearn) ... ERROR
+test_missing_earnings_entry TestErrorsBlockC5.test_missing_earnings_entry) ... ERROR
+test_missing_fred_key_is_not_an_error TestErrorsBlockC5.test_missing_fred_key_is_not_an_error) ... ERROR
+test_network_diagnosis_per_provider TestErrorsBlockC5.test_network_diagnosis_per_provider) ... ERROR
+test_no_result_entry_and_exit_four TestErrorsBlockC5.test_no_result_entry_and_exit_four) ... FAIL
+test_no_traceback_without_debug TestErrorsBlockC5.test_no_traceback_without_debug) ... FAIL
+test_no_vol_no_stop_entry TestErrorsBlockC5.test_no_vol_no_stop_entry) ... ERROR
+test_rate_limit_diagnosis TestErrorsBlockC5.test_rate_limit_diagnosis) ... ERROR
+test_rho_fallback_entry TestErrorsBlockC5.test_rho_fallback_entry) ... ERROR
+test_stale_cache_entry TestErrorsBlockC5.test_stale_cache_entry) ... ERROR
+test_unwritable_cache_error_has_code_and_fix TestErrorsBlockC5.test_unwritable_cache_error_has_code_and_fix) ... FAIL
+test_docs_table_matches_registry TestCodesRegistry.test_docs_table_matches_registry) ... ERROR
+test_negative_control_scanner_finds_missing_code TestCodesRegistry.test_negative_control_scanner_finds_missing_code) ... ERROR
+test_registry_entries_complete TestCodesRegistry.test_registry_entries_complete) ... ERROR
+test_used_codes_registered TestCodesRegistry.test_used_codes_registered) ... ERROR
+test_changelog_documents_the_renumbering TestExitCodesPhase5.test_changelog_documents_the_renumbering) ... FAIL
+test_clean_run_exits_zero TestExitCodesPhase5.test_clean_run_exits_zero) ... ok
+test_degraded_run_exits_one TestExitCodesPhase5.test_degraded_run_exits_one) ... FAIL
+test_doctor_bad_health_exits_one TestExitCodesPhase5.test_doctor_bad_health_exits_one) ... FAIL
+test_ml_unavailable_exits_one TestExitCodesPhase5.test_ml_unavailable_exits_one) ... ok
+test_network_required_exits_three TestExitCodesPhase5.test_network_required_exits_three) ... ok
+test_no_result_exits_four TestExitCodesPhase5.test_no_result_exits_four) ... FAIL
+test_unexpected_exits_seventy TestExitCodesPhase5.test_unexpected_exits_seventy) ... FAIL
+test_usage_error_exits_two TestExitCodesPhase5.test_usage_error_exits_two) ... FAIL
+
+SUMMARY: 65 RED (19 FAIL + 46 ERROR) / 6 already-green regression anchors:
+ - test_no_color_conflicts_with_color_always (MasterParser raises MasterError on unknown args today — the C-1 conflict rule still needs its own explicit check once --color exists)
+ - test_ascii_mode_pure_ascii (ASCII swap already true; kept as a regression anchor)
+ - test_regolden_requires_explicit_flag (vacuously green while make_goldens.py does not exist; becomes a real guard once the script ships)
+ - test_clean_run_exits_zero / test_ml_unavailable_exits_one / test_network_required_exits_three (kept behaviours from the old contract)

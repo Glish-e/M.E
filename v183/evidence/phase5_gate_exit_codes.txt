@@ -1,0 +1,29 @@
+=== GATE CAPTURE 6: exit codes, each from a REAL triggering run ===
+-- exit 0 (clean surface: --version)
+exit=0
+-- exit 1 (degraded: stub run with warnings)
+exit=1
+-- exit 2 (usage/config: bad --top)
+exit=2
+-- exit 3 (network required: --mode online, probe failed, MASTER_NET unset)
+exit=3
+-- exit 4 (no result/NO-GO: offline cold real engines)
+exit=4
+-- exit 65 (replay mismatch): real triggering run in the suite (test_tampered_manifest_fails_loudly)
+-- exit 70 (unexpected internal): monkeypatched raise (test_no_traceback_without_debug asserts rc 70 both with and without --debug)
+-- exit 130 (Ctrl-C): KeyboardInterrupt handler (suite interrupt test)
+
+-- and the test-level table:
+test_clean_run_exits_zero (test_master.TestExitCodesPhase5.test_clean_run_exits_zero) ... ok
+test_degraded_run_exits_one (test_master.TestExitCodesPhase5.test_degraded_run_exits_one) ... ok
+test_doctor_bad_health_exits_one (test_master.TestExitCodesPhase5.test_doctor_bad_health_exits_one) ... ok
+test_ml_unavailable_exits_one (test_master.TestExitCodesPhase5.test_ml_unavailable_exits_one) ... ok
+test_network_required_exits_three (test_master.TestExitCodesPhase5.test_network_required_exits_three) ... ok
+test_no_result_exits_four (test_master.TestExitCodesPhase5.test_no_result_exits_four) ... ok
+test_unexpected_exits_seventy (test_master.TestExitCodesPhase5.test_unexpected_exits_seventy) ... ok
+test_usage_error_exits_two (test_master.TestExitCodesPhase5.test_usage_error_exits_two) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.407s
+
+OK

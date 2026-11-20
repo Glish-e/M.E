@@ -1,0 +1,79 @@
+bench before · 2026-11-08 21:39:38 · python 3.12.16 · cwd /home/z/my-project/work/final
+
+[a] import cost  (python3 -X importtime master.py --version)
+  wall 0.1s (exit 0)
+  cumulative total (max) 17 ms; top 15:
+        17.3 ms  urllib.request
+        12.9 ms  http.client
+         8.9 ms  statistics
+         8.4 ms  email.parser
+         8.2 ms  email.feedparser
+         8.0 ms  concurrent.futures
+         7.9 ms  argparse
+         7.5 ms  email._policybase
+         7.5 ms  concurrent.futures._base
+         6.1 ms  re
+         5.5 ms  email.utils
+         4.7 ms  dataclasses
+         4.5 ms  enum
+         4.4 ms  logging
+         4.1 ms  inspect
+
+[b] --selftest wall time
+  wall 11.7s (exit 0)
+  
+
+[c] stub run (MASTER_STUBS=1, default watchlist)
+  wall 0.4s (exit 0)
+  pipeline total 0.3s · layers {'total': 0.3, 'macro': 0.0, 'quality': 0.0, 'earnings': 0.0, 'ml': 0.0, 'risk': 0.0}
+  cProfile (cumulative, top 15):
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    2/1    0.000    0.000    0.006    0.006 /home/z/my-project/work/final/scripts/bench.py:130(_stub_run)
+    2/1    0.000    0.000    0.005    0.005 /home/z/my-project/work/final/master.py:2697(run_pipeline)
+    2/1    0.000    0.000    0.005    0.005 /home/z/my-project/work/final/master.py:2711(_run_pipeline_inner)
+    11/10    0.000    0.000    0.004    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    5    0.000    0.000    0.003    0.001 /home/z/my-project/work/final/master.py:2589(_soft_deadline_call)
+    11/10    0.000    0.000    0.002    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    7    0.000    0.000    0.002    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/thr
+    15    0.000    0.000    0.002    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/th
+    7    0.000    0.000    0.002    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/thr
+    10    0.000    0.000    0.002    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/co
+    1    0.000    0.000    0.001    0.001 /home/z/my-project/work/final/master.py:3673(build_parser)
+    38    0.000    0.000    0.001    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/ar
+    6/5    0.000    0.000    0.001    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/t
+    1    0.000    0.000    0.001    0.001 /home/z/my-project/work/final/master.py:2224(fuse)
+    6/5    0.000    0.000    0.001    0.000 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/t
+
+[d] warm offline run (default watchlist; caches as-is)
+  wall 78.7s (exit 0)
+  subprocess wall (incl. startup): 78.7s
+  timings: {'total': 77.9, 'macro': 77.88, 'quality': 77.88, 'earnings': 1.72, 'ml': 1.53, 'risk': 0.0}
+  layer statuses: macro=ERROR, quality=DEGRADED, earnings=OK, ml=OK, risk=DEGRADED
+  render_report: 0.0s
+  cProfile (cumulative, top 15):
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    49/22    0.000    0.000  120.483    5.476 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    2/1    0.000    0.000  120.405  120.405 /home/z/my-project/work/final/scripts/bench.py:175(_one)
+    2/1    0.001    0.000  120.405  120.405 /home/z/my-project/work/final/master.py:2697(run_pipeline)
+    2/1    0.000    0.000  120.404  120.404 /home/z/my-project/work/final/master.py:2711(_run_pipeline_inner)
+    5    0.000    0.000  120.403   24.081 /home/z/my-project/work/final/master.py:2589(_soft_deadline_call)
+    24/10    0.000    0.000  120.400   12.040 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    24/6    0.000    0.000  120.400   20.067 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    12/7    0.001    0.000  118.353   16.908 {method 'get' of '_queue.SimpleQueue' objects}
+    25/24    0.001    0.000  118.239    4.927 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12
+    11/4    0.000    0.000  118.153   29.538 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    11/4    0.000    0.000  118.152   29.538 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    11/4    0.000    0.000  118.152   29.538 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    11/4    0.000    0.000  118.152   29.538 /home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/
+    5/1    0.000    0.000  118.151  118.151 /home/z/my-project/work/final/master.py:2625(_prefetch_one)
+    1    0.007    0.007  118.151  118.151 /home/z/my-project/work/final/master.py:1093(prefetch)
+
+[e] cold online run (folded in from a saved --json run)
+  timings: {'total': 148.3, 'macro': 148.27, 'quality': 148.27, 'earnings': 2.73, 'ml': 1.58, 'risk': 0.0}
+
+== summary ==
+import total        17 ms
+selftest wall       11.7 s
+stub run total      0.3 s
+warm offline total  77.9 s (render 0.0 s)
+cold online total   148.3 s

@@ -1,0 +1,92 @@
+M.E. FINAL master (v1.8.3) - stage-2 fixes handoff (F1-F12)
+============================================================
+
+WHAT SHIPPED. final_master_h.zip = final_master_g.zip (v1.8.2) + the
+owner-approved stage-1 fixes; engines untouched (ENGINES.sha256 OK x3
+at entry AND exit). 605 -> 644 tests, red-first (the stage-1
+standalone drivers in download/stage1_out/proposed_tests were RED on
+v1.8.2), none weakened/removed. Owner decisions: APPROVE F1, F3, F5,
+F6, F7, F9, F11, F12; docs-only F4 (reachability disclosure + register
+gate; behaviour DEFERRED), F8, F10; F2's design question
+(NOT_SELECTED vs MISSING_DATA) DEFERRED to the owner's v2 backtest.
+VERSIONS: master v1.8.3; ml_dataset v1.0.1; ml_train v1.1.0.
+
+F1 PREFLIGHT DNS WATCHDOG. Every resolve runs in a daemon thread
+joined by min(per-host budget, remaining total); a stuck resolver is
+abandoned (max _DNS_ABANDON_MAX=8/pass), marked dead ("dns timeout"),
+never retried past the budget. Measured (evidence/v183_dns_bounds.txt):
+permanent hang 10.00 s wall on the shipped knobs (was UNBOUNDED);
+5 s stall 10.00 s (was 5.00 s on a 2.0 s budget); mixed 2.75 s;
+fast-path notes byte-identical. net_bounds.md corrected: the old
+"stops the pass at 10 s" was claim-only.
+
+F11 WRAP_FETCH CAPPED. Provider calls run under _run_capped (the
+yfinance-wrapper pattern); a hung call is abandoned at
+min(NET_CALL_CAP_S, remaining run budget), the breaker force-opens,
+the honest "timed out" URLError enters the existing retry/ledger path
+(was: unbounded past cap AND deadline). Real-yfinance behaviour still
+AWAITING OWNER DATA: scripts/owner_net_check.sh.
+
+F3 V2 WEAK FILL. Under --ruleset v2 the fixed missing-E fill is scored
+on UN-renormalised weights: base(missing) is WEAK-invariant (Q80 52.00
+WATCH; was 63.03 LONG under WEAK). Legacy ruleset byte-identical
+(pinned grid test); v2 is opt-in and still unbacktested.
+
+F7 DEGENERATE RATIOS. Sortino/PF -> None below 3 losing windows
+(rendered "n/a (n_neg<3)"; the shipped pilot's ONE -0.1% window had
+produced 791.285 / 1371.55); every ratio carries "(low power, n=N)"
+below 8 independent windows; n_neg rides the metrics JSON; the 6-date
+lockbox is labelled "uninformative". NO gate boolean changed;
+_bt_verdict byte-for-byte untouched (diff-proven).
+
+F12 RERUN NAN EXIT 70. _bt_boot_ci([]) -> (None, None); every
+backtest JSON/runlog dump passes a recursive NaN->None scrub (C-6).
+Fixes the observed online --backtest --backtest-rerun crash.
+
+F6 --BT-ABLATE (opt-in). macro_cap|macro_mult|macro_all over the
+RECORDED rows only (no re-decisions, no network, nothing written);
+prints the damp=1.0 assumption + per-date/aggregate excess vs EW + the
+one-episode disclosure. Shipped readout: 11 flips
+(2025-10-31..2026-01-31); aggregate excess vs EW as-recorded +0.0111
+vs ablated -0.0298 - the demotions were protective (NOT validated
+evidence; one episode).
+
+F5 W_CONSUMER_MERGED. One warning when unbucketed consumer names are
+scored under an XLP/XLY long; --bucket splits the pools. Scores
+unchanged. Registry + docs table updated.
+
+F9 ADV-UNCHECKED. WT cells show "12%*" + footnote when the sizer ran
+without advs; additive JSON field adv_checked. Display/JSON only.
+
+F2E HEADER LINE (display-only). "earnings prior: N/M names scored with
+E missing (...)" per run; hash unchanged. F2c fill design DEFERRED.
+
+F4/F8/F10 DOCS+REGISTER TRUTH. CYCLICAL_SECTORS inert members
+(financials/specialty) disclosed + value-level register gate
+(negative control); master.py consumer comment fixed; stamps from
+me/core.__version__ (requirements*.txt said v1.7.0-dev);
+risk-budget docs say APPLIED; CHANGELOG 604->605 corrected;
+ADVANCED.md ML table = the SHIPPED validation numbers (q 261 OOS rows,
+pooled IC -0.487 vs base-rate +0.0377; e 0 rows; macro 35) + the
+two-estimator note; evidence/README.md (NEW) separates real-network
+proofs (R1-R8 are pre-v1.8 HISTORICAL) from loopback-only claims;
+root-safe mocked cache-test twin (skipIf root; Python 3.13 still
+UNVERIFIED - no 3.13 on the build box).
+
+GATES: 644 tests OK; decision hash a023714c... UNCHANGED (loopback
+proof, evidence/v183_decision_hash.txt); CONFIG diff vs v1.8.2 = NONE;
+goldens regenerated with written justification
+(evidence/goldens/v183_goldens_justification.md: version row, the F2
+header line, nothing else); recorded backtest reproduced offline with
+the F7 presentation (gates/verdict/ICs identical; Sortino/PF now null);
+rules register PASS incl. the new REACH line.
+
+KNOWN LIMITS: real yfinance untested here (owner_net_check.sh); a hung
+resolver inside a raw engine urlopen remains uncapped (preflight +
+wrap_fetch are); F2c deferred; F4's optional behaviour change (ETF
+vocabulary for financials/specialty) deferred - it would change
+decisions and the hash.
+
+ZIP SHA256: printed in the delivery message (never inside the zip).
+
+Research screener, not investment advice. No live trades are placed.

@@ -1,0 +1,54 @@
+# final_red.txt — RED evidence (rule H4: red test first, then fix)
+
+date: 2026-11-09 (UTC). Suite = test_master.py (256 tests after this phase).
+
+## Part 1 — the new tests cannot even load against the unmodified phase-5 master
+command: cp phase-5 master.py/ml_*.py into ../redcheck + the FINAL test file,
+then `python3 test_master.py`:
+    ImportError: cannot import name 'LayerProvenance' from 'master'
+Every final-phase surface (LayerProvenance, _resolve_net_mode, layer_provenance,
+run_freeze/run_replay/run_doctor, _retrying_*, net modes, provenance in json)
+is absent in v1.4.0 — all 70 new tests error at import. That is the red state
+of the whole feature set, captured before any fix.
+
+## Part 2 — first in-place run of the full suite (v1.5.0 work-in-progress)
+command: python3 test_master.py
+result:  Ran 256 tests / FAILED (failures=8)  ← the honest intermediate red
+
+The 8 failures, each with its fix (fixes then verified by the green run):
+1. TestNetModes.test_explicit_online_without_network_exits_3 — not raised:
+   the test set MASTER_NET=online, which is the trust-valve and bypasses
+   verification by design. FIX (test): explicit --mode online + failed probe
+   memo, no env valve — raises MasterError code 3.
+2. TestNetModes.test_no_probe_at_import — SyntaxError in the harness one-
+   liner (def after semicolon). FIX (test): real multi-line -c program;
+   --version with sockets blocked exits 0.
+3. TestRefreshPlan.test_plan_counts — "quality 0/0": the test passed no
+   quality layer, so the pool probe had nothing to count. FIX (test): a
+   peek_refs-bearing fake quality layer -> "quality 3/5".
+4. TestSidecarPin.test_tampered_sidecar_untrained — the test computed the
+   pin FROM the tampered bytes (pin matched, head loaded). FIX (test): pin
+   the original bytes, then tamper the file -> "sidecar sha256 mismatch".
+5. TestFreezeReplay (both) — the freeze manifest was built from a DIFFERENT
+   namespace (no tickers), so replay rebuilt the default 22-name watchlist.
+   FIX (test): freeze and run share the same argv.
+6. TestDegradationMatrixFinal.test_earnings_missing_keeps_haircut — wrong
+   ticker (MU has earnings in the stubs; AAPL is the MISSING_DATA row) and
+   hard-coded tilt. FIX (test): AAPL + read the macro mult from the decision.
+7. TestDegradationMatrixFinal.test_macro_cache_missing_is_missing_data +
+   test_offline_never_writes_cache — AttributeError: module 'meds' has no
+   attribute '__file__' (fake modules). FIX (code): _prepare_meds_snapshot
+   guards __file__ with getattr and keeps the DATA_DIR/cwd snapshot candidates.
+8. TestFeatureCap.test_retrained_heads_respect_cap — the shipped heads were
+   still the 32-feature phase-5 models. FIX (deliberate, G8): retrained all
+   three heads with the 20-feature cap (ml_data/models/*, honest verdicts
+   unchanged: q/e/macro all still FAIL validation -> SHADOW).
+
+Also fixed during this cycle (found by the failures, not by inspection):
+- per-layer elapsed attribution (done.get(name) stamps) exposed by
+  TestPerLayerTiming; offline flag semantics for stub runs (a stub run is
+  STUBBED, never quietly 'offline') exposed by TestOfflineGuard.
+
+## Green
+command: python3 test_master.py
+result:  Ran 256 tests in 18.059s / OK   (see final_green.txt)

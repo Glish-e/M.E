@@ -1,0 +1,28 @@
+============================================================================
+ADV PROBE — P-4 feasibility (spec 3.3): is dollar volume readable?
+============================================================================
+
+1) earnings engine price cache (/home/z/.earnings_engine_cache)
+   no px_*.csv cache files found (cold cache — nothing to inspect)
+   cached price files with a Volume column: 0/0
+
+2) engine source price paths
+   earnings_engine.py: Volume column references 0 (none — yahoo_prices() extracts Close only, cached as a single close column)
+   quality.py:          Volume column references 0 (none — the price client extracts Close / Adj Close / Stock Splits only)
+
+----------------------------------------------------------------------------
+ADV PROBE VERDICT: ADV UNAVAILABLE [W_ADV_UNAVAILABLE]
+  No price feed this master can read carries a Volume column —
+  average daily dollar volume cannot be computed offline, and it
+  is NOT estimated, faked or proxied (spec 3.3: probe first, do
+  not fake). Consequences, stated loudly:
+   - the ADV cap (max position as a percentage of ADV) is NOT
+     implemented;
+   - the minimum-ADV exclusion (with a visible reason) is NOT
+     implemented;
+   - the liquidity limit of spec 3.4's trade-management grid is
+     UNANSWERABLE until an engine-side volume feed exists (an
+     owner decision — engine files stay untouched).
+  This verdict also prints in `python3 master.py --doctor` output;
+  re-run this probe any time: python3 scripts/adv_probe.py
+----------------------------------------------------------------------------

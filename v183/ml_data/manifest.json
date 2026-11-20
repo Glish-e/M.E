@@ -1,0 +1,154 @@
+{
+ "schema_version": 1,
+ "created": "2026-11-08",
+ "ml_dataset_version": "1.0.0",
+ "master_version": "1.3.1",
+ "engine_versions": {
+  "meds": "14.7.0",
+  "quality": "3.4.1",
+  "earnings": "3"
+ },
+ "config_hash_master": "16abf8cdc21f21a9",
+ "config_hash_quality": "20cb26d8afbc3a9b",
+ "build": {
+  "freq": "monthly",
+  "sectors": "tech",
+  "pool": "standard (quality sector percentile pools, peers=builtin)",
+  "funnel": "earnings top-K opened to every gated name (no truncation)",
+  "dates": [
+   "2025-08-31",
+   "2025-09-30",
+   "2025-10-31",
+   "2025-11-30",
+   "2025-12-31",
+   "2026-01-31",
+   "2026-02-28",
+   "2026-03-31",
+   "2026-04-30",
+   "2026-05-31",
+   "2026-06-30",
+   "2026-07-31"
+  ],
+  "dates_built": 10,
+  "dates_cached": 2,
+  "dates_failed": 0,
+  "offline": false,
+  "workers": 4
+ },
+ "date_range": [
+  "2025-08-31",
+  "2026-07-31"
+ ],
+ "rows": {
+  "ticker_rows": 1080,
+  "macro_rows": 84,
+  "tickers": 90,
+  "dates": 12
+ },
+ "nan_rate_per_feature": {
+  "q_score": 0.16203703703703703,
+  "q_rank_pct": 0.16203703703703703,
+  "q_coverage": 0.0,
+  "q_flag_count": 0.0,
+  "q_veto": 0.0,
+  "q_pillar_profitability": 0.06666666666666667,
+  "q_pillar_growth": 0.044444444444444446,
+  "q_pillar_financial_strength": 0.044444444444444446,
+  "q_pillar_earnings_quality": 0.08425925925925926,
+  "q_pillar_valuation": 0.16666666666666666,
+  "q_pillar_shareholder_yield": 0.13148148148148148,
+  "e_score": 0.35833333333333334,
+  "p_next_big": 0.35833333333333334,
+  "beat_rate": 0.35833333333333334,
+  "last4_big": 0.35833333333333334,
+  "streak_big": 0.35833333333333334,
+  "qtrs_since_big": 0.35833333333333334,
+  "days_since_last_earnings": 0.35833333333333334,
+  "e_confidence": 0.35833333333333334,
+  "conviction": 0.0,
+  "macro_tilt": 0.0,
+  "macro_confidence": 0.0,
+  "macro_leverage": 0.0,
+  "macro_credit_on": 0.0,
+  "macro_regime_defensive": 0.0,
+  "macro_regime_risk_on": 0.0,
+  "sector_specialty": 0.0,
+  "sector_industrials": 0.0,
+  "sector_energy": 0.0,
+  "sector_materials": 0.0,
+  "sector_financials": 0.0,
+  "sector_tech": 0.0,
+  "sector_communication": 0.0,
+  "sector_consumer": 0.0,
+  "sector_healthcare": 0.0,
+  "sector_reits": 0.0,
+  "sector_utilities": 0.0,
+  "q_missing": 0.0,
+  "e_missing": 0.0,
+  "p_next_big_missing": 0.0,
+  "days_since_missing": 0.0,
+  "r_q_score": 0.16203703703703703,
+  "r_e_score": 0.35833333333333334,
+  "r_p_next_big": 0.35833333333333334,
+  "r_conviction": 0.0,
+  "r_days_since_last_earnings": 0.35833333333333334,
+  "r_beat_rate": 0.35833333333333334
+ },
+ "label_coverage": {
+  "y_q": 0.9666666666666667,
+  "y_e": 0.9018518518518519,
+  "ret_63": 0.9666666666666667
+ },
+ "pit_verified": {
+  "earnings": true,
+  "quality": true,
+  "meds": false
+ },
+ "pit_status": {
+  "earnings": "PIT_VERIFIED \u2014 deterministic; _window cuts quarters to date+provider-lag < as_of (evidence/phase4_pit_probes.txt)",
+  "quality": "PIT_VERIFIED \u2014 deterministic; facts cut by public availability (filing) date, boundary probe passed",
+  "meds": "PIT_APPROXIMATE \u2014 deterministic, as-of floored, PIT lags applied, but series are fetched at TODAY's vintage (pit_mode=approximate_pit_lag) \u2014 pit_verified false"
+ },
+ "price_field": "Yahoo daily ADJUSTED close (earnings_engine.prices, auto_adjust=True); feature prices are cut at as-of by the engines, label prices are strictly after as-of",
+ "embargo": "Labels look up to 63 trading days (~3 calendar months) ahead of their as-of date. With monthly as-of dates, consecutive dates' label windows overlap by construction: walk-forward training must purge + embargo at least 63 trading days (3 monthly periods; 1 quarterly period) between train and test, and rows must be grouped by `group` (never shuffled across time).",
+ "targets": {
+  "y_q": "1 if the 63-trading-day forward return beats SPY (quality is slow)",
+  "y_e": "1 if the 30-trading-day return after the next earnings event (first event strictly after as-of, within 63 td) beats SPY; NaN when no event or incomplete prices",
+  "y_m": "1 if the sector ETF beats SPY over the next calendar month"
+ },
+ "survivorship_warning": "The universe is TODAY's active listing set (quality's builtin universe, active refs only): names delisted before the build are absent by construction and forward returns are upward-biased. Results exclude costs and claim no alpha.",
+ "delisting_and_gaps": {
+  "universe_delisted": [
+   "DFS",
+   "JNPR",
+   "ANSS",
+   "TGE",
+   "DRE",
+   "WBD",
+   "EA",
+   "MANT",
+   "VSTO"
+  ],
+  "universe_renamed": [
+   "BLL",
+   "PARA"
+  ],
+  "forward_price_gap_names": [
+   "CFLT",
+   "PSTG",
+   "QRVO"
+  ],
+  "forward_price_gap_rows": 36
+ },
+ "data_provenance": {
+  "class": "REAL-API",
+  "stubbed": false,
+  "apis": [
+   "FRED",
+   "SEC EDGAR",
+   "Finnhub",
+   "Yahoo (yfinance)"
+  ],
+  "note": "built by REAL engine runs (phase-5 evidence: evidence/phase5_real_run.txt, REAL-DERIVED harvests); the field is the v1.8.0 provenance migration \u2014 additive metadata, the dataset npz is untouched"
+ }
+}

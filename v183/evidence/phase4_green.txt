@@ -1,0 +1,844 @@
+test_build_inline_shape (test_master.RealEngineContract.test_build_inline_shape) ... ok
+test_month_floor_parity (test_master.RealEngineContract.test_month_floor_parity) ... ok
+test_normalize_parity (test_master.RealEngineContract.test_normalize_parity) ... ok
+test_versions_match_tested (test_master.RealEngineContract.test_versions_match_tested) ... ok
+test_propagation_and_floor (test_master.TestAsOfPropagation.test_propagation_and_floor) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_b8_freeze_manifest_crash_leaves_previous_file (test_master.TestAtomicWritesB8.test_b8_freeze_manifest_crash_leaves_previous_file) ... ok
+test_b8_meds_snapshot_write_crash_leaves_previous_file (test_master.TestAtomicWritesB8.test_b8_meds_snapshot_write_crash_leaves_previous_file) ... ok
+test_b8_ml_dataset_atomic_helpers_crash_safe (test_master.TestAtomicWritesB8.test_b8_ml_dataset_atomic_helpers_crash_safe) ... ok
+test_b8_ml_train_save_model_crash_leaves_previous_file (test_master.TestAtomicWritesB8.test_b8_ml_train_save_model_crash_leaves_previous_file) ... ok
+test_b8_write_csv_crash_leaves_previous_file (test_master.TestAtomicWritesB8.test_b8_write_csv_crash_leaves_previous_file) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_bucket_tilts (test_master.TestBucketMacroSplit.test_bucket_tilts) ... ok
+test_stub_run_bucket_keeps_macro_apart (test_master.TestBucketMacroSplit.test_stub_run_bucket_keeps_macro_apart) ... ok
+test_default_dir_cold_fetch_reported_cold (test_master.TestCacheStatusRealDir.test_default_dir_cold_fetch_reported_cold) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings 0.0h
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_all_engines_present_is_exit_0 (test_master.TestCheckSections.test_all_engines_present_is_exit_0) ... ok
+test_missing_engine_is_exit_2_with_sections (test_master.TestCheckSections.test_missing_engine_is_exit_2_with_sections) ... ok
+test_bad_as_of_is_64 (test_master.TestCli.test_bad_as_of_is_64) ... ok
+test_bad_flag_is_64 (test_master.TestCli.test_bad_flag_is_64) ... ok
+test_help_version (test_master.TestCli.test_help_version) ... ok
+test_json_exit0_and_parses (test_master.TestCli.test_json_exit0_and_parses) ... ok
+test_h2_pins_frozen (test_master.TestConfigGateFinal.test_h2_pins_frozen) ... ok
+test_new_keys_have_rationales (test_master.TestConfigGateFinal.test_new_keys_have_rationales) ... ok
+test_only_additions_plus_width (test_master.TestConfigGateFinal.test_only_additions_plus_width) ... ok
+test_bands_ordered (test_master.TestConfigSanity.test_bands_ordered) ... ok
+test_vocab (test_master.TestConfigSanity.test_vocab) ... ok
+test_weights (test_master.TestConfigSanity.test_weights) ... ok
+test_dry_run_output (test_master.TestDatasetDryRun.test_dry_run_output) ... ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+ok
+test_dry_run_reports_cached_dates (test_master.TestDatasetDryRun.test_dry_run_reports_cached_dates) ... ok
+test_conviction_definition_in_table_explain_and_json (test_master.TestDefinitionsAndLabels.test_conviction_definition_in_table_explain_and_json) ... ok
+test_missing_e_still_long_disclosed (test_master.TestDefinitionsAndLabels.test_missing_e_still_long_disclosed) ... ok
+test_scorecard_labels_p_next (test_master.TestDefinitionsAndLabels.test_scorecard_labels_p_next) ... ok
+test_earnings_missing_keeps_haircut (test_master.TestDegradationMatrixFinal.test_earnings_missing_keeps_haircut) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_macro_cache_missing_is_missing_data (test_master.TestDegradationMatrixFinal.test_macro_cache_missing_is_missing_data) ... [plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+ok
+test_offline_never_writes_cache (test_master.TestDegradationMatrixFinal.test_offline_never_writes_cache) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_offline_serves_cached_earnings_any_age (test_master.TestDegradationMatrixFinal.test_offline_serves_cached_earnings_any_age) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_quality_cache_missing_per_name (test_master.TestDegradationMatrixFinal.test_quality_cache_missing_per_name) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_readonly_cache_is_clear_error_online (test_master.TestDegradationMatrixFinal.test_readonly_cache_is_clear_error_online) ... ok
+test_sklearn_absent_gbm_head_unavailable (test_master.TestDegradationMatrixFinal.test_sklearn_absent_gbm_head_unavailable)
+B-1: sklearn genuinely absent -> the head is UNAVAILABLE with a ... ok
+test_damp (test_master.TestDegradedDamp.test_damp) ... ok
+test_doctor_hash_mismatch_is_2 (test_master.TestDoctor.test_doctor_hash_mismatch_is_2) ... ok
+test_doctor_next_line_actionable (test_master.TestDoctor.test_doctor_next_line_actionable) ... ok
+test_doctor_screen_shape (test_master.TestDoctor.test_doctor_screen_shape) ... ok
+test_backtest_summary_maps_v3_series (test_master.TestEarningsAdapterV3Contract.test_backtest_summary_maps_v3_series) ... ok
+test_backtest_uses_v3_result (test_master.TestEarningsAdapterV3Contract.test_backtest_uses_v3_result) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_dstr_handles_real_engine_timestamps (test_master.TestEarningsAdapterV3Contract.test_dstr_handles_real_engine_timestamps)
+P4-D1: the REAL engine returns pd.Timestamp dates; _dstr used to ... ok
+test_plan_now_chip_via_signals (test_master.TestEarningsAdapterV3Contract.test_plan_now_chip_via_signals) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_plan_stale_report_is_open_not_now (test_master.TestEarningsAdapterV3Contract.test_plan_stale_report_is_open_not_now) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_verdict_ladder_without_auc (test_master.TestEarningsAdapterV3Contract.test_verdict_ladder_without_auc) ... ok
+test_missing_score_shows_no_data_and_dash_probability (test_master.TestEarningsScorecard.test_missing_score_shows_no_data_and_dash_probability) ... ok
+test_one_bad_ticker_does_not_kill_layer (test_master.TestEarningsTickerIsolation.test_one_bad_ticker_does_not_kill_layer) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_full_run (test_master.TestEndToEnd.test_full_run) ... ok
+test_engines_sha256_matches_phase5 (test_master.TestEnginesUntouched.test_engines_sha256_matches_phase5) ... ok
+test_docstring_documents_codes (test_master.TestExitCodesFinal.test_docstring_documents_codes) ... ok
+test_replay_mismatch_code (test_master.TestExitCodesFinal.test_replay_mismatch_code) ... ok
+test_no_go_reason_names_real_blocker (test_master.TestExitReason.test_no_go_reason_names_real_blocker) ... ok
+test_useful_macro_still_exits_zero (test_master.TestExitReason.test_useful_macro_still_exits_zero) ... ok
+test_all_fail_exit2 (test_master.TestFailureIsolation.test_all_fail_exit2) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+ok
+test_meds_error_rest_runs (test_master.TestFailureIsolation.test_meds_error_rest_runs) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_one_ticker_quality_error (test_master.TestFailureIsolation.test_one_ticker_quality_error) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+ok
+test_retrained_heads_respect_cap (test_master.TestFeatureCap.test_retrained_heads_respect_cap)
+G8: the shipped heads (retrained on the pilot dataset) each use ... ok
+test_select_features_fold_cap_and_train_only (test_master.TestFeatureCap.test_select_features_fold_cap_and_train_only) ... ok
+test_small_feature_set_untouched (test_master.TestFeatureCap.test_small_feature_set_untouched) ... ok
+test_earnings_signal_sanitises (test_master.TestFiniteSanitisation.test_earnings_signal_sanitises) ... ok
+test_earnings_top_zero_is_explicit_idle (test_master.TestFiniteSanitisation.test_earnings_top_zero_is_explicit_idle) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_fuse_matrix_never_long (test_master.TestFiniteSanitisation.test_fuse_matrix_never_long) ... ok
+test_nan_cli_flags_exit_64 (test_master.TestFiniteSanitisation.test_nan_cli_flags_exit_64) ... ok
+test_parse_macro_sanitises (test_master.TestFiniteSanitisation.test_parse_macro_sanitises) ... ok
+test_quality_signal_rejects_bad_scores (test_master.TestFiniteSanitisation.test_quality_signal_rejects_bad_scores) ... ok
+test_zero_confidence_and_leverage_survive (test_master.TestFiniteSanitisation.test_zero_confidence_and_leverage_survive) ... ok
+test_colored_equals_plain_at_narrow_width (test_master.TestFitVisibleWidth.test_colored_equals_plain_at_narrow_width) ... ok
+test_fit_counts_visible_chars_only (test_master.TestFitVisibleWidth.test_fit_counts_visible_chars_only) ... ok
+test_exactly_one_score_not_probability (test_master.TestFooterOne.test_exactly_one_score_not_probability) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_freeze_replay_stub_identical (test_master.TestFreezeReplay.test_freeze_replay_stub_identical) ... replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+ok
+test_replay_needs_manifest (test_master.TestFreezeReplay.test_replay_needs_manifest) ... ok
+test_tampered_manifest_fails_loudly (test_master.TestFreezeReplay.test_tampered_manifest_fails_loudly) ... REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+ok
+test_earnings_event_passed_flag (test_master.TestFreshness.test_earnings_event_passed_flag) ... ok
+test_earnings_price_boundaries (test_master.TestFreshness.test_earnings_price_boundaries) ... ok
+test_macro_boundaries (test_master.TestFreshness.test_macro_boundaries) ... ok
+test_macro_missing_data (test_master.TestFreshness.test_macro_missing_data) ... ok
+test_macro_source_from_tier (test_master.TestFreshness.test_macro_source_from_tier) ... ok
+test_quality_boundaries (test_master.TestFreshness.test_quality_boundaries) ... ok
+test_stale_never_silently_ok (test_master.TestFreshness.test_stale_never_silently_ok) ... ok
+test_topk (test_master.TestFunnel.test_topk) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/17 cached (stale/missing names are the only network calls) · earnings 0/7 histories cached
+ok
+test_exact_thresholds (test_master.TestFusionBoundaries.test_exact_thresholds) ... ok
+test_trigger_mode_blocks_long (test_master.TestFusionBoundaries.test_trigger_mode_blocks_long) ... ok
+test_veto_cap_and_degraded_damp (test_master.TestFusionBoundaries.test_veto_cap_and_degraded_damp) ... ok
+test_weak_renormalisation (test_master.TestFusionBoundaries.test_weak_renormalisation) ... ok
+test_at_gate_boundary (test_master.TestFusionGates.test_at_gate_boundary) ... ok
+test_below_gate (test_master.TestFusionGates.test_below_gate) ... ok
+test_no_score_never_imputed (test_master.TestFusionGates.test_no_score_never_imputed) ... ok
+test_other_flags_are_warnings_only (test_master.TestFusionGates.test_other_flags_are_warnings_only) ... ok
+test_vetoes (test_master.TestFusionGates.test_vetoes) ... ok
+test_b4_future_report_warning_reaches_the_signal (test_master.TestHardeningB4B5B6.test_b4_future_report_warning_reaches_the_signal) ... ok
+test_b4_now_chip_rejects_future_dated_reports (test_master.TestHardeningB4B5B6.test_b4_now_chip_rejects_future_dated_reports) ... ok
+test_b5_blocked_long_is_reasserted_avoid_by_overlays (test_master.TestHardeningB4B5B6.test_b5_blocked_long_is_reasserted_avoid_by_overlays) ... ok
+test_b5_consistent_blocked_row_is_untouched (test_master.TestHardeningB4B5B6.test_b5_consistent_blocked_row_is_untouched) ... ok
+test_b6_documented_keys_disclose_their_status (test_master.TestHardeningB4B5B6.test_b6_documented_keys_disclose_their_status) ... ok
+test_b6_mode_keys_drive_the_standard_mode (test_master.TestHardeningB4B5B6.test_b6_mode_keys_drive_the_standard_mode) ... ok
+test_help_cli (test_master.TestHelpAndExamples.test_help_cli) ... ok
+test_help_examples (test_master.TestHelpAndExamples.test_help_examples) ... ok
+test_env_unchanged (test_master.TestImportPurity.test_env_unchanged) ... ok
+test_import_no_side_effects (test_master.TestImportPurity.test_import_no_side_effects) ... ok
+test_only_quality_imports_nothing_else (test_master.TestImportPurity.test_only_quality_imports_nothing_else) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_keys (test_master.TestJsonSchema.test_keys) ... ok
+test_mu_long_math (test_master.TestJsonSchema.test_mu_long_math) ... ok
+test_version_imports_no_heavy_libs (test_master.TestLazyImports.test_version_imports_no_heavy_libs) ... ok
+test_bounds (test_master.TestMLConfig.test_bounds) ... ok
+test_h2_frozen_pins_unchanged (test_master.TestMLConfig.test_h2_frozen_pins_unchanged) ... ok
+test_new_keys_have_rationales (test_master.TestMLConfig.test_new_keys_have_rationales) ... ok
+test_m1_inner_embargo_is_target_aware (test_master.TestMLGatesPhase3.test_m1_inner_embargo_is_target_aware) ... ok
+test_m1_leaking_embargo_inflates_inner_score (test_master.TestMLGatesPhase3.test_m1_leaking_embargo_inflates_inner_score) ... ok
+test_m1_no_inner_label_window_overlap (test_master.TestMLGatesPhase3.test_m1_no_inner_label_window_overlap) ... ok
+test_m2_per_fold_features_recorded_and_label_independent (test_master.TestMLGatesPhase3.test_m2_per_fold_features_recorded_and_label_independent) ... [ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.789 · decile spread +1.000 · Brier skill +0.668 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.776 (identical rows: verdict_basis n=90)
+[ml_train]   model_sha256 743ca7d7278e6e83… · dataset_sha256 6c20be656309
+[ml_train]   shipped SHADOW -> /tmp/tmpnky18lir/m/head_q.npz
+ok
+test_m2_selection_perturbation_test_fold_only (test_master.TestMLGatesPhase3.test_m2_selection_perturbation_test_fold_only) ... [ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.789 · decile spread +1.000 · Brier skill +0.668 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.776 (identical rows: verdict_basis n=90)
+[ml_train]   model_sha256 743ca7d7278e6e83… · dataset_sha256 6c20be656309
+[ml_train]   shipped SHADOW -> /tmp/tmp76v4hgyz/a/head_q.npz
+[ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.776 · decile spread +1.000 · Brier skill +0.246 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.776 (identical rows: verdict_basis n=90)
+[ml_train]   model_sha256 97f7a8f9a85084ca… · dataset_sha256 9f22c840e272
+[ml_train]   shipped SHADOW -> /tmp/tmp76v4hgyz/b/head_q.npz
+ok
+test_m3_calibrated_folds_still_work (test_master.TestMLGatesPhase3.test_m3_calibrated_folds_still_work) ... [ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.678 · decile spread +0.778 · Brier skill +0.424 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.680 (identical rows: verdict_basis n=90)
+[ml_train]   model_sha256 ea39c44f70d4f32f… · dataset_sha256 62fa73d7c0ee
+[ml_train]   shipped SHADOW -> /tmp/tmpjye0iq5y/m/head_q.npz
+ok
+test_m3_insample_fallback_path_is_gone (test_master.TestMLGatesPhase3.test_m3_insample_fallback_path_is_gone) ... ok
+test_m3_insufficient_folds_get_no_calibrated_probability (test_master.TestMLGatesPhase3.test_m3_insufficient_folds_get_no_calibrated_probability) ... [ml_train] head q: logistic_np · 300 train rows · 0 usable OOS rows over 5 fold(s) · 5 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 0 · final calibration uncalibrated_insufficient_inner_oof
+[ml_train]   monthly rank IC +nan · decile spread +nan · Brier skill +nan · verdict insufficient evidence
+[ml_train]   model_sha256 dfc14564a7af0c51… · dataset_sha256 63bf500a968e
+[ml_train]   shipped SHADOW -> /tmp/tmpu9l_i3wg/m/head_q.npz
+ok
+test_m4_all_gates_pass_positive_allowed (test_master.TestMLGatesPhase3.test_m4_all_gates_pass_positive_allowed) ... [ml_train] head q: logistic_np · 570 train rows · 360 usable OOS rows over 15 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 12 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.822 · decile spread +1.000 · Brier skill +0.879 · verdict beats
+[ml_train]   baseline raw score IC +0.746 (identical rows: verdict_basis n=360)
+[ml_train]   model_sha256 b56624c2234065f8… · dataset_sha256 f7a17d69d349
+[ml_train]   shipped SHADOW -> /tmp/tmp9uq748li/m/head_q.npz
+ml_train: head q -> ACTIVE (hash-bound validation report on file)
+ok
+test_m4_baseline_compared_on_identical_rows (test_master.TestMLGatesPhase3.test_m4_baseline_compared_on_identical_rows) ... [ml_train] head q: logistic_np · 300 train rows · 60 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.550 · decile spread +1.000 · Brier skill +0.305 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.696 (identical rows: verdict_basis n=60)
+[ml_train]   model_sha256 523c0f5f8c4f0e88… · dataset_sha256 c17ab4624a62
+[ml_train]   shipped SHADOW -> /tmp/tmpk8sf4yc5/m/head_q.npz
+ok
+test_m4_gate_100_rows_fails (test_master.TestMLGatesPhase3.test_m4_gate_100_rows_fails) ... [ml_train] head q: logistic_np · 152 train rows · 96 usable OOS rows over 15 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 12 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.762 · decile spread +1.000 · Brier skill +0.836 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.688 (identical rows: verdict_basis n=96)
+[ml_train]   model_sha256 fb56f60461e1d383… · dataset_sha256 a4040519a9da
+[ml_train]   shipped SHADOW -> /tmp/tmppze04jl6/m/head_q.npz
+ok
+test_m4_gate_11_periods_fails (test_master.TestMLGatesPhase3.test_m4_gate_11_periods_fails) ... [ml_train] head q: logistic_np · 540 train rows · 330 usable OOS rows over 14 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 11 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.826 · decile spread +1.000 · Brier skill +0.885 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.755 (identical rows: verdict_basis n=330)
+[ml_train]   model_sha256 86f0dca59443e136… · dataset_sha256 c34be7f78b60
+[ml_train]   shipped SHADOW -> /tmp/tmp59wr6atv/m/head_q.npz
+ok
+test_m4_gate_no_calibration_fails (test_master.TestMLGatesPhase3.test_m4_gate_no_calibration_fails) ... [ml_train] head q: logistic_np · 300 train rows · 0 usable OOS rows over 5 fold(s) · 5 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 0 · final calibration uncalibrated_insufficient_inner_oof
+[ml_train]   monthly rank IC +nan · decile spread +nan · Brier skill +nan · verdict insufficient evidence
+[ml_train]   model_sha256 dfc14564a7af0c51… · dataset_sha256 63bf500a968e
+[ml_train]   shipped SHADOW -> /tmp/tmpaq_wmg5s/m/head_q.npz
+ok
+test_m5_activate_refuses_tampered_model_file (test_master.TestMLGatesPhase3.test_m5_activate_refuses_tampered_model_file) ... [ml_train] head q: logistic_np · 570 train rows · 360 usable OOS rows over 15 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 12 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.822 · decile spread +1.000 · Brier skill +0.879 · verdict beats
+[ml_train]   baseline raw score IC +0.746 (identical rows: verdict_basis n=360)
+[ml_train]   model_sha256 b56624c2234065f8… · dataset_sha256 f7a17d69d349
+[ml_train]   shipped SHADOW -> /tmp/tmpqz9agymu/m/head_q.npz
+ml_train: --activate q REFUSED — the report's model_sha256 does not match this model file (train or re-validate first)
+ml_train: head q -> ACTIVE (hash-bound validation report on file)
+ok
+test_m5_gbm_sidecar_pin_required_and_verified (test_master.TestMLGatesPhase3.test_m5_gbm_sidecar_pin_required_and_verified) ... ok
+test_model_with_future_dated_feature_refused (test_master.TestMLLeakage.test_model_with_future_dated_feature_refused) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_trainer_embargo_is_enforced (test_master.TestMLLeakage.test_trainer_embargo_is_enforced) ... ok
+test_b8_adjustment_skips_nonfinite_parts (test_master.TestMLLoadB8.test_b8_adjustment_skips_nonfinite_parts) ... ok
+test_b8_bad_base_rate_refused_at_load (test_master.TestMLLoadB8.test_b8_bad_base_rate_refused_at_load) ... ok
+test_b8_nan_probability_drops_head_with_note (test_master.TestMLLoadB8.test_b8_nan_probability_drops_head_with_note) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_b8_nonfinite_calib_refused_at_load (test_master.TestMLLoadB8.test_b8_nonfinite_calib_refused_at_load) ... ok
+test_m5_active_requires_hash_bound_report (test_master.TestMLLoadB8.test_m5_active_requires_hash_bound_report) ... ok
+test_m5_gbm_sidecar_pin_required_and_verified (test_master.TestMLLoadB8.test_m5_gbm_sidecar_pin_required_and_verified) ... ok
+test_active_applies_bounded_adjustment (test_master.TestMLStates.test_active_applies_bounded_adjustment) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_active_without_report_refused (test_master.TestMLStates.test_active_without_report_refused) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_probability_only_with_sample_size_and_footer_intact (test_master.TestMLStates.test_probability_only_with_sample_size_and_footer_intact) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_shadow_logged_and_changes_no_decision (test_master.TestMLStates.test_shadow_logged_and_changes_no_decision) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_untrained_runs_loud_and_changes_nothing (test_master.TestMLStates.test_untrained_runs_loud_and_changes_nothing) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_activate_refused_without_passing_report (test_master.TestMLTrain.test_activate_refused_without_passing_report) ... [ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.678 · decile spread +0.778 · Brier skill +0.424 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.680 (identical rows: verdict_basis n=90)
+[ml_train]   model_sha256 ea39c44f70d4f32f… · dataset_sha256 62fa73d7c0ee
+[ml_train]   shipped SHADOW -> /tmp/tmp2jr__fgt/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: --activate q REFUSED — validation verdict is 'insufficient evidence', not 'beats'
+ml_train: --activate q REFUSED — validation verdict is 'insufficient evidence', not 'beats'
+ml_train: head q -> ACTIVE (hash-bound validation report on file)
+ok
+test_forbidden_dataset_feature_refused (test_master.TestMLTrain.test_forbidden_dataset_feature_refused) ... ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ok
+test_too_few_groups_refused_honestly (test_master.TestMLTrain.test_too_few_groups_refused_honestly) ... ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+ok
+test_train_save_reload_and_predict_parity (test_master.TestMLTrain.test_train_save_reload_and_predict_parity) ... [ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.678 · decile spread +0.778 · Brier skill +0.424 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.680 (identical rows: verdict_basis n=90)
+[ml_train]   model_sha256 ea39c44f70d4f32f… · dataset_sha256 62fa73d7c0ee
+[ml_train]   shipped SHADOW -> /tmp/tmp_v5lwooq/models/head_q.npz
+ok
+test_all_heads_unavailable_still_a_result (test_master.TestMLUnavailable.test_all_heads_unavailable_still_a_result)
+all three heads version-mismatched: exit 1, decisions still ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_version_mismatch_run_continues_exit_one (test_master.TestMLUnavailable.test_version_mismatch_run_continues_exit_one) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_ml_models_flag_parses (test_master.TestMLWizardAndFlags.test_ml_models_flag_parses) ... ok
+test_only_accepts_ml_and_risk (test_master.TestMLWizardAndFlags.test_only_accepts_ml_and_risk) ... ok
+test_wizard_layers_prompt_lists_five (test_master.TestMLWizardAndFlags.test_wizard_layers_prompt_lists_five) ... ok
+test_empty_snapshot_is_degraded (test_master.TestMacroSnapshotRejects.test_empty_snapshot_is_degraded) ... ok
+test_fresh_snapshot_stays_ok (test_master.TestMacroSnapshotRejects.test_fresh_snapshot_stays_ok) ... ok
+test_stale_snapshot_is_degraded (test_master.TestMacroSnapshotRejects.test_stale_snapshot_is_degraded) ... ok
+test_header_rows_present (test_master.TestManifestHeader.test_header_rows_present) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_missing_engine_printed_missing (test_master.TestManifestHeader.test_missing_engine_printed_missing) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+ok
+test_build_ns_opens_funnel_and_uses_standard_pool (test_master.TestMlDataset.test_build_ns_opens_funnel_and_uses_standard_pool) ... ok
+test_date_features_missing_flags_and_ranks (test_master.TestMlDataset.test_date_features_missing_flags_and_ranks) ... ok
+test_default_end_excludes_unlabelable_months (test_master.TestMlDataset.test_default_end_excludes_unlabelable_months) ... ok
+test_forward_return_and_gaps (test_master.TestMlDataset.test_forward_return_and_gaps) ... ok
+test_month_grid_monthly_and_quarterly (test_master.TestMlDataset.test_month_grid_monthly_and_quarterly) ... ok
+test_next_event_window (test_master.TestMlDataset.test_next_event_window) ... ok
+test_verify_embargo_statement (test_master.TestMlDataset.test_verify_embargo_statement) ... ok
+test_verify_passes_on_wellformed_and_catches_violations (test_master.TestMlDataset.test_verify_passes_on_wellformed_and_catches_violations) ... ok
+test_e_monotone (test_master.TestMonotonicity.test_e_monotone) ... ok
+test_q_monotone (test_master.TestMonotonicity.test_q_monotone) ... ok
+test_tilt_monotone (test_master.TestMonotonicity.test_tilt_monotone) ... ok
+test_auto_picks_offline_when_probe_fails (test_master.TestNetModes.test_auto_picks_offline_when_probe_fails) ... [plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_auto_picks_online_when_probe_ok (test_master.TestNetModes.test_auto_picks_online_when_probe_ok) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_explicit_online_without_network_exits_3 (test_master.TestNetModes.test_explicit_online_without_network_exits_3) ... ok
+test_mode_split_depth_and_net (test_master.TestNetModes.test_mode_split_depth_and_net) ... ok
+test_no_probe_at_import (test_master.TestNetModes.test_no_probe_at_import) ... ok
+test_offline_flag_is_alias (test_master.TestNetModes.test_offline_flag_is_alias) ... ok
+test_probe_skipped_for_offline (test_master.TestNetModes.test_probe_skipped_for_offline) ... ok
+test_stub_runs_resolve_offline_without_probe (test_master.TestNetModes.test_stub_runs_resolve_offline_without_probe) ... ok
+test_stubs_banner_never_silent (test_master.TestNetModes.test_stubs_banner_never_silent) ... ok
+test_provenance_frozen_at_snapshot (test_master.TestNoLateWrites.test_provenance_frozen_at_snapshot) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_floor (test_master.TestNoLookahead.test_floor) ... ok
+test_future_as_of_rejected (test_master.TestNoLookahead.test_future_as_of_rejected) ... ok
+test_future_dated_earnings_rejected (test_master.TestNoLookahead.test_future_dated_earnings_rejected) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_partial_quality_still_exits_0 (test_master.TestNoQualityScoresExitTwo.test_partial_quality_still_exits_0) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+ok
+test_quality_zero_ok_exits_2 (test_master.TestNoQualityScoresExitTwo.test_quality_zero_ok_exits_2) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+ok
+test_identical_runs_identical_decisions (test_master.TestNoStateLeakBetweenRuns.test_identical_runs_identical_decisions) ... ok
+test_two_cache_dir_runs_restore_everything (test_master.TestNoStateLeakBetweenRuns.test_two_cache_dir_runs_restore_everything) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_offline_cache_miss_fails_fast (test_master.TestOfflineFastFail.test_offline_cache_miss_fails_fast) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+ok
+test_offline_yfinance_path_disabled (test_master.TestOfflineFastFail.test_offline_yfinance_path_disabled)
+§2.4: with yfinance installed, offline still blocks its sockets — ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_offline_flag_in_json_manifest (test_master.TestOfflineGuard.test_offline_flag_in_json_manifest) ... ok
+test_quality_transport_patched_only_during_offline_run (test_master.TestOfflineGuard.test_quality_transport_patched_only_during_offline_run) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_stubbed_offline_run_no_sockets (test_master.TestOfflineNoSockets.test_stubbed_offline_run_no_sockets) ... ok
+test_macro_elapsed_is_own (test_master.TestPerLayerTiming.test_macro_elapsed_is_own) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_doctor_carries_the_adv_status (test_master.TestPhase4ADV.test_doctor_carries_the_adv_status) ... ok
+test_probe_never_invents_numbers (test_master.TestPhase4ADV.test_probe_never_invents_numbers) ... ok
+test_probe_runs_and_verdict_is_loud (test_master.TestPhase4ADV.test_probe_runs_and_verdict_is_loud) ... ok
+test_damped_reason_label_interpolates (test_master.TestPhase4Hunt.test_damped_reason_label_interpolates) ... ok
+test_weak_reason_label_interpolates (test_master.TestPhase4Hunt.test_weak_reason_label_interpolates) ... ok
+test_conviction_raw_carried (test_master.TestPhase4Ruleset.test_conviction_raw_carried) ... ok
+test_door_rounding_long_flips_under_v2 (test_master.TestPhase4Ruleset.test_door_rounding_long_flips_under_v2) ... ok
+test_door_rounding_watch_flips_under_v2 (test_master.TestPhase4Ruleset.test_door_rounding_watch_flips_under_v2) ... ok
+test_legacy_header_label (test_master.TestPhase4Ruleset.test_legacy_header_label) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_legacy_subsidy_still_reproduces_and_is_the_default (test_master.TestPhase4Ruleset.test_legacy_subsidy_still_reproduces_and_is_the_default) ... ok
+test_ruleset_flag_choices_and_default (test_master.TestPhase4Ruleset.test_ruleset_flag_choices_and_default) ... ok
+test_ruleset_flag_rejects_unknown (test_master.TestPhase4Ruleset.test_ruleset_flag_rejects_unknown) ... ok
+test_ruleset_run_no_config_leak (test_master.TestPhase4Ruleset.test_ruleset_run_no_config_leak) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_v2_funnel_prior_uses_the_fill (test_master.TestPhase4Ruleset.test_v2_funnel_prior_uses_the_fill) ... ok
+test_v2_header_label (test_master.TestPhase4Ruleset.test_v2_header_label) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_v2_missing_never_outranks_observed (test_master.TestPhase4Ruleset.test_v2_missing_never_outranks_observed) ... ok
+test_v2_missing_never_outranks_observed_through_fuse (test_master.TestPhase4Ruleset.test_v2_missing_never_outranks_observed_through_fuse) ... ok
+test_v2_overlay_regate_uses_unrounded (test_master.TestPhase4Ruleset.test_v2_overlay_regate_uses_unrounded) ... ok
+test_v2_reason_names_the_fill (test_master.TestPhase4Ruleset.test_v2_reason_names_the_fill) ... ok
+test_live_plan_stop_integration (test_master.TestPhase4Stops.test_live_plan_stop_integration) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_no_position_no_stop_no_warning (test_master.TestPhase4Stops.test_no_position_no_stop_no_warning) ... ok
+test_no_stop_warning_silent_none_is_gone (test_master.TestPhase4Stops.test_no_stop_warning_silent_none_is_gone) ... ok
+test_stop_formula (test_master.TestPhase4Stops.test_stop_formula) ... ok
+test_stop_key_defaults (test_master.TestPhase4Stops.test_stop_key_defaults) ... ok
+test_stop_none_when_no_vol_WITH_warning (test_master.TestPhase4Stops.test_stop_none_when_no_vol_WITH_warning) ... ok
+test_stop_surfaces_in_signal_and_explain (test_master.TestPhase4Stops.test_stop_surfaces_in_signal_and_explain) ... ok
+test_analyze_and_signals_read_the_same_config_value (test_master.TestPhase4TPSingleSource.test_analyze_and_signals_read_the_same_config_value) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_master_has_no_second_tp_source (test_master.TestPhase4TPSingleSource.test_master_has_no_second_tp_source) ... ok
+test_tp_change_flows_to_both_calls (test_master.TestPhase4TPSingleSource.test_tp_change_flows_to_both_calls) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_legacy_mode_is_unchanged (test_master.TestPhase4VolTarget.test_legacy_mode_is_unchanged) ... ok
+test_looser_than_norm_label_and_arithmetic (test_master.TestPhase4VolTarget.test_looser_than_norm_label_and_arithmetic) ... ok
+test_sizing_flag_flows_to_the_sizer (test_master.TestPhase4VolTarget.test_sizing_flag_flows_to_the_sizer) ... ok
+test_sizing_mode_keys_and_flag (test_master.TestPhase4VolTarget.test_sizing_mode_keys_and_flag) ... ok
+test_vol_target_edge_inputs (test_master.TestPhase4VolTarget.test_vol_target_edge_inputs) ... ok
+test_vol_target_keeps_the_dd_veto (test_master.TestPhase4VolTarget.test_vol_target_keeps_the_dd_veto) ... ok
+test_vol_target_realized_vol_never_exceeds_target (test_master.TestPhase4VolTarget.test_vol_target_realized_vol_never_exceeds_target) ... ok
+test_vol_target_solves_the_target_vol (test_master.TestPhase4VolTarget.test_vol_target_solves_the_target_vol) ... ok
+test_vol_target_veto_can_fire_too (test_master.TestPhase4VolTarget.test_vol_target_veto_can_fire_too) ... ok
+test_vol_target_vol_never_exceeds_target_when_caps_bind (test_master.TestPhase4VolTarget.test_vol_target_vol_never_exceeds_target_when_caps_bind) ... ok
+test_prefetch_pool_uses_workers_flag (test_master.TestPrefetchWorkers.test_prefetch_pool_uses_workers_flag) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_kill_and_stop (test_master.TestProgressSilencing.test_kill_and_stop) ... ok
+test_json_layers_provenance (test_master.TestProvenanceSurfaces.test_json_layers_provenance) ... ok
+test_report_header_and_layer_lines (test_master.TestProvenanceSurfaces.test_report_header_and_layer_lines) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_same_json_schema_every_mode (test_master.TestProvenanceSurfaces.test_same_json_schema_every_mode) ... [plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_end_to_end_ordering (test_master.TestRankingAndCap.test_end_to_end_ordering) ... ok
+test_gate_failed_conviction_capped_when_high (test_master.TestRankingAndCap.test_gate_failed_conviction_capped_when_high) ... ok
+test_rank_key_orders_actions (test_master.TestRankingAndCap.test_rank_key_orders_actions) ... ok
+test_vetoed_conviction_capped_with_reason (test_master.TestRankingAndCap.test_vetoed_conviction_capped_with_reason) ... ok
+test_plan_counts (test_master.TestRefreshPlan.test_plan_counts) ... ok
+test_offline_no_refresh (test_master.TestRefreshReport.test_offline_no_refresh) ... [plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_online_refresh_report_fields (test_master.TestRefreshReport.test_online_refresh_report_fields) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_bucket_split (test_master.TestRefsIdentity.test_bucket_split) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_same_object (test_master.TestRefsIdentity.test_same_object) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_watchlist_peers_targets_only (test_master.TestRefsIdentity.test_watchlist_peers_targets_only) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_dummy_overlay_runs_end_to_end (test_master.TestRegistryReal.test_dummy_overlay_runs_end_to_end) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_dummy_sizer_fills_weights_and_portfolio_footer (test_master.TestRegistryReal.test_dummy_sizer_fills_weights_and_portfolio_footer) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_explicit_only_still_excludes_registered_layers (test_master.TestRegistryReal.test_explicit_only_still_excludes_registered_layers) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_overlay_adj_is_bounded (test_master.TestRegistryReal.test_overlay_adj_is_bounded) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_registered_extra_layer_runs_without_any_code_mentioning_it (test_master.TestRegistryReal.test_registered_extra_layer_runs_without_any_code_mentioning_it) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_registry_order_drives_build_order (test_master.TestRegistryReal.test_registry_order_drives_build_order) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+ok
+test_unknown_layer_name_64 (test_master.TestRegistryReal.test_unknown_layer_name_64) ... ok
+test_ascii_is_ascii (test_master.TestRender.test_ascii_is_ascii) ... ok
+test_bar (test_master.TestRender.test_bar) ... ok
+test_color_stripped_equals_plain (test_master.TestRender.test_color_stripped_equals_plain) ... ok
+test_width_bounds (test_master.TestRender.test_width_bounds) ... ok
+test_4xx_not_retried (test_master.TestRetryPolicy.test_4xx_not_retried) ... ok
+test_failed_refresh_keeps_engine_fallback (test_master.TestRetryPolicy.test_failed_refresh_keeps_engine_fallback)
+§3.3: the wrapper returns the engine's own failure tuple after ... ok
+test_fetch_wrapper_retries_429_and_transient (test_master.TestRetryPolicy.test_fetch_wrapper_retries_429_and_transient) ... ok
+test_fetch_wrapper_stops_on_4xx (test_master.TestRetryPolicy.test_fetch_wrapper_stops_on_4xx) ... ok
+test_provider_error_gives_up_after_three (test_master.TestRetryPolicy.test_provider_error_gives_up_after_three) ... ok
+test_rate_limit_left_to_engine (test_master.TestRetryPolicy.test_rate_limit_left_to_engine) ... ok
+test_transient_retried_then_succeeds (test_master.TestRetryPolicy.test_transient_retried_then_succeeds) ... ok
+test_layer_error_leaves_weights_untouched (test_master.TestRiskLayer.test_layer_error_leaves_weights_untouched) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+risk failed: RuntimeError: boom
+ok
+test_offline_run_no_sockets_with_shadow_models (test_master.TestRiskLayer.test_offline_run_no_sockets_with_shadow_models) ... [plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+ok
+test_weights_filled_end_to_end (test_master.TestRiskLayer.test_weights_filled_end_to_end) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ok
+test_dd_veto_zeroes_the_book (test_master.TestRiskProps.test_dd_veto_zeroes_the_book) ... ok
+test_fallback_equal_weight_without_vols (test_master.TestRiskProps.test_fallback_equal_weight_without_vols) ... ok
+test_high_correlation_caps_gross (test_master.TestRiskProps.test_high_correlation_caps_gross) ... ok
+test_low_budget_is_a_veto (test_master.TestRiskProps.test_low_budget_is_a_veto) ... ok
+test_no_longs_means_all_cash (test_master.TestRiskProps.test_no_longs_means_all_cash) ... ok
+test_single_name_hits_name_cap (test_master.TestRiskProps.test_single_name_hits_name_cap) ... ok
+test_weights_nonneg_budget_and_caps (test_master.TestRiskProps.test_weights_nonneg_budget_and_caps) ... ok
+test_negative_control_planted_dead_key_fails (test_master.TestRulesRegisterCheck.test_negative_control_planted_dead_key_fails) ... ok
+test_real_register_passes (test_master.TestRulesRegisterCheck.test_real_register_passes) ... ok
+test_bad_mode_is_64 (test_master.TestRunModes.test_bad_mode_is_64) ... ok
+test_explicit_flag_beats_mode (test_master.TestRunModes.test_explicit_flag_beats_mode) ... ok
+test_mode_presets (test_master.TestRunModes.test_mode_presets) ... ok
+test_plan_banner_prints_pool_and_caches (test_master.TestRunModes.test_plan_banner_prints_pool_and_caches) ... ok
+test_plan_banner_silent_when_quiet (test_master.TestRunModes.test_plan_banner_silent_when_quiet) ... ok
+test_standard_mirrors_v100_defaults (test_master.TestRunModes.test_standard_mirrors_v100_defaults) ... ok
+test_warm_respects_skip (test_master.TestRunModes.test_warm_respects_skip) ... cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+ok
+test_warm_selects_macro_quality (test_master.TestRunModes.test_warm_selects_macro_quality) ... cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+ok
+test_watchlist_peers_warning_present (test_master.TestRunModes.test_watchlist_peers_warning_present) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_no_sector_table_without_quality (test_master.TestSectorTable.test_no_sector_table_without_quality) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ok
+test_sector_table_rows_and_values (test_master.TestSectorTable.test_sector_table_rows_and_values) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_cap_bad_band_64 (test_master.TestSectorsCapDiscover.test_cap_bad_band_64) ... ok
+test_cap_filters_and_discloses_excluded (test_master.TestSectorsCapDiscover.test_cap_filters_and_discloses_excluded) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_cap_unavailable_without_mcap_data_64 (test_master.TestSectorsCapDiscover.test_cap_unavailable_without_mcap_data_64) ... ok
+test_discover_sets_top_and_warns_when_few_qualify (test_master.TestSectorsCapDiscover.test_discover_sets_top_and_warns_when_few_qualify) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_sectors_bad_group_64 (test_master.TestSectorsCapDiscover.test_sectors_bad_group_64) ... ok
+test_sectors_probe_failure_64 (test_master.TestSectorsCapDiscover.test_sectors_probe_failure_64) ... ok
+test_sectors_scopes_candidates_to_groups (test_master.TestSectorsCapDiscover.test_sectors_scopes_candidates_to_groups) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+ok
+test_missing_sidecar_untrained (test_master.TestSidecarPin.test_missing_sidecar_untrained) ... ok
+test_no_pin_refused (test_master.TestSidecarPin.test_no_pin_refused) ... ok
+test_pin_ok_loads (test_master.TestSidecarPin.test_pin_ok_loads)
+B-1/B-2: with pins taken from the RUNTIME the head loads on ANY ... ok
+test_poisoned_sidecar_refused_before_unpickle (test_master.TestSidecarPin.test_poisoned_sidecar_refused_before_unpickle)
+B-1: sha256 mismatch must be refused BEFORE any unpickle. Proof: ... ok
+test_tampered_sidecar_untrained (test_master.TestSidecarPin.test_tampered_sidecar_untrained) ... ok
+test_wrong_joblib_marks_head_unavailable (test_master.TestSidecarPin.test_wrong_joblib_marks_head_unavailable) ... ok
+test_wrong_numpy_marks_head_unavailable (test_master.TestSidecarPin.test_wrong_numpy_marks_head_unavailable) ... ok
+test_wrong_python_marks_head_unavailable (test_master.TestSidecarPin.test_wrong_python_marks_head_unavailable) ... ok
+test_wrong_sklearn_marks_head_unavailable (test_master.TestSidecarPin.test_wrong_sklearn_marks_head_unavailable)
+B-1: sklearn mismatch (the 1.9.1-vs-1.5.2 '_loss' case) -> ... ok
+test_disabled (test_master.TestSignalVocabulary.test_disabled) ... ok
+test_missing_data_reason_and_cell (test_master.TestSignalVocabulary.test_missing_data_reason_and_cell) ... ok
+test_not_selected (test_master.TestSignalVocabulary.test_not_selected) ... ok
+test_b1_all_inf_vols_degrade_not_crash (test_master.TestSizerHardeningB1B2B3.test_b1_all_inf_vols_degrade_not_crash) ... ok
+test_b1_mixed_unusable_vols_never_leak_nan (test_master.TestSizerHardeningB1B2B3.test_b1_mixed_unusable_vols_never_leak_nan) ... ok
+test_b1_nan_and_negative_vols_treated_as_missing (test_master.TestSizerHardeningB1B2B3.test_b1_nan_and_negative_vols_treated_as_missing) ... ok
+test_b1_one_inf_vol_gets_peer_median_weight_and_note (test_master.TestSizerHardeningB1B2B3.test_b1_one_inf_vol_gets_peer_median_weight_and_note) ... ok
+test_b2_rho_bar_short_history_returns_none (test_master.TestSizerHardeningB1B2B3.test_b2_rho_bar_short_history_returns_none) ... ok
+test_b2_rho_exception_path_discloses_through_layer (test_master.TestSizerHardeningB1B2B3.test_b2_rho_exception_path_discloses_through_layer) ... ok
+test_b2_single_name_book_discloses_and_estimates_dd (test_master.TestSizerHardeningB1B2B3.test_b2_single_name_book_discloses_and_estimates_dd) ... ok
+test_b2_two_names_rho_none_uses_fallback_rho_and_discloses (test_master.TestSizerHardeningB1B2B3.test_b2_two_names_rho_none_uses_fallback_rho_and_discloses) ... ok
+test_b3_inf_budget_is_a_stand_down (test_master.TestSizerHardeningB1B2B3.test_b3_inf_budget_is_a_stand_down) ... ok
+test_b3_nan_budget_is_a_stand_down (test_master.TestSizerHardeningB1B2B3.test_b3_nan_budget_is_a_stand_down) ... ok
+test_b3_nonfinite_rho_bar_is_treated_as_unavailable (test_master.TestSizerHardeningB1B2B3.test_b3_nonfinite_rho_bar_is_treated_as_unavailable) ... ok
+test_late_worker_cannot_write_after_fusion (test_master.TestSoftDeadline.test_late_worker_cannot_write_after_fusion) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+ok
+test_soft_deadline_exists_and_documents_itself (test_master.TestSoftDeadline.test_soft_deadline_exists_and_documents_itself) ... ok
+test_layer_stale_provenance_becomes_warning (test_master.TestStaleNames.test_layer_stale_provenance_becomes_warning) ... ok
+test_plain_missing_reason_carries_cause (test_master.TestStaleNames.test_plain_missing_reason_carries_cause) ... ok
+test_stale_flag_reason_line (test_master.TestStaleNames.test_stale_flag_reason_line) ... ok
+test_stale_name_ranks_below_scored (test_master.TestStaleNames.test_stale_name_ranks_below_scored) ... ok
+test_stdout_results_stderr_progress_and_piped_plain (test_master.TestStreams.test_stdout_results_stderr_progress_and_piped_plain) ... ok
+test_csv_escapes_formula_cells (test_master.TestStrictJsonAndCsv.test_csv_escapes_formula_cells) ... ok
+test_payload_sanitises_nan (test_master.TestStrictJsonAndCsv.test_payload_sanitises_nan) ... ok
+test_stubbed_json_flag (test_master.TestStubBanner.test_stubbed_json_flag) ... ok
+test_stubbed_render_shows_banner (test_master.TestStubBanner.test_stubbed_render_shows_banner) ... ok
+test_stub_run_has_five_layers_and_weights (test_master.TestStubFiveLayers.test_stub_run_has_five_layers_and_weights) ... ok
+test_stub_run_within_budget (test_master.TestStubWarmBudget.test_stub_run_within_budget) ... ok
+test_defensive_caps (test_master.TestTiltMapping.test_defensive_caps) ... ok
+test_inflation_shock (test_master.TestTiltMapping.test_inflation_shock) ... ok
+test_sleeve_split (test_master.TestTiltMapping.test_sleeve_split) ... ok
+test_soft_landing (test_master.TestTiltMapping.test_soft_landing) ... ok
+test_ml_train_version_agrees_everywhere (test_master.TestVersionSurfaces.test_ml_train_version_agrees_everywhere) ... ok
+test_warm_skip_all_raises_64 (test_master.TestWarmGuard.test_warm_skip_all_raises_64) ... ok
+test_warm_skip_one_still_works (test_master.TestWarmGuard.test_warm_skip_one_still_works) ... ok
+test_weak_e_states_effective_weight (test_master.TestWeakEDisclosure.test_weak_e_states_effective_weight) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+ok
+test_ascii_renders_at_all_widths (test_master.TestWidths.test_ascii_renders_at_all_widths) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_colour_equals_plain_at_every_width (test_master.TestWidths.test_colour_equals_plain_at_every_width) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_lines_bounded_at_40_70_110 (test_master.TestWidths.test_lines_bounded_at_40_70_110) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_bounded_and_tiered (test_master.TestWidthsWithSizer.test_bounded_and_tiered) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+ok
+test_cap_any_is_no_flag (test_master.TestWizard.test_cap_any_is_no_flag) ... ok
+test_cap_step_offered_when_data_exists (test_master.TestWizard.test_cap_step_offered_when_data_exists) ... ok
+test_cap_step_says_unavailable_when_no_data (test_master.TestWizard.test_cap_step_says_unavailable_when_no_data) ... ok
+test_decline_aborts_with_rerun_hint (test_master.TestWizard.test_decline_aborts_with_rerun_hint) ... ok
+test_eof_aborts (test_master.TestWizard.test_eof_aborts) ... ok
+test_layers_subset_becomes_only (test_master.TestWizard.test_layers_subset_becomes_only) ... ok
+test_market_flow_uses_all (test_master.TestWizard.test_market_flow_uses_all) ... ok
+test_sectors_flow_builds_flag_equivalent_namespace (test_master.TestWizard.test_sectors_flow_builds_flag_equivalent_namespace) ... ok
+test_three_invalid_answers_raise_64 (test_master.TestWizard.test_three_invalid_answers_raise_64) ... ok
+test_tickers_flow_positional (test_master.TestWizard.test_tickers_flow_positional) ... ok
+test_main_no_args_non_tty_runs_default (test_master.TestWizardEntry.test_main_no_args_non_tty_runs_default) ... ok
+test_main_no_args_tty_runs_wizard_end_to_end (test_master.TestWizardEntry.test_main_no_args_tty_runs_wizard_end_to_end) ... cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+ok
+test_wants_wizard_truth_table (test_master.TestWizardEntry.test_wants_wizard_truth_table) ... ok
+
+----------------------------------------------------------------------
+Ran 348 tests in 10.863s
+
+OK

@@ -1,0 +1,310 @@
+{
+  "head": "macro",
+  "label": "sector ETF beats SPY next month",
+  "model_type": "logistic_np",
+  "features": [
+    "regime_confidence",
+    "regime_dominance",
+    "regime_leverage",
+    "regime_credit_on",
+    "regime_defensive",
+    "regime_risk_on",
+    "etf_in_longs",
+    "etf_in_shorts",
+    "tilt_mean"
+  ],
+  "feature_selection": {
+    "cap": 20,
+    "method": "per-fold |standardised logistic coef| computed on THAT fold's train window only (M2: never pooled across folds \u2014 the old pooled ranking read later test periods' training data); the final refit selects on all labeled rows (the shipped model, disclosed)",
+    "selected": [
+      "regime_confidence",
+      "regime_dominance",
+      "regime_leverage",
+      "regime_credit_on",
+      "regime_defensive",
+      "regime_risk_on",
+      "etf_in_longs",
+      "etf_in_shorts",
+      "tilt_mean"
+    ],
+    "dropped": [],
+    "per_fold": {
+      "24314": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "24315": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "24316": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "24317": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "24318": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ]
+    }
+  },
+  "embargo_months": 3,
+  "embargo_rule": "test group predicted only from groups <= test - 3 - 1 (label windows can never straddle a split; walk-forward, never shuffled)",
+  "inner_embargo_months": 1,
+  "inner_embargo_rule": "inner CV embargo >= the head's label horizon in months (1m for this head, _inner_embargo_months) \u2014 inner-fold label windows can never overlap an inner test month",
+  "n_groups": 12,
+  "n_train_rows": 84,
+  "n_oos_rows": 35,
+  "n_oos_periods": 5,
+  "n_insufficient_folds": 0,
+  "final_calibration": "inner_oof",
+  "verdict_basis": {
+    "n_rows": 35,
+    "n_periods": 5,
+    "model_rowset_sha256": "14054e6fc507a3b6fb182440767fa6d39828c57089b17125c0a19c058a5194a9",
+    "baseline_rowset_sha256": "14054e6fc507a3b6fb182440767fa6d39828c57089b17125c0a19c058a5194a9",
+    "note": "model vs raw-engine baseline judged on identical OOS rows and time groups (equal row-set digests prove it)"
+  },
+  "folds": [
+    {
+      "train_groups": [
+        24307,
+        24310
+      ],
+      "test_group": 24314,
+      "C": 0.01,
+      "platt": [
+        1.0,
+        0.0
+      ],
+      "calibration": "inner_oof",
+      "features": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "n_train": 28,
+      "n_test": 7,
+      "gbm_ic": NaN
+    },
+    {
+      "train_groups": [
+        24307,
+        24311
+      ],
+      "test_group": 24315,
+      "C": 0.01,
+      "platt": [
+        1.0,
+        0.0
+      ],
+      "calibration": "inner_oof",
+      "features": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "n_train": 35,
+      "n_test": 7,
+      "gbm_ic": NaN
+    },
+    {
+      "train_groups": [
+        24307,
+        24312
+      ],
+      "test_group": 24316,
+      "C": 0.01,
+      "platt": [
+        -2.8849214202339475,
+        -0.6609984063197035
+      ],
+      "calibration": "inner_oof",
+      "features": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "n_train": 42,
+      "n_test": 7,
+      "gbm_ic": NaN
+    },
+    {
+      "train_groups": [
+        24307,
+        24313
+      ],
+      "test_group": 24317,
+      "C": 0.01,
+      "platt": [
+        -2.0815051753144562,
+        -0.4361712984587797
+      ],
+      "calibration": "inner_oof",
+      "features": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "n_train": 49,
+      "n_test": 7,
+      "gbm_ic": NaN
+    },
+    {
+      "train_groups": [
+        24307,
+        24314
+      ],
+      "test_group": 24318,
+      "C": 0.01,
+      "platt": [
+        4.613538338710742,
+        1.857038322730064
+      ],
+      "calibration": "inner_oof",
+      "features": [
+        "regime_confidence",
+        "regime_dominance",
+        "regime_leverage",
+        "regime_credit_on",
+        "regime_defensive",
+        "regime_risk_on",
+        "etf_in_longs",
+        "etf_in_shorts",
+        "tilt_mean"
+      ],
+      "n_train": 56,
+      "n_test": 7,
+      "gbm_ic": -0.4166666666666667
+    }
+  ],
+  "pooled": {
+    "n": 35,
+    "base_rate": 0.34285714285714286,
+    "rank_ic_pooled": 0.313845842368644,
+    "rank_ic_monthly_mean": 0.3684876545873548,
+    "rank_ic_monthly_min": -0.07562376774775252,
+    "decile_spread": 0.3333333333333333,
+    "n_months": 5,
+    "brier": 0.22933103657067214,
+    "brier_base": 0.2307817576009996,
+    "brier_skill_vs_base": 0.0062861165692117416,
+    "ece_5bin": 0.12342268733326701
+  },
+  "pooled_gbm": {
+    "n": 35,
+    "base_rate": 0.34285714285714286,
+    "rank_ic_pooled": 0.15457782133467826,
+    "rank_ic_monthly_mean": -0.4166666666666667,
+    "rank_ic_monthly_min": -0.4166666666666667,
+    "decile_spread": 0.0,
+    "n_months": 1,
+    "brier": 0.2575196742477377,
+    "brier_base": 0.2307817576009996,
+    "brier_skill_vs_base": -0.11585801635571857,
+    "ece_5bin": 0.2287500414354186
+  },
+  "baselines": {
+    "base_rate": {
+      "n": 35,
+      "base_rate": 0.34285714285714286,
+      "rank_ic_pooled": 0.297939785765562,
+      "rank_ic_monthly_mean": NaN,
+      "rank_ic_monthly_min": NaN,
+      "decile_spread": 0.3333333333333333,
+      "brier": 0.2307817576009996,
+      "brier_base": 0.2307817576009996,
+      "brier_skill_vs_base": 0.0,
+      "ece_5bin": 0.12204081632653052
+    },
+    "raw_engine_score": {
+      "n": 35,
+      "base_rate": 0.34285714285714286,
+      "rank_ic_pooled": 0.09978901679768619,
+      "rank_ic_monthly_mean": 0.10522847498307933,
+      "rank_ic_monthly_min": -0.4166666666666667,
+      "decile_spread": 0.3333333333333333,
+      "n_months": 5,
+      "brier": 0.48253968253968255,
+      "brier_base": 0.2307817576009996,
+      "brier_skill_vs_base": -1.0908917912565221,
+      "ece_5bin": 0.4952380952380952
+    }
+  },
+  "verdict": "insufficient evidence",
+  "verdict_why": "n_oos 35 < 100 rows; only 5 usable OOS period(s) < 12 \u2014 sample too small to judge, however good the numbers look",
+  "verdict_rule": "beats IFF n_oos >= 100 rows AND >= 12 usable OOS periods AND final model calibrated via inner OOF AND monthly-mean rank IC > 0 AND > raw-engine-score baseline IC (identical rows) AND Brier skill vs base rate > 0; a failed sample gate is 'insufficient evidence' naming the condition",
+  "sample_warning": "5 test fold(s) on 12 monthly groups \u2014 a PILOT-size sample: treat every metric as indicative, never as proof; the head ships SHADOW either way",
+  "elapsed_s": 0.3,
+  "pins": {
+    "sklearn_version": "1.5.2",
+    "numpy_version": "2.1.3",
+    "joblib_version": "1.5.3",
+    "python_version": "3.12.16",
+    "master_version": "1.7.0-dev"
+  },
+  "model_sha256": "95edc94c6b6d4aada6f6815f78507f4b8376017001917ce65b4a2d992a06626c",
+  "dataset_sha256": "e1e325ea0589"
+}

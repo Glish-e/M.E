@@ -1,0 +1,27 @@
+# evidence/phase3_retrain.txt — PHASE 3 honest retrain
+# Date: 2026-11-13 22:53:39 UTC
+# Command: python3 ml_train.py --dataset ml_data/dataset_v1.npz --out ml_data/models
+# (defaults: heads q,e,macro · embargo 3m from the dataset manifest ·
+#  min-train 4 · model auto · seed 7 — same invocation as the phase-1
+#  retrain, now on the M1-M5-ported trainer. The v1.5.0-era numbers
+#  (435/381/35 OOS rows, all folds 'calibrated' via the in-sample
+#  fallback) are in evidence/phase1_retrain.txt for contrast.)
+
+[ml_train] head q: gbm_joblib · 1044 train rows · 261 usable OOS rows over 5 fold(s) · 2 insufficient · embargo 3m (inner 3m)
+[ml_train]   usable OOS periods 3 · final calibration inner_oof
+[ml_train]   monthly rank IC -0.416 · decile spread -0.423 · Brier skill -0.805 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.368 (identical rows: verdict_basis n=261)
+[ml_train]   model_sha256 537ec0173a70d7b3… · dataset_sha256 e1e325ea0589
+[ml_train]   shipped SHADOW -> ml_data/models/head_q.npz
+[ml_train] head e: logistic_np · 974 train rows · 0 usable OOS rows over 5 fold(s) · 5 insufficient · embargo 3m (inner 5m)
+[ml_train]   usable OOS periods 0 · final calibration inner_oof
+[ml_train]   monthly rank IC +nan · decile spread +nan · Brier skill +nan · verdict insufficient evidence
+[ml_train]   model_sha256 0de65f1f7af92d24… · dataset_sha256 e1e325ea0589
+[ml_train]   shipped SHADOW -> ml_data/models/head_e.npz
+[ml_train] head macro: logistic_np · 84 train rows · 35 usable OOS rows over 5 fold(s) · 0 insufficient · embargo 3m (inner 1m)
+[ml_train]   usable OOS periods 5 · final calibration inner_oof
+[ml_train]   monthly rank IC +0.368 · decile spread +0.333 · Brier skill +0.006 · verdict insufficient evidence
+[ml_train]   baseline raw score IC +0.105 (identical rows: verdict_basis n=35)
+[ml_train]   model_sha256 95edc94c6b6d4aad… · dataset_sha256 e1e325ea0589
+[ml_train]   shipped SHADOW -> ml_data/models/head_macro.npz
+rc=0

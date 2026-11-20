@@ -1,0 +1,23 @@
+PHASE 2 TREE CHECK — 2026-11-14 (sandbox clock)
+==========================================================
+
+-- ENGINES.sha256 gate (sha256sum -c) --
+meds.py: OK
+quality.py: OK
+earnings_engine.py: OK
+
+-- manifest --
+MANIFEST: 136 files written; reverification: ALL MATCH
+
+-- stray tmp litter under the tree (expect none) --
+(none listed = none)
+
+-- suite / selftest / register last lines --
+288 passed in 8.00s
+OK
+RULES REGISTER CHECK: PASS (every key is live or disclosed as not-read)
+
+-- engine hashes (full, for the record) --
+5e64b60da86d2e759f1f506e8c9dfdc5acfed32ce6958a204f172242cefc437b  meds.py
+f123fb4e36ad298d0c662d0b36d71bb98ea80ef42760714d3b7133bac1b31215  quality.py
+8e31e53248531584898ebfd266347775874b93d3440d12830cdb7f5a4545b0e0  earnings_engine.py

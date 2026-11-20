@@ -1,0 +1,77 @@
+# evidence/phase3_red.txt — PHASE 3, red-first run
+# Date: 2026-11-13 22:47:22 UTC
+# Tree: work/wip == download/wip_phase2.zip (sha256 c4ba273356a57a7ef3f46597e1a6d3ece5181701f6d3bf70f54618044ea359db), BEFORE any phase-3 port. Only the phase-3 tests (new classes TestMLLoadB8 / TestMLGatesPhase3, the rewritten TestFeatureCap, the updated test_activate_refused_without_passing_report + fixture _mk_ml_model hash-binding) were run.
+# Command: python3 -m unittest test_master.TestMLLoadB8 test_master.TestMLGatesPhase3 test_master.TestFeatureCap test_master.TestMLTrain.test_activate_refused_without_passing_report
+
+======================================================================
+ERROR: test_m1_inner_embargo_is_target_aware (test_master.TestMLGatesPhase3.test_m1_inner_embargo_is_target_aware)
+======================================================================
+ERROR: test_m1_leaking_embargo_inflates_inner_score (test_master.TestMLGatesPhase3.test_m1_leaking_embargo_inflates_inner_score)
+======================================================================
+ERROR: test_m1_no_inner_label_window_overlap (test_master.TestMLGatesPhase3.test_m1_no_inner_label_window_overlap)
+======================================================================
+ERROR: test_m4_all_gates_pass_positive_allowed (test_master.TestMLGatesPhase3.test_m4_all_gates_pass_positive_allowed)
+======================================================================
+ERROR: test_m4_baseline_compared_on_identical_rows (test_master.TestMLGatesPhase3.test_m4_baseline_compared_on_identical_rows)
+======================================================================
+ERROR: test_m4_gate_100_rows_fails (test_master.TestMLGatesPhase3.test_m4_gate_100_rows_fails)
+======================================================================
+ERROR: test_m4_gate_11_periods_fails (test_master.TestMLGatesPhase3.test_m4_gate_11_periods_fails)
+======================================================================
+ERROR: test_select_features_fold_cap_and_train_only (test_master.TestFeatureCap.test_select_features_fold_cap_and_train_only)
+======================================================================
+ERROR: test_small_feature_set_untouched (test_master.TestFeatureCap.test_small_feature_set_untouched)
+======================================================================
+FAIL: test_b8_adjustment_skips_nonfinite_parts (test_master.TestMLLoadB8.test_b8_adjustment_skips_nonfinite_parts)
+======================================================================
+FAIL: test_b8_bad_base_rate_refused_at_load (test_master.TestMLLoadB8.test_b8_bad_base_rate_refused_at_load)
+======================================================================
+FAIL: test_b8_nan_probability_drops_head_with_note (test_master.TestMLLoadB8.test_b8_nan_probability_drops_head_with_note)
+======================================================================
+FAIL: test_b8_nonfinite_calib_refused_at_load (test_master.TestMLLoadB8.test_b8_nonfinite_calib_refused_at_load)
+======================================================================
+FAIL: test_m5_active_requires_hash_bound_report (test_master.TestMLLoadB8.test_m5_active_requires_hash_bound_report)
+======================================================================
+FAIL: test_m2_per_fold_features_recorded_and_label_independent (test_master.TestMLGatesPhase3.test_m2_per_fold_features_recorded_and_label_independent)
+======================================================================
+FAIL: test_m2_selection_perturbation_test_fold_only (test_master.TestMLGatesPhase3.test_m2_selection_perturbation_test_fold_only)
+======================================================================
+FAIL: test_m3_calibrated_folds_still_work (test_master.TestMLGatesPhase3.test_m3_calibrated_folds_still_work)
+======================================================================
+FAIL: test_m3_insample_fallback_path_is_gone (test_master.TestMLGatesPhase3.test_m3_insample_fallback_path_is_gone)
+======================================================================
+FAIL: test_m3_insufficient_folds_get_no_calibrated_probability (test_master.TestMLGatesPhase3.test_m3_insufficient_folds_get_no_calibrated_probability)
+======================================================================
+FAIL: test_m4_gate_no_calibration_fails (test_master.TestMLGatesPhase3.test_m4_gate_no_calibration_fails)
+
+--- detail tail ---
+ERROR: test_m1_inner_embargo_is_target_aware (test_master.TestMLGatesPhase3.test_m1_inner_embargo_is_target_aware)
+AttributeError: module 'ml_train' has no attribute '_inner_embargo_months'
+ERROR: test_m1_leaking_embargo_inflates_inner_score (test_master.TestMLGatesPhase3.test_m1_leaking_embargo_inflates_inner_score)
+AttributeError: module 'ml_train' has no attribute '_inner_embargo_months'
+ERROR: test_m1_no_inner_label_window_overlap (test_master.TestMLGatesPhase3.test_m1_no_inner_label_window_overlap)
+AttributeError: module 'ml_train' has no attribute '_inner_embargo_months'
+ERROR: test_m4_all_gates_pass_positive_allowed (test_master.TestMLGatesPhase3.test_m4_all_gates_pass_positive_allowed)
+KeyError: 'n_oos_periods'
+ERROR: test_m4_baseline_compared_on_identical_rows (test_master.TestMLGatesPhase3.test_m4_baseline_compared_on_identical_rows)
+KeyError: 'verdict_basis'
+ERROR: test_m4_gate_100_rows_fails (test_master.TestMLGatesPhase3.test_m4_gate_100_rows_fails)
+KeyError: 'n_oos_periods'
+ERROR: test_m4_gate_11_periods_fails (test_master.TestMLGatesPhase3.test_m4_gate_11_periods_fails)
+KeyError: 'n_oos_periods'
+FAIL: test_b8_adjustment_skips_nonfinite_parts (test_master.TestMLLoadB8.test_b8_adjustment_skips_nonfinite_parts)
+AssertionError: 5.0 is not None
+FAIL: test_b8_bad_base_rate_refused_at_load (test_master.TestMLLoadB8.test_b8_bad_base_rate_refused_at_load)
+AssertionError: {'schema_version': array(1), 'model_type': array('logistic_np', dtype='<U11'), 'head': array('q', dtype='<U1'), 'feature_names': ['q_score', 'e_score', 'conviction'], 'impute_medians': array([50., 50., 50.]), 'scaler_mean': array([50., 50., 50.]), 'scaler_scale': array([25., 25., 25.]), 'coef': array([1. , 0.5, 0.5]), 'intercept': array(-1.), 'calib_a': array(1.), 'calib_b': array(0.), 'base_rate': array(nan), 'n_train': array(1000), 'train_from': array('2025-08-31', dtype='<U10'), 'train_to': array('2026-07-31', dtype='<U10'), 'trained_at': array('2026-11-09T00:00:00', dtype='<U19'), 'embargo_months': array(3), 'master_version': array('1.7.0-dev', dtype='<U9'), 'dataset_sha256': array('000000000000', dtype='<U12'), 'config_hash': array('xxxxxxxxxxxx', dtype='<U12'), 'state': 'SHADOW', 'metrics_json': array('{}', dtype='<U2')} is not None : nan
+FAIL: test_b8_nan_probability_drops_head_with_note (test_master.TestMLLoadB8.test_b8_nan_probability_drops_head_with_note)
+AssertionError: False is not true : ('ml: head(s) e, macro UNTRAINED — overlay runs on the loaded heads only',)
+FAIL: test_b8_nonfinite_calib_refused_at_load (test_master.TestMLLoadB8.test_b8_nonfinite_calib_refused_at_load)
+AssertionError: {'schema_version': array(1), 'model_type': array('logistic_np', dtype='<U11'), 'head': array('q', dtype='<U1'), 'feature_names': ['q_score', 'e_score', 'conviction'], 'impute_medians': array([50., 50., 50.]), 'scaler_mean': array([50., 50., 50.]), 'scaler_scale': array([25., 25., 25.]), 'coef': array([1. , 0.5, 0.5]), 'intercept': array(-1.), 'calib_a': array(nan), 'calib_b': array(0.), 'base_rate': array(0.5), 'n_train': array(1000), 'train_from': array('2025-08-31', dtype='<U10'), 'train_to': array('2026-07-31', dtype='<U10'), 'trained_at': array('2026-11-09T00:00:00', dtype='<U19'), 'embargo_months': array(3), 'master_version': array('1.7.0-dev', dtype='<U9'), 'dataset_sha256': array('000000000000', dtype='<U12'), 'config_hash': array('xxxxxxxxxxxx', dtype='<U12'), 'state': 'SHADOW', 'metrics_json': array('{}', dtype='<U2')} is not None : {'calib_a': nan}
+FAIL: test_m5_active_requires_hash_bound_report (test_master.TestMLLoadB8.test_m5_active_requires_hash_bound_report)
+AssertionError: 'ACTIVE' != 'SHADOW'
+FAIL: test_m2_per_fold_features_recorded_and_label_independent (test_master.TestMLGatesPhase3.test_m2_per_fold_features_recorded_and_label_independent)
+AssertionError: 'per_fold' not found in {'cap': 20, 'method': 'mean |standardised coef| over 6 TRAIN-fold fits (never the test fold, never the full data)', 'selected': ['conviction', 'macro_credit_on', 'macro_leverage', 'macro_tilt', 'q_coverage', 'q_flag_count', 'q_missing', 'q_rank_pct', 'q_score', 'q_veto', 'r_conviction', 'r_q_score', 'sector_communication', 'sector_consumer', 'sector_healthcare', 'sector_industrials', 'sector_materials', 'sector_reits', 'sector_specialty', 'sector_tech'], 'dropped': ['macro_regime_defensive', 'sector_energy', 'sector_utilities', 'sector_financials', 'macro_regime_risk_on', 'macro_confidence'], 'importance': {'q_score': 3.69753023251662, 'macro_tilt': 0.6713277402515806, 'r_q_score': 0.39264372143251486, 'sector_industrials': 0.37396238829481737, 'r_conviction': 0.3691082727807389, 'sector_materials': 0.3038443039607847, 'macro_leverage': 0.3025594413413921, 'q_missing': 0.2713047847363534, 'q_rank_pct': 0.21921196788264663, 'macro_credit_on': 0.2156115757346222, 'conviction': 0.1713875747954804, 'q_veto': 0.1648252270411612, 'sector_specialty': 0.16409452814681466, 'sector_reits': 0.1426115026368091, 'q_coverage': 0.13815739994052553, 'sector_healthcare': 0.13044377003933352, 'sector_consumer': 0.1180890733322726, 'sector_tech': 0.11220410304194199, 'sector_communication': 0.09958475853192338, 'q_flag_count': 0.08333633198610567, 'macro_regime_defensive': 0.07778395772204401, 'sector_energy': 0.07353025901051755, 'sector_utilities': 0.06084618315622404, 'sector_financials': 0.04964443751065451, 'macro_regime_risk_on': 0.04923554636582408, 'macro_confidence': 0.034286944501866305}}
+FAIL: test_m2_selection_perturbation_test_fold_only (test_master.TestMLGatesPhase3.test_m2_selection_perturbation_test_fold_only)
+AssertionError: 'features' not found in {'train_groups': [0, 2], 'test_group': 4, 'C': 0.1, 'platt': [6.366740479492247, 0.5728133007512249], 'n_train': 90, 'n_test': 30}
+FAIL: test_m3_calibrated_folds_still_work (test_master.TestMLGatesPhase3.test_m3_calibrated_folds_still_work)
+AssertionError: False is not true : [{'train_groups': [0, 2], 'test_group': 4, 'C': 0.1, 'platt': [3.093427365765596, -0.20386437754515346], 'n_train': 90, 'n_test': 30}, {'train_groups': [0, 3], 'test_group': 5, 'C': 1.0, 'platt': [1.8039676747525666, -0.06270430292544321], 'n_train': 120, 'n_test': 30}, {'train_groups': [0, 4], 'test_group': 6, 'C': 1.0, 'platt': [1.248006567871106, -0.48137533697911833], 'n_train': 150, 'n_test': 30}, {'train_groups': [0, 5], 'test_group': 7, 'C': 1.0, 'platt': [1.7258683668864512, -0.29856884072528045], 'n_train': 180, 'n_test': 30}, {'train_groups': [0, 6], 'test_group': 8, 'C': 1.0, 'platt': [1.514651932247283, -0.40979284840421276], 'n_train': 210, 'n_test': 30}, {'train_groups': [0, 7], 'test_group': 9, 'C': 1.0, 'platt': [1.5291417120110415, -0.15142972123380283], 'n_train': 240, 'n_test': 30}]

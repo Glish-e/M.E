@@ -1,0 +1,56 @@
+[plan] mode standard · 5 tickers · quality pool 288 names · L3 top-25 · budget 240s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[quality] cold cache: scoring the whole universe (288 names, a few provider calls per name, rate-limited); results are memoized for this process.
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: CFLT"}}}
+$CFLT: possibly delisted; no timezone found
+$PSTG: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$SKX: possibly delisted; no timezone found
+$HBI: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$K: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$SPTN: possibly delisted; no timezone found
+$CMA: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$SNV: possibly delisted; no price data found  (1d 2025-09-04 -> 2026-11-09)
+$MMC: possibly delisted; no timezone found
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ MASTER v1.4.0 · mode standard · as of 2026-11-08 (live) · offline no · stubs no                            │
+│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train v1.0.0 · master v1.4.0                     │
+│ chain: macro→quality→earnings→ml→risk                                                                      │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ ✓ L1 macro     meds v14.7.0        144s  warm ● OK        
+ ✓ L2 quality   quality v3.4.1      144s  cold ● OK        5/5 scored  ████████████ 5/5
+ ✓ L3 earnings  earnings v3         2.4s  cold ▲ DEGRADED  OK · weak
+ ✓ L4 ml        ml_train v1.0.0     1.5s  n/a  ● OK        
+ ✓ L5 risk      master v1.4.0       0.0s  n/a  ● OK        portfolio
+
+ L1 MACRO ── Credit Crunch & Liquidity Squeeze · Crisis
+   conf █████████░ 0.92 · lev 1.35x · risk budget 1.35
+eff 2026-10-31 · data cache · PIT approximate_pit_lag · credit ON · next month 2026-11
+   LONG  XLU XLP        SHORT  –          sleeve: TLT BIL
+sector tilt tech -0.5 · comm -0.5 · cons +1.0 · indu -0.5 · energy 0 · util +1.0 · mats -0.5 · health – ·
+     fin – · reits – · spec –
+
+ SECTOR      tilt   scored   median-Q
+ tech        -0.5   3/3      72
+ consumer    +1.0   1/1      54
+ financials  –      1/1      41
+
+ML OVERLAY q SHADOW(n 1044) · e SHADOW(n 974) · macro SHADOW(n 84) — probabilities logged, no decision
+   changed
+
+  #  TICKER SECTOR  ACTION CONV             Q     E         WT    MACRO  FLAGS REASONS
+  1  MU     tech    WATCH  ████████░░░░ 71 B80 A  52 B      0%    -0.5   – Q 80 (A) rank 1/94 tech; macro -0.…
+  2  NVDA   tech    WATCH  ███████░░░░░ 56 C72 B  12 D      0%    -0.5   HIGH_ACCRUA… Q 72 (B) rank 6/94 tech…
+  3  AAPL   tech    WATCH  ██████░░░░░░ 49 C62 B  12 D      0%    -0.5   – Q 62 (B) rank 18/94 tech; macro -0…
+  4  COST   cons    WATCH  ██████░░░░░░ 49 C54 C  9 F       0%    +1.0   – Q 54 (C) rank 29/75 consumer; macr…
+  5  JPM    fin     AVOID  ████░░░░░░░░ 36 D41 C  17 D      0%    –      HIGH_ACCRUA… Q 41 (C) rank 77/119 fi…
+ 0 LONG · 4 WATCH · 1 AVOID
+
+risk: gross 0% of 1.35 budget · cash 100%
+risk caps: no LONG names — all cash
+warnings: earnings accuracy: NOT ENOUGH DATA to judge (only 13 high-rated tests, want 30+). Add more
+   tickers.
+conviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt — score, not probability
+research screener, not investment advice · survivorship-biased universe · timings 144.0s (macro 143.8s ·
+   quality 143.8s · earnings 2.4s · ml 1.5s · risk 0.0s)
+exit=0

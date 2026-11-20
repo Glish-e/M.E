@@ -1,0 +1,87 @@
+baseline: ../p4/master.py (53 entries)
+current : master.py (66 entries)
+VALUE CHANGED ML_ADJ_MAX:
+  base='<absent>'
+  curr=5.0
+VALUE CHANGED ML_FORBIDDEN_FEATURES:
+  base='<absent>'
+  curr=frozenset({'y_m', 'ret_63', 'y_q', 'y_e', 'event_date', 'label_end_63', 'ret_21', 'macro_ret_1m'})
+VALUE CHANGED ML_MODELS_DIR:
+  base='<absent>'
+  curr='ml_data/models'
+VALUE CHANGED RISK_CORR_LOOKBACK_TD:
+  base='<absent>'
+  curr=126
+VALUE CHANGED RISK_DD_FACTOR:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED RISK_MAX_EST_DD:
+  base='<absent>'
+  curr=0.3
+VALUE CHANGED RISK_MAX_NAME_W:
+  base='<absent>'
+  curr=0.1
+VALUE CHANGED RISK_MAX_PRICE_NAMES:
+  base='<absent>'
+  curr=60
+VALUE CHANGED RISK_MAX_SECTOR_W:
+  base='<absent>'
+  curr=0.35
+VALUE CHANGED RISK_MIN_BUDGET:
+  base='<absent>'
+  curr=0.25
+VALUE CHANGED RISK_MIN_EFFECTIVE_BETS:
+  base='<absent>'
+  curr=8.0
+VALUE CHANGED RISK_MIN_HISTORY_TD:
+  base='<absent>'
+  curr=42
+VALUE CHANGED RISK_VOL_LOOKBACK_TD:
+  base='<absent>'
+  curr=126
+RATIONALE CHANGED ML_ADJ_MAX:
+  base='<absent>'
+  curr="The ML overlay's own conviction_adj bound (±5, half the generic OVERLAY_MAX_ADJ): an ACTIVE head may nudge, never re-rank a book. Applied on top of the generic clamp, so the effective bound is min(ML_ADJ_MAX, OVERLAY_MAX_ADJ)."
+RATIONALE CHANGED ML_FORBIDDEN_FEATURES:
+  base='<absent>'
+  curr='Feature names a model may NEVER use: they are derived from prices AFTER the as-of date (the label window), so loading a model that consumes one is refused loudly (leakage guard, phase-5 gate).'
+RATIONALE CHANGED ML_MODELS_DIR:
+  base='<absent>'
+  curr='Where MLLayer looks for head_{q,e,macro}.npz + validation_*.json (written by ml_train.py; --ml-models overrides). An absent/empty dir is the UNTRAINED state, never an error.'
+RATIONALE CHANGED RISK_CORR_LOOKBACK_TD:
+  base='<absent>'
+  curr='Trading days behind the average pairwise correlation (the equicorrelation model): same window as vol so both describe the same market regime.'
+RATIONALE CHANGED RISK_DD_FACTOR:
+  base='<absent>'
+  curr='Estimated max drawdown = this factor x annualised portfolio vol (a rough stress heuristic for equity portfolios, not a VaR): it is an ESTIMATE shown with its inputs, never a probability (H5).'
+RATIONALE CHANGED RISK_MAX_EST_DD:
+  base='<absent>'
+  curr='Portfolio veto threshold: if the estimated max drawdown exceeds 30% even after the correlation cap, every weight goes to 0 (all cash) and the veto is disclosed. 30% = the point where recovery needs +43%.'
+RATIONALE CHANGED RISK_MAX_NAME_W:
+  base='<absent>'
+  curr='Max single-name weight as a fraction of the risk budget: a 10% cap means one idea can never dominate the book, whatever its conviction.'
+RATIONALE CHANGED RISK_MAX_PRICE_NAMES:
+  base='<absent>'
+  curr='The sizer fetches price history for at most this many LONG names (conviction order) — the same Yahoo-politeness ceiling as PREFETCH_ALL_MAX; overflow names fall back to the median vol.'
+RATIONALE CHANGED RISK_MAX_SECTOR_W:
+  base='<absent>'
+  curr='Max summed weight per quality sector as a fraction of the risk budget: sector concentration is the classic screener failure mode (tech-only books); 35% allows a deliberate tilt, not a bet.'
+RATIONALE CHANGED RISK_MIN_BUDGET:
+  base='<absent>'
+  curr="A macro risk budget below 0.25 (from meds' conviction_leverage, degraded-capped at 1.0) is a stand-down signal: the sizer vetoes new deployment instead of placing token positions."
+RATIONALE CHANGED RISK_MIN_EFFECTIVE_BETS:
+  base='<absent>'
+  curr='Gross exposure is capped at budget * effective_bets/8 where effective_bets = N/(1+(N-1)*rho_bar): a perfectly correlated book (rho->1, eff->1) deploys at most 1/8 of the budget. 8 independent bets is the level at which a capped book deploys fully.'
+RATIONALE CHANGED RISK_MIN_HISTORY_TD:
+  base='<absent>'
+  curr="Below this many price rows a name's vol is not trusted; it falls back to the median vol of the priced names (never an invented number)."
+RATIONALE CHANGED RISK_VOL_LOOKBACK_TD:
+  base='<absent>'
+  curr="Trading days of daily returns behind each name's annualised volatility (~6 months): long enough to be stable, short enough to react to a regime change; matches the label horizon order of magnitude."
+
+H2 verdict: every difference vs the phase-4 output is an ADDED key
+(3 ML_* + 10 RISK_*), each with a rationale string. No existing key changed
+value or rationale; the frozen pins (W_Q 0.65, W_E 0.35, E_MISSING_HAIRCUT
+0.90, EARNINGS_WEAK_SCALE 0.5, MACRO_TILT_GAIN 0.10, MIN_QUALITY 40,
+ACTION_LONG_AT 60, ACTION_WATCH_AT 45, OVERLAY_MAX_ADJ 10) are byte-identical
+(also asserted by TestMLConfig.test_h2_frozen_pins_unchanged).

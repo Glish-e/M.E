@@ -1,0 +1,16 @@
+release gate — /home/z/my-project/work/wip
+[FAIL] HANDOFF <= 3500 ASCII chars — 16556 chars (16528 ASCII)
+[FAIL] HANDOFF has no "PLACEHOLDER"
+[FAIL] HANDOFF ZIP SHA256 line carries the release wording — ZIP SHA256: PLACEHOLDER (the zip cannot contain its own hash; the valu
+[PASS] ml_train version readable — v1.1.0
+[PASS] sidecar head_e.npz pins ml_train 1.1.0 — 1.1.0
+[PASS] sidecar head_macro.npz pins ml_train 1.1.0 — 1.1.0
+[PASS] sidecar head_q.npz pins ml_train 1.1.0 — 1.1.0
+[PASS] CHANGELOG top ml_train claim agrees — 1.1.0
+[PASS] HANDOFF top ml_train claim agrees — 1.1.0
+[FAIL] RUNBOOK <= 120 lines — 338 lines
+[FAIL] MANIFEST hashes all match — evidence/phase6_backtest.json, evidence/phase6_backtest_report.md, master.py
+[FAIL] MANIFEST lists every file (excl. itself) — meds_cache/cache.json.gz, evidence/phase7_online_offline_identity.txt, evidence/phase7_freeze_replay.txt
+[PASS] no final_master_d.zip nested in the tree
+RESULT: FAIL
+gate rc=1

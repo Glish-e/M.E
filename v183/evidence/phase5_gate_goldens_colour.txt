@@ -1,0 +1,6 @@
+=== GATE CAPTURE 7: goldens + date-guard + colour-precedence tests (real run) ===
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 8.554s
+
+OK

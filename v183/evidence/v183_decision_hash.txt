@@ -1,0 +1,16 @@
+# v1.8.3 decision-hash invariance gate (S7 proof)
+
+Scenario: identical fake engines; every quality fetch goes
+through the process-level transports to a HEALTHY loopback
+HTTP server (127.0.0.1:200; never the real network). The
+v1.8.3 run has the net guard INSTALLED and ACTIVE (urlopen
+guard, ledger, breaker + the v1.8.2 rate/brownout rules);
+the v1.8.1 run (pristine final_master_f.zip extraction) has
+the v1.8.1 guard. Stub/offline fixture identity is covered
+in-suite (goldens byte-exact; the guard-off vs guard-healthy
+hash test).
+
+v1.8.1 (final_master_f.zip): hash a023714c15e78f6019d2d3d97de9c13d3f987c9d91188dcb87ae9d10878c35e8 · 5 decisions
+v1.8.3 (this tree)        : hash a023714c15e78f6019d2d3d97de9c13d3f987c9d91188dcb87ae9d10878c35e8 · 5 decisions · fetch_total {'ok': 5, 'failed': 0, 'skipped': 0}
+
+UNCHANGED — S7 holds: the hardening pass changes no decision.

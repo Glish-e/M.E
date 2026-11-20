@@ -1,0 +1,58 @@
+PHASE 1 TREE CHECK — 2026-11-13T20:56:16Z
+
+$ sha256sum -c ENGINES.sha256
+meds.py: OK
+quality.py: OK
+earnings_engine.py: OK
+
+ENGINES.sha256 content:
+5e64b60da86d2e759f1f506e8c9dfdc5acfed32ce6958a204f172242cefc437b  meds.py
+f123fb4e36ad298d0c662d0b36d71bb98ea80ef42760714d3b7133bac1b31215  quality.py
+8e31e53248531584898ebfd266347775874b93d3440d12830cdb7f5a4545b0e0  earnings_engine.py
+
+$ python3 -c manifest self-check (every listed file hashes to its recorded sha256)
+manifest self-check: 114 files verified, 0 problems
+
+$ git-style diff vs the shipped v1.5.0 manifest (files changed/added/removed):
+added (15):
+  + evidence/PHASE_STATE.md
+  + evidence/phase0_baseline.txt
+  + evidence/phase0_env_matrix_partial.txt
+  + evidence/phase0_fact_checks.md
+  + evidence/phase0_tree_check.txt
+  + evidence/phase1_b1_b5_red.txt
+  + evidence/phase1_b2_red.txt
+  + evidence/phase1_env_matrix.txt
+  + evidence/phase1_retrain.txt
+  + evidence/port_map.md
+  + evidence/preregistration.md
+  + evidence/step0_plan.md
+  + requirements-lock.txt
+  + requirements.txt
+  + scripts/test_env_matrix.py
+removed (0):
+changed (12):
+  ~ CHANGELOG.md
+  ~ HANDOFF.txt
+  ~ evidence/defects.md
+  ~ master.py
+  ~ ml_data/models/head_e.npz
+  ~ ml_data/models/head_macro.npz
+  ~ ml_data/models/head_q.npz
+  ~ ml_data/models/validation_e.json
+  ~ ml_data/models/validation_macro.json
+  ~ ml_data/models/validation_q.json
+  ~ ml_train.py
+  ~ test_master.py
+unchanged: 87
+
+POSTSCRIPT — self-reference note: this file verifies the tree and the
+manifest, so the FINAL manifest (built after this file's last edit,
+listing this file with its final hash) cannot be verified from inside
+this file by construction. The final verification runs from the
+delivery step instead: the zip's own tree check (`sha256sum -c
+MANIFEST.txt` extracted from wip_phase1.zip) and
+scripts/verify_manifest.py in the phase-0 style. The self-check ABOVE
+(114 files, 0 problems) covered every file except this one at that
+point; the only file that changed afterwards is this file itself and
+MANIFEST.txt.

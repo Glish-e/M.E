@@ -1,0 +1,89 @@
+[91m*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data — never for any decision ***[0m
+
+╭──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+[96m│ MASTER v1.8.3 · mode standard · net offline (MASTER_NET=offline (override)) · as of FROZEN-DATE · stubs yes                                                   │[0m
+[96m│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train SYNTHETIC-stub · master SYNTHETIC-stub                                                       │[0m
+[96m│ chain: macro→quality→earnings→ml→risk                                                                                                                        │[0m
+[96m│ RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)                                                                                                    │[0m
+[96m│ earnings prior: 1/3 names scored with E missing (x0.90 quality haircut; ruleset legacy) — NOT_SELECTED/MISSING_DATA indistinguishable here                   │[0m
+[96m│ data: macro: stub · as-of n/a · OK · age n/a  |  quality: stub · as-of n/a · OK · age n/a  |  earnings: stub · as-of n/a · OK · age n/a                      │[0m
+[96m│ data: ml: stub · as-of n/a · OK · age n/a  |  risk: stub · as-of n/a · OK · age n/a                                                                          │[0m
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+[1mSUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on · warnings 4[0m
+[1mtop picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71[0m
+
+[93mVERDICT 3 LONG / 0 WATCH / 0 AVOID — 4 warning(s): credit OFF — not trade-grade (macro damped; excluded: CREDIT_CRUNCH, E[0m
+
+ [92m●[0m [96mL1 macro     [0m meds v14.7.0 Xs  warm [92m● OK         [0m
+[90m     data stub · as-of n/a · OK n/a[0m
+ [92m●[0m [96mL2 quality   [0m quality v3.4.1 Xs  warm [92m● OK         [0m 3/3 scored  [92m████████████[0m
+[90m     data stub · as-of n/a · OK n/a[0m
+ [93m▲[0m [96mL3 earnings  [0m earnings v3 Xs  warm [93m▲ DEGRADED   [0m 1 no data
+[90m     data stub · as-of n/a · OK n/a[0m
+ [93m▲[0m [96mL4 ml        [0m ml_train SYNTHETIC-stub Xs  n/a  [93m▲ DEGRADED   [0m
+[90m     data stub · as-of n/a · OK n/a[0m
+ [92m●[0m [96mL5 risk      [0m master SYNTHETIC-stub Xs  n/a  [92m● OK         [0m portfolio
+[90m     data stub · as-of n/a · OK n/a[0m
+
+ L1 MACRO ── Soft Landing / Policy Pivot · Mid Cycle
+   conf [92m████████░░[0m 0.82 · lev 1.35x · risk budget 1.00
+eff FROZEN-DATE · data public · PIT approximate_pit_lag · credit OFF ▲ not trade-grade · next month 2026-12
+   LONG  SPY QQQ XLY    SHORT  –          sleeve: –
+excluded (credit OFF): CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION
+sector tilt tech +1.0 · comm +1.0 · cons +1.0 · indu +0.5 · energy +0.5 · util +0.5 · mats +0.5 · health – · fin – · reits – · spec – · macro credit OFF:
+     tilt damped ×0.5
+
+[1m SECTOR      tilt   scored   median-Q[0m
+ tech        +1.0   3/3      80
+
+[95mML OVERLAY q UNTRAINED · e UNTRAINED · macro UNTRAINED — probabilities logged, no decision changed[0m
+
+[1m #  TICKER   SECTOR    ACTION   CONV               Q       E           WT      MACRO    FLAGS          REASONS[0m
+ 1  [1mAAPL[0m     tech      [92mLONG[0m     [92m██████████░░[0m 83 A  88 A    n/a         2%      +1.0     –              Q 88 (A) rank 3/41 tech; macro +1.0: QQQ(strong), SPY(we…[0m
+ 2  [1mMU[0m       tech      [92mLONG[0m     [92m█████████░░░[0m 79 A  72 B    81 A        2%      +1.0     –              Q 72 (B) rank 3/41 tech; macro +1.0: QQQ(strong), SPY(we…[0m
+ 3  [1mNVDA[0m     tech      [92mLONG[0m     [92m████████░░░░[0m 71 B  80 A    44 C        2%      +1.0     HIGH_ACCRUALS  Q 80 (A) rank 3/41 tech; macro +1.0: QQQ(strong), SPY(we…[0m
+[90m 3 LONG · 0 WATCH · 0 AVOID[0m
+
+[90mrisk: gross 7% of 1.00 budget · cash 93% · est max DD ~4% (2x ann vol — estimate, not a probability) · eff bets 1.8[0m
+[90mrisk caps: correlation cap (eff bets 1.8)[0m
+[90mcosts: live plan is GROSS of costs — est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the backtest nets the same 10 bps/side; estimate, not[0m
+[90m   a net-return claim)[0m
+[90mconviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt — score, not probability[0m
+[90mresearch screener, not investment advice · survivorship-biased universe · timings Xs (macro Xs · quality Xs · earnings Xs · ml Xs · risk Xs)[0m
+
+[90mLEGEND ● OK · ▲ DEGRADED · ✗ ERROR · n/a = no data (reason in warnings) · green good · yellow warn/STALE · red error/AVOID[0m
+
+[1mERRORS & WARNINGS[0m
+[93m ▲ earnings  W_EARNINGS_MISSING   earnings data missing for one or more names[0m
+[93mwhy: no earnings history (<4 quarters or provider failed)[0m
+[93mfix: python3 master.py --warm (fill the earnings cache)[0m
+[93m ▲ ml        W_HEAD_UNAVAILABLE   ml head UNAVAILABLE in this environment (run continued)[0m
+[93mwhy: UNTRAINED (stub): no models — train with ml_train.py[0m
+[93mfix: python3 ml_train.py (retrain on this environment's versions)[0m
+[93m ▲ net       W_NET_OFFLINE        offline mode selected: zero sockets, cache truth only[0m
+[93mwhy: MASTER_NET=offline (override)[0m
+[93mfix: python3 master.py --warm --mode online (refresh the caches)[0m
+[93m ▲ pipeline  W_CREDIT_OFF         credit terms excluded — macro conviction damped[0m
+[93mwhy: credit OFF — not trade-grade (macro damped; excluded: CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION)[0m
+[93mfix: python3 master.py --doctor (macro data review; credit returns when the engine's credit read does)[0m
+[93m ▲ pipeline  W_EARNINGS_ACCURACY  earnings layer accuracy verdict (descriptive)[0m
+[93mwhy: earnings accuracy: SIGNAL: high-rated names hit big beats 1.80x more often than base[0m
+[93mfix: python3 master.py MU --explain MU (per-name earnings evidence)[0m
+[93m ▲ pipeline  W_EARNINGS_MISSING   earnings data missing for one or more names[0m
+[93mwhy: 1 ticker(s) no earnings history[0m
+[93mfix: python3 master.py --warm (fill the earnings cache)[0m
+[93m ▲ pipeline  W_HEAD_UNAVAILABLE   ml head UNAVAILABLE in this environment (run continued)[0m
+[93mwhy: UNTRAINED (stub): no models — train with ml_train.py[0m
+[93mfix: python3 ml_train.py (retrain on this environment's versions)[0m
+[93m ▲ pipeline  W_SYNTHETIC          SYNTHETIC stub layers rendered (not real engine data)[0m
+[93mwhy: stub layers rendered (MASTER_STUBS)[0m
+[93mfix: python3 master.py (unset MASTER_STUBS for real engine data)[0m
+[93m ▲ quality   W_QUALITY_FLAG       the quality engine flagged a name (e.g. ALTMAN_DISTRESS)[0m
+[93mwhy: HIGH_ACCRUALS[0m
+[93mfix: python3 master.py <ticker> --explain <ticker> (the per-layer breakdown names the driving metrics)[0m
+[90mDATA SOURCES: macro SYNTHETIC n/a · quality SYNTHETIC n/a · earnings SYNTHETIC n/a · ml SYNTHETIC n/a · risk SYNTHETIC n/a[0m
+[90mmacro path: no FRED key → public fredgraph.csv[0m
+[1mFETCH HEALTH[0m
+[90m  stub layers — no fetches (MASTER_STUBS)[0m
+  totals 0 ok / 0 failed / 0 skipped

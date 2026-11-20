@@ -1,0 +1,380 @@
+baseline: baseline/master_v1_1_0.py (51 entries)
+current : master.py (108 entries)
+VALUE CHANGED EARNINGS_STOP_K:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED E_MISSING_V2:
+  base='<absent>'
+  curr=0.0
+VALUE CHANGED FETCH_LEDGER_PATH:
+  base='<absent>'
+  curr='data/fetch_ledger.jsonl'
+VALUE CHANGED FREEZE_MAX_BYTES:
+  base='<absent>'
+  curr=268435456
+VALUE CHANGED FRESHNESS_EARNINGS_EVENT_MAX_D:
+  base='<absent>'
+  curr=135
+VALUE CHANGED FRESHNESS_EARNINGS_PRICE_MAX_AGE_D:
+  base='<absent>'
+  curr=5
+VALUE CHANGED FRESHNESS_MACRO_MAX_AGE_D:
+  base='<absent>'
+  curr=45
+VALUE CHANGED FRESHNESS_QUALITY_MAX_AGE_D:
+  base='<absent>'
+  curr=135
+VALUE CHANGED MACRO_SNAPSHOT_MAX_AGE_H:
+  base='<absent>'
+  curr=48.0
+VALUE CHANGED MAX_TERM_WIDTH:
+  base=110
+  curr=160
+VALUE CHANGED MIN_TERM_WIDTH:
+  base=72
+  curr=40
+VALUE CHANGED ML_ADJ_MAX:
+  base='<absent>'
+  curr=5.0
+VALUE CHANGED ML_FORBIDDEN_FEATURES:
+  base='<absent>'
+  curr=frozenset({'y_q', 'macro_ret_1m', 'y_m', 'y_e', 'label_end_63', 'ret_21', 'event_date', 'ret_63'})
+VALUE CHANGED ML_MODELS_DIR:
+  base='<absent>'
+  curr='ml_data/models'
+VALUE CHANGED NET_BREAKER_COOLDOWN_S:
+  base='<absent>'
+  curr=30.0
+VALUE CHANGED NET_BREAKER_K:
+  base='<absent>'
+  curr=5
+VALUE CHANGED NET_BREAKER_RATE:
+  base='<absent>'
+  curr=0.5
+VALUE CHANGED NET_BREAKER_TIMEOUT_WEIGHT:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED NET_BREAKER_WINDOW_N:
+  base='<absent>'
+  curr=20
+VALUE CHANGED NET_BROWNOUT_S:
+  base='<absent>'
+  curr=120.0
+VALUE CHANGED NET_CALL_CAP_S:
+  base='<absent>'
+  curr=30.0
+VALUE CHANGED NET_DEFER_COOLDOWN_S:
+  base='<absent>'
+  curr=1.5
+VALUE CHANGED NET_MODES:
+  base='<absent>'
+  curr=('auto', 'online', 'offline')
+VALUE CHANGED NET_MODE_DEFAULT:
+  base='<absent>'
+  curr='auto'
+VALUE CHANGED NET_NEG_CACHE_PATH:
+  base='<absent>'
+  curr='data/negative_cache.json'
+VALUE CHANGED NET_NEG_CACHE_TTL_S:
+  base='<absent>'
+  curr=21600.0
+VALUE CHANGED NET_PREFLIGHT_HOSTS:
+  base='<absent>'
+  curr=(('api.stlouisfed.org', 443), ('fred.stlouisfed.org', 443), ('www.sec.gov', 443), ('data.sec.gov', 443), ('query1.finance.yahoo.com', 443), ('finnhub.io', 443))
+VALUE CHANGED NET_PREFLIGHT_RETRIES:
+  base='<absent>'
+  curr=2
+VALUE CHANGED NET_PREFLIGHT_S:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED NET_PREFLIGHT_TOTAL_S:
+  base='<absent>'
+  curr=10.0
+VALUE CHANGED NET_RETRY_BUDGET_S:
+  base='<absent>'
+  curr=45.0
+VALUE CHANGED OVERLAY_MAX_ADJ:
+  base='<absent>'
+  curr=10.0
+VALUE CHANGED PREFETCH_ALL_MAX:
+  base=60
+  curr=150
+VALUE CHANGED PROBE_BUDGET_S:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED PROBE_HOST:
+  base='<absent>'
+  curr='fred.stlouisfed.org'
+VALUE CHANGED PROBE_PORT:
+  base='<absent>'
+  curr=443
+VALUE CHANGED RETRY_BACKOFF_S:
+  base='<absent>'
+  curr=(0.5, 1.5)
+VALUE CHANGED RETRY_MAX_ATTEMPTS:
+  base='<absent>'
+  curr=3
+VALUE CHANGED RISK_ADV_MAX_PARTICIPATION:
+  base='<absent>'
+  curr=0.1
+VALUE CHANGED RISK_CORR_LOOKBACK_TD:
+  base='<absent>'
+  curr=126
+VALUE CHANGED RISK_DD_BREAKER_COOLDOWN_W:
+  base='<absent>'
+  curr=2
+VALUE CHANGED RISK_DD_BREAKER_DD:
+  base='<absent>'
+  curr=0.1
+VALUE CHANGED RISK_DD_FACTOR:
+  base='<absent>'
+  curr=2.0
+VALUE CHANGED RISK_FALLBACK_RHO:
+  base='<absent>'
+  curr=0.5
+VALUE CHANGED RISK_MAX_EST_DD:
+  base='<absent>'
+  curr=0.3
+VALUE CHANGED RISK_MAX_NAME_W:
+  base='<absent>'
+  curr=0.1
+VALUE CHANGED RISK_MAX_PRICE_NAMES:
+  base='<absent>'
+  curr=60
+VALUE CHANGED RISK_MAX_SECTOR_W:
+  base='<absent>'
+  curr=0.35
+VALUE CHANGED RISK_MIN_BUDGET:
+  base='<absent>'
+  curr=0.25
+VALUE CHANGED RISK_MIN_EFFECTIVE_BETS:
+  base='<absent>'
+  curr=8.0
+VALUE CHANGED RISK_MIN_HISTORY_TD:
+  base='<absent>'
+  curr=42
+VALUE CHANGED RISK_SIZING_MODE:
+  base='<absent>'
+  curr='legacy'
+VALUE CHANGED RISK_VOL_LOOKBACK_TD:
+  base='<absent>'
+  curr=126
+VALUE CHANGED RISK_VOL_TARGET:
+  base='<absent>'
+  curr=0.15
+VALUE CHANGED RULESET:
+  base='<absent>'
+  curr='legacy'
+VALUE CHANGED RUN_BUDGET_BY_DEPTH:
+  base='<absent>'
+  curr={'quick': 600.0, 'standard': 1200.0, 'deep': 4500.0}
+VALUE CHANGED RUN_BUDGET_S:
+  base='<absent>'
+  curr=1200.0
+VALUE CHANGED STALE_STATUS_DAYS:
+  base='<absent>'
+  curr=7
+VALUE CHANGED STUB_WARM_BUDGET_S:
+  base='<absent>'
+  curr=10.0
+VALUE CHANGED WIZARD_RETRIES:
+  base='<absent>'
+  curr=6
+RATIONALE CHANGED CONF_DIGITS:
+  base='Render precision per quantity (stable across --json).'
+  curr="INTENDED render precision per quantity. NOT currently read: the renderer hardcodes its formats (conviction 1dp, score 0dp, mult 3dp, time 1dp — the same values, kept stable across --json). Kept as the register's honest statement of intent, disclosed not-read per v1.4.1 (B6); scripts/rules_register_check.py carries it as DISCLOSED."
+RATIONALE CHANGED EARNINGS_NATIVE_GRADES:
+  base="earnings_engine's _rating bands — shown only on the earnings layer."
+  curr="earnings_engine's own _rating bands (documented vocabulary). The production adapter shows the engine's OWN rating string verbatim and never re-scores through these bands; they are consumed by the test suite's signal builders and the band-ordering gate, and by any future adapter that must derive a letter from a numeric engine score. v1.4.1 (B6) port: documented as not-read-in-production — the rules register (scripts/rules_register_check.py) carries it as DISCLOSED."
+RATIONALE CHANGED EARNINGS_STOP_K:
+  base='<absent>'
+  curr="P-3 (spec 3.4, phase 4): live-plan stop = entry x (1 - k x annualised vol x sqrt(hold_days/365)) with k from this key (hold_days calendar = EARNINGS_HOLD_DAYS, vol = the sizer's 126-td trailing annualised vol off the engine's price cache — the same estimate the risk layer uses). 2.0 is the pre-registered MID-grid value of the spec's {off,1.5,2.0,3.0} grid; the grid backtest (spec 5.8, later phase) chooses by pre-registered OOS rules — no result has been used to pick 2.0. No vol -> no stop, with a visible W_NO_VOL_NO_STOP warning (code + fix command), never a silent None."
+RATIONALE CHANGED EARNINGS_TOP_K:
+  base='L3 runs only on the K best L1+L2 survivors — saves most Yahoo calls and avoids 429s.'
+  curr='L3 runs only on the K best L1+L2 survivors — saves most Yahoo calls and avoids 429s. v1.4.1 (B6) port, phase 2: this key IS the standard-mode --earnings-top default (MODES reads it at import AND at _apply_mode time; quick/deep keep their own presets 10/40).'
+RATIONALE CHANGED EARNINGS_TP:
+  base='eng.plan take-profit.'
+  curr="eng.plan take-profit. Phase 4 (B-7c): the ONE source of truth for the take-profit — passed to BOTH the engine's live signals() call and the analyze(trade=True) backtest, so the live plan and the backtest can never disagree (the engine's own 0.20 default is never reached because master always supplies this value; the engine file stays untouched)."
+RATIONALE CHANGED E_MISSING_V2:
+  base='<absent>'
+  curr="P-1 (spec 3.2, phase 4): the FIXED conservative E a missing-E name is scored at under ruleset v2. 0.0 = the floor of the engine's 0-100 E scale, and the ONLY value for which base(missing E) <= base(any observed E) holds for EVERY observed E >= 0 (the spec 3.2 invariant); any higher fill would let a name with observed E below the fill rank below the missing name — the exact subsidy legacy exhibits at e < 0.714*q. Chosen a priori (the invariant IS the choice), not tuned on any result."
+RATIONALE CHANGED FETCH_LEDGER_PATH:
+  base='<absent>'
+  curr='N4/N9: every online run dumps its fetch ledger here (jsonl) — the input --retry-failed reads to re-fetch ONLY the failed transient items of the last run.'
+RATIONALE CHANGED FREEZE_MAX_BYTES:
+  base='<absent>'
+  curr='--freeze copies at most this many bytes of engine cache files into the freeze dir (256 MB): a standard-mode quality pool is ~1.7 GB, so freeze is EXACT for quick/watchlist-peer runs and size-capped (with a loud note) for standard/deep pools.'
+RATIONALE CHANGED FRESHNESS_EARNINGS_EVENT_MAX_D:
+  base='<absent>'
+  curr='Per-name flag: no earnings row newer than a quarter + filing lag means a report date has passed since the cache was written (the engine exposes no calendar; this is the honest cadence bound).'
+RATIONALE CHANGED FRESHNESS_EARNINGS_PRICE_MAX_AGE_D:
+  base='<absent>'
+  curr="earnings (event-driven, daily prices): STALE when the price history fetch stamp is older than 5 calendar days (quality's own price TTL is 5 days; the earnings engine's is 12 h)."
+RATIONALE CHANGED FRESHNESS_MACRO_MAX_AGE_D:
+  base='<absent>'
+  curr="macro (monthly FRED data, meds floors to month-end): STALE when the engine's own effective_as_of is older than 45 days = one monthly cycle + slack. STALE keeps the data and the score, shows the age."
+RATIONALE CHANGED FRESHNESS_QUALITY_MAX_AGE_D:
+  base='<absent>'
+  curr="quality (quarterly SEC fundamentals): STALE when the cache fetch stamp is older than 135 days = a full quarter + the SEC filing lag (~30-45d). Per-name staleness is the engine's own STALE_DATA flags."
+RATIONALE CHANGED LAYER_TIMEOUT_S:
+  base='STANDARD-mode per-layer wall-clock budget (prefetch + run); --mode quick/deep use their own presets.'
+  curr='STANDARD-mode per-layer wall-clock budget (prefetch + run); --mode quick/deep use their own presets. v1.4.1 (B6) port, phase 2: this key IS the standard-mode --timeout default (MODES reads it at import AND at _apply_mode time), so the key and the preset can never drift apart.'
+RATIONALE CHANGED MACRO_SNAPSHOT_MAX_AGE_H:
+  base='<absent>'
+  curr="A meds snapshot (offline / force-snapshot mode) older than this is reported DEGRADED, never OK: meds' own cache TTL is 24 h, so 48 h = two missed refresh cycles before master calls the regime stale. Disclosure gate on the macro card; the tilt is damped like any other DEGRADED macro and it is never a per-ticker fusion input."
+RATIONALE CHANGED MAX_TERM_WIDTH:
+  base='Terminal width ceiling.'
+  curr="Terminal width ceiling. Phase 5 (C-3) raised 110 -> 160: the owner's terminal runs at 96 cols and the tested tier ladder is 40/70/110/160; disclosed as a VALUE CHANGE in evidence/rules_changes.md (phase 8 CONFIG diff must verify it). Display only; never a fusion input."
+RATIONALE CHANGED MIN_TERM_WIDTH:
+  base='Terminal width floor.'
+  curr='Terminal width floor. Phase 3 lowered this 72 -> 40: --width 40 is a documented, gate-tested tier now (widths 40/70/110) — the renderer drops columns at narrow widths instead of silently rendering 40 as 72. Display only; never a fusion input.'
+RATIONALE CHANGED ML_ADJ_MAX:
+  base='<absent>'
+  curr="The ML overlay's own conviction_adj bound (±5, half the generic OVERLAY_MAX_ADJ): an ACTIVE head may nudge, never re-rank a book. Applied on top of the generic clamp, so the effective bound is min(ML_ADJ_MAX, OVERLAY_MAX_ADJ)."
+RATIONALE CHANGED ML_FORBIDDEN_FEATURES:
+  base='<absent>'
+  curr='Feature names a model may NEVER use: they are derived from prices AFTER the as-of date (the label window), so loading a model that consumes one is refused loudly (leakage guard, phase-5 gate).'
+RATIONALE CHANGED ML_MODELS_DIR:
+  base='<absent>'
+  curr='Where MLLayer looks for head_{q,e,macro}.npz + validation_*.json (written by ml_train.py; --ml-models overrides). An absent/empty dir is the UNTRAINED state, never an error.'
+RATIONALE CHANGED MODES:
+  base='Run presets: what each --mode sets unless the user passes the flag explicitly. quick trades exact sector ranks for a small comparison pool (the watchlist itself); standard keeps honest sector pools; deep is the long research pass. standard mirrors the v1.0.0 defaults exactly.'
+  curr='Run presets: what each --mode sets unless the user passes the flag explicitly. quick trades exact sector ranks for a small comparison pool (the watchlist itself); standard keeps honest sector pools; deep is the long research pass. standard mirrors the v1.0.0 defaults exactly and v1.4.1 (B6) resolves from CONFIG[EARNINGS_TOP_K]/[LAYER_TIMEOUT_S] at import AND at _apply_mode time, so the two formerly dead keys are now the single source of truth for the standard preset.'
+RATIONALE CHANGED NET_BREAKER_COOLDOWN_S:
+  base='<absent>'
+  curr='N3: breaker cooldown: after it the host goes half-open and exactly ONE probe goes through; success closes, failure re-opens.'
+RATIONALE CHANGED NET_BREAKER_K:
+  base='<absent>'
+  curr="N3: per-host circuit breaker — consecutive fetch failures (transient or auth classes; item-level 404s do NOT count) before the host's breaker OPENS and every call fails instantly."
+RATIONALE CHANGED NET_BREAKER_RATE:
+  base='<absent>'
+  curr='v1.8.2 (W1): trip when weighted failures in the rolling window reach RATE * WINDOW (timeouts count NET_BREAKER_TIMEOUT_WEIGHTx). 0.5 with N=20: 10 plain failures — or 5 timeouts — inside the last 20 calls.'
+RATIONALE CHANGED NET_BREAKER_TIMEOUT_WEIGHT:
+  base='<absent>'
+  curr='v1.8.2 (W1): a TIMEOUT failure counts this much in the rate rule (a timeout burned a full NET_CALL_CAP_S of wall; a fast 5xx did not).'
+RATIONALE CHANGED NET_BREAKER_WINDOW_N:
+  base='<absent>'
+  curr="v1.8.2 (W1): the breaker's SECOND trip rule — the rolling window of the last N calls per host over which the weighted failure RATE is compared to NET_BREAKER_RATE (intermittent ok/fail hosts never accumulate K consecutive failures; the consecutive rule stays)."
+RATIONALE CHANGED NET_BROWNOUT_S:
+  base='<absent>'
+  curr='v1.8.2 (W1): the GLOBAL brownout budget — the total wall time the run may spend inside FAILED attempts (successful attempts never count) before EVERY breaker is force-opened and all further calls fail fast. Measured per-host brownout trip (cap 30 s, K 5, 3 attempts): 184.4 s, x3 sequential host families = 553 s > the 300 s standard / 180 s quick targets — this knob bounds the whole run at 120 s of failed wall (bound: 10 + 120 + 30 + 1.5 + 1 = 162.5 s < 180 s). 0 disables the guard (not recommended).'
+RATIONALE CHANGED NET_CALL_CAP_S:
+  base='<absent>'
+  curr='N3/N1: the master process guard clamps every engine request timeout to this (min(engine timeout, cap)) so a 45-300 s engine timeout can never stall the run past the budget.'
+RATIONALE CHANGED NET_DEFER_COOLDOWN_S:
+  base='<absent>'
+  curr="N9: cooldown before the deferred retry pass (ONE more attempt for transient-failed items after their layer's main pass)."
+RATIONALE CHANGED NET_MODES:
+  base='<absent>'
+  curr='The data-mode half of --mode (quick/standard/deep stay the depth presets): auto probes the network once (2 s budget, DNS+TCP, no payload) and picks online/offline; online/offline are explicit.'
+RATIONALE CHANGED NET_MODE_DEFAULT:
+  base='<absent>'
+  curr="Default --mode: auto = the standard depth preset + one cheap probe deciding online vs offline. Identical depth behaviour to v1.4.0's no-flag default; only the network policy is new."
+RATIONALE CHANGED NET_NEG_CACHE_PATH:
+  base='<absent>'
+  curr='N5/F8: the master-owned negative-cache file (layer:item -> why/fix/until-TTL). PERMANENT failures (404/delisted/bad ticker) are not refetched until the TTL expires.'
+RATIONALE CHANGED NET_NEG_CACHE_TTL_S:
+  base='<absent>'
+  curr='N5: negative-cache entry TTL (6 h: a day-part, long enough to keep a dead ticker out of every rerun, short enough to pick up a fix).'
+RATIONALE CHANGED NET_PREFLIGHT_HOSTS:
+  base='<absent>'
+  curr='N2: the host list preflighted (built from evidence/net_paths.md — every host the three engines call). A dead host OPENS its breaker immediately (fail fast). MASTER_NET_PREFLIGHT=0 disables preflight (the hermeticity valve for tests/CI).'
+RATIONALE CHANGED NET_PREFLIGHT_RETRIES:
+  base='<absent>'
+  curr='N2: preflight retries per host with backoff+jitter (1 + 2 attempts).'
+RATIONALE CHANGED NET_PREFLIGHT_S:
+  base='<absent>'
+  curr='N2: per-host preflight TCP probe budget (DNS+connect, no payload) before the layers run in online/auto-live mode; a dead host is known within seconds, not minutes.'
+RATIONALE CHANGED NET_PREFLIGHT_TOTAL_S:
+  base='<absent>'
+  curr='v1.8.2 (W1): the WHOLE preflight pass is capped at this wall time — hosts not probed before it runs out are marked dead (breaker open, fail fast, honest note): a DNS-hang outage cannot stretch preflight to hosts x 3 x NET_PREFLIGHT_S. Bounds the outage case: 10 + 1.5 + slack = 12.5 s < the 15 s target. 0 disables the cap (v1.8.1 behaviour).'
+RATIONALE CHANGED NET_RETRY_BUDGET_S:
+  base='<absent>'
+  curr='N5: the TOTAL retry-time budget per run (backoff sleeps, Retry-After waits, deferred cooldowns all draw from it).'
+RATIONALE CHANGED OVERLAY_MAX_ADJ:
+  base='<absent>'
+  curr="An overlay layer (stage 'overlay', L4-style) may move a conviction by at most this much per name — a bound, not a weight: the core fusion (0.65*Q + 0.35*E) is never touched (H2), veto/gate AVOIDs are never adjusted, and the clamp is disclosed in the reasons line. 10 points = one grade band: enough to matter, never enough to manufacture LONG from a name fusion scored below the door."
+RATIONALE CHANGED PREFETCH_ALL_MAX:
+  base='--earnings-prefetch all is honoured only when the watchlist is <= this many names.'
+  curr='v1.8.1 (F6, ordered change 60 -> 150): --earnings-prefetch all is honoured only when the watchlist is <= this many names, so sector pools warm (a 60-name cap starved them).'
+RATIONALE CHANGED PROBE_BUDGET_S:
+  base='<absent>'
+  curr='Total budget for the auto-mode probe (DNS + TCP). Beyond this the run is offline — a stalled DNS server must never stall a screener.'
+RATIONALE CHANGED PROBE_HOST:
+  base='<absent>'
+  curr='The one stable host the auto-mode probe resolves and connects to (TCP 443, no payload, no request): a source the macro engine itself uses, so reachability here means reachability for the real fetch.'
+RATIONALE CHANGED PROBE_PORT:
+  base='<absent>'
+  curr='Probe TCP port (https).'
+RATIONALE CHANGED RETRY_BACKOFF_S:
+  base='<absent>'
+  curr='Backoff before retry 1 and retry 2, plus +-20% jitter, so parallel workers do not resynchronise on the provider.'
+RATIONALE CHANGED RETRY_MAX_ATTEMPTS:
+  base='<absent>'
+  curr="Per-request attempts in online mode (1 + 2 retries) for the transport/fetch seams master can wrap adapter-side (quality default_transport, earnings _fetch/_px_fetch). 4xx other than 429 never retry; 429 is left to the engines' own Retry-After handling."
+RATIONALE CHANGED RISK_ADV_MAX_PARTICIPATION:
+  base='<absent>'
+  curr="v1.8.0 (W5): opt-in ADV liquidity guard (sizer kwarg advs=): a name's weight is capped at this fraction of its average daily volume (ADV in budget units). Binds only when the owner supplies ADV data; without data the loud W_ADV_UNAVAILABLE warning fires (the phase-4 probe found no volume feed in the engines' caches)."
+RATIONALE CHANGED RISK_CORR_LOOKBACK_TD:
+  base='<absent>'
+  curr='Trading days behind the average pairwise correlation (the equicorrelation model): same window as vol so both describe the same market regime.'
+RATIONALE CHANGED RISK_DD_BREAKER_COOLDOWN_W:
+  base='<absent>'
+  curr='v1.8.0 (W5): after the breaker fires, the book stays in cash this many windows (label windows) before re-entering — a cooldown, not a permanent stand-down.'
+RATIONALE CHANGED RISK_DD_BREAKER_DD:
+  base='<absent>'
+  curr="v1.8.0 (W5): opt-in --bt-breaker drawdown circuit-breaker threshold on the backtest's NET equity curve (only with the flag; the preregistered default backtest is unchanged)."
+RATIONALE CHANGED RISK_DD_FACTOR:
+  base='<absent>'
+  curr='Estimated max drawdown = this factor x annualised portfolio vol (a rough stress heuristic for equity portfolios, not a VaR): it is an ESTIMATE shown with its inputs, never a probability (H5).'
+RATIONALE CHANGED RISK_FALLBACK_RHO:
+  base='<absent>'
+  curr='v1.4.1 port (B2, phase 2): the conservative equicorrelation used by the est-DD estimate when vols exist but rho is unavailable (1-2 names, <42 overlapping rows, a correlation error, or a non-finite rho_bar). The correlation cap itself stays OFF in that state — both facts are DISCLOSED (note + footer + JSON rho_fallback/rho_used + the stable W_RHO_FALLBACK code), never silent. 0.5 is a documented conservative assumption, not a rule change: books with a real rho are untouched (asserted by test_b2_*).'
+RATIONALE CHANGED RISK_MAX_EST_DD:
+  base='<absent>'
+  curr='Portfolio veto threshold: if the estimated max drawdown exceeds 30% even after the correlation cap, every weight goes to 0 (all cash) and the veto is disclosed. 30% = the point where recovery needs +43%.'
+RATIONALE CHANGED RISK_MAX_NAME_W:
+  base='<absent>'
+  curr='Max single-name weight as a fraction of the risk budget: a 10% cap means one idea can never dominate the book, whatever its conviction.'
+RATIONALE CHANGED RISK_MAX_PRICE_NAMES:
+  base='<absent>'
+  curr='The sizer fetches price history for at most this many LONG names (conviction order) — the same Yahoo-politeness ceiling as PREFETCH_ALL_MAX; overflow names fall back to the median vol.'
+RATIONALE CHANGED RISK_MAX_SECTOR_W:
+  base='<absent>'
+  curr='Max summed weight per quality sector as a fraction of the risk budget: sector concentration is the classic screener failure mode (tech-only books); 35% allows a deliberate tilt, not a bet.'
+RATIONALE CHANGED RISK_MIN_BUDGET:
+  base='<absent>'
+  curr="A macro risk budget below 0.25 (from meds' conviction_leverage, degraded-capped at 1.0) is a stand-down signal: the sizer vetoes new deployment instead of placing token positions."
+RATIONALE CHANGED RISK_MIN_EFFECTIVE_BETS:
+  base='<absent>'
+  curr='Gross exposure is capped at budget * effective_bets/8 where effective_bets = N/(1+(N-1)*rho_bar): a perfectly correlated book (rho->1, eff->1) deploys at most 1/8 of the budget. 8 independent bets is the level at which a capped book deploys fully.'
+RATIONALE CHANGED RISK_MIN_HISTORY_TD:
+  base='<absent>'
+  curr="Below this many price rows a name's vol is not trusted; it falls back to the median vol of the priced names (never an invented number)."
+RATIONALE CHANGED RISK_SIZING_MODE:
+  base='<absent>'
+  curr="P-2 (spec 3.3, phase 4): the sizing mode. legacy = the shipped sizer: inverse-vol weights, name cap, sector cap, correlation-aware gross cap eff/8, est-DD veto. vol_target = the opt-in mode: the SAME weights/caps, but the correlation-aware scaling is expressed as a volatility target — gross is solved so the estimated portfolio vol (equicorrelation, the same inputs) hits RISK_VOL_TARGET, capped at the budget (no leverage); name cap, sector cap and the DD veto are kept. Any looser-than-legacy deployment prints a 'looser than norm by X%' note with X computed from the actual numbers. Default legacy; --sizing vol_target opts in."
+RATIONALE CHANGED RISK_VOL_LOOKBACK_TD:
+  base='<absent>'
+  curr="Trading days of daily returns behind each name's annualised volatility (~6 months): long enough to be stable, short enough to react to a regime change; matches the label horizon order of magnitude."
+RATIONALE CHANGED RISK_VOL_TARGET:
+  base='<absent>'
+  curr='P-2 (spec 3.3, phase 4): target annualised portfolio vol for the vol_target sizing mode (fraction of budget deployed x vol). 0.15 coheres with the legacy risk envelope by construction: at target, est max DD = RISK_DD_FACTOR x 0.15 = 0.30 = exactly RISK_MAX_EST_DD (the legacy veto line). Pre-registered coherence, not a result-tuned value.'
+RATIONALE CHANGED RULESET:
+  base='<absent>'
+  curr='P-1 / P-6 (spec 3.2, phase 4): the ruleset selector. legacy = the shipped v1.5.0 rules: missing-E keeps the x0.90 advantage (missing beats observed E whenever e < 0.714*q) and the LONG/WATCH doors compare ROUNDED conviction. v2 = missing-E is scored as the fixed conservative fill E_MISSING_V2 through the SAME blend (invariant-tested: missing never outranks an observed E) and the doors compare UNROUNDED conviction (display stays rounded). Default legacy until backtest evidence + owner approval; --ruleset v2 is the opt-in and the header labels the active ruleset either way.'
+RATIONALE CHANGED RUN_BUDGET_BY_DEPTH:
+  base='<absent>'
+  curr="v1.8.2 (W1): the OVERALL run budget derived from the depth preset (MASTER_RUN_BUDGET_S env still wins; RUN_BUDGET_S is the fallback for unknown depths). quick 600 s = 2x its 300 s per-layer preset (measured real quick runs 6-25 s, stub 0.3 s: 24x+ headroom); standard 1200 s = the unchanged v1.8.1 RUN_BUDGET_S; deep 4500 s = its 3600 s layer preset + 900 s slack — v1.8.1's flat 1200 s silently CLIPPED a legit deep layer at 1200 s (the depth-derived budget fixes that). Display/budget only; never a fusion input."
+RATIONALE CHANGED RUN_BUDGET_S:
+  base='<absent>'
+  curr='N1: the OVERALL run wall-clock budget for a STANDARD-depth run (and the fallback for unknown depths): after it the run renders what it has, salvages unfinished layers and the process exits within seconds even if a worker is stuck (MASTER_RUN_BUDGET_S env overrides it for tests/CI). v1.8.2 (W1): the depth-derived value lives in RUN_BUDGET_BY_DEPTH; this key stays the disclosed standard value and the fallback (S7: runtime knob, listed in the CONFIG diff).'
+RATIONALE CHANGED STALE_STATUS_DAYS:
+  base='<absent>'
+  curr='Phase 5 (C-2) DISPLAY staleness threshold: a served source older than this shows yellow STALE + age in the report (e.g. macro > 7d), never a green OK. Display-only label — the FRESHNESS_* gates that actually gate logic/decisions are untouched and stay the pre-registered values; this key never feeds a decision.'
+RATIONALE CHANGED STUB_WARM_BUDGET_S:
+  base='<absent>'
+  curr="Regression guard: a warm MASTER_STUBS run on the default watchlist must finish in well under this (measured 0.3s; 10s = 30x headroom) or the suite fails — stub runs are the fast tier by contract. NOT currently read by PRODUCTION master.py: the budget is enforced by the test suite (TestStubWarmBudget), so the register discloses it as not-read-in-production rather than counting it live (phase-2 census finding on the v1.5.0 tree; v1.4.1's register never saw this key)."
+RATIONALE CHANGED WIZARD_RETRIES:
+  base='<absent>'
+  curr="F2: the wizard's per-question retry budget (invalid answers before the honest exit 2), forgiving prefixes/close-matches/numbers first."

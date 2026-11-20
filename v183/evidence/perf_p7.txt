@@ -1,0 +1,49 @@
+perf p7 (phase 7, B-8 speed honesty) · 2026-11-14 · python 3.12.16
+machine: the build sandbox (2 vCPU, 4 GB RAM) · network: partial
+(SEC + Yahoo reachable with SEC_USER_AGENT set; see the note below)
+cache state: watchlist (22 names) + tech pool (92) warmed this session;
+the full 643-name universe is NOT warm (a full warm is an owner job)
+
+[a] import cost (python3 -X importtime master.py --version)
+  wall 0.14 s · cumulative max 17.0 ms (urllib.request 17.0 · http.client
+  12.8 · email.parser 8.3 · typing 2.2 · the rest < 1 ms each)
+
+[b] selftest wall (python3 master.py --selftest)
+  Ran 432 tests in 16.793s · OK · subprocess wall 17.3 s
+
+[c] stub run (MASTER_STUBS=1, quick watchlist, offline)
+  subprocess wall 0.38 s (pipeline total 0.2 s)
+
+[d] warm offline runs, REAL cache, targets from spec §7:
+  warm single name (MU, quick, offline)          4.2 s   target <= 5 s  MET
+  warm 5-name (MU NVDA AAPL AMD META, quick)     5.2 s   target <= 15 s MET
+  warm single-sector (--sectors tech, 90 names)  16.3 s  target <= 60 s MET
+  backtest re-run (recorded decisions cached)    0.5 s   "minutes, not
+                                                   hours"              MET
+  warm DEFAULT-watchlist standard run (643-name
+  pool): did NOT complete inside the session's 580 s command budget
+  (twice attempted; ~114/643 names cached — the uncached majority goes
+  through provider-refusal paths). The v1.5.0 lineage's real measured
+  number for the SAME engine on a fully-warmed 1.6 GB cache on this
+  sandbox family: ~73 s (evidence/perf_after.txt). Owner command to
+  reproduce: python3 master.py --warm  (full universe, ~20+ min network)
+  then python3 master.py --offline ; python3 scripts/bench.py --tag yours
+
+[e] cold online run: SKIPPED (bench default; cold = rate-limited real
+  fetching). The single-name online quick run measured 8.7 s warm-ish
+  (refresh checks) · the identity-run online pass 14.1 s.
+
+EQUIVALENCE (spec §7): no speed optimization touched decision code this
+round (bench + freeze fixes only; the freeze/replay gate IS the
+bit-for-bit equivalence proof: evidence/phase7_freeze_replay.txt — 5
+names identical, exit 0; tampered manifest -> exit 65).
+
+Q8 verdict: MEASURED and honest — single name, 5-name, single-sector and
+backtest targets MET with the commands shown; the full-universe warm
+standard number is the lineage's 73 s (cited) and unmeasured here (the
+owner command is printed). Machine-bound, stated.
+
+NOTE (discovered this phase): sec.gov 403s quality's default contactless
+User-Agent from this sandbox; the documented env var SEC_USER_AGENT
+(e.g. "research-screener admin@example.com") fixes it — required for any
+online SEC fetch here. RUNBOOK gains this row at phase 9.

@@ -1,0 +1,13 @@
+=== B-9 item 2: freeze/replay consistency (real cache, post P7-H1 fix) ===
+--- [1] online quick run, dedicated cache inside the freeze dir, freeze ---
+[freeze] wrote /tmp/f7w/manifest.json (5 names) · copied 39 files 23.0 MB (earnings 0 files, meds cache 1 file, meds snapshot 22 files, quality 16 files)
+master: exit 1 — degraded (result produced): earnings — details in the ERRORS & WARNINGS block
+--- [2] replay (fully offline rerun + verify) ---
+replay OK: 5 names identical to the frozen manifest (2.8s, fully offline)
+REPLAY EXIT CODE: 0
+--- [3] TAMPER the frozen manifest's ranking, replay again ---
+tampered: ranking[0].conviction -> 99.9
+REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'WATCH', 'conviction': 99.9, 'grade': 'B'} vs replay {'ticker': 'MU', 'action': 'WATCH', 'conviction': 66.3, 'grade': 'B'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+TAMPERED REPLAY EXIT CODE: 65

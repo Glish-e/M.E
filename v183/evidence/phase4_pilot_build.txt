@@ -1,0 +1,56 @@
+[ml] 1/12 2025-08-31 · building (pool via --sectors tech) ...
+[quality] cold cache: scoring the whole universe (92 names, a few provider calls per name, rate-limited); results are memoized for this process.
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: CFLT"}}}
+$CFLT: possibly delisted; no timezone found
+$PSTG: possibly delisted; no price data found  (1d 2024-06-27 -> 2026-11-09)
+[ml] 1/12 2025-08-31 · 90 names · quality OK 75 · layers macro=OK,quality=DEGRADED,earnings=ERROR · 21s
+[ml] --max-dates 1: stopping after 1 new date(s); re-run to resume
+dataset -> ml_data/dataset_v1.npz
+  ticker rows 90 (90 names x 1 dates) · macro rows 7
+  labels: y_q 87/90 · y_e 83/90 · y_m 7/7
+  dates built 1 · cached 0 · failed 0 · manifest -> ml_data/manifest.json
+[ml] 1/12 2025-08-31 · building (pool via --sectors tech) ...
+[quality] cold cache: scoring the whole universe (92 names, a few provider calls per name, rate-limited); results are memoized for this process.
+Crumb fetch rate-limited (HTTP 429), continuing without crumb
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
+HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+$CFLT: possibly delisted; no timezone found
+$PSTG: possibly delisted; no price data found  (1d 2024-06-27 -> 2026-11-09)
+[ml] 1/12 2025-08-31 · 90 names · quality OK 75 · layers macro=OK,quality=DEGRADED,earnings=OK · 12s
+[ml] 2/12 2025-09-30 · building (pool via --sectors tech) ...
+[ml] 2/12 2025-09-30 · 90 names · quality OK 75 · layers macro=OK,quality=DEGRADED,earnings=OK · 23s
+[ml] --max-dates 2: stopping after 2 new date(s); re-run to resume
+dataset -> ml_data/dataset_v1.npz
+  ticker rows 180 (90 names x 2 dates) · macro rows 14
+  labels: y_q 174/180 · y_e 170/180 · y_m 14/14
+  dates built 2 · cached 0 · failed 0 · manifest -> ml_data/manifest.json
+[ml] 1/12 2025-08-31 · cached
+[ml] 2/12 2025-09-30 · cached
+[ml] 3/12 2025-10-31 · building (pool via --sectors tech) ...
+[quality] cold cache: scoring the whole universe (92 names, a few provider calls per name, rate-limited); results are memoized for this process.
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: CFLT"}}}
+$CFLT: possibly delisted; no timezone found
+$PSTG: possibly delisted; no price data found  (1d 2024-08-27 -> 2026-11-09)
+[ml] 3/12 2025-10-31 · 90 names · quality OK 75 · layers macro=OK,quality=DEGRADED,earnings=OK · 12s
+[ml] 4/12 2025-11-30 · building (pool via --sectors tech) ...
+[ml] 4/12 2025-11-30 · 90 names · quality OK 76 · layers macro=OK,quality=DEGRADED,earnings=OK · 23s
+[ml] 5/12 2025-12-31 · building (pool via --sectors tech) ...
+[ml] 5/12 2025-12-31 · 90 names · quality OK 76 · layers macro=OK,quality=DEGRADED,earnings=OK · 34s
+[ml] 6/12 2026-01-31 · building (pool via --sectors tech) ...
+[ml] 6/12 2026-01-31 · 90 names · quality OK 76 · layers macro=OK,quality=DEGRADED,earnings=OK · 45s
+[ml] 7/12 2026-02-28 · building (pool via --sectors tech) ...
+[ml] 7/12 2026-02-28 · 90 names · quality OK 75 · layers macro=OK,quality=DEGRADED,earnings=OK · 56s
+[ml] 8/12 2026-03-31 · building (pool via --sectors tech) ...
+[ml] 8/12 2026-03-31 · 90 names · quality OK 74 · layers macro=OK,quality=DEGRADED,earnings=OK · 67s
+[ml] 9/12 2026-04-30 · building (pool via --sectors tech) ...
+[ml] 9/12 2026-04-30 · 90 names · quality OK 75 · layers macro=OK,quality=DEGRADED,earnings=OK · 78s
+[ml] 10/12 2026-05-31 · building (pool via --sectors tech) ...
+[ml] 10/12 2026-05-31 · 90 names · quality OK 76 · layers macro=OK,quality=DEGRADED,earnings=OK · 90s
+[ml] 11/12 2026-06-30 · building (pool via --sectors tech) ...
+[ml] 11/12 2026-06-30 · 90 names · quality OK 76 · layers macro=OK,quality=DEGRADED,earnings=OK · 101s
+[ml] 12/12 2026-07-31 · building (pool via --sectors tech) ...
+[ml] 12/12 2026-07-31 · 90 names · quality OK 76 · layers macro=OK,quality=DEGRADED,earnings=OK · 112s
+dataset -> ml_data/dataset_v1.npz
+  ticker rows 1080 (90 names x 12 dates) · macro rows 84
+  labels: y_q 1044/1080 · y_e 974/1080 · y_m 84/84
+  dates built 10 · cached 2 · failed 0 · manifest -> ml_data/manifest.json

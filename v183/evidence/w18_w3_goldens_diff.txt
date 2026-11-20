@@ -1,0 +1,300 @@
+===== golden_ascii_110.txt
+9,10c9,11
+< | data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a                       |
+< | data: ml stub n/a OK n/a  |  risk stub n/a OK n/a                                                          |
+---
+> | data: macro: stub . as-of n/a . OK . age n/a  |  quality: stub . as-of n/a . OK . age n/a                  |
+> | data: earnings: stub . as-of n/a . OK . age n/a  |  ml: stub . as-of n/a . OK . age n/a                    |
+> | data: risk: stub . as-of n/a . OK . age n/a                                                                |
+12a14,16
+> SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID . risk risk_on . warnings 4
+> top picks AAPL LONG 83 . MU LONG 79 . NVDA LONG 71
+> 
+15c19
+<  * L1 macro     meds v14.7.0      Xs    warm * OK         
+---
+>  * L1 macro      meds v14.7.0 Xs  warm * OK         
+17c21
+<  * L2 quality   quality v3.4.1    Xs    warm * OK         3/3 scored  ############
+---
+>  * L2 quality    quality v3.4.1 Xs  warm * OK          3/3 scored  ############
+19c23
+<  ! L3 earnings  earnings v3       Xs    warm ! DEGRADED   1 no data
+---
+>  ! L3 earnings   earnings v3 Xs  warm ! DEGRADED    1 no data
+21c25
+===== golden_ascii_160.txt
+8c8,9
+< | data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a  |  ml stub n/a OK n/a  |  risk stub n/a OK n/a                         |
+---
+> | data: macro: stub . as-of n/a . OK . age n/a  |  quality: stub . as-of n/a . OK . age n/a  |  earnings: stub . as-of n/a . OK . age n/a                      |
+> | data: ml: stub . as-of n/a . OK . age n/a  |  risk: stub . as-of n/a . OK . age n/a                                                                          |
+10a12,14
+> SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID . risk risk_on . warnings 4
+> top picks AAPL LONG 83 . MU LONG 79 . NVDA LONG 71
+> 
+13c17
+<  * L1 macro     meds v14.7.0      Xs    warm * OK         
+---
+>  * L1 macro      meds v14.7.0 Xs  warm * OK         
+15c19
+<  * L2 quality   quality v3.4.1    Xs    warm * OK         3/3 scored  ############
+---
+>  * L2 quality    quality v3.4.1 Xs  warm * OK          3/3 scored  ############
+17c21
+<  ! L3 earnings  earnings v3       Xs    warm ! DEGRADED   1 no data
+---
+>  ! L3 earnings   earnings v3 Xs  warm ! DEGRADED    1 no data
+19c23
+<  ! L4 ml        ml_train SYNTHETI.Xs    n/a  ! DEGRADED   
+---
+===== golden_ascii_40.txt
+6,9c6,9
+< | MASTER v1.8.0-dev . mode standard .  |
+< | net offline (MASTER_NET=offline      |
+< | (override)) . as of FROZEN-DATE .     |
+< | stubs yes                            |
+---
+> | MASTER v1.8.0-dev . mode standard    |
+> | . net offline (MASTER_NET=offline    |
+> | (override)) . as of FROZEN-DATE       |
+> | . stubs yes                          |
+18,22c18,22
+< | data: macro stub n/a OK n/a          |
+< | data: quality stub n/a OK n/a        |
+< | data: earnings stub n/a OK n/a       |
+< | data: ml stub n/a OK n/a             |
+< | data: risk stub n/a OK n/a           |
+---
+> | data: macro: stub . OK               |
+> | data: quality: stub . OK             |
+> | data: earnings: stub . OK            |
+> | data: ml: stub . OK                  |
+> | data: risk: stub . OK                |
+24a25,26
+> SUMMARY 3L/0W/0A . risk_on . warn 4 . .
+===== golden_ascii_70.txt
+1,2c1,2
+< *** STUBBED RUN (SYNTHETIC stub layers) - NOT real engine data -
+<   never for any decision ***
+---
+> *** STUBBED RUN (SYNTHETIC stub layers) - NOT real engine data
+>   - never for any decision ***
+11,13c11,14
+< | data: macro stub n/a OK n/a  |  quality stub n/a OK n/a            |
+< | data: earnings stub n/a OK n/a  |  ml stub n/a OK n/a              |
+< | data: risk stub n/a OK n/a                                         |
+---
+> | data: macro: stub . as-of n/a . OK                                 |
+> | data: quality: stub . as-of n/a . OK                               |
+> | data: earnings: stub . as-of n/a . OK                              |
+> | data: ml: stub . as-of n/a . OK  |  risk: stub . as-of n/a . OK    |
+15a17,19
+> SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID . risk risk_on
+> top picks AAPL LONG 83 . MU LONG 79 . NVDA LONG 71
+> 
+18c22
+<  * L1 macro     meds v14.7.0      Xs    warm * OK         
+---
+>  * L1 macro      meds v14.7.0 Xs  * OK         
+20c24
+===== golden_colour_110.txt
+9,10c9,11
+< [96m│ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a                       │[0m
+< [96m│ data: ml stub n/a OK n/a  |  risk stub n/a OK n/a                                                          │[0m
+---
+> [96m│ data: macro: stub · as-of n/a · OK · age n/a  |  quality: stub · as-of n/a · OK · age n/a                  │[0m
+> [96m│ data: earnings: stub · as-of n/a · OK · age n/a  |  ml: stub · as-of n/a · OK · age n/a                    │[0m
+> [96m│ data: risk: stub · as-of n/a · OK · age n/a                                                                │[0m
+12a14,16
+> [1mSUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on · warnings 4[0m
+> [1mtop picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71[0m
+> 
+15c19
+<  [92m●[0m [96mL1 macro     [0mmeds v14.7.0      Xs    warm [92m● OK         [0m
+---
+>  [92m●[0m [96mL1 macro     [0m meds v14.7.0 Xs  warm [92m● OK         [0m
+17c21
+<  [92m●[0m [96mL2 quality   [0mquality v3.4.1    Xs    warm [92m● OK         [0m3/3 scored  [92m████████████[0m
+---
+>  [92m●[0m [96mL2 quality   [0m quality v3.4.1 Xs  warm [92m● OK         [0m 3/3 scored  [92m████████████[0m
+19c23
+<  [93m▲[0m [96mL3 earnings  [0mearnings v3       Xs    warm [93m▲ DEGRADED   [0m1 no data
+---
+>  [93m▲[0m [96mL3 earnings  [0m earnings v3 Xs  warm [93m▲ DEGRADED   [0m 1 no data
+21c25
+===== golden_colour_160.txt
+8c8,9
+< [96m│ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a  |  ml stub n/a OK n/a  |  risk stub n/a OK n/a                         │[0m
+---
+> [96m│ data: macro: stub · as-of n/a · OK · age n/a  |  quality: stub · as-of n/a · OK · age n/a  |  earnings: stub · as-of n/a · OK · age n/a                      │[0m
+> [96m│ data: ml: stub · as-of n/a · OK · age n/a  |  risk: stub · as-of n/a · OK · age n/a                                                                          │[0m
+10a12,14
+> [1mSUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on · warnings 4[0m
+> [1mtop picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71[0m
+> 
+13c17
+<  [92m●[0m [96mL1 macro     [0mmeds v14.7.0      Xs    warm [92m● OK         [0m
+---
+>  [92m●[0m [96mL1 macro     [0m meds v14.7.0 Xs  warm [92m● OK         [0m
+15c19
+<  [92m●[0m [96mL2 quality   [0mquality v3.4.1    Xs    warm [92m● OK         [0m3/3 scored  [92m████████████[0m
+---
+>  [92m●[0m [96mL2 quality   [0m quality v3.4.1 Xs  warm [92m● OK         [0m 3/3 scored  [92m████████████[0m
+17c21
+<  [93m▲[0m [96mL3 earnings  [0mearnings v3       Xs    warm [93m▲ DEGRADED   [0m1 no data
+---
+>  [93m▲[0m [96mL3 earnings  [0m earnings v3 Xs  warm [93m▲ DEGRADED   [0m 1 no data
+19c23
+<  [93m▲[0m [96mL4 ml        [0mml_train SYNTHETI…Xs    n/a  [93m▲ DEGRADED   [0m
+---
+===== golden_colour_40.txt
+6,9c6,9
+< [96m│ MASTER v1.8.0-dev · mode standard ·  │[0m
+< [96m│ net offline (MASTER_NET=offline      │[0m
+< [96m│ (override)) · as of FROZEN-DATE ·     │[0m
+< [96m│ stubs yes                            │[0m
+---
+> [96m│ MASTER v1.8.0-dev · mode standard    │[0m
+> [96m│ · net offline (MASTER_NET=offline    │[0m
+> [96m│ (override)) · as of FROZEN-DATE       │[0m
+> [96m│ · stubs yes                          │[0m
+18,22c18,22
+< [96m│ data: macro stub n/a OK n/a          │[0m
+< [96m│ data: quality stub n/a OK n/a        │[0m
+< [96m│ data: earnings stub n/a OK n/a       │[0m
+< [96m│ data: ml stub n/a OK n/a             │[0m
+< [96m│ data: risk stub n/a OK n/a           │[0m
+---
+> [96m│ data: macro: stub · OK               │[0m
+> [96m│ data: quality: stub · OK             │[0m
+> [96m│ data: earnings: stub · OK            │[0m
+> [96m│ data: ml: stub · OK                  │[0m
+> [96m│ data: risk: stub · OK                │[0m
+24a25,26
+> [1mSUMMARY 3L/0W/0A · risk_on · warn 4 · …[0m
+===== golden_colour_70.txt
+1,2c1,2
+< [91m*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data —[0m
+< [91m  never for any decision ***[0m
+---
+> [91m*** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data[0m
+> [91m  — never for any decision ***[0m
+11,13c11,14
+< [96m│ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a            │[0m
+< [96m│ data: earnings stub n/a OK n/a  |  ml stub n/a OK n/a              │[0m
+< [96m│ data: risk stub n/a OK n/a                                         │[0m
+---
+> [96m│ data: macro: stub · as-of n/a · OK                                 │[0m
+> [96m│ data: quality: stub · as-of n/a · OK                               │[0m
+> [96m│ data: earnings: stub · as-of n/a · OK                              │[0m
+> [96m│ data: ml: stub · as-of n/a · OK  |  risk: stub · as-of n/a · OK    │[0m
+15a17,19
+> [1mSUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on[0m
+> [1mtop picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71[0m
+> 
+18c22
+<  [92m●[0m [96mL1 macro     [0mmeds v14.7.0      Xs    warm [92m● OK         [0m
+---
+>  [92m●[0m [96mL1 macro     [0m meds v14.7.0 Xs  [92m● OK         [0m
+20c24
+===== golden_plain_110.txt
+9,10c9,11
+< │ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a                       │
+< │ data: ml stub n/a OK n/a  |  risk stub n/a OK n/a                                                          │
+---
+> │ data: macro: stub · as-of n/a · OK · age n/a  |  quality: stub · as-of n/a · OK · age n/a                  │
+> │ data: earnings: stub · as-of n/a · OK · age n/a  |  ml: stub · as-of n/a · OK · age n/a                    │
+> │ data: risk: stub · as-of n/a · OK · age n/a                                                                │
+12a14,16
+> SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on · warnings 4
+> top picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71
+> 
+15c19
+<  ● L1 macro     meds v14.7.0      Xs    warm ● OK         
+---
+>  ● L1 macro      meds v14.7.0 Xs  warm ● OK         
+17c21
+<  ● L2 quality   quality v3.4.1    Xs    warm ● OK         3/3 scored  ████████████
+---
+>  ● L2 quality    quality v3.4.1 Xs  warm ● OK          3/3 scored  ████████████
+19c23
+<  ▲ L3 earnings  earnings v3       Xs    warm ▲ DEGRADED   1 no data
+---
+>  ▲ L3 earnings   earnings v3 Xs  warm ▲ DEGRADED    1 no data
+21c25
+===== golden_plain_160.txt
+8c8,9
+< │ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a  |  earnings stub n/a OK n/a  |  ml stub n/a OK n/a  |  risk stub n/a OK n/a                         │
+---
+> │ data: macro: stub · as-of n/a · OK · age n/a  |  quality: stub · as-of n/a · OK · age n/a  |  earnings: stub · as-of n/a · OK · age n/a                      │
+> │ data: ml: stub · as-of n/a · OK · age n/a  |  risk: stub · as-of n/a · OK · age n/a                                                                          │
+10a12,14
+> SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on · warnings 4
+> top picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71
+> 
+13c17
+<  ● L1 macro     meds v14.7.0      Xs    warm ● OK         
+---
+>  ● L1 macro      meds v14.7.0 Xs  warm ● OK         
+15c19
+<  ● L2 quality   quality v3.4.1    Xs    warm ● OK         3/3 scored  ████████████
+---
+>  ● L2 quality    quality v3.4.1 Xs  warm ● OK          3/3 scored  ████████████
+17c21
+<  ▲ L3 earnings  earnings v3       Xs    warm ▲ DEGRADED   1 no data
+---
+>  ▲ L3 earnings   earnings v3 Xs  warm ▲ DEGRADED    1 no data
+19c23
+<  ▲ L4 ml        ml_train SYNTHETI…Xs    n/a  ▲ DEGRADED   
+---
+===== golden_plain_40.txt
+6,9c6,9
+< │ MASTER v1.8.0-dev · mode standard ·  │
+< │ net offline (MASTER_NET=offline      │
+< │ (override)) · as of FROZEN-DATE ·     │
+< │ stubs yes                            │
+---
+> │ MASTER v1.8.0-dev · mode standard    │
+> │ · net offline (MASTER_NET=offline    │
+> │ (override)) · as of FROZEN-DATE       │
+> │ · stubs yes                          │
+18,22c18,22
+< │ data: macro stub n/a OK n/a          │
+< │ data: quality stub n/a OK n/a        │
+< │ data: earnings stub n/a OK n/a       │
+< │ data: ml stub n/a OK n/a             │
+< │ data: risk stub n/a OK n/a           │
+---
+> │ data: macro: stub · OK               │
+> │ data: quality: stub · OK             │
+> │ data: earnings: stub · OK            │
+> │ data: ml: stub · OK                  │
+> │ data: risk: stub · OK                │
+24a25,26
+> SUMMARY 3L/0W/0A · risk_on · warn 4 · …
+===== golden_plain_70.txt
+1,2c1,2
+< *** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data —
+<   never for any decision ***
+---
+> *** STUBBED RUN (SYNTHETIC stub layers) — NOT real engine data
+>   — never for any decision ***
+11,13c11,14
+< │ data: macro stub n/a OK n/a  |  quality stub n/a OK n/a            │
+< │ data: earnings stub n/a OK n/a  |  ml stub n/a OK n/a              │
+< │ data: risk stub n/a OK n/a                                         │
+---
+> │ data: macro: stub · as-of n/a · OK                                 │
+> │ data: quality: stub · as-of n/a · OK                               │
+> │ data: earnings: stub · as-of n/a · OK                              │
+> │ data: ml: stub · as-of n/a · OK  |  risk: stub · as-of n/a · OK    │
+15a17,19
+> SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID · risk risk_on
+> top picks AAPL LONG 83 · MU LONG 79 · NVDA LONG 71
+> 
+18c22
+<  ● L1 macro     meds v14.7.0      Xs    warm ● OK         
+---
+>  ● L1 macro      meds v14.7.0 Xs  ● OK         
+20c24

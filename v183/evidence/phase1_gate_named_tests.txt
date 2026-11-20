@@ -1,0 +1,21 @@
+PHASE 1 GATE — the 7 named v1.5.0 failures + the sklearn-hard-code (TestSidecarPin.test_pin_ok_loads)
+run explicitly under every ambient condition, v1.7.0-dev tree, 2026-11-13T20:59:06Z
+
+== baseline (env: none)
+8 passed in 1.02s
+
+== offline (env: MASTER_NET=offline)
+8 passed in 1.07s
+
+== stubs (env: MASTER_STUBS=1)
+8 passed in 1.08s
+
+== both (env: MASTER_NET=offline MASTER_STUBS=1)
+8 passed in 1.10s
+
+== sklearn+joblib blocked (sys.modules pinned to None)
+8 passed in 0.69s
+
+== date pinned 2025-02-01 (the cell that broke the most v1.5.0 tests; harness-style module date pinning)
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+named tests: ran=8 failures=0 errors=0

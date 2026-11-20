@@ -1,0 +1,76 @@
+# engine CLI surfaces — run 2026-11-08T15:20Z
+
+## earnings_engine.py --help
+usage: earnings_engine.py [-h] [--thr THR] [--quarters QUARTERS]
+                          [--provider {yahoo,finnhub}] [--hold HOLD] [--tp TP]
+                          [--sl SL] [--min-score MIN_SCORE] [--bench BENCH]
+                          [--no-trade] [--no-accuracy] [--history] [--detail]
+                          [--debug] [--no-cache] [--save SAVE]
+                          tickers [tickers ...]
+
+Big-earnings-beat rater + 90-day long test
+
+positional arguments:
+  tickers
+
+options:
+  -h, --help            show this help message and exit
+  --thr THR             EPS surprise % that counts as a big beat
+  --quarters QUARTERS   history depth (default 40 = ~10 years)
+  --provider {yahoo,finnhub}
+  --hold HOLD           max holding days
+  --tp TP               take-profit as a fraction (0.20 = +20%); 0 = off
+  --sl SL               stop-loss fraction; 0 = off
+  --min-score MIN_SCORE
+                        score needed to go long
+  --bench BENCH         benchmark ticker ('' = none)
+  --no-trade            skip the trade test + live signals
+  --no-accuracy
+  --history             print every quarter with its rating
+  --detail              raw surprise columns in the scorecard
+  --debug               full tracebacks on errors
+  --no-cache
+  --save SAVE           folder to write scores/trades/signals CSVs
+
+## quality.py --help
+usage: python3 quality.py [TICKER | scan | score | validate | livecheck | selftest] [options]
+  TICKER    ONE ticker, colored score card - the short command:  python3 quality.py AAPL
+            (add --layer for the compact trading JSON, --json for the full dump)
+  (no command) quick scan of ~58 liquid names - colorful terminal table, no CSV, no key needed
+  scan      fetch and score the full universe (scan --help for options; resumable, ~15-25 min cold)
+  score     same as the short form, with options (score JPM --peers BAC,WFC,GS; --explain TICKER for provenance)
+  validate  forward-validation harness over snapshot history (validate --help; --pit-universe for section 8.3)
+  livecheck live provider checks (verifies your .env keys and every data source)
+  selftest  run the embedded test suite
+
+## meds.py --help (head)
+meds.py — Macro Regime & L/S Scenario Engine (v14.7.0)
+
+usage: meds.py [--audit] [--from DATE [--to DATE]] [--json]
+               [--ticker TICKER] [--csv FILE] [--check-endpoints]
+               [--snapshot] [--start DATE] [--end DATE]
+               [--fetch-start DATE] [--output-start DATE]
+               [--output-end DATE] [--ml] [--demo] [--paper]
+               [--pit-manifest] [--print-config]
+               [--check-config] [--require-credit]
+
+  (no flag)        THIS month's prediction as a short card:
+                   regime, confidence, leverage, LONG/SHORT
+                   basket, data tier and credit state.  No
+                   backtest; a cold run fetches 22 FRED series
+                   (one stderr line), later runs are warm.
+  --from DATE      month-by-month regimes + baskets for a span
+                   (DATE = YYYY-MM or YYYY-MM-DD; --to defaults
+                   to the current prediction month; months are
+                   clamped to the predictable range with a
+                   notice).  --start/--end alias --from/--to.
+  --json           with (no flag)/--from: machine-readable dict.
+  --audit          the FULL engine run: FRED fetch -> walk-
+                   forward -> backtest -> prereg evaluation ->
+                   readiness report (the v14.6.2 plain run;
+                   --csv FILE and --prereg-full imply it).
+  --validate       exact alias of the plain (card) run.
+  --ticker TICKER  score ONE ticker against the live regime and
+                   exit: prints the score card, or machine-
+                   readable JSON with --json.
+  --csv FILE       opt-in: write the monthly results table to FILE.

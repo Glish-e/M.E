@@ -1,0 +1,691 @@
+FFFF.FFFFFFFFF.FFFFFFFFFF                                                [100%]
+=================================== FAILURES ===================================
+_______ TestSizerHardeningB1B2B3.test_b1_all_inf_vols_degrade_not_crash ________
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b1_all_inf_vols_degrade_not_crash>
+
+    def test_b1_all_inf_vols_degrade_not_crash(self):
+>       out = master.size_portfolio(["A", "B"], {"A": float("inf"),
+                                                 "B": float("inf")},
+                                    0.4, self.sectors, 1.35)
+
+test_master.py:4736: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+longs = ['A', 'B'], vols = {'A': inf, 'B': inf}, rho_bar = 0.4
+sectors = {'A': 'tech', 'B': 'tech', 'C': 'healthcare', 'D': 'energy', ...}
+budget = 1.35
+
+    def size_portfolio(longs: list[str], vols: dict[str, float | None] | None,
+                       rho_bar: float | None, sectors: dict[str, str],
+                       budget: float) -> dict:
+        """PURE inverse-vol sizer: name cap -> sector cap -> correlation-aware
+        gross cap (effective bets) -> estimated-drawdown portfolio veto.
+        Weights are absolute exposures summing to <= budget; cash = budget -
+        gross is explicit; vetoed books are all-zero with the reason. vols /
+        rho_bar None -> equal-weight fallback (never invented numbers). No IO,
+        no clocks: the whole sizer is testable as a function (phase-5 gate)."""
+        b = float(budget)
+        out: dict[str, Any] = {"weights": {}, "gross": 0.0, "cash": b, "est_dd": None,
+                               "eff_bets": None,
+                               "rho_bar": (None if rho_bar is None else float(rho_bar)),
+                               "veto": "", "notes": [], "fallback": False, "budget": b}
+        if not longs:
+            out["notes"].append("no LONG names — all cash")
+            return out
+        if b < float(CONFIG["RISK_MIN_BUDGET"]):
+            out["veto"] = (f"budget {b:.2f} < {CONFIG['RISK_MIN_BUDGET']:.2f} "
+                           "(macro stand-down)")
+            out["notes"].append(out["veto"])
+            return out
+        have = {t: float(v) for t, v in (vols or {}).items() if v is not None and v > 0.0}
+        if have:
+            med = statistics.median(sorted(have.values()))
+            vol = {t: have.get(t, med) for t in longs}    # unpriced -> peer median
+            inv = {t: 1.0 / vol[t] for t in longs}
+            s = sum(inv.values())
+>           w = {t: inv[t] / s for t in longs}
+                    ^^^^^^^^^^
+E           ZeroDivisionError: float division by zero
+
+master.py:2160: ZeroDivisionError
+_____ TestSizerHardeningB1B2B3.test_b1_mixed_unusable_vols_never_leak_nan ______
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b1_mixed_unusable_vols_never_leak_nan>
+
+    def test_b1_mixed_unusable_vols_never_leak_nan(self):
+        vols = {"A": float("inf"), "B": float("nan"), "C": -1.0,
+                "D": 0.25, "E": 0.40}
+        out = master.size_portfolio(list("ABCDE"), vols, 0.3, self.sectors, 1.0)
+        self.assertTrue(all(math.isfinite(w) and w >= 0.0
+                            for w in out["weights"].values()))
+>       self.assertTrue(all(out["weights"][t] > 0.0 for t in "ABCDE"))
+E       AssertionError: False is not true
+
+test_master.py:4773: AssertionError
+__ TestSizerHardeningB1B2B3.test_b1_nan_and_negative_vols_treated_as_missing ___
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b1_nan_and_negative_vols_treated_as_missing>
+
+    def test_b1_nan_and_negative_vols_treated_as_missing(self):
+        out = master.size_portfolio(
+            ["A", "B", "C"], {"A": float("nan"), "B": -0.20, "C": 0.30},
+            0.4, self.sectors, 1.0)
+        for t in "ABC":
+            self.assertGreater(out["weights"][t], 0.0, t)
+            self.assertTrue(math.isfinite(out["weights"][t]), t)
+        notes = " ".join(out["notes"])
+>       self.assertIn("A", notes)
+E       AssertionError: 'A' not found in 'correlation cap (eff bets 1.7)'
+
+test_master.py:4763: AssertionError
+_ TestSizerHardeningB1B2B3.test_b1_one_inf_vol_gets_peer_median_weight_and_note _
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b1_one_inf_vol_gets_peer_median_weight_and_note>
+
+    def test_b1_one_inf_vol_gets_peer_median_weight_and_note(self):
+        out = master.size_portfolio(["A", "B"], {"A": float("inf"), "B": 0.30},
+                                    0.4, self.sectors, 1.0)
+        self.assertFalse(out["fallback"])              # B still priced
+>       self.assertGreater(out["weights"]["A"], 0.0)   # NOT silently zero
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: 0.0 not greater than 0.0
+
+test_master.py:4749: AssertionError
+_ TestSizerHardeningB1B2B3.test_b2_rho_exception_path_discloses_through_layer __
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b2_rho_exception_path_discloses_through_layer>
+
+    def test_b2_rho_exception_path_discloses_through_layer(self):
+        import pandas as pd
+        import numpy as np
+        layer = master.RiskLayer()
+        ctx = master.Context(flags={"offline": False, "restores": []})
+        ctx.risk_budget = 1.0
+        rng = np.random.RandomState(7)
+        idx = pd.date_range("2025-01-01", periods=200)
+        series = {t: pd.Series(100.0 * np.cumprod(
+                     1.0 + 0.01 * rng.randn(200)), index=idx)
+                  for t in "ABCD"}
+        decs = [master.Decision(ticker=t, sector=self.sectors[t],
+                                action="LONG", conviction=70.0)
+                for t in "ABCD"]
+    
+        def _rho_broad_except(series_map, as_of=None):
+            try:                       # what the real broad except does:
+                raise RuntimeError("correlation backend exploded")
+            except Exception:
+                return None            # rho lost, silently in v1.5.0
+    
+        with mock.patch.object(layer, "_price_data",
+                               return_value=(series, "")), \
+             mock.patch.object(master, "_rho_bar", _rho_broad_except):
+            res = layer.run(ctx, decs)
+        self.assertEqual(res.status, "OK")
+        joined = " ".join(res.ctx_out["portfolio"])
+>       self.assertIn("rho unavailable", joined)          # footer line
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: 'rho unavailable' not found in 'risk: gross 40% of 1.00 budget · cash 60%'
+
+test_master.py:4882: AssertionError
+_ TestSizerHardeningB1B2B3.test_b2_single_name_book_discloses_and_estimates_dd _
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b2_single_name_book_discloses_and_estimates_dd>
+
+    def test_b2_single_name_book_discloses_and_estimates_dd(self):
+        out = master.size_portfolio(["A"], {"A": 0.30}, None, self.sectors, 1.0)
+        self.assertAlmostEqual(out["weights"]["A"],
+                               master.CONFIG["RISK_MAX_NAME_W"])
+>       self.assertIsNotNone(out["est_dd"])           # rho irrelevant at n=1
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: unexpectedly None
+
+test_master.py:4820: AssertionError
+_ TestSizerHardeningB1B2B3.test_b2_two_names_rho_none_uses_fallback_rho_and_discloses _
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b2_two_names_rho_none_uses_fallback_rho_and_discloses>
+
+    def test_b2_two_names_rho_none_uses_fallback_rho_and_discloses(self):
+        out = master.size_portfolio(["A", "B"], {"A": 0.30, "B": 0.30},
+                                    None, self.sectors, 1.0)
+        self.assertIsNone(out["eff_bets"])            # corr cap OFF, said so
+>       self.assertTrue(out["rho_fallback"])
+                        ^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'rho_fallback'
+
+test_master.py:4832: KeyError
+_________ TestSizerHardeningB1B2B3.test_b3_inf_budget_is_a_stand_down __________
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b3_inf_budget_is_a_stand_down>
+
+    def test_b3_inf_budget_is_a_stand_down(self):
+        out = master.size_portfolio(["A", "B"], {"A": 0.3, "B": 0.4},
+                                    0.4, self.sectors, float("inf"))
+>       self.assertTrue(out["veto"])
+E       AssertionError: '' is not true
+
+test_master.py:4795: AssertionError
+_________ TestSizerHardeningB1B2B3.test_b3_nan_budget_is_a_stand_down __________
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b3_nan_budget_is_a_stand_down>
+
+    def test_b3_nan_budget_is_a_stand_down(self):
+        out = master.size_portfolio(["A", "B"], {"A": 0.3, "B": 0.4},
+                                    0.4, self.sectors, float("nan"))
+>       self.assertTrue(out["veto"])
+E       AssertionError: '' is not true
+
+test_master.py:4780: AssertionError
+_ TestSizerHardeningB1B2B3.test_b3_nonfinite_rho_bar_is_treated_as_unavailable _
+
+self = <test_master.TestSizerHardeningB1B2B3 testMethod=test_b3_nonfinite_rho_bar_is_treated_as_unavailable>
+
+    def test_b3_nonfinite_rho_bar_is_treated_as_unavailable(self):
+        for bad_rho in (float("nan"), float("inf")):
+            out = master.size_portfolio(["A", "B", "C", "D"],
+                                        {"A": .3, "B": .3, "C": .3, "D": .3},
+                                        bad_rho, self.sectors, 1.0)
+            self.assertTrue(math.isfinite(out["gross"]), bad_rho)
+            self.assertNotEqual(out["gross"], 0.0)    # not silently zeroed
+>           self.assertIsNone(out["eff_bets"])        # corr cap OFF, disclosed
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: nan is not None
+
+test_master.py:4807: AssertionError
+_____ TestHardeningB4B5B6.test_b4_future_report_warning_reaches_the_signal _____
+
+self = <test_master.TestHardeningB4B5B6 testMethod=test_b4_future_report_warning_reaches_the_signal>
+
+    def test_b4_future_report_warning_reaches_the_signal(self):
+        today = date(2026, 11, 13)              # pinned clock
+        plan_row = master._map_plan_row(
+            {"action": "LONG (entered)",
+             "event_date": (today + timedelta(days=3)).isoformat(),
+             "entry_px": 100.0}, today)
+        sig = master._earnings_signal("T", {"score": 60.0, "rating": "B"},
+                                      plan_row, None, None)
+>       self.assertEqual(sig.facts["plan"], "open")          # not NOW
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: 'LONG' != 'open'
+E       - LONG
+E       + open
+
+test_master.py:4935: AssertionError
+______ TestHardeningB4B5B6.test_b4_now_chip_rejects_future_dated_reports _______
+
+self = <test_master.TestHardeningB4B5B6 testMethod=test_b4_now_chip_rejects_future_dated_reports>
+
+    def test_b4_now_chip_rejects_future_dated_reports(self):
+        today = date(2026, 11, 13)              # pinned clock, not today()
+    
+        def row(offset):
+            ev = (None if offset is None
+                  else (today - timedelta(days=offset)).isoformat())
+            return {"action": "LONG (entered)", "event_date": ev,
+                    "entry_px": 100.0, "target_px": 115.0}
+    
+        for fresh in (0, 1, 10):                    # fresh reports: NOW
+            self.assertEqual(master._map_plan_row(row(fresh), today)["status"],
+                             "LONG", fresh)
+        self.assertEqual(master._map_plan_row(row(11), today)["status"], "open")
+        self.assertEqual(master._map_plan_row(row(None), today)["status"], "open")
+        for future in (-1, -30):                    # future-dated: NEVER NOW
+            m = master._map_plan_row(row(future), today)
+>           self.assertEqual(m["status"], "open", future)
+E           AssertionError: 'LONG' != 'open'
+E           - LONG
+E           + open
+E            : -1
+
+test_master.py:4923: AssertionError
+___ TestHardeningB4B5B6.test_b5_blocked_long_is_reasserted_avoid_by_overlays ___
+
+self = <test_master.TestHardeningB4B5B6 testMethod=test_b5_blocked_long_is_reasserted_avoid_by_overlays>
+
+    def test_b5_blocked_long_is_reasserted_avoid_by_overlays(self):
+        # hand-built foreign state: blocked veto but action still LONG
+        # (the production pipeline never builds this; overlays must not
+        # preserve it — defence in depth)
+        d = master.Decision(ticker="X", sector="tech", action="LONG",
+                            conviction=80.0, blocked="veto")
+        d.layers["macro"] = master.LayerSignal(
+            "X", "macro", score=None, grade="-", status="OK",
+            facts={"tilt": 1.0})
+        sig = master.LayerSignal("X", "ml", score=None, grade="SHADOW",
+                                 status="OK", facts={"conviction_adj": 5.0})
+        res = master.LayerResult(name="ml", order=4, stage="overlay",
+                                 status="OK", signals={"X": sig})
+        master._apply_overlays([d], {"ml": res}, "boost")
+>       self.assertEqual(d.action, "AVOID")                  # re-asserted
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: 'LONG' != 'AVOID'
+E       - LONG
+E       + AVOID
+
+test_master.py:4955: AssertionError
+______ TestHardeningB4B5B6.test_b6_documented_keys_disclose_their_status _______
+
+self = <test_master.TestHardeningB4B5B6 testMethod=test_b6_documented_keys_disclose_their_status>
+
+    def test_b6_documented_keys_disclose_their_status(self):
+        rat = master.config_rationales()
+        # EARNINGS_NATIVE_GRADES: production shows the engine's own rating
+        # string; the bands are a documented vocabulary, not a code path.
+>       self.assertIn("never re-scores", rat["EARNINGS_NATIVE_GRADES"])
+E       AssertionError: 'never re-scores' not found in "earnings_engine's _rating bands — shown only on the earnings layer."
+
+test_master.py:4999: AssertionError
+________ TestHardeningB4B5B6.test_b6_mode_keys_drive_the_standard_mode _________
+
+self = <test_master.TestHardeningB4B5B6 testMethod=test_b6_mode_keys_drive_the_standard_mode>
+
+    def test_b6_mode_keys_drive_the_standard_mode(self):
+        # change the CONFIG value and the standard preset must follow:
+        # the old test passed only because 900==900 and 25==25
+        with mock.patch.dict(master.CONFIG, {"LAYER_TIMEOUT_S": 123.0,
+                                             "EARNINGS_TOP_K": 7}):
+            ns = _ns(["--mode", "standard"])
+>           self.assertEqual(ns.timeout, 123.0)
+E           AssertionError: 900.0 != 123.0
+
+test_master.py:4981: AssertionError
+____ TestAtomicWritesB8.test_b8_freeze_manifest_crash_leaves_previous_file _____
+
+self = <test_master.TestAtomicWritesB8 testMethod=test_b8_freeze_manifest_crash_leaves_previous_file>
+
+    def test_b8_freeze_manifest_crash_leaves_previous_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            fz = Path(tmp) / "fz"
+            out = _run(["MU", "NVDA", "--mode", "quick"], stubs=True,
+                       timeout=30)
+            note = run_freeze(str(fz), out, _ns(["MU", "NVDA", "--mode", "quick"]))
+            self.assertIn("manifest.json", note)
+            man = fz / "manifest.json"
+            before = man.read_text(encoding="utf-8")
+            # crash exactly at the rename (bytes already on the .tmp):
+            with mock.patch("os.replace", side_effect=OSError("boom")):
+>               with self.assertRaises(OSError):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               AssertionError: OSError not raised
+
+test_master.py:5119: AssertionError
+__ TestAtomicWritesB8.test_b8_meds_snapshot_write_crash_leaves_previous_file ___
+
+self = <test_master.TestAtomicWritesB8 testMethod=test_b8_meds_snapshot_write_crash_leaves_previous_file>
+
+    def test_b8_meds_snapshot_write_crash_leaves_previous_file(self):
+        class _VC:
+            def _load_all(self):
+                return {"fred/DGS10.csv": b"stale", "not_fred.txt": b"x"}
+    
+            def get(self, name, max_age_days=None):
+                return (b"DGS10 NEW BODY", {})
+    
+        fake_meds = types.SimpleNamespace(VerifiedCache=_VC)
+        with tempfile.TemporaryDirectory() as tmp:
+            dest = Path(tmp) / "meds_snapshot"
+            (dest / "fred").mkdir(parents=True)
+            (dest / "fred" / "DGS10.csv").write_bytes(b"PREVIOUS TRUTH")
+            # crash at the rename: previous snapshot file intact, no litter
+            with mock.patch("os.replace", side_effect=OSError("boom")):
+                n, note = master._materialise_meds_snapshot(fake_meds, dest)
+>           self.assertEqual(n, 0)
+E           AssertionError: 1 != 0
+
+test_master.py:5141: AssertionError
+_______ TestAtomicWritesB8.test_b8_ml_dataset_atomic_helpers_crash_safe ________
+
+self = <test_master.TestAtomicWritesB8 testMethod=test_b8_ml_dataset_atomic_helpers_crash_safe>
+
+    def test_b8_ml_dataset_atomic_helpers_crash_safe(self):
+        import ml_dataset as mld
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "cache" / "2026-07-31.json"
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text("{\"old\": true}", encoding="utf-8")
+            with mock.patch("os.replace", side_effect=OSError("boom")):
+                with self.assertRaises(OSError):
+>                   mld._atomic_write_text(p, "{\"new\": 1}")
+                    ^^^^^^^^^^^^^^^^^^^^^^
+E                   AttributeError: module 'ml_dataset' has no attribute '_atomic_write_text'
+
+test_master.py:5057: AttributeError
+__ TestAtomicWritesB8.test_b8_ml_train_save_model_crash_leaves_previous_file ___
+
+self = <test_master.TestAtomicWritesB8 testMethod=test_b8_ml_train_save_model_crash_leaves_previous_file>
+
+    def test_b8_ml_train_save_model_crash_leaves_previous_file(self):
+        import ml_train as mlt
+    
+        def partial_write(target, *a, **k):
+            """Simulate a crash AFTER partial bytes reached the disk."""
+            if hasattr(target, "write"):
+                target.write(b"PK\x03\x04TRUNCATED-GARBAGE")
+            else:
+                with open(target, "wb") as fh:
+                    fh.write(b"PK\x03\x04TRUNCATED-GARBAGE")
+            raise OSError("disk full (simulated mid-write crash)")
+    
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "head_q.npz"
+            np.savez(p, marker=np.int64(42))         # pre-existing artifact
+            # pin_versions=False: the ATOMIC WRITE is under test here (the
+            # pin refresh has its own phase-1 tests) and the test must stay
+            # green with sklearn/joblib blocked — 0 skips in the matrix.
+            with mock.patch("numpy.savez", partial_write):
+                with self.assertRaises(OSError):
+                    mlt.save_model(p, {"model_type": "logistic_np",
+                                       "feature_names": ["a"],
+                                       "state": "SHADOW"},
+                                   pin_versions=False)
+>           back = dict(np.load(p, allow_pickle=False))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_master.py:5097: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/z/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py:476: in load
+    ret = NpzFile(fid, own_fid=own_fid, allow_pickle=allow_pickle,
+/home/z/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py:192: in __init__
+    _zip = zipfile_factory(fid)
+           ^^^^^^^^^^^^^^^^^^^^
+/home/z/.venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py:103: in zipfile_factory
+    return zipfile.ZipFile(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/zipfile/__init__.py:1396: in __init__
+    self._RealGetContents()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <zipfile.ZipFile [closed]>
+
+    def _RealGetContents(self):
+        """Read in the table of contents for the ZIP file."""
+        fp = self.fp
+        try:
+            endrec = _EndRecData(fp)
+        except OSError:
+            raise BadZipFile("File is not a zip file")
+        if not endrec:
+>           raise BadZipFile("File is not a zip file")
+E           zipfile.BadZipFile: File is not a zip file
+
+/home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/zipfile/__init__.py:1463: BadZipFile
+_______ TestAtomicWritesB8.test_b8_write_csv_crash_leaves_previous_file ________
+
+self = <test_master.TestAtomicWritesB8 testMethod=test_b8_write_csv_crash_leaves_previous_file>
+
+    def test_b8_write_csv_crash_leaves_previous_file(self):
+        import csv
+        real_writer = csv.writer
+    
+        class _Crashing:
+            """csv.writer stand-in: first row lands, the second one crashes
+            (simulated disk-full mid-write)."""
+    
+            def __init__(self, w):
+                self._w, self.n = w, 0
+    
+            def writerow(self, r):
+                self.n += 1
+                if self.n > 1:
+                    raise OSError("disk full (simulated mid-write crash)")
+                self._w.writerow(r)
+    
+        with tempfile.TemporaryDirectory() as tmp:
+            csv_path = str(Path(tmp) / "out" / "book.csv")
+            Path(csv_path).parent.mkdir(parents=True, exist_ok=True)
+            Path(csv_path).write_text("PRE-EXISTING BOOK", encoding="utf-8")
+            out = _run(self.argv, mods=self._fakes())
+            with mock.patch("csv.writer", lambda fh, *a, **k:
+                            _Crashing(real_writer(fh, *a, **k))):
+                with self.assertRaises(OSError):
+                    master._write_csv(csv_path, out,
+                                      _ns(["--csv", csv_path]))
+>           self.assertEqual(Path(csv_path).read_text(encoding="utf-8"),
+                             "PRE-EXISTING BOOK")
+E           AssertionError: 'rank,ticker,sector,action,conviction,grad[101 chars]ht\n' != 'PRE-EXISTING BOOK'
+E           + PRE-EXISTING BOOK
+E           - rank,ticker,sector,action,conviction,grade,macro_tilt,now,q_score,q_grade,q_status,e_score,e_grade,e_status,plan,p_next_big,flags,reasons,weight
+E           -
+
+test_master.py:5045: AssertionError
+----------------------------- Captured stderr call -----------------------------
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+___________ TestWeakEDisclosure.test_weak_e_states_effective_weight ____________
+
+self = <test_master.TestWeakEDisclosure testMethod=test_weak_e_states_effective_weight>
+
+    def test_weak_e_states_effective_weight(self):
+        we = float(CONFIG["W_E"]) * float(CONFIG["EARNINGS_WEAK_SCALE"])
+        eff = we / (float(CONFIG["W_Q"]) + we)
+        # force the engine verdict to NOT ENOUGH (the real pilot condition)
+        # so the weak path actually renders; the render itself is under test
+        with mock.patch.object(master, "_accuracy_verdict",
+                               return_value="NOT ENOUGH DATA (n_tests 0)"):
+            out = _run(["MU", "NVDA", "AAPL", "--min-conviction", "0"],
+                       mods={"meds": _fake_meds({}), "quality": _fake_quality({}),
+                             "earnings": _fake_earnings({})})
+        e_res = out.results["earnings"]
+        self.assertTrue(e_res.ctx_out.get("weak"))
+        rep = render_report(out, _ns(["--width", "110", "--top", "25",
+                                      "--min-conviction", "0"]))
+>       self.assertIn(f"E weight {float(CONFIG['W_E']):.0%} -> {eff:.0%}", rep)
+E       AssertionError: 'E weight 35% -> 21%' not found in '╭────────────────────────────────────────────────────────────────────────────────────────────────────────────╮\n│ MASTER v1.7.0-dev · mode standard · net online (MASTER_NET=online (override)) · as of 2026-11-13 (live) ·  │\n│ stubs no                                                                                                   │\n│ engines: meds v14.7.0 · quality v3.4.1 · earnings v3 · ml_train v1.0.0 · master v1.7.0-dev                 │\n│ chain: macro→quality→earnings→ml→risk                                                                      │\n│ data: macro network 2026-10-31·13d OK | quality mixed ? MISSING_DATA | earnings mixed ? MISSING_DATA | ml  │\n│ cache ? OK | risk none ? OK                                                                                │\n╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\n\n ✓ L1 macro     meds v14.7.0        0.0s  cold ● OK        \n     data network · as-of 2026-10-31 · age 13d · OK\n ✓ L2 quality   quality v3.4.1      0.0s  cold ● OK        3/3 scored  ████████████ 3/3\n     data mixed · as-of ? · age ? · MISSING_DATA\n ✓ L3 earnings  earnings v3         0.0s  cold ▲ DEGRADED  1 no data · weak\n     data mixed · as-of ? · age ? · MISSING_DATA\n ✓ L4 ml        ml_train v1.0.0     0.0s  n/a  ▲ DEGRADED  \n     data cache · as-of ? · age ? · OK\n ✓ L5 risk      master v1.7.0-dev   0.0s  n/a  ● OK        portfolio\n     data none · as-of ? · age ? · OK\n\n L1 MACRO ── Soft Landing / Policy Pivot · Mid Cycle\n   conf ████████░░ 0.82 · lev 1.35x · risk budget 1.35\neff 2026-10-31 · data public · PIT approximate_pit_lag · credit ON · next month 2026-12\n   LONG  SPY QQQ XLY    SHORT  –          sleeve: –\nsector tilt tech +1.0 · comm +1.0 · cons +1.0 · indu +0.5 · energy +0.5 · util +0.5 · mats +0.5 · health\n     – · fin – · reits – · spec –\n\n SECTOR      tilt   scored   median-Q\n tech        +1.0   3/3      80\n\nML OVERLAY q UNTRAINED · e UNTRAINED · macro UNTRAINED — probabilities logged, no decision changed\n\n  #  TICKER SECTOR  ACTION CONV             Q     E         WT    MACRO  FLAGS REASONS\n  1  AAPL   tech    LONG   ██████████░░ 87 A88 A  nodata    5%    +1.0   – Q 88 (A) rank 3/11 tech; macro +1.…\n  2  MU     tech    LONG   ██████████░░ 81 A72 B  81 A·NOW  5%    +1.0   – Q 72 (B) rank 3/11 tech; macro +1.…\n  3  NVDA   tech    LONG   ██████████░░ 80 A80 A  44 C      5%    +1.0   HIGH_ACCRUA… Q 80 (A) rank 3/11 tech…\n 3 LONG · 0 WATCH · 0 AVOID\n\nrisk: gross 11% of 1.35 budget · cash 89% · est max DD ~5% (2x ann vol — estimate, not a probability) · eff\n   bets 2.8\nrisk caps: correlation cap (eff bets 2.8)\nwarnings: 1 ticker(s) no earnings history · earnings accuracy: NOT ENOUGH DATA (n_tests 0) · ml: UNTRAINED\n   — no models in /tmp/ml_hermetic_o_wxb4il (train: python3 ml_train.py)\nconviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt — score, not probability\nresearch screener, not investment advice · survivorship-biased universe · timings 0.0s (macro 0.0s ·\n   quality 0.0s · earnings 0.0s · ml 0.0s · risk 0.0s)'
+
+test_master.py:5173: AssertionError
+----------------------------- Captured stderr call -----------------------------
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+_____ TestRulesRegisterCheck.test_negative_control_planted_dead_key_fails ______
+
+self = <test_master.TestRulesRegisterCheck testMethod=test_negative_control_planted_dead_key_fails>
+
+    def test_negative_control_planted_dead_key_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            corrupt = Path(tmp) / "master_corrupt.py"
+            corrupt.write_text(
+                Path("master.py").read_text(encoding="utf-8")
+                + '\n_cfg("ZZ_PLANTED_DEAD_KEY", 1, "planted for the '
+                  'negative control.")\n', encoding="utf-8")
+>           rc, out = self._run_checker(["--master", str(corrupt)])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+test_master.py:5219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+test_master.py:5203: in _run_checker
+    rc = self._checker().main(argv)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/rules_register_check.py:83: in main
+    mod, src = _load_master(master_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/rules_register_check.py:69: in _load_master
+    spec.loader.exec_module(mod)
+<frozen importlib._bootstrap_external>:999: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+/tmp/tmpah43bu24/master_corrupt.py:502: in <module>
+    ???
+/home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/dataclasses.py:1265: in wrap
+    return _process_class(cls, init, repr, eq, order, unsafe_hash,
+/home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/dataclasses.py:983: in _process_class
+    and _is_type(type, cls, dataclasses, dataclasses.KW_ONLY,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+annotation = 'str', cls = <class 'master_register_under_test.MacroState'>
+a_module = <module 'dataclasses' from '/home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/dataclasses.py'>
+a_type = <dataclasses._KW_ONLY_TYPE object at 0x7f66fafcc080>
+is_type_predicate = <function _is_kw_only at 0x7f66fb0a5760>
+
+    def _is_type(annotation, cls, a_module, a_type, is_type_predicate):
+        # Given a type annotation string, does it refer to a_type in
+        # a_module?  For example, when checking that annotation denotes a
+        # ClassVar, then a_module is typing, and a_type is
+        # typing.ClassVar.
+    
+        # It's possible to look up a_module given a_type, but it involves
+        # looking in sys.modules (again!), and seems like a waste since
+        # the caller already knows a_module.
+    
+        # - annotation is a string type annotation
+        # - cls is the class that this annotation was found in
+        # - a_module is the module we want to match
+        # - a_type is the type in that module we want to match
+        # - is_type_predicate is a function called with (obj, a_module)
+        #   that determines if obj is of the desired type.
+    
+        # Since this test does not do a local namespace lookup (and
+        # instead only a module (global) lookup), there are some things it
+        # gets wrong.
+    
+        # With string annotations, cv0 will be detected as a ClassVar:
+        #   CV = ClassVar
+        #   @dataclass
+        #   class C0:
+        #     cv0: CV
+    
+        # But in this example cv1 will not be detected as a ClassVar:
+        #   @dataclass
+        #   class C1:
+        #     CV = ClassVar
+        #     cv1: CV
+    
+        # In C1, the code in this function (_is_type) will look up "CV" in
+        # the module and not find it, so it will not consider cv1 as a
+        # ClassVar.  This is a fairly obscure corner case, and the best
+        # way to fix it would be to eval() the string "CV" with the
+        # correct global and local namespaces.  However that would involve
+        # a eval() penalty for every single field of every dataclass
+        # that's defined.  It was judged not worth it.
+    
+        match = _MODULE_IDENTIFIER_RE.match(annotation)
+        if match:
+            ns = None
+            module_name = match.group(1)
+            if not module_name:
+                # No module name, assume the class's module did
+                # "from dataclasses import InitVar".
+>               ns = sys.modules.get(cls.__module__).__dict__
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               AttributeError: 'NoneType' object has no attribute '__dict__'. Did you mean: '__dir__'?
+
+/home/z/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/dataclasses.py:749: AttributeError
+_______________ TestRulesRegisterCheck.test_real_register_passes _______________
+
+self = <test_master.TestRulesRegisterCheck testMethod=test_real_register_passes>
+
+    def test_real_register_passes(self):
+        rc, out = self._run_checker([])
+>       self.assertEqual(rc, 0, out)
+E       AssertionError: 1 != 0 :   LIVE      ACTION_LONG_AT               read in production master.py
+E         LIVE      ACTION_WATCH_AT              read in production master.py
+E         LIVE      BAR_COLS                     read in production master.py
+E         LIVE      COLD_S_PER_NAME              read in production master.py
+E         DEAD      CONF_DIGITS                  no production reference and no disclosure in rationale
+E         LIVE      CYCLICAL_SECTORS             read in production master.py
+E         LIVE      DEFAULT_MIN_CONV             read in production master.py
+E         LIVE      DEFAULT_TOP                  read in production master.py
+E         LIVE      DEFAULT_WATCHLIST            read in production master.py
+E         LIVE      DEFAULT_WORKERS              read in production master.py
+E         LIVE      DEFENSIVE_SCENARIOS          read in production master.py
+E         LIVE      DISCRETIONARY_SET            read in production master.py
+E         LIVE      EARNINGS_HOLD_DAYS           read in production master.py
+E         LIVE      EARNINGS_MAX_AGE             read in production master.py
+E         DEAD      EARNINGS_NATIVE_GRADES       no production reference and no disclosure in rationale
+E         LIVE      EARNINGS_PLAN_MIN            read in production master.py
+E         LIVE      EARNINGS_QUARTERS            read in production master.py
+E         DEAD      EARNINGS_TOP_K               no production reference and no disclosure in rationale
+E         LIVE      EARNINGS_TP                  read in production master.py
+E         LIVE      EARNINGS_WEAK_SCALE          read in production master.py
+E         LIVE      ENGINE_VERSION_ATTRS         read in production master.py
+E         LIVE      ETF_TO_SECTORS               read in production master.py
+E         LIVE      EXPLAIN_METRICS              read in production master.py
+E         LIVE      E_MISSING_HAIRCUT            read in production master.py
+E         LIVE      FREEZE_MAX_BYTES             read in production master.py
+E         LIVE      FRESHNESS_EARNINGS_EVENT_MAX_D read in production master.py
+E         LIVE      FRESHNESS_EARNINGS_PRICE_MAX_AGE_D read in production master.py
+E         LIVE      FRESHNESS_MACRO_MAX_AGE_D    read in production master.py
+E         LIVE      FRESHNESS_QUALITY_MAX_AGE_D  read in production master.py
+E         DEAD      LAYER_TIMEOUT_S              no production reference and no disclosure in rationale
+E         LIVE      MACRO_DEGRADED_DAMP          read in production master.py
+E         LIVE      MACRO_SNAPSHOT_MAX_AGE_H     read in production master.py
+E         LIVE      MACRO_TILT_GAIN              read in production master.py
+E         LIVE      MASTER_GRADES                read in production master.py
+E         LIVE      MAX_REASONS                  read in production master.py
+E         LIVE      MAX_TERM_WIDTH               read in production master.py
+E         LIVE      MIN_QUALITY                  read in production master.py
+E         LIVE      MIN_TERM_WIDTH               read in production master.py
+E         LIVE      ML_ADJ_MAX                   read in production master.py
+E         LIVE      ML_FORBIDDEN_FEATURES        read in production master.py
+E         LIVE      ML_MODELS_DIR                read in production master.py
+E         LIVE      MODES                        read in production master.py
+E         LIVE      MODE_DEFAULT                 read in production master.py
+E         LIVE      NET_MODES                    read in production master.py
+E         LIVE      NET_MODE_DEFAULT             read in production master.py
+E         LIVE      NEUTRAL_KEY                  read in production master.py
+E         LIVE      OVERLAY_MAX_ADJ              read in production master.py
+E         LIVE      PREFETCH_ALL_MAX             read in production master.py
+E         LIVE      PRICE_TTL_H                  read in production master.py
+E         LIVE      PROBE_BUDGET_S               read in production master.py
+E         LIVE      PROBE_HOST                   read in production master.py
+E         LIVE      PROBE_PORT                   read in production master.py
+E         LIVE      PROBE_TIMEOUT_S              read in production master.py
+E         LIVE      QUALITY_NATIVE_GRADES        read in production master.py
+E         LIVE      QUALITY_SECTORS              read in production master.py
+E         LIVE      RETRY_BACKOFF_S              read in production master.py
+E         LIVE      RETRY_MAX_ATTEMPTS           read in production master.py
+E         LIVE      RISK_CAP_DEGRADED            read in production master.py
+E         LIVE      RISK_CORR_LOOKBACK_TD        read in production master.py
+E         LIVE      RISK_DD_FACTOR               read in production master.py
+E         LIVE      RISK_MAX_EST_DD              read in production master.py
+E         LIVE      RISK_MAX_NAME_W              read in production master.py
+E         LIVE      RISK_MAX_PRICE_NAMES         read in production master.py
+E         LIVE      RISK_MAX_SECTOR_W            read in production master.py
+E         LIVE      RISK_MIN_BUDGET              read in production master.py
+E         LIVE      RISK_MIN_EFFECTIVE_BETS      read in production master.py
+E         LIVE      RISK_MIN_HISTORY_TD          read in production master.py
+E         LIVE      RISK_VOL_LOOKBACK_TD         read in production master.py
+E         LIVE      SECTOR_ABBR                  read in production master.py
+E         LIVE      SECTOR_ORDER                 read in production master.py
+E         LIVE      SLEEVE_ETFS                  read in production master.py
+E         LIVE      STAPLES_SET                  read in production master.py
+E         DEAD      STUB_WARM_BUDGET_S           no production reference and no disclosure in rationale
+E         LIVE      TESTED_VERSIONS              read in production master.py
+E         LIVE      VETO_FLAGS                   read in production master.py
+E         LIVE      WARM_ETA_RANGE_S             read in production master.py
+E         LIVE      WARM_TIMEOUT_S               read in production master.py
+E         LIVE      W_E                          read in production master.py
+E         LIVE      W_Q                          read in production master.py
+E       RULES REGISTER: 74 live / 0 disclosed-not-read / 5 dead (total 79)
+E       FAIL: dead CONFIG keys (no production read, no disclosure): CONF_DIGITS, EARNINGS_NATIVE_GRADES, EARNINGS_TOP_K, LAYER_TIMEOUT_S, STUB_WARM_BUDGET_S
+
+test_master.py:5208: AssertionError
+=========================== short test summary info ============================
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b1_all_inf_vols_degrade_not_crash
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b1_mixed_unusable_vols_never_leak_nan
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b1_nan_and_negative_vols_treated_as_missing
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b1_one_inf_vol_gets_peer_median_weight_and_note
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b2_rho_exception_path_discloses_through_layer
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b2_single_name_book_discloses_and_estimates_dd
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b2_two_names_rho_none_uses_fallback_rho_and_discloses
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b3_inf_budget_is_a_stand_down
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b3_nan_budget_is_a_stand_down
+FAILED test_master.py::TestSizerHardeningB1B2B3::test_b3_nonfinite_rho_bar_is_treated_as_unavailable
+FAILED test_master.py::TestHardeningB4B5B6::test_b4_future_report_warning_reaches_the_signal
+FAILED test_master.py::TestHardeningB4B5B6::test_b4_now_chip_rejects_future_dated_reports
+FAILED test_master.py::TestHardeningB4B5B6::test_b5_blocked_long_is_reasserted_avoid_by_overlays
+FAILED test_master.py::TestHardeningB4B5B6::test_b6_documented_keys_disclose_their_status
+FAILED test_master.py::TestHardeningB4B5B6::test_b6_mode_keys_drive_the_standard_mode
+FAILED test_master.py::TestAtomicWritesB8::test_b8_freeze_manifest_crash_leaves_previous_file
+FAILED test_master.py::TestAtomicWritesB8::test_b8_meds_snapshot_write_crash_leaves_previous_file
+FAILED test_master.py::TestAtomicWritesB8::test_b8_ml_dataset_atomic_helpers_crash_safe
+FAILED test_master.py::TestAtomicWritesB8::test_b8_ml_train_save_model_crash_leaves_previous_file
+FAILED test_master.py::TestAtomicWritesB8::test_b8_write_csv_crash_leaves_previous_file
+FAILED test_master.py::TestWeakEDisclosure::test_weak_e_states_effective_weight
+FAILED test_master.py::TestRulesRegisterCheck::test_negative_control_planted_dead_key_fails
+FAILED test_master.py::TestRulesRegisterCheck::test_real_register_passes - As...
+23 failed, 2 passed, 263 deselected in 3.21s

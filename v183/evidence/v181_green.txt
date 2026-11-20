@@ -1,0 +1,7 @@
+# v1.8.1 GREEN evidence — full suite
+
+Ran 544 tests in 46.733s
+OK
+
+# new tests: 70 (544 - 474 baseline); all green above.
+# red-first proof: evidence/v181_red.txt (same 70 tests, all RED, captured BEFORE the implementation).

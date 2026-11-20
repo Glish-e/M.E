@@ -1,0 +1,23 @@
+=== F4: API hosts per engine ===
+-- meds.py
+https://api.stlouisfed.org/fred/series/observations
+https://fred.stlouisfed.org/docs/api/fred/series_observations.html
+https://fred.stlouisfed.org/graph/fredgraph.csv
+-- quality.py
+https://data.sec.gov/api/xbrl/companyfacts/
+https://data.sec.gov/submissions/CIK
+https://finnhub.io/api/v1
+https://unit.test/data
+https://www.sec.gov/files/company_tickers.json
+-- earnings_engine.py
+https://finnhub.io/api/v1/stock/earnings
+-- yahoo hosts anywhere
+      1 query1.finance.yahoo.com
+      1 query1.finance.yahoo.com/v8/finance/chart/SPY
+      1 query2.finance.yahoo.com
+-- FRED key env names (meds.py:270)
+_FRED_KEY_NAMES = ("FREDAPI", "FRED_API_KEY", "FRED_API", "FRED_APIKEY")
+-- Finnhub key
+    - Finnhub key: .env may use the standard name FINNHUB_API_KEY (the
+    """(token, env_var_name) from FINNHUB_API_KEY or legacy FINAPI.
+    logged or stored (3.3.0: .env files written as FINNHUB_API_KEY work).

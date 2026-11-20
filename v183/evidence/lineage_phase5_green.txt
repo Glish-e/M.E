@@ -1,0 +1,345 @@
+test_build_inline_shape (__main__.RealEngineContract.test_build_inline_shape) ... ok
+test_month_floor_parity (__main__.RealEngineContract.test_month_floor_parity) ... ok
+test_normalize_parity (__main__.RealEngineContract.test_normalize_parity) ... ok
+test_versions_match_tested (__main__.RealEngineContract.test_versions_match_tested) ... ok
+test_propagation_and_floor (__main__.TestAsOfPropagation.test_propagation_and_floor) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_bucket_tilts (__main__.TestBucketMacroSplit.test_bucket_tilts) ... ok
+test_stub_run_bucket_keeps_macro_apart (__main__.TestBucketMacroSplit.test_stub_run_bucket_keeps_macro_apart) ... ok
+test_default_dir_cold_fetch_reported_cold (__main__.TestCacheStatusRealDir.test_default_dir_cold_fetch_reported_cold) ... [plan] mode standard · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 0.0h
+ok
+test_all_engines_present_is_exit_0 (__main__.TestCheckSections.test_all_engines_present_is_exit_0) ... ok
+test_missing_engine_is_exit_2_with_sections (__main__.TestCheckSections.test_missing_engine_is_exit_2_with_sections) ... ok
+test_bad_as_of_is_64 (__main__.TestCli.test_bad_as_of_is_64) ... ok
+test_bad_flag_is_64 (__main__.TestCli.test_bad_flag_is_64) ... ok
+test_help_version (__main__.TestCli.test_help_version) ... ok
+test_json_exit0_and_parses (__main__.TestCli.test_json_exit0_and_parses) ... ok
+test_bands_ordered (__main__.TestConfigSanity.test_bands_ordered) ... ok
+test_vocab (__main__.TestConfigSanity.test_vocab) ... ok
+test_weights (__main__.TestConfigSanity.test_weights) ... ok
+test_conviction_definition_in_table_explain_and_json (__main__.TestDefinitionsAndLabels.test_conviction_definition_in_table_explain_and_json) ... ok
+test_missing_e_still_long_disclosed (__main__.TestDefinitionsAndLabels.test_missing_e_still_long_disclosed) ... ok
+test_scorecard_labels_p_next (__main__.TestDefinitionsAndLabels.test_scorecard_labels_p_next) ... ok
+test_damp (__main__.TestDegradedDamp.test_damp) ... ok
+test_backtest_summary_maps_v3_series (__main__.TestEarningsAdapterV3Contract.test_backtest_summary_maps_v3_series) ... ok
+test_backtest_uses_v3_result (__main__.TestEarningsAdapterV3Contract.test_backtest_uses_v3_result) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_dstr_handles_real_engine_timestamps (__main__.TestEarningsAdapterV3Contract.test_dstr_handles_real_engine_timestamps)
+P4-D1: the REAL engine returns pd.Timestamp dates; _dstr used to ... ok
+test_plan_now_chip_via_signals (__main__.TestEarningsAdapterV3Contract.test_plan_now_chip_via_signals) ... [plan] mode standard · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_plan_stale_report_is_open_not_now (__main__.TestEarningsAdapterV3Contract.test_plan_stale_report_is_open_not_now) ... [plan] mode standard · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_verdict_ladder_without_auc (__main__.TestEarningsAdapterV3Contract.test_verdict_ladder_without_auc) ... ok
+test_missing_score_shows_no_data_and_dash_probability (__main__.TestEarningsScorecard.test_missing_score_shows_no_data_and_dash_probability) ... ok
+test_one_bad_ticker_does_not_kill_layer (__main__.TestEarningsTickerIsolation.test_one_bad_ticker_does_not_kill_layer) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_full_run (__main__.TestEndToEnd.test_full_run) ... ok
+test_no_go_reason_names_real_blocker (__main__.TestExitReason.test_no_go_reason_names_real_blocker) ... ok
+test_useful_macro_still_exits_zero (__main__.TestExitReason.test_useful_macro_still_exits_zero) ... ok
+test_all_fail_exit2 (__main__.TestFailureIsolation.test_all_fail_exit2) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+ok
+test_meds_error_rest_runs (__main__.TestFailureIsolation.test_meds_error_rest_runs) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_one_ticker_quality_error (__main__.TestFailureIsolation.test_one_ticker_quality_error) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+quality MU: RuntimeError: quality boom MU
+ok
+test_earnings_signal_sanitises (__main__.TestFiniteSanitisation.test_earnings_signal_sanitises) ... ok
+test_earnings_top_zero_is_explicit_idle (__main__.TestFiniteSanitisation.test_earnings_top_zero_is_explicit_idle) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_fuse_matrix_never_long (__main__.TestFiniteSanitisation.test_fuse_matrix_never_long) ... ok
+test_nan_cli_flags_exit_64 (__main__.TestFiniteSanitisation.test_nan_cli_flags_exit_64) ... ok
+test_parse_macro_sanitises (__main__.TestFiniteSanitisation.test_parse_macro_sanitises) ... ok
+test_quality_signal_rejects_bad_scores (__main__.TestFiniteSanitisation.test_quality_signal_rejects_bad_scores) ... ok
+test_zero_confidence_and_leverage_survive (__main__.TestFiniteSanitisation.test_zero_confidence_and_leverage_survive) ... ok
+test_colored_equals_plain_at_narrow_width (__main__.TestFitVisibleWidth.test_colored_equals_plain_at_narrow_width) ... ok
+test_fit_counts_visible_chars_only (__main__.TestFitVisibleWidth.test_fit_counts_visible_chars_only) ... ok
+test_exactly_one_score_not_probability (__main__.TestFooterOne.test_exactly_one_score_not_probability) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_topk (__main__.TestFunnel.test_topk) ... [plan] mode standard · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_exact_thresholds (__main__.TestFusionBoundaries.test_exact_thresholds) ... ok
+test_trigger_mode_blocks_long (__main__.TestFusionBoundaries.test_trigger_mode_blocks_long) ... ok
+test_veto_cap_and_degraded_damp (__main__.TestFusionBoundaries.test_veto_cap_and_degraded_damp) ... ok
+test_weak_renormalisation (__main__.TestFusionBoundaries.test_weak_renormalisation) ... ok
+test_at_gate_boundary (__main__.TestFusionGates.test_at_gate_boundary) ... ok
+test_below_gate (__main__.TestFusionGates.test_below_gate) ... ok
+test_no_score_never_imputed (__main__.TestFusionGates.test_no_score_never_imputed) ... ok
+test_other_flags_are_warnings_only (__main__.TestFusionGates.test_other_flags_are_warnings_only) ... ok
+test_vetoes (__main__.TestFusionGates.test_vetoes) ... ok
+test_env_unchanged (__main__.TestImportPurity.test_env_unchanged) ... ok
+test_import_no_side_effects (__main__.TestImportPurity.test_import_no_side_effects) ... ok
+test_only_quality_imports_nothing_else (__main__.TestImportPurity.test_only_quality_imports_nothing_else) ... [plan] mode standard · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_keys (__main__.TestJsonSchema.test_keys) ... ok
+test_mu_long_math (__main__.TestJsonSchema.test_mu_long_math) ... ok
+test_bounds (__main__.TestMLConfig.test_bounds) ... ok
+test_h2_frozen_pins_unchanged (__main__.TestMLConfig.test_h2_frozen_pins_unchanged) ... ok
+test_new_keys_have_rationales (__main__.TestMLConfig.test_new_keys_have_rationales) ... ok
+test_model_with_future_dated_feature_refused (__main__.TestMLLeakage.test_model_with_future_dated_feature_refused) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_trainer_embargo_is_enforced (__main__.TestMLLeakage.test_trainer_embargo_is_enforced) ... ok
+test_active_applies_bounded_adjustment (__main__.TestMLStates.test_active_applies_bounded_adjustment) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_active_without_report_refused (__main__.TestMLStates.test_active_without_report_refused) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_probability_only_with_sample_size_and_footer_intact (__main__.TestMLStates.test_probability_only_with_sample_size_and_footer_intact) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_shadow_logged_and_changes_no_decision (__main__.TestMLStates.test_shadow_logged_and_changes_no_decision) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_untrained_runs_loud_and_changes_nothing (__main__.TestMLStates.test_untrained_runs_loud_and_changes_nothing) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_activate_refused_without_passing_report (__main__.TestMLTrain.test_activate_refused_without_passing_report) ... [ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpq4drl1zv/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: head q -> ACTIVE (validation report on file)
+ok
+test_forbidden_dataset_feature_refused (__main__.TestMLTrain.test_forbidden_dataset_feature_refused) ... ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ok
+test_too_few_groups_refused_honestly (__main__.TestMLTrain.test_too_few_groups_refused_honestly) ... ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+ok
+test_train_save_reload_and_predict_parity (__main__.TestMLTrain.test_train_save_reload_and_predict_parity) ... [ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpe6b_4e_9/models/head_q.npz
+ok
+test_ml_models_flag_parses (__main__.TestMLWizardAndFlags.test_ml_models_flag_parses) ... ok
+test_only_accepts_ml_and_risk (__main__.TestMLWizardAndFlags.test_only_accepts_ml_and_risk) ... ok
+test_wizard_layers_prompt_lists_five (__main__.TestMLWizardAndFlags.test_wizard_layers_prompt_lists_five) ... ok
+test_empty_snapshot_is_degraded (__main__.TestMacroSnapshotRejects.test_empty_snapshot_is_degraded) ... ok
+test_fresh_snapshot_stays_ok (__main__.TestMacroSnapshotRejects.test_fresh_snapshot_stays_ok) ... ok
+test_stale_snapshot_is_degraded (__main__.TestMacroSnapshotRejects.test_stale_snapshot_is_degraded) ... ok
+test_header_rows_present (__main__.TestManifestHeader.test_header_rows_present) ... [plan] mode standard · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_missing_engine_printed_missing (__main__.TestManifestHeader.test_missing_engine_printed_missing) ... [plan] mode standard · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+ok
+test_build_ns_opens_funnel_and_uses_standard_pool (__main__.TestMlDataset.test_build_ns_opens_funnel_and_uses_standard_pool) ... ok
+test_date_features_missing_flags_and_ranks (__main__.TestMlDataset.test_date_features_missing_flags_and_ranks) ... ok
+test_default_end_excludes_unlabelable_months (__main__.TestMlDataset.test_default_end_excludes_unlabelable_months) ... ok
+test_forward_return_and_gaps (__main__.TestMlDataset.test_forward_return_and_gaps) ... ok
+test_month_grid_monthly_and_quarterly (__main__.TestMlDataset.test_month_grid_monthly_and_quarterly) ... ok
+test_next_event_window (__main__.TestMlDataset.test_next_event_window) ... ok
+test_verify_embargo_statement (__main__.TestMlDataset.test_verify_embargo_statement) ... ok
+test_verify_passes_on_wellformed_and_catches_violations (__main__.TestMlDataset.test_verify_passes_on_wellformed_and_catches_violations) ... ok
+test_e_monotone (__main__.TestMonotonicity.test_e_monotone) ... ok
+test_q_monotone (__main__.TestMonotonicity.test_q_monotone) ... ok
+test_tilt_monotone (__main__.TestMonotonicity.test_tilt_monotone) ... ok
+test_floor (__main__.TestNoLookahead.test_floor) ... ok
+test_future_as_of_rejected (__main__.TestNoLookahead.test_future_as_of_rejected) ... ok
+test_future_dated_earnings_rejected (__main__.TestNoLookahead.test_future_dated_earnings_rejected) ... [plan] mode standard · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_partial_quality_still_exits_0 (__main__.TestNoQualityScoresExitTwo.test_partial_quality_still_exits_0) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+quality MU: RuntimeError: quality boom MU
+ok
+test_quality_zero_ok_exits_2 (__main__.TestNoQualityScoresExitTwo.test_quality_zero_ok_exits_2) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+ok
+test_identical_runs_identical_decisions (__main__.TestNoStateLeakBetweenRuns.test_identical_runs_identical_decisions) ... ok
+test_two_cache_dir_runs_restore_everything (__main__.TestNoStateLeakBetweenRuns.test_two_cache_dir_runs_restore_everything) ... [plan] mode standard · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings COLD — caches warm, expect ≈1-5 min
+[plan] mode standard · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings COLD — caches warm, expect ≈1-5 min
+ok
+test_offline_flag_in_json_manifest (__main__.TestOfflineGuard.test_offline_flag_in_json_manifest) ... ok
+test_quality_transport_patched_only_during_offline_run (__main__.TestOfflineGuard.test_quality_transport_patched_only_during_offline_run) ... [plan] mode standard · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_real_meds_offline_is_honest_error_no_sockets (__main__.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets) ... [plan] mode standard · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_stubbed_offline_run_no_sockets (__main__.TestOfflineNoSockets.test_stubbed_offline_run_no_sockets) ... ok
+test_prefetch_pool_uses_workers_flag (__main__.TestPrefetchWorkers.test_prefetch_pool_uses_workers_flag) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_kill_and_stop (__main__.TestProgressSilencing.test_kill_and_stop) ... ok
+test_end_to_end_ordering (__main__.TestRankingAndCap.test_end_to_end_ordering) ... ok
+test_gate_failed_conviction_capped_when_high (__main__.TestRankingAndCap.test_gate_failed_conviction_capped_when_high) ... ok
+test_rank_key_orders_actions (__main__.TestRankingAndCap.test_rank_key_orders_actions) ... ok
+test_vetoed_conviction_capped_with_reason (__main__.TestRankingAndCap.test_vetoed_conviction_capped_with_reason) ... ok
+test_bucket_split (__main__.TestRefsIdentity.test_bucket_split) ... [plan] mode standard · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_same_object (__main__.TestRefsIdentity.test_same_object) ... [plan] mode standard · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_watchlist_peers_targets_only (__main__.TestRefsIdentity.test_watchlist_peers_targets_only) ... [plan] mode standard · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_dummy_overlay_runs_end_to_end (__main__.TestRegistryReal.test_dummy_overlay_runs_end_to_end) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_dummy_sizer_fills_weights_and_portfolio_footer (__main__.TestRegistryReal.test_dummy_sizer_fills_weights_and_portfolio_footer) ... [plan] mode standard · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_explicit_only_still_excludes_registered_layers (__main__.TestRegistryReal.test_explicit_only_still_excludes_registered_layers) ... [plan] mode standard · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_overlay_adj_is_bounded (__main__.TestRegistryReal.test_overlay_adj_is_bounded) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+[plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_registered_extra_layer_runs_without_any_code_mentioning_it (__main__.TestRegistryReal.test_registered_extra_layer_runs_without_any_code_mentioning_it) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_registry_order_drives_build_order (__main__.TestRegistryReal.test_registry_order_drives_build_order) ... [plan] mode standard · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_unknown_layer_name_64 (__main__.TestRegistryReal.test_unknown_layer_name_64) ... ok
+test_ascii_is_ascii (__main__.TestRender.test_ascii_is_ascii) ... ok
+test_bar (__main__.TestRender.test_bar) ... ok
+test_color_stripped_equals_plain (__main__.TestRender.test_color_stripped_equals_plain) ... ok
+test_width_bounds (__main__.TestRender.test_width_bounds) ... ok
+test_layer_error_leaves_weights_untouched (__main__.TestRiskLayer.test_layer_error_leaves_weights_untouched) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+risk failed: RuntimeError: boom
+ok
+test_offline_run_no_sockets_with_shadow_models (__main__.TestRiskLayer.test_offline_run_no_sockets_with_shadow_models) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_weights_filled_end_to_end (__main__.TestRiskLayer.test_weights_filled_end_to_end) ... [plan] mode standard · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_dd_veto_zeroes_the_book (__main__.TestRiskProps.test_dd_veto_zeroes_the_book) ... ok
+test_fallback_equal_weight_without_vols (__main__.TestRiskProps.test_fallback_equal_weight_without_vols) ... ok
+test_high_correlation_caps_gross (__main__.TestRiskProps.test_high_correlation_caps_gross) ... ok
+test_low_budget_is_a_veto (__main__.TestRiskProps.test_low_budget_is_a_veto) ... ok
+test_no_longs_means_all_cash (__main__.TestRiskProps.test_no_longs_means_all_cash) ... ok
+test_single_name_hits_name_cap (__main__.TestRiskProps.test_single_name_hits_name_cap) ... ok
+test_weights_nonneg_budget_and_caps (__main__.TestRiskProps.test_weights_nonneg_budget_and_caps) ... ok
+test_bad_mode_is_64 (__main__.TestRunModes.test_bad_mode_is_64) ... ok
+test_explicit_flag_beats_mode (__main__.TestRunModes.test_explicit_flag_beats_mode) ... ok
+test_mode_presets (__main__.TestRunModes.test_mode_presets) ... ok
+test_plan_banner_prints_pool_and_caches (__main__.TestRunModes.test_plan_banner_prints_pool_and_caches) ... ok
+test_plan_banner_silent_when_quiet (__main__.TestRunModes.test_plan_banner_silent_when_quiet) ... ok
+test_standard_mirrors_v100_defaults (__main__.TestRunModes.test_standard_mirrors_v100_defaults) ... ok
+test_warm_respects_skip (__main__.TestRunModes.test_warm_respects_skip) ... [plan] warm-up run (macro+quality only, budget 30s) · 22 tickers · quality pool 47 names
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h
+ok
+test_warm_selects_macro_quality (__main__.TestRunModes.test_warm_selects_macro_quality) ... [plan] warm-up run (macro+quality only, budget 30s) · 22 tickers · quality pool 47 names
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h
+ok
+test_watchlist_peers_warning_present (__main__.TestRunModes.test_watchlist_peers_warning_present) ... [plan] mode quick · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_no_sector_table_without_quality (__main__.TestSectorTable.test_no_sector_table_without_quality) ... [plan] mode standard · 1 tickers · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h
+ok
+test_sector_table_rows_and_values (__main__.TestSectorTable.test_sector_table_rows_and_values) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_cap_bad_band_64 (__main__.TestSectorsCapDiscover.test_cap_bad_band_64) ... ok
+test_cap_filters_and_discloses_excluded (__main__.TestSectorsCapDiscover.test_cap_filters_and_discloses_excluded) ... [plan] mode standard · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_cap_unavailable_without_mcap_data_64 (__main__.TestSectorsCapDiscover.test_cap_unavailable_without_mcap_data_64) ... ok
+test_discover_sets_top_and_warns_when_few_qualify (__main__.TestSectorsCapDiscover.test_discover_sets_top_and_warns_when_few_qualify) ... [plan] mode standard · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_sectors_bad_group_64 (__main__.TestSectorsCapDiscover.test_sectors_bad_group_64) ... ok
+test_sectors_probe_failure_64 (__main__.TestSectorsCapDiscover.test_sectors_probe_failure_64) ... ok
+test_sectors_scopes_candidates_to_groups (__main__.TestSectorsCapDiscover.test_sectors_scopes_candidates_to_groups) ... [plan] mode standard · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_disabled (__main__.TestSignalVocabulary.test_disabled) ... ok
+test_missing_data_reason_and_cell (__main__.TestSignalVocabulary.test_missing_data_reason_and_cell) ... ok
+test_not_selected (__main__.TestSignalVocabulary.test_not_selected) ... ok
+test_late_worker_cannot_write_after_fusion (__main__.TestSoftDeadline.test_late_worker_cannot_write_after_fusion) ... [plan] mode standard · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h
+ok
+test_soft_deadline_exists_and_documents_itself (__main__.TestSoftDeadline.test_soft_deadline_exists_and_documents_itself) ... ok
+test_stdout_results_stderr_progress_and_piped_plain (__main__.TestStreams.test_stdout_results_stderr_progress_and_piped_plain) ... ok
+test_csv_escapes_formula_cells (__main__.TestStrictJsonAndCsv.test_csv_escapes_formula_cells) ... ok
+test_payload_sanitises_nan (__main__.TestStrictJsonAndCsv.test_payload_sanitises_nan) ... ok
+test_stubbed_json_flag (__main__.TestStubBanner.test_stubbed_json_flag) ... ok
+test_stubbed_render_shows_banner (__main__.TestStubBanner.test_stubbed_render_shows_banner) ... ok
+test_stub_run_has_five_layers_and_weights (__main__.TestStubFiveLayers.test_stub_run_has_five_layers_and_weights) ... ok
+test_defensive_caps (__main__.TestTiltMapping.test_defensive_caps) ... ok
+test_inflation_shock (__main__.TestTiltMapping.test_inflation_shock) ... ok
+test_sleeve_split (__main__.TestTiltMapping.test_sleeve_split) ... ok
+test_soft_landing (__main__.TestTiltMapping.test_soft_landing) ... ok
+test_warm_skip_all_raises_64 (__main__.TestWarmGuard.test_warm_skip_all_raises_64) ... ok
+test_warm_skip_one_still_works (__main__.TestWarmGuard.test_warm_skip_one_still_works) ... ok
+test_ascii_renders_at_all_widths (__main__.TestWidths.test_ascii_renders_at_all_widths) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_colour_equals_plain_at_every_width (__main__.TestWidths.test_colour_equals_plain_at_every_width) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_lines_bounded_at_40_70_110 (__main__.TestWidths.test_lines_bounded_at_40_70_110) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_bounded_and_tiered (__main__.TestWidthsWithSizer.test_bounded_and_tiered) ... [plan] mode standard · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_cap_any_is_no_flag (__main__.TestWizard.test_cap_any_is_no_flag) ... ok
+test_cap_step_offered_when_data_exists (__main__.TestWizard.test_cap_step_offered_when_data_exists) ... ok
+test_cap_step_says_unavailable_when_no_data (__main__.TestWizard.test_cap_step_says_unavailable_when_no_data) ... ok
+test_decline_aborts_with_rerun_hint (__main__.TestWizard.test_decline_aborts_with_rerun_hint) ... ok
+test_eof_aborts (__main__.TestWizard.test_eof_aborts) ... ok
+test_layers_subset_becomes_only (__main__.TestWizard.test_layers_subset_becomes_only) ... ok
+test_market_flow_uses_all (__main__.TestWizard.test_market_flow_uses_all) ... ok
+test_sectors_flow_builds_flag_equivalent_namespace (__main__.TestWizard.test_sectors_flow_builds_flag_equivalent_namespace) ... ok
+test_three_invalid_answers_raise_64 (__main__.TestWizard.test_three_invalid_answers_raise_64) ... ok
+test_tickers_flow_positional (__main__.TestWizard.test_tickers_flow_positional) ... ok
+test_main_no_args_non_tty_runs_default (__main__.TestWizardEntry.test_main_no_args_non_tty_runs_default) ... ok
+test_main_no_args_tty_runs_wizard_end_to_end (__main__.TestWizardEntry.test_main_no_args_tty_runs_wizard_end_to_end) ... [plan] mode quick · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality 0.3h · macro 0.3h · earnings 1.1h — caches warm, expect ≈1-5 min
+ok
+test_wants_wizard_truth_table (__main__.TestWizardEntry.test_wants_wizard_truth_table) ... ok
+
+----------------------------------------------------------------------
+Ran 186 tests in 9.876s
+
+OK

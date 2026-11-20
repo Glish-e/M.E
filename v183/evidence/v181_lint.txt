@@ -1,0 +1,167 @@
+LINT HUNT — phase 8 M1 static analysis over the decision-path closure
+==============================================================================
+
+### master.py: 78 closure functions
+           160 x7   first master.py:_earnings_signal:838   warns = (_redact(str(err))[:160],) if err else ()
+            24 x3   first master.py:_refresh_plan_line:2661   meds_data_age_d = (int(meds_age // 24) if meds_age is not None else None)
+           200 x3   first master.py:LayerBase._salvage:235   res.warnings = tuple(dict.fromkeys((*res.warnings, _redact(note)[:200])))
+           400 x3   first master.py:_earnings_signal:819   "n_quarters": _fin_int(row.get("n_quarters"), 0, 400),
+       86400.0 x3   first master.py:_dir_files_fresher:2698   cut = time.time() - ttl_d * 86400.0
+            80 x2   first master.py:EarningsLayer.run:1197   (str(t), f"engine error: {str(eng.errors.get(t, ''))[:80]}",
+            90 x2   first master.py:fuse_candidate:1860   + (f" — {first_w[:90]}" if first_w else ""))
+           120 x2   first master.py:QualityLayer.prefetch:648   why = f"{cls}: {e}"[:120]
+           380 x2   first master.py:EarningsLayer._plan_map:1098   start = (anchor - timedelta(days=380)).isoformat()   # 126 td + buffer
+    1000000000.0 x2   first master.py:EarningsLayer._engine:990   cache_ttl_hours=(1e9 if ctx.flags.get("offline") else 12.0))
+          0.05 x1   first master.py:_run_pipeline_inner:2951   timeout=max(0.05, budgets[layer.name] - time.monotonic()))
+           0.1 x1   first master.py:_accuracy_verdict:778   if lift == lift and lift >= 1.5 and corr == corr and corr >= 0.10:
+           1.5 x1   first master.py:_accuracy_verdict:778   if lift == lift and lift >= 1.5 and corr == corr and corr >= 0.10:
+             6 x1   first master.py:EarningsLayer.run:1241   f"{', '.join(recovered[:6])}")
+           7.0 x1   first master.py:_refresh_plan_line:2670   q_fresh = _dir_files_fresher(qdir, "sec", ttl_d=7.0) if pool else 0
+           180 x1   first master.py:_resolve_exit:3265   why = "; ".join(str(x) for x in ml_res.ctx_out["unavailable"])[:180]
+           300 x1   first master.py:_run_pipeline_inner:2849   sys.stderr.write(msg[:300] + "\n")
+         365.0 x1   first master.py:_stop_price:896   stop = entry * (1.0 - k * fv * math.sqrt(hold / 365.0))
+
+### meds.py: 39 closure functions
+           0.2 x1   first meds.py:_repair_history_series:2374   if m_fred > 0 and not (0.2 <= m_csv / m_fred <= 5.0):
+           0.4 x1   first meds.py:conviction_leverage_v2:1242   blended = 0.6 * margin_score + 0.4 * regime_acc
+           0.6 x1   first meds.py:conviction_leverage_v2:1242   blended = 0.6 * margin_score + 0.4 * regime_acc
+           0.7 x1   first meds.py:regime_now:7988   if retained is not None and retained < 0.70:
+           0.8 x1   first meds.py:conviction_leverage_v2:1244   stability_mult = 0.8 if regime_months < 2 else (0.9 if regime_months < 3 else 1.0)
+           0.9 x1   first meds.py:conviction_leverage_v2:1244   stability_mult = 0.8 if regime_months < 2 else (0.9 if regime_months < 3 else 1.0)
+           1.5 x1   first meds.py:_pit_fetch_floor:871   return base - pd.Timedelta(days=int(max_lag * 1.5) + 10)
+            35 x1   first meds.py:_card_status:8385   if stale_days > int(lags.get(sid, 0)) + 35:
+           800 x1   first meds.py:_mrs:7601   for sid, text in sorted(client.fetch_failures.items()))[:800]
+
+### quality.py: 38 closure functions
+
+
+### earnings_engine.py: 21 closure functions
+           0.2 x3   first earnings_engine.py:EarningsEngine.analyze:963   hold_days: int = 90, take_profit: Optional[float] = 0.20, stop_loss: Optional[float] = None,
+            90 x3   first earnings_engine.py:EarningsEngine.analyze:963   hold_days: int = 90, take_profit: Optional[float] = 0.20, stop_loss: Optional[float] = None,
+           0.1 x1   first earnings_engine.py:_surprise_pct:139   return np.clip((act - est) / np.maximum(np.abs(est), 0.10) * 100, -100, 100)
+           0.6 x1   first earnings_engine.py:EarningsEngine.validate:811   cut = ds["date"].iloc[int(len(ds) * 0.6)]
+           6.0 x1   first earnings_engine.py:EarningsEngine.__init__:572   half_life: float = 6.0,           # recency weighting, in quarters
+          17.0 x1   first earnings_engine.py:EarningsEngine.__init__:569   threshold: float = 17.0,          # EPS surprise % that counts as a BIG beat
+            70 x1   first earnings_engine.py:_rating:219   return "A" if score >= 70 else "B" if score >= 50 else "C" if score >= 30 else "D" if score >= 10 else "F"
+            80 x1   first earnings_engine.py:EarningsEngine.backtest:880   errors[t] = f"prices: {type(e).__name__}: {str(e)[:80]}"
+           150 x1   first earnings_engine.py:EarningsEngine.score:712   self.errors[t] = f"{type(e).__name__}: {str(e)[:150]}"
+
+### ml_dataset.py: 7 closure functions
+
+
+### ml_train.py: 22 closure functions
+         1e-08 x2   first ml_train.py:_platt:388   if abs(da) < 1e-8 and abs(db) < 1e-8:
+            21 x2   first ml_train.py:_inner_embargo_months:161   return max(1, -(-td // 21))     # ceil(td / 21)
+         500.0 x2   first ml_train.py:_platt:375   p = 1.0 / (1.0 + np.exp(-np.clip(a * z + b, -500.0, 500.0)))
+          0.05 x1   first ml_train.py:_gbm:307   max_iter=120, learning_rate=0.05, max_leaf_nodes=8, l2_regularization=1.0,
+           120 x1   first ml_train.py:_gbm:307   max_iter=120, learning_rate=0.05, max_leaf_nodes=8, l2_regularization=1.0,
+          2000 x1   first ml_train.py:_pipe:301   ("lr", LogisticRegression(C=C, max_iter=2000, solver="lbfgs"))])
+
+==============================================================================
+PATTERN HITS (grouped by kind)
+==============================================================================
+
+-- CLOCK-in-decision-logic (8) --
+  master.py:EarningsLayer._plan_map:1091: today = date.today()   [date.today]
+  master.py:MLLayer.run:1536: as_of = ctx.as_of or date.today().isoformat()   [date.today]
+  master.py:RiskLayer._price_data:1675: anchor = (date.fromisoformat(ctx.as_of) if ctx.as_of else date.today())   [date.today]
+  master.py:_age_days_from:2494: return (date.today() - date.fromisoformat(str(as_of)[:10])).days   [date.today]
+  quality.py:_as_of_date:6456: return as_of or date.today().isoformat()   [date.today]
+  quality.py:get_quality_score:6641: fetch_on = date.today().isoformat()      # the ONE boundary clock read   [date.today]
+  quality.py:get_quality_score:6642: ok, err = _validate_as_of(as_of, boundary=date.today())   [date.today]
+  ml_train.py:train_head:648: "trained_at": date.today().isoformat(), "state": "SHADOW",   [date.today]
+
+-- DEAD-parameter (8) --
+  master.py:LayerBase.prefetch:222: def prefetch(self, ctx: Context) -> None:      # optional, worker thread   [ctx]
+  master.py:MacroLayer.run:395: def run(self, ctx: Context, cands: list[Candidate]) -> LayerResult:   [cands]
+  master.py:QualityLayer.run:729: def run(self, ctx: Context, cands: list[Candidate]) -> LayerResult:   [cands]
+  master.py:_assert_cache_writable:2358: def _assert_cache_writable(ctx: Context, restores: list | None,   [restores]
+  master.py:_reasons:1768: def _reasons(d: Decision, cand: Candidate, q: float | None, e: float | None,   [mode]
+  master.py:_refresh_plan_line:2645: def _refresh_plan_line(ctx: Context, layers: list[LayerBase],   [ns]
+  master.py:_stale_reason:2731: def _stale_reason(layer: str, data_age_d: int | None,   [ttl_h]
+  quality.py:_red_flags:6312: def _red_flags(view: FundamentalsView, market, raw: dict,   [market]
+
+-- EXCEPT-broad (48) --
+  master.py:EarningsLayer._plan_map:1081: except Exception as e:   [broad]
+  master.py:EarningsLayer._plan_map:1088: except Exception as e:   [broad]
+  master.py:EarningsLayer._plan_map:1108: except Exception:   [broad]
+  master.py:EarningsLayer.run:1160: except Exception as e:   [broad]
+  master.py:EarningsLayer.run:1174: except Exception as e:             # record its error, continue   [broad]
+  master.py:EarningsLayer.run:1242: except Exception as e:   [broad]
+  master.py:MLLayer.run:1529: except Exception as e:   [broad]
+  master.py:MLLayer.run:1540: except Exception as e:   [broad]
+  master.py:MLLayer.run:1554: except Exception as e:   [broad]
+  master.py:MacroLayer.prefetch:374: except Exception as e:                        # adapter boundary   [broad]
+  master.py:QualityLayer.peek_refs:495: except Exception as e:                 # engine import failure etc.   [broad]
+  master.py:QualityLayer.prefetch:644: except Exception as e:                 # ticker failure never kills the layer   [broad]
+  master.py:RiskLayer._price_data:1673: except Exception as e:   [broad]
+  master.py:RiskLayer._price_data:1683: except Exception:   [broad]
+  master.py:_backtest_summary:873: except Exception:   [returns neutral None]
+  master.py:_ml_load_head:1271: except Exception as e:   [broad]
+  master.py:_ml_load_head:1283: except Exception:   [broad]
+  master.py:_ml_load_head:1292: except Exception:   [broad]
+  master.py:_ml_load_head:1323: except Exception as e:   [broad]
+  master.py:_ml_load_head:1380: except Exception as e:   [broad]
+  master.py:_run_pipeline_inner:2972: except Exception as e:   [broad]
+  master.py:_run_pipeline_inner:3010: except Exception as e:   [broad]
+  master.py:_run_pipeline_inner:3039: except Exception as e:   [broad]
+  master.py:_run_pipeline_inner:3068: except Exception as e:   [broad]
+  master.py:_run_pipeline_inner:3092: except Exception as e:   [broad]
+  master.py:_stubbed_registry:1750: except Exception as e:   [broad]
+  master.py:_universe_probe:2100: except Exception as e:   [broad]
+  master.py:_universe_probe:2109: except Exception as e:   [broad]
+  meds.py:_card_runner_up:8638: except Exception as e:   [broad]
+  meds.py:_scenario_retained_weight:1227: except Exception:   [returns neutral None]
+  quality.py:YfinancePriceClient.available:3158: except Exception:   [broad]
+  quality.py:_detect_sector_yfinance:15666: except Exception:   [returns neutral None]
+  quality.py:compute_raw_metrics:6006: except Exception as exc:  # one metric never kills the company   [broad]
+  quality.py:fetch_companies:6546: except Exception as exc:   [broad]
+  quality.py:score_universe:6085: except Exception as exc:   [broad]
+  earnings_engine.py:EarningsEngine.analyze:982: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.backtest:851: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.backtest:879: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.history:625: except Exception:   [broad]
+  earnings_engine.py:EarningsEngine.history:636: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.prices:667: except Exception:   [broad]
+  earnings_engine.py:EarningsEngine.prices:674: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.score:711: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.signals:948: except Exception as e:   [broad]
+  earnings_engine.py:EarningsEngine.validate:790: except Exception:   [broad]
+  ml_train.py:_inner_oof:351: except Exception:   [broad]
+  ml_train.py:select_features_fold:458: except Exception:   [broad]
+  ml_train.py:train_head:555: except Exception:   [broad]
+
+-- EXCEPT-neutral-return (6) --
+  master.py:_age_days_from:2495: except ValueError:   [None]
+  master.py:_dir_file_count:2756: except OSError:   [0]
+  master.py:_dir_files_fresher:2701: except OSError:   [0]
+  master.py:_file_fresher:2692: except OSError:   [False]
+  master.py:_stop_price:891: except (TypeError, ValueError):   [None]
+  meds.py:_card_runner_up:8630: except (KeyError, TypeError, ValueError):   [None]
+
+-- EXCEPT-silent-pass (11) --
+  master.py:EarningsLayer.prefetch:1056: except Exception:
+  master.py:EarningsLayer.run:1230: except Exception:
+  master.py:QualityLayer._deferred_rescore:707: except Exception:
+  master.py:_earnings_px_date:2516: except OSError:
+  master.py:run_pipeline:2781: except Exception:
+  master.py:run_pipeline:2785: except Exception:
+  master.py:run_pipeline:2789: except Exception:
+  meds.py:_capture_diagnostics:513: except ValueError:
+  quality.py:_load_dotenv:293: except (OSError, RuntimeError, ValueError):
+  earnings_engine.py:EarningsEngine.history:647: except Exception:
+  earnings_engine.py:EarningsEngine.prices:684: except Exception:
+
+-- SORT-no-tiebreak (10) --
+  master.py:_apply_overlays:1983: overlays = [r for r in sorted(results.values(), key=lambda r: r.order)
+  master.py:_resolve_exit:3254: ordered = sorted(results.values(),
+  master.py:funnel_shortlist:1966: ranked.sort(key=lambda x: (-x[0], x[1]))
+  meds.py:_card_runner_up:8647: scored.sort(key=lambda x: (-x[1], x[0].priority))
+  quality.py:_assign_sector_ranks:6252: group.sort(key=lambda r: (-r.score, r.ticker))
+  quality.py:_midranks:5897: order = sorted(range(n), key=lambda i: vals[i])
+  quality.py:compute_raw_metrics:6012: provenance[spec.name] = sorted(
+  ml_dataset.py:date_features:366: vals.sort(key=lambda kv: (kv[1], kv[0]))
+  ml_train.py:select_features_fold:464: order = sorted(range(len(feats)), key=lambda i: (-imp[i], feats[i]))
+  ml_train.py:select_features_fold:470: "selected": [feats[i] for i in sorted(order[:cap],
+
+-- DEAD-CONFIG-KEYS (never read in production code) --

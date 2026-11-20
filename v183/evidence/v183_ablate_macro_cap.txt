@@ -1,0 +1,23 @@
+M.E. backtest ablation (--bt-ablate macro_cap) — a WHAT-IF over the RECORDED decisions, never a verdict
+========================================================================
+assumption: damp = 1.0 (every shipped record carries layers.macro == 'OK' -> degraded_for_damp False); the records do not store damp
+assumption: gross windows, no costs (the recorded rows carry no sizer weights; costs are a rerun question)
+
+date        regime     n  long as-rec -> ablated   excess vs EW (as-rec / ablated)   flipped rows
+2025-08-31  risk_on    87    10 ->   10       -0.0924 /  -0.0924          0
+2025-09-30  risk_on    87    11 ->   11       -0.0387 /  -0.0387          0
+2025-10-31  defensive  87     0 ->    2           n/a /  -0.2231          2
+2025-11-30  defensive  87     0 ->    3           n/a /  -0.0351          3
+2025-12-31  defensive  87     0 ->    3           n/a /  +0.0081          3
+2026-01-31  defensive  87     0 ->    3           n/a /  +0.0440          3
+2026-02-28  risk_on    87    13 ->   13       +0.0098 /  +0.0098          0
+2026-03-31  risk_on    87    13 ->   13       +0.0406 /  +0.0406          0
+2026-04-30  risk_on    87    13 ->   13       +0.1055 /  +0.1055          0
+2026-05-31  risk_on    87    10 ->   10       +0.0689 /  +0.0689          0
+2026-06-30  risk_on    87    10 ->   10       +0.0756 /  +0.0756          0
+2026-07-31  risk_on    87    11 ->   11       -0.0357 /  -0.0357          0
+
+aggregate excess vs EW (mean per date): as-recorded +0.0111 · ablated -0.0060 · delta -0.0172
+macro_cap flipped 11 WATCH row(s) to LONG; macro_mult rescaled 0 tilted row(s)
+episode disclosure: 4 month(s) with demoted rows (2025-10, 2025-11, 2025-12, 2026-01; span 2025-10-31..2026-01-31) — NOT validated evidence: the shipped pilot holds ONE defensive episode (2025-10-31..2026-01-31), 12 month-end dates, tech-only universe
+nothing here changes a gate, a verdict or a recorded decision; the preregistered backtest is `python3 master.py --backtest` without --bt-ablate

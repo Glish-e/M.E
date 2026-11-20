@@ -1,0 +1,14 @@
+{
+  "earnings": {
+    "verdict": "PIT_VERIFIED",
+    "evidence": "score(as_of) deterministic; _window cuts quarters to date+lag < as_of (max dates {\"MU\": \"2024-06-26\", \"NVDA\": \"2024-05-22\", \"AAPL\": \"2024-05-02\"})"
+  },
+  "quality": {
+    "verdict": "PIT_VERIFIED",
+    "evidence": "3072 traced facts, all available_date <= as_of; deterministic; boundary probe on the latest filing"
+  },
+  "meds": {
+    "verdict": "PIT_APPROXIMATE",
+    "evidence": "regime_now(as_of) deterministic; effective 2024-06-30; data_tier=public; pit_mode=approximate_pit_lag (approximate vintage)"
+  }
+}

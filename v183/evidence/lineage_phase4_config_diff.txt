@@ -1,0 +1,20 @@
+baseline: baseline/master_v1_1_0.py (51 entries)
+current : master.py (53 entries)
+VALUE CHANGED MACRO_SNAPSHOT_MAX_AGE_H:
+  base='<absent>'
+  curr=48.0
+VALUE CHANGED MIN_TERM_WIDTH:
+  base=72
+  curr=40
+VALUE CHANGED OVERLAY_MAX_ADJ:
+  base='<absent>'
+  curr=10.0
+RATIONALE CHANGED MACRO_SNAPSHOT_MAX_AGE_H:
+  base='<absent>'
+  curr="A meds snapshot (offline / force-snapshot mode) older than this is reported DEGRADED, never OK: meds' own cache TTL is 24 h, so 48 h = two missed refresh cycles before master calls the regime stale. Disclosure gate on the macro card; the tilt is damped like any other DEGRADED macro and it is never a per-ticker fusion input."
+RATIONALE CHANGED MIN_TERM_WIDTH:
+  base='Terminal width floor.'
+  curr='Terminal width floor. Phase 3 lowered this 72 -> 40: --width 40 is a documented, gate-tested tier now (widths 40/70/110) — the renderer drops columns at narrow widths instead of silently rendering 40 as 72. Display only; never a fusion input.'
+RATIONALE CHANGED OVERLAY_MAX_ADJ:
+  base='<absent>'
+  curr="An overlay layer (stage 'overlay', L4-style) may move a conviction by at most this much per name — a bound, not a weight: the core fusion (0.65*Q + 0.35*E) is never touched (H2), veto/gate AVOIDs are never adjusted, and the clamp is disclosed in the reasons line. 10 points = one grade band: enough to matter, never enough to manufacture LONG from a name fusion scored below the door."

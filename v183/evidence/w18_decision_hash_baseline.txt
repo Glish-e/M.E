@@ -1,0 +1,2 @@
+decision_hash(ranking) = 2734886b39877ad67586b0a11c278ad4e199a91d8dbca8993ff5fb8f2c972595
+n_names = 5

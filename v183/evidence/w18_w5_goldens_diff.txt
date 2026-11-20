@@ -1,0 +1,51 @@
+52a53,54
+> costs: live plan is GROSS of costs - est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the
+>    backtest nets the same 10 bps/side; estimate, not a net-return claim)
+48a49,50
+> costs: live plan is GROSS of costs - est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the backtest nets the same 10 bps/side; estimate, not
+>    a net-return claim)
+74a75,80
+> costs: live plan is GROSS of costs
+>    - est round-trip 2 x 10 bps/side
+>    ~0.20% one-off on the deployed 7%
+>    (the backtest nets the same 10
+>    bps/side; estimate, not a net-return
+>    claim)
+57a58,60
+> costs: live plan is GROSS of costs - est round-trip 2 x 10 bps/side
+>    ~0.20% one-off on the deployed 7% (the backtest nets the same 10
+>    bps/side; estimate, not a net-return claim)
+52a53,54
+> [90mcosts: live plan is GROSS of costs — est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the[0m
+> [90m   backtest nets the same 10 bps/side; estimate, not a net-return claim)[0m
+48a49,50
+> [90mcosts: live plan is GROSS of costs — est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the backtest nets the same 10 bps/side; estimate, not[0m
+> [90m   a net-return claim)[0m
+74a75,80
+> [90mcosts: live plan is GROSS of costs[0m
+> [90m   — est round-trip 2 x 10 bps/side[0m
+> [90m   ~0.20% one-off on the deployed 7%[0m
+> [90m   (the backtest nets the same 10[0m
+> [90m   bps/side; estimate, not a net-return[0m
+> [90m   claim)[0m
+57a58,60
+> [90mcosts: live plan is GROSS of costs — est round-trip 2 x 10 bps/side[0m
+> [90m   ~0.20% one-off on the deployed 7% (the backtest nets the same 10[0m
+> [90m   bps/side; estimate, not a net-return claim)[0m
+52a53,54
+> costs: live plan is GROSS of costs — est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the
+>    backtest nets the same 10 bps/side; estimate, not a net-return claim)
+48a49,50
+> costs: live plan is GROSS of costs — est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the backtest nets the same 10 bps/side; estimate, not
+>    a net-return claim)
+74a75,80
+> costs: live plan is GROSS of costs
+>    — est round-trip 2 x 10 bps/side
+>    ~0.20% one-off on the deployed 7%
+>    (the backtest nets the same 10
+>    bps/side; estimate, not a net-return
+>    claim)
+57a58,60
+> costs: live plan is GROSS of costs — est round-trip 2 x 10 bps/side
+>    ~0.20% one-off on the deployed 7% (the backtest nets the same 10
+>    bps/side; estimate, not a net-return claim)

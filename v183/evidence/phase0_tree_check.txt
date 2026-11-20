@@ -1,0 +1,13 @@
+
+files on disk (excl MANIFEST.txt): 99
+files in MANIFEST.txt:             99
+verified OK:                       99
+MISMATCH:                          0
+MISSING from tree:                 0
+UNLISTED in tree:                  0
+
+--- ENGINES.sha256 gate ---
+meds.py                MATCH  5e64b60da86d2e759f1f506e8c9dfdc5acfed32ce6958a204f172242cefc437b
+quality.py             MATCH  f123fb4e36ad298d0c662d0b36d71bb98ea80ef42760714d3b7133bac1b31215
+earnings_engine.py     MATCH  8e31e53248531584898ebfd266347775874b93d3440d12830cdb7f5a4545b0e0
+ENGINES.sha256 GATE: PASS

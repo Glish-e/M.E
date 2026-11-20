@@ -1,0 +1,44 @@
+========================================================================
+PHASE 4 GATE — reuse_report / PIT status / verify / pilot reload
+========================================================================
+
+GATE 1 · STEP A reuse report written before any building
+  evidence/reuse_report.md (capability table + one-line decisions)
+  discovery greps: evidence/phase4_discovery_greps.txt
+  engine CLI surfaces (run): evidence/phase4_cli_surfaces.txt
+
+GATE 2 · STEP B PIT status per engine (RUN, not assumed — evidence/phase4_pit_probes.txt)
+  earnings: PIT_VERIFIED
+  quality: PIT_VERIFIED
+  meds: PIT_APPROXIMATE
+  meds is PIT_APPROXIMATE -> manifest pit_verified.meds=false (as built)
+
+GATE 3 · STEP D pilot: 12 dates built, reloads cleanly
+  build log: evidence/phase4_pilot_build.txt (dates built 12, failed 0)
+  verify: evidence/phase4_pilot_verify.txt — all PASS, exit 0
+  rows: {'ticker_rows': 1080, 'macro_rows': 84, 'tickers': 90, 'dates': 12}  range: ['2025-08-31', '2026-07-31']
+  npz: X (1080, 47) float32, loads allow_pickle=False, 19 arrays
+  labels: y_q 1044/1080 · y_e 974/1080 · y_m 84/84
+
+GATE 4 · test suite (exit 0 = green)
+  python3 test_master.py:
+Ran 157 tests in 5.035s
+
+OK
+
+GATE 5 · H2 CONFIG gate vs the phase-3 output
+  keys added/removed/values changed/rationales changed: NONE (see run log)
+  H2 pins (W_Q/W_E/haircuts/gates/earnings params): IDENTICAL
+  vs the v1.1.0 baseline: evidence/phase4_config_diff.txt (phases 2-3 diffs only)
+
+GATE 6 · H6 offline: evidence/phase4_check_offline_after.txt (2 tests OK, sockets self-blocked)
+
+========================================================================
+ENTRY POINTS
+========================================================================
+master.py --selftest           exit=0
+test_master.py                 exit=0
+master v1.3.1 · tested engines: meds 14.7.0, quality 3.4.1, earnings 3
+master.py --version            exit=0
+MASTER_STUBS=1 --json          exit=0
+ml_dataset.py --verify         exit=0

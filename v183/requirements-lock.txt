@@ -1,0 +1,18 @@
+# master engine v1.8.3 — LOCKED test environment (spec 3.1 P0)
+#
+# Every phase-1 gate (suite, env matrix, retrain, doctor) ran on EXACTLY
+# these versions (importlib-reported; see evidence/phase1_env_matrix.txt
+# header and evidence/phase1_retrain.txt). Install with:
+#   python3 -m pip install -r requirements-lock.txt   (python 3.12.16)
+python 3.12.16                 # interpreter pin (not pip-installable)
+numpy==2.1.3
+pandas==2.2.3
+scikit-learn==1.5.2
+joblib==1.5.3
+scipy==1.14.1
+requests==2.32.5
+# yfinance: ABSENT (optional; see requirements.txt)
+#
+# The retrained ML heads (ml_data/models/) pin exactly this set inside
+# every head npz; any other environment will load them as UNAVAILABLE
+# with the reason — by design (spec 3.1, defect B-1).

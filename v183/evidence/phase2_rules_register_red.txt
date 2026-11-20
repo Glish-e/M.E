@@ -1,0 +1,81 @@
+  LIVE      ACTION_LONG_AT               read in production master.py
+  LIVE      ACTION_WATCH_AT              read in production master.py
+  LIVE      BAR_COLS                     read in production master.py
+  LIVE      COLD_S_PER_NAME              read in production master.py
+  DEAD      CONF_DIGITS                  no production reference and no disclosure in rationale
+  LIVE      CYCLICAL_SECTORS             read in production master.py
+  LIVE      DEFAULT_MIN_CONV             read in production master.py
+  LIVE      DEFAULT_TOP                  read in production master.py
+  LIVE      DEFAULT_WATCHLIST            read in production master.py
+  LIVE      DEFAULT_WORKERS              read in production master.py
+  LIVE      DEFENSIVE_SCENARIOS          read in production master.py
+  LIVE      DISCRETIONARY_SET            read in production master.py
+  LIVE      EARNINGS_HOLD_DAYS           read in production master.py
+  LIVE      EARNINGS_MAX_AGE             read in production master.py
+  DEAD      EARNINGS_NATIVE_GRADES       no production reference and no disclosure in rationale
+  LIVE      EARNINGS_PLAN_MIN            read in production master.py
+  LIVE      EARNINGS_QUARTERS            read in production master.py
+  DEAD      EARNINGS_TOP_K               no production reference and no disclosure in rationale
+  LIVE      EARNINGS_TP                  read in production master.py
+  LIVE      EARNINGS_WEAK_SCALE          read in production master.py
+  LIVE      ENGINE_VERSION_ATTRS         read in production master.py
+  LIVE      ETF_TO_SECTORS               read in production master.py
+  LIVE      EXPLAIN_METRICS              read in production master.py
+  LIVE      E_MISSING_HAIRCUT            read in production master.py
+  LIVE      FREEZE_MAX_BYTES             read in production master.py
+  LIVE      FRESHNESS_EARNINGS_EVENT_MAX_D read in production master.py
+  LIVE      FRESHNESS_EARNINGS_PRICE_MAX_AGE_D read in production master.py
+  LIVE      FRESHNESS_MACRO_MAX_AGE_D    read in production master.py
+  LIVE      FRESHNESS_QUALITY_MAX_AGE_D  read in production master.py
+  DEAD      LAYER_TIMEOUT_S              no production reference and no disclosure in rationale
+  LIVE      MACRO_DEGRADED_DAMP          read in production master.py
+  LIVE      MACRO_SNAPSHOT_MAX_AGE_H     read in production master.py
+  LIVE      MACRO_TILT_GAIN              read in production master.py
+  LIVE      MASTER_GRADES                read in production master.py
+  LIVE      MAX_REASONS                  read in production master.py
+  LIVE      MAX_TERM_WIDTH               read in production master.py
+  LIVE      MIN_QUALITY                  read in production master.py
+  LIVE      MIN_TERM_WIDTH               read in production master.py
+  LIVE      ML_ADJ_MAX                   read in production master.py
+  LIVE      ML_FORBIDDEN_FEATURES        read in production master.py
+  LIVE      ML_MODELS_DIR                read in production master.py
+  LIVE      MODES                        read in production master.py
+  LIVE      MODE_DEFAULT                 read in production master.py
+  LIVE      NET_MODES                    read in production master.py
+  LIVE      NET_MODE_DEFAULT             read in production master.py
+  LIVE      NEUTRAL_KEY                  read in production master.py
+  LIVE      OVERLAY_MAX_ADJ              read in production master.py
+  LIVE      PREFETCH_ALL_MAX             read in production master.py
+  LIVE      PRICE_TTL_H                  read in production master.py
+  LIVE      PROBE_BUDGET_S               read in production master.py
+  LIVE      PROBE_HOST                   read in production master.py
+  LIVE      PROBE_PORT                   read in production master.py
+  LIVE      PROBE_TIMEOUT_S              read in production master.py
+  LIVE      QUALITY_NATIVE_GRADES        read in production master.py
+  LIVE      QUALITY_SECTORS              read in production master.py
+  LIVE      RETRY_BACKOFF_S              read in production master.py
+  LIVE      RETRY_MAX_ATTEMPTS           read in production master.py
+  LIVE      RISK_CAP_DEGRADED            read in production master.py
+  LIVE      RISK_CORR_LOOKBACK_TD        read in production master.py
+  LIVE      RISK_DD_FACTOR               read in production master.py
+  LIVE      RISK_MAX_EST_DD              read in production master.py
+  LIVE      RISK_MAX_NAME_W              read in production master.py
+  LIVE      RISK_MAX_PRICE_NAMES         read in production master.py
+  LIVE      RISK_MAX_SECTOR_W            read in production master.py
+  LIVE      RISK_MIN_BUDGET              read in production master.py
+  LIVE      RISK_MIN_EFFECTIVE_BETS      read in production master.py
+  LIVE      RISK_MIN_HISTORY_TD          read in production master.py
+  LIVE      RISK_VOL_LOOKBACK_TD         read in production master.py
+  LIVE      SECTOR_ABBR                  read in production master.py
+  LIVE      SECTOR_ORDER                 read in production master.py
+  LIVE      SLEEVE_ETFS                  read in production master.py
+  LIVE      STAPLES_SET                  read in production master.py
+  DEAD      STUB_WARM_BUDGET_S           no production reference and no disclosure in rationale
+  LIVE      TESTED_VERSIONS              read in production master.py
+  LIVE      VETO_FLAGS                   read in production master.py
+  LIVE      WARM_ETA_RANGE_S             read in production master.py
+  LIVE      WARM_TIMEOUT_S               read in production master.py
+  LIVE      W_E                          read in production master.py
+  LIVE      W_Q                          read in production master.py
+RULES REGISTER: 74 live / 0 disclosed-not-read / 5 dead (total 79)
+FAIL: dead CONFIG keys (no production read, no disclosure): CONF_DIGITS, EARNINGS_NATIVE_GRADES, EARNINGS_TOP_K, LAYER_TIMEOUT_S, STUB_WARM_BUDGET_S

@@ -1,0 +1,18 @@
+
+=== probe_earnings ===
+PASS earnings determinism: score(as_of=2024-06-30) twice -> identical (3 scored, cols incl. ['score', 'rating'])
+PASS earnings window cut: max public quarter < as_of for {'MU': '2024-06-26', 'NVDA': '2024-05-22', 'AAPL': '2024-05-02'} (engine _window: date + provider lag < as_of; yahoo lag = 0 = announcement date)
+
+=== probe_quality ===
+PASS quality determinism: get_quality_score(MU, as_of=2024-06-30) twice -> identical (score 27.7237 OK)
+PASS quality filing cut: 3072 traced facts, ALL available_date <= as_of (violations: 0); fundamentals cut by FILING/availability date, not period end
+     sample period_end -> filing -> available: [('2024-05-30', '2024-06-27', '2024-06-27'), ('2024-06-20', '2024-06-27', '2024-06-27'), ('2024-06-28', 'None', '2024-06-28')]
+PASS quality boundary: accession 0000723125-24-000019 (available 2024-06-27) is visible at as_of=2024-06-27 but NOT at as_of=2024-06-26 — the cut is the public availability date, exactly
+PASS quality price path: get_momentum_12_1(MU, as_of=2024-06-30) twice -> identical (momentum 1.012849398644077, basis adjusted); build_market filters bars <= as_of (quality.py:4779, 3.4.0 S0)
+
+=== probe_meds ===
+PASS meds determinism: regime_now(as_of=2024-06-30) twice -> identical on every field master consumes (EARLY_CYCLE_RE_ACCELERATION, conf 0.971, basket ['QQQ', 'XLI', 'XLY', 'SPY']); free-form `notes` diagnostics vary between fetch and memo hit (disclosed, never a decision input)
+PASS meds as-of floor: effective as_of 2024-06-30 <= requested 2024-06-30 (last COMPLETED month end, _decision_month_end)
+PASS meds vintage honesty: data_tier=public pit_mode=approximate_pit_lag — series fetched NOW and cut at as_of with PIT lags (_apply_pit_lag meds.py:823), i.e. approximate vintage, NOT the data vintage available then -> labelled PIT_APPROXIMATE (pit_verified: false in the dataset manifest)
+
+SUMMARY {"earnings": "PIT_VERIFIED", "quality": "PIT_VERIFIED", "meds": "PIT_APPROXIMATE"}

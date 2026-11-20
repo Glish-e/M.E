@@ -1,0 +1,47 @@
+B-2 RED EVIDENCE — v1.5.0-as-shipped suite under ambient conditions (before fixes)
+Captured 2026-11-13T20:28:29Z; commands run from the wip tree root.
+
+$ MASTER_NET=offline python3 -m pytest test_master.py -q
+        self._memo((False, "probe failed: fake unreachable"))
+FAILED test_master.py::TestCacheStatusRealDir::test_default_dir_cold_fetch_reported_cold
+FAILED test_master.py::TestManifestHeader::test_header_rows_present - Asserti...
+FAILED test_master.py::TestNetModes::test_explicit_online_without_network_exits_3
+FAILED test_master.py::TestNetModes::test_probe_skipped_for_offline - Asserti...
+FAILED test_master.py::TestProvenanceSurfaces::test_same_json_schema_every_mode
+FAILED test_master.py::TestDegradationMatrixFinal::test_readonly_cache_is_clear_error_online
+FAILED test_master.py::TestSidecarPin::test_wrong_joblib_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_numpy_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_python_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_sklearn_marks_head_unavailable
+FAILED test_master.py::TestMLUnavailable::test_all_heads_unavailable_still_a_result
+FAILED test_master.py::TestMLUnavailable::test_version_mismatch_run_continues_exit_one
+FAILED test_master.py::TestVersionSurfaces::test_ml_train_version_agrees_everywhere
+13 failed, 250 passed in 12.43s
+
+$ MASTER_STUBS=1 python3 -m pytest test_master.py -q
+FAILED test_master.py::TestStreams::test_stdout_results_stderr_progress_and_piped_plain
+FAILED test_master.py::TestSidecarPin::test_wrong_joblib_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_numpy_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_python_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_sklearn_marks_head_unavailable
+FAILED test_master.py::TestMLUnavailable::test_all_heads_unavailable_still_a_result
+FAILED test_master.py::TestMLUnavailable::test_version_mismatch_run_continues_exit_one
+FAILED test_master.py::TestVersionSurfaces::test_ml_train_version_agrees_everywhere
+8 failed, 255 passed in 12.47s
+
+$ python3 -c "import sys; sys.modules[\"sklearn\"]=None; sys.modules[\"joblib\"]=None; import pytest; sys.exit(pytest.main([\"test_master.py\",\"-q\"]))"  # sklearn+joblib blocked
+FAILED test_master.py::TestMLTrain::test_activate_refused_without_passing_report
+FAILED test_master.py::TestMLTrain::test_too_few_groups_refused_honestly - Mo...
+FAILED test_master.py::TestMLTrain::test_train_save_reload_and_predict_parity
+FAILED test_master.py::TestSidecarPin::test_no_pin_refused - AssertionError: ...
+FAILED test_master.py::TestSidecarPin::test_pin_ok_loads - AssertionError: 'U...
+FAILED test_master.py::TestSidecarPin::test_poisoned_sidecar_refused_before_unpickle
+FAILED test_master.py::TestSidecarPin::test_tampered_sidecar_untrained - Asse...
+FAILED test_master.py::TestSidecarPin::test_wrong_joblib_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_numpy_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_python_marks_head_unavailable
+FAILED test_master.py::TestSidecarPin::test_wrong_sklearn_marks_head_unavailable
+FAILED test_master.py::TestMLUnavailable::test_all_heads_unavailable_still_a_result
+FAILED test_master.py::TestMLUnavailable::test_version_mismatch_run_continues_exit_one
+FAILED test_master.py::TestVersionSurfaces::test_ml_train_version_agrees_everywhere
+14 failed, 249 passed in 9.08s

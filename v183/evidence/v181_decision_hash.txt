@@ -1,0 +1,13 @@
+# v1.8.1 decision-hash invariance gate (R15-style proof)
+
+Scenario: identical fake engines; every quality fetch goes
+through the process-level transports to a HEALTHY loopback
+HTTP server (127.0.0.1:200; never the real network). The
+v1.8.1 run has the net guard INSTALLED and ACTIVE (urlopen
+guard, ledger, breaker, retry clock); the v1.8.0 run (pristine
+final_master_e.zip extraction) has no guard.
+
+v1.8.0 (final_master_e.zip): hash a023714c15e78f6019d2d3d97de9c13d3f987c9d91188dcb87ae9d10878c35e8 · 5 decisions
+v1.8.1 (this tree)        : hash a023714c15e78f6019d2d3d97de9c13d3f987c9d91188dcb87ae9d10878c35e8 · 5 decisions · fetch_total {'ok': 5, 'failed': 0, 'skipped': 0}
+
+UNCHANGED — the network layer on and healthy changes no decision.

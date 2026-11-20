@@ -1,0 +1,89 @@
+*** STUBBED RUN (SYNTHETIC stub layers) - NOT real engine data - never for any decision ***
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| MASTER v1.8.3 . mode standard . net offline (MASTER_NET=offline (override)) . as of FROZEN-DATE . stubs yes                                                   |
+| engines: meds v14.7.0 . quality v3.4.1 . earnings v3 . ml_train SYNTHETIC-stub . master SYNTHETIC-stub                                                       |
+| chain: macro>quality>earnings>ml>risk                                                                                                                        |
+| RULESET legacy - missing-E advantage ACTIVE (UNVALIDATED)                                                                                                    |
+| earnings prior: 1/3 names scored with E missing (x0.90 quality haircut; ruleset legacy) - NOT_SELECTED/MISSING_DATA indistinguishable here                   |
+| data: macro: stub . as-of n/a . OK . age n/a  |  quality: stub . as-of n/a . OK . age n/a  |  earnings: stub . as-of n/a . OK . age n/a                      |
+| data: ml: stub . as-of n/a . OK . age n/a  |  risk: stub . as-of n/a . OK . age n/a                                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+SUMMARY  verdict 3 LONG / 0 WATCH / 0 AVOID . risk risk_on . warnings 4
+top picks AAPL LONG 83 . MU LONG 79 . NVDA LONG 71
+
+VERDICT 3 LONG / 0 WATCH / 0 AVOID - 4 warning(s): credit OFF - not trade-grade (macro damped; excluded: CREDIT_CRUNCH, E
+
+ * L1 macro      meds v14.7.0 Xs  warm * OK         
+     data stub . as-of n/a . OK n/a
+ * L2 quality    quality v3.4.1 Xs  warm * OK          3/3 scored  ############
+     data stub . as-of n/a . OK n/a
+ ! L3 earnings   earnings v3 Xs  warm ! DEGRADED    1 no data
+     data stub . as-of n/a . OK n/a
+ ! L4 ml         ml_train SYNTHETIC-stub Xs  n/a  ! DEGRADED   
+     data stub . as-of n/a . OK n/a
+ * L5 risk       master SYNTHETIC-stub Xs  n/a  * OK          portfolio
+     data stub . as-of n/a . OK n/a
+
+ L1 MACRO -- Soft Landing / Policy Pivot . Mid Cycle
+   conf ########-- 0.82 . lev 1.35x . risk budget 1.00
+eff FROZEN-DATE . data public . PIT approximate_pit_lag . credit OFF ! not trade-grade . next month 2026-12
+   LONG  SPY QQQ XLY    SHORT  -          sleeve: -
+excluded (credit OFF): CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION
+sector tilt tech +1.0 . comm +1.0 . cons +1.0 . indu +0.5 . energy +0.5 . util +0.5 . mats +0.5 . health - . fin - . reits - . spec - . macro credit OFF:
+     tilt damped x0.5
+
+ SECTOR      tilt   scored   median-Q
+ tech        +1.0   3/3      80
+
+ML OVERLAY q UNTRAINED . e UNTRAINED . macro UNTRAINED - probabilities logged, no decision changed
+
+ #  TICKER   SECTOR    ACTION   CONV               Q       E           WT      MACRO    FLAGS          REASONS
+ 1  AAPL     tech      LONG     ##########-- 83 A  88 A    n/a         2%      +1.0     -              Q 88 (A) rank 3/41 tech; macro +1.0: QQQ(strong), SPY(we.
+ 2  MU       tech      LONG     #########--- 79 A  72 B    81 A        2%      +1.0     -              Q 72 (B) rank 3/41 tech; macro +1.0: QQQ(strong), SPY(we.
+ 3  NVDA     tech      LONG     ########---- 71 B  80 A    44 C        2%      +1.0     HIGH_ACCRUALS  Q 80 (A) rank 3/41 tech; macro +1.0: QQQ(strong), SPY(we.
+ 3 LONG . 0 WATCH . 0 AVOID
+
+risk: gross 7% of 1.00 budget . cash 93% . est max DD ~4% (2x ann vol - estimate, not a probability) . eff bets 1.8
+risk caps: correlation cap (eff bets 1.8)
+costs: live plan is GROSS of costs - est round-trip 2 x 10 bps/side ~0.20% one-off on the deployed 7% (the backtest nets the same 10 bps/side; estimate, not
+   a net-return claim)
+conviction = 0.65*Q + 0.35*E (missing-E x0.90, weak-E x0.5) x macro tilt - score, not probability
+research screener, not investment advice . survivorship-biased universe . timings Xs (macro Xs . quality Xs . earnings Xs . ml Xs . risk Xs)
+
+LEGEND * OK . ! DEGRADED . x ERROR . n/a = no data (reason in warnings) . green good . yellow warn/STALE . red error/AVOID
+
+ERRORS & WARNINGS
+ ! earnings  W_EARNINGS_MISSING   earnings data missing for one or more names
+why: no earnings history (<4 quarters or provider failed)
+fix: python3 master.py --warm (fill the earnings cache)
+ ! ml        W_HEAD_UNAVAILABLE   ml head UNAVAILABLE in this environment (run continued)
+why: UNTRAINED (stub): no models - train with ml_train.py
+fix: python3 ml_train.py (retrain on this environment's versions)
+ ! net       W_NET_OFFLINE        offline mode selected: zero sockets, cache truth only
+why: MASTER_NET=offline (override)
+fix: python3 master.py --warm --mode online (refresh the caches)
+ ! pipeline  W_CREDIT_OFF         credit terms excluded - macro conviction damped
+why: credit OFF - not trade-grade (macro damped; excluded: CREDIT_CRUNCH, EARLY_CYCLE_RE_ACCELERATION)
+fix: python3 master.py --doctor (macro data review; credit returns when the engine's credit read does)
+ ! pipeline  W_EARNINGS_ACCURACY  earnings layer accuracy verdict (descriptive)
+why: earnings accuracy: SIGNAL: high-rated names hit big beats 1.80x more often than base
+fix: python3 master.py MU --explain MU (per-name earnings evidence)
+ ! pipeline  W_EARNINGS_MISSING   earnings data missing for one or more names
+why: 1 ticker(s) no earnings history
+fix: python3 master.py --warm (fill the earnings cache)
+ ! pipeline  W_HEAD_UNAVAILABLE   ml head UNAVAILABLE in this environment (run continued)
+why: UNTRAINED (stub): no models - train with ml_train.py
+fix: python3 ml_train.py (retrain on this environment's versions)
+ ! pipeline  W_SYNTHETIC          SYNTHETIC stub layers rendered (not real engine data)
+why: stub layers rendered (MASTER_STUBS)
+fix: python3 master.py (unset MASTER_STUBS for real engine data)
+ ! quality   W_QUALITY_FLAG       the quality engine flagged a name (e.g. ALTMAN_DISTRESS)
+why: HIGH_ACCRUALS
+fix: python3 master.py <ticker> --explain <ticker> (the per-layer breakdown names the driving metrics)
+DATA SOURCES: macro SYNTHETIC n/a . quality SYNTHETIC n/a . earnings SYNTHETIC n/a . ml SYNTHETIC n/a . risk SYNTHETIC n/a
+macro path: no FRED key > public fredgraph.csv
+FETCH HEALTH
+  stub layers - no fetches (MASTER_STUBS)
+  totals 0 ok / 0 failed / 0 skipped

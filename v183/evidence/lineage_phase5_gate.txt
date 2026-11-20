@@ -1,0 +1,56 @@
+PHASE-5 GATE — all four conditions, each proven by a named test or a run
+
+GATE 1 — leakage test rejects a future-dated feature: PASS
+  test_master.TestMLLeakage.test_model_with_future_dated_feature_refused
+    a head model whose feature_names include ret_63 (a label-window column)
+    is REFUSED at load: heads[q].state == UNTRAINED, warning names the
+    leakage guard, decisions identical to the no-ml control.
+  test_master.TestMLLeakage.test_trainer_embargo_is_enforced
+    walk_forward_splits(embargo=3): every split has
+    max(train groups) <= min(test group) - 4; train windows only expand.
+  test_master.TestMLTrain.test_forbidden_dataset_feature_refused
+    ml_train itself refuses (exit 2) a dataset with ret_63 inside X.
+  live: ml_train printed the guard line and trained only on the 47
+    legitimate columns (evidence/phase5_train_report.txt).
+
+GATE 2 — SHADOW changes no decision: PASS
+  test_master.TestMLStates.test_shadow_logged_and_changes_no_decision
+    with all three REAL heads loaded SHADOW: (ticker, action, conviction,
+    grade, weight) sequences are IDENTICAL to a --skip ml control run;
+    the SHADOW view is only LOGGED (reasons line "overlay ml: p_q ...
+    (n=...) · would adj ... · SHADOW, logged not applied"; no
+    conviction_adj fact exists in SHADOW).
+  live: the real run (evidence/phase5_real_run.txt) shows L4 ml OK with
+    all heads SHADOW and no conviction movement from the overlay.
+
+GATE 3 — ACTIVE refused without a report: PASS
+  test_master.TestMLStates.test_active_without_report_refused
+    an ACTIVE-stamped model with NO validation file, and one whose report
+    says verdict "fails", are both downgraded to SHADOW with a loud
+    "refused ... downgraded" warning; decisions unchanged.
+  test_master.TestMLTrain.test_activate_refused_without_passing_report
+    ml_train --activate: exit 2 with no report, exit 2 with a failing
+    report, exit 0 only with a passing one.
+  live: `ml_train --activate q` on the real models returned exit 2
+    ("validation verdict is 'fails', not 'beats'") — all three heads ship
+    SHADOW (q/e: negative OOS rank IC; macro: IC +0.368 but n_oos 35 <
+    the a priori minimum of 100).
+
+GATE 4 — risk property tests green: PASS
+  test_master.TestRiskProps (7 tests): weights >= 0; sum <= budget;
+  cash + gross == budget; name cap 10%; sector cap 35%; high correlation
+  caps gross via effective bets; est-DD veto zeroes the book; low macro
+  budget is a veto; equal-weight fallback never invents vols; single name
+  hits the name cap; no LONGs = all cash.
+  test_master.TestRiskLayer: weights filled end to end (LONG > 0,
+  WATCH/AVOID/blocked == 0.0), portfolio footer + JSON, offline run opens
+  ZERO sockets with SHADOW models present, a raising sizer leaves every
+  weight untouched (atomic).
+  test_master.TestWidthsWithSizer: WT column at width >= 70 only, every
+  line bounded at 40/70/110, still exactly ONE "score, not probability".
+
+SUITE: 186/186 green (157 phase 1-4 carry-overs + 29 phase-5 tests), 0
+skipped. Socket-blocked offline runs green (evidence/
+phase5_check_offline_after.txt). Stub five-layer end-to-end green
+(evidence/phase5_stub_e2e.txt). Real-engine quick run green, exit 0
+(evidence/phase5_real_run*.txt).

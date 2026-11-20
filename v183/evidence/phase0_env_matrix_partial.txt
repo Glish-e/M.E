@@ -1,0 +1,1758 @@
+TEST ENV MATRIX — PHASE 0 on v1.5.0 base (dates pinned, deps blocked, env pinned)
+============================================================================
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings 0.0h
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/17 cached (stale/missing names are the only network calls) · earnings 0/7 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpjvm89xfz/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: head q -> ACTIVE (validation report on file)
+ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpkyhfj5xj/models/head_q.npz
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+risk failed: RuntimeError: boom
+[plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+date pinned 2026-11-13 (today)         ran=256  failures=1 errors=1 skipped=0
+    FAIL test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets): AssertionError: 'ERROR' not found in ('OK', 'DEGRADED')
+    FAIL test_month_floor_parity (test_master.RealEngineContract.test_month_floor_parity): TypeError: Cannot convert Timestamp to FakeDate
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings 0.0h
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-09-30..2026-11-30, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/17 cached (stale/missing names are the only network calls) · earnings 0/7 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpa36p2zn5/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: head q -> ACTIVE (validation report on file)
+ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmp2wmqu2if/models/head_q.npz
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+risk failed: RuntimeError: boom
+[plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+date pinned 2027-03-01 (Monday)        ran=256  failures=3 errors=1 skipped=0
+    FAIL test_earnings_price_boundaries (test_master.TestFreshness.test_earnings_price_boundaries):  : (4, 'price history fetched 112d ago > 5d (daily cadence)')
+    FAIL test_quality_boundaries (test_master.TestFreshness.test_quality_boundaries):  : (134, 'quality cache fetched 242d ago > 135d (quarterly cadence)')
+    FAIL test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets): AssertionError: 'ERROR' not found in ('OK', 'DEGRADED')
+    FAIL test_month_floor_parity (test_master.RealEngineContract.test_month_floor_parity): TypeError: Cannot convert Timestamp to FakeDate
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings 0.0h
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-07-31..2026-09-30, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/17 cached (stale/missing names are the only network calls) · earnings 0/7 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmplk6k4y3r/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: head q -> ACTIVE (validation report on file)
+ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmp2d34_oa8/models/head_q.npz
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+risk failed: RuntimeError: boom
+[plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+date pinned 2026-12-31 (year end)      ran=256  failures=3 errors=1 skipped=0
+    FAIL test_earnings_price_boundaries (test_master.TestFreshness.test_earnings_price_boundaries):  : (4, 'price history fetched 52d ago > 5d (daily cadence)')
+    FAIL test_quality_boundaries (test_master.TestFreshness.test_quality_boundaries):  : (134, 'quality cache fetched 182d ago > 135d (quarterly cadence)')
+    FAIL test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets): AssertionError: 'ERROR' not found in ('OK', 'DEGRADED')
+    FAIL test_month_floor_parity (test_master.RealEngineContract.test_month_floor_parity): TypeError: Cannot convert Timestamp to FakeDate
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings 0.0h
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2024-08-31..2024-10-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/17 cached (stale/missing names are the only network calls) · earnings 0/7 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmpuca229gw/models/head_q.npz
+ml_train: --activate q REFUSED — no validation report (validation_q.json); ACTIVE needs a report that beats the baselines
+ml_train: --activate q REFUSED — validation verdict is 'fails', not 'beats'
+ml_train: head q -> ACTIVE (validation report on file)
+ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+[ml_train] head q: logistic_np · 300 train rows · 180 OOS rows over 6 fold(s) · embargo 1m
+[ml_train]   monthly rank IC +0.722 · decile spread +1.000 · Brier skill +0.559 · verdict beats
+[ml_train]   baseline raw score IC +0.710
+[ml_train]   shipped SHADOW -> /tmp/tmp0jlflhi0/models/head_q.npz
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+risk failed: RuntimeError: boom
+[plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+date pinned 2025-02-01 (Sunday)        ran=256  failures=3 errors=4 skipped=0
+    FAIL test_earnings_price_boundaries (test_master.TestFreshness.test_earnings_price_boundaries):  : (6, '')
+    FAIL test_quality_boundaries (test_master.TestFreshness.test_quality_boundaries):  : (136, '')
+    FAIL test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets): AssertionError: 'ERROR' not found in ('OK', 'DEGRADED')
+    FAIL test_month_floor_parity (test_master.RealEngineContract.test_month_floor_parity): TypeError: Cannot convert Timestamp to FakeDate
+    FAIL test_propagation_and_floor (test_master.TestAsOfPropagation.test_propagation_and_floor): master.MasterError: --as-of 2026-06-30 is in the future (quality rejects future dates; no lookahead)
+    FAIL test_build_ns_opens_funnel_and_uses_standard_pool (test_master.TestMlDataset.test_build_ns_opens_funnel_and_uses_standard_pool): master.MasterError: --as-of 2026-06-30 is in the future (quality rejects future dates; no lookahead)
+    FAIL test_future_dated_earnings_rejected (test_master.TestNoLookahead.test_future_dated_earnings_rejected): master.MasterError: --as-of 2026-06-30 is in the future (quality rejects future dates; no lookahead)
+2026-02-29 (leap)                      invalid date — skipped
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings 0.0h
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+ml_dataset DRY RUN (no build, no fetch):
+  dates      3 (2026-05-31..2026-07-31, monthly) | 0 cached | 3 to build
+  tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+  rows       ~229 expected (pool x dates x 0.85 gated coverage)
+  time       ~6 min (90 names x 1.30 s/name cold (measured on the build machine; override with --per-date-s))
+  disk       ~0 MB needed vs 8.0 GB free
+  pacing     the engines' own limiters (quality 40 Yahoo/min, SEC fair-access); no added parallelism; resumable per date
+  next       re-run WITHOUT --dry-run to build; interrupt any time - cached dates are kept and the same command resumes
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-0 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+replay OK: 2 names identical to the frozen manifest (0.5s, fully offline)
+REPLAY MISMATCH — the offline rerun from this freeze dir differs from the frozen manifest:
+  rank 1: frozen {'ticker': 'MU', 'action': 'LONG', 'conviction': 99.9, 'grade': 'A'} vs replay {'ticker': 'MU', 'action': 'LONG', 'conviction': 78.9, 'grade': 'A'}
+tampered cache, changed code, or a partial (capped) freeze — freeze again with --mode quick for an exact copy
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 7 tickers · quality pool 17 names · L3 top-3 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/17 cached (stale/missing names are the only network calls) · earnings 0/7 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+ml_train: REFUSED — feature(s) ret_63 are label-window derived (future-dated); the dataset is leaking
+ml_train: head q: head q: no walk-forward split fits (embargo 3m + min train 4m vs 4 groups) — NOT ENOUGH DATA, refusing
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+earnings failed: ModuleNotFoundError: import of earnings_engine halted; None in sys.modules
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+quality MU: RuntimeError: quality boom MU
+quality NVDA: RuntimeError: quality boom NVDA
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 120s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+quality MU: RuntimeError: offline mode: cache miss, network disabled
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · budget 90s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+[plan] mode standard · net offline · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[plan] mode standard · net offline · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 3 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/3 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · quality pool 10 names · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+risk failed: RuntimeError: boom
+[plan] mode standard · net offline · 6 tickers · quality pool 25 names · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 6 tickers · quality pool 25 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/25 cached (stale/missing names are the only network calls) · earnings 0/6 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] warm-up run (macro+quality only, budget 30s) · net online · 22 tickers · quality pool 47 names
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈1-2 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/47 cached (stale/missing names are the only network calls) · earnings 0/22 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 1 tickers · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/1 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 11 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/11 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · quality pool 10 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/10 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 4 tickers · quality pool 21 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/21 cached (stale/missing names are the only network calls) · earnings 0/4 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 2 tickers · L3 top-25 · budget 30s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD
+[plan] refresh plan: macro cold · quality 0/0 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode standard · net online · 5 tickers · quality pool 24 names · L3 top-25 · budget 900s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-1 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/24 cached (stale/missing names are the only network calls) · earnings 0/5 histories cached
+cache dirs writable (online run will refresh stale items only)
+[plan] mode quick · net online · 2 tickers · quality pool 2 names (watchlist ranks — rough) · L3 top-10 · budget 300s/layer
+[plan] caches: quality COLD · macro COLD · earnings COLD — cold quality pass ≈0-0 min · faster now: --mode quick · fill caches first: --warm
+[plan] refresh plan: macro cold · quality 0/2 cached (stale/missing names are the only network calls) · earnings 0/2 histories cached
+[refresh] refresh: nothing stale (all caches fresh) · per-layer macro 0.0s, quality 0.0s, earnings 0.0s, ml 0.0s, risk 0.0s
+sklearn+joblib import blocked          ran=256  failures=4 errors=3 skipped=0
+    FAIL test_real_meds_offline_is_honest_error_no_sockets (test_master.TestOfflineNoSockets.test_real_meds_offline_is_honest_error_no_sockets): AssertionError: 'ERROR' not found in ('OK', 'DEGRADED')
+    FAIL test_no_pin_refused (test_master.TestSidecarPin.test_no_pin_refused): AssertionError: 'no sidecar_sha256 pin' not found in 'head e: GBM model needs joblib+sklearn and the sidecar head_e.jobl
+    FAIL test_pin_ok_loads (test_master.TestSidecarPin.test_pin_ok_loads): AssertionError: unexpectedly None
+    FAIL test_tampered_sidecar_untrained (test_master.TestSidecarPin.test_tampered_sidecar_untrained): AssertionError: 'sha256 mismatch' not found in 'head e: GBM model needs joblib+sklearn and the sidecar head_e.joblib — U
+    FAIL test_month_floor_parity (test_master.RealEngineContract.test_month_floor_parity): TypeError: Cannot convert Timestamp to FakeDate
+    FAIL test_activate_refused_without_passing_report (test_master.TestMLTrain.test_activate_refused_without_passing_report): ModuleNotFoundError: import of sklearn halted; None in sys.modules
+    FAIL test_train_save_reload_and_predict_parity (test_master.TestMLTrain.test_train_save_reload_and_predict_parity): ModuleNotFoundError: import of sklearn halted; None in sys.modules

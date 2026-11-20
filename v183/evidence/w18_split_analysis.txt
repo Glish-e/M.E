@@ -1,0 +1,37 @@
+cross-module global references (from -> to: names):
+
+[master.py] uses:
+   -> me/backtest.py (1): run_backtest
+   -> me/cli.py (3): _apply_mode, _validate_ns, build_parser
+   -> me/core.py (44): CONFIG, Candidate, Context, Decision, LayerProvenance, LayerResult, LayerSignal, MacroState, RunOutput, _AttrRestore, _CfgKeyRestore, _EnvRestore, _Progress, _SysModuleBlock, __version__, _atomic_write_text, _base_conviction, _cache_age_h, _csv_safe, _ctx_note, _dir_stamp, _door_value, _engine_version, _engines_sha256 ...
+   -> me/errors.py (3): MasterError, _phase, phase_name
+   -> me/render.py (10): Style, _build_diags, _colour_choice, _colour_depth, _diag_line, _explain_block, _windows_vt_enable, json_payload, make_style, render_report
+   -> me/risk.py (4): _ann_vol, _rho_bar, risk_ctx_out, size_portfolio
+
+[me/backtest.py] uses:
+   -> master.py (1): run_pipeline
+   -> me/cli.py (3): _apply_mode, _validate_ns, build_parser
+   -> me/core.py (4): CONFIG, RunOutput, _atomic_write_text, _exc
+   -> me/errors.py (2): MasterError, _code_registry
+
+[me/cli.py] uses:
+   -> master.py (1): LAYER_REGISTRY
+   -> me/core.py (2): CONFIG, _finite
+   -> me/errors.py (1): MasterError
+
+[me/render.py] uses:
+   -> me/core.py (12): CONFIG, Decision, LayerSignal, RunOutput, __version__, _base_conviction, _engines_sha256, _exc, _finite, _ruleset, macro_tilt, macro_view
+   -> me/errors.py (1): MasterError
+
+[me/risk.py] uses:
+   -> me/core.py (1): CONFIG
+
+planned sizes (lines, approx):
+   master.py          3540
+   me/backtest.py      588
+   me/cli.py           289
+   me/core.py         1160
+   me/errors.py         39
+   me/render.py       1214
+   me/risk.py          368
+   TOTAL              7198

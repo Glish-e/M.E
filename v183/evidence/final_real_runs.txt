@@ -1,0 +1,110 @@
+# final_real_runs.txt — real-engine verification (final phase, sandbox with network)
+
+## R1. real ONLINE run (auto mode; default engines, warm caches, 3 names)
+command: SEC_USER_AGENT="master screener research contact@example.com" \
+         python3 master.py MU NVDA AAPL --quiet --json --timeout 400
+result: exit 0 · net online (probe ok 11 ms)
+timings: total 14.1s · macro 12.12s · quality 12.13s · earnings 0.01s · ml 1.57s
+provenance: macro cache as-of 2026-10-31 (8d) OK · quality cache 2026-11-08 (0d) OK
+            · earnings mixed 2026-11-08 (0d) OK · ml cache · risk none
+decisions: MU WATCH 70.7 · NVDA WATCH 56.0 · AAPL WATCH 49.1
+side effect: meds_snapshot/ materialised (22 FRED series) for offline reuse.
+
+## R2. real OFFLINE run (same names; the offline-first goal)
+command: python3 master.py MU NVDA AAPL --mode offline --quiet --json
+result: exit 0 · net offline (no probe — skipped by design)
+timings: total 12.7s · macro 11.05s* · quality 11.07s · earnings 0.07s
+         (*macro's own work is 0.2s from the snapshot; the wall time is GIL
+          contention with quality's universe pass — see perf_delta.md)
+provenance: macro cache 2026-10-31 (8d) OK — meds' own snapshot tier,
+            MACRO_ENGINE_SNAPSHOT -> meds_snapshot/ + yfinance made ABSENT
+decisions: IDENTICAL to the online run (MU WATCH 70.7 · NVDA 56.0 · AAPL 49.1)
+
+## R3. G1 — socket-blocked OFFLINE run (the zero-socket proof)
+command: subprocess with socket.socket.__init__ raising for AF_INET/AF_INET6,
+         master.py MU NVDA AAPL --mode offline --quiet --json
+result: exit 0 · macro OK (cache) · quality OK (cache) · earnings DEGRADED
+        (14 no data — honest, names without cached history) · ml OK · risk OK
+        decisions identical to R1/R2. ZERO network sockets opened.
+
+## R4. explicit --mode online with the network blocked
+command: python3 master.py MU --mode online (INET sockets blocked)
+result: exit 3 — "network required (--mode online) but the probe failed —
+        probe failed: OSError: simulated network down; use --mode offline
+        for last-cached-truth or --mode auto to pick automatically"
+
+## R5. --doctor (real)
+ master v1.5.0 doctor
+ engines   meds ok v14.7.0  quality ok v3.4.1  earnings ok v3  (hashes match)
+ libs      python 3.12.16 · numpy 2.1.3 · sklearn 1.5.2 · joblib 1.5.3
+ cache     macro 0d OK | quality 0d OK | earnings 0d OK
+ network   reachable (10 ms)
+ ml        q SHADOW · e SHADOW · macro SHADOW  (all fail validation — SHADOW, no decision changed)
+ disk      5.5 GB free of 10 GB
+ NEXT: python3 master.py --mode quick (caches fresh, network up — the fast pass)
+exit 0.
+
+## R6. freeze -> replay (REAL engines, dedicated cache dir)
+freeze: python3 master.py MU NVDA AAPL --mode quick --freeze /tmp/frz3 \
+          --cache-dir /tmp/frz3/warm --quiet
+  [freeze] wrote /tmp/frz3/manifest.json (3 names) · copied 39 files 15.7 MB
+           (earnings 6 files, meds cache 1 file, meds snapshot 22 files,
+            quality 10 files)
+replay: python3 master.py --replay /tmp/frz3
+  replay OK: 3 names identical to the frozen manifest (3.8s, fully offline)
+  exit 0.
+tamper: one cached quality sec/*.json overwritten with {"tampered": true}:
+  REPLAY MISMATCH — rank 1: frozen MU WATCH 67.9 B vs replay MU WATCH 75.5 A
+                   rank 3: frozen AAPL WATCH 45.8 C vs replay AAPL AVOID 0.0 F
+  exit 65.
+NOTE (documented limit): quality's cache files are engine-internal HASH
+names, so a per-ticker copy is impossible adapter-side; freeze is EXACT
+when the run uses a dedicated --cache-dir inside the freeze dir (as above),
+and size-capped (FREEZE_MAX_BYTES 256 MB vs a ~1.7 GB standard pool)
+otherwise — replay then fails loudly instead of pretending.
+
+## R7. fast tier (quick + offline, default 22-name watchlist)
+command: python3 master.py --mode quick --offline --json
+timings: total 5.8s · all layers OK/DEGRADED · decisions ranked
+(the standard-depth warm offline run on the same watchlist: 75.2s — the
+ difference is quality's whole-universe pass, see perf_delta.md)
+
+## R8. ml_train retrain with the 20-feature cap (G8)
+command: python3 ml_train.py --dataset ml_data/dataset_v1.npz --out ml_data/models
+ head q    : gbm_joblib · 1044 train · 435 OOS · 20 features (12 dropped)
+             IC -0.284 · baseline raw score +0.186 · verdict fails
+ head e    : gbm_joblib · 974 train · 381 OOS · 20 features (1 dropped)
+             IC -0.183 · baseline -0.150 · verdict fails
+ head macro: logistic_np · 84 train · 35 OOS · 9 features (cap not binding)
+             IC +0.368 · baseline +0.105 · Brier +0.006 · verdict fails
+             (n_oos 35 < 100 a-priori minimum)
+ ALL THREE SHIP SHADOW (unchanged from phase 5 — told straight).
+ --activate q refused, exit 2 (verdict != beats).
+ Sidecar pins shipped: head_q/e npz carry sidecar_sha256 + sklearn_version
+ 1.5.2 + master_version 1.5.0; head_macro carries sklearn/master versions.
+
+## R9. ml_dataset --dry-run (§7.3)
+ ml_dataset DRY RUN (no build, no fetch):
+   dates      12 (2025-08-31..2026-07-31, monthly) | 12 cached | 0 to build
+   tickers    ~90 per date (quality universe probe: 90 active names in --sectors tech)
+   rows       ~918 expected (pool x dates x 0.85 gated coverage)
+   time       ~1 min (90 names x 1.30 s/name cold ...)
+   disk       ~1 MB needed vs 5.5 GB free
+   pacing     the engines' own limiters ... resumable per date
+   next       re-run WITHOUT --dry-run to build ...
+exit 0, nothing built.
+
+## Latent phase-5 defects FOUND and fixed by this phase's red runs
+- P6-D1: the offline guard patched earnings _px_fetch — the REAL engine's
+  price fetcher is _pfetch (setting _px_fetch was a silent no-op; offline
+  prices could still hit the network). Both names now guarded; caught by
+  the online-side AttributeError in the red run.
+- P6-D2: meds has NO transport seam and calls yfinance directly — in
+  offline mode with yfinance installed, meds' price inputs opened sockets
+  (invisible to phase-5 tests because the suite blocks sockets, turning
+  them into engine-internal errors only). Offline now makes yfinance look
+  ABSENT (sys.modules valve, restored after the run) — verified: 0.2s
+  snapshot regime, zero sockets.
+- P6-D3: asyncio's event loop opens an AF_UNIX socketpair; a socket gate
+  must block only AF_INET/AF_INET6 (the suite always did; documented here
+  so nobody "fixes" it into flakiness).

@@ -1,0 +1,49 @@
+FUZZ DECISIONS — invariant fuzz (seed 88117)
+============================================================================
+cases executed: 21925  (fuse=12000, sizer=3925, overlay=2000, ml=2000, plan=2000, mono=2400, det/order=120)
+invariant suites with violations: 7
+
+-- I1-ml-scaled-range: 1231 violation(s), first 5:
+     case 0: s=nan
+     case 1: s=nan
+     case 2: s=2.0000010000010002
+     case 6: s=nan
+     case 7: s=2.0000010000010002
+-- I2-nan-budget-weights: 353 violation(s), first 5:
+     case 6: budget=nan -> weights {'L0': nan, 'L1': nan, 'L2': nan, 'L3': nan, 'L4': nan, 'L5': nan, 'L6': nan}
+     case 13: budget=nan -> weights {'L0': nan, 'L1': nan, 'L2': nan, 'L3': nan, 'L4': nan, 'L5': nan}
+     case 29: budget=nan -> weights {'L0': nan, 'L1': nan, 'L2': nan, 'L3': nan, 'L4': nan, 'L5': nan}
+     case 48: budget=nan -> weights {'L0': nan, 'L1': nan}
+     case 53: budget=nan -> weights {'L0': nan, 'L1': nan, 'L2': nan, 'L3': nan, 'L4': nan, 'L5': nan}
+-- I2-weight-invalid: 353 violation(s), first 5:
+     case 6: w[L0]=nan budget=nan rho=-1.0 vols={'L3': inf, 'L5': inf, 'L1': 250.0, 'L0': 0.15, 'L2': inf, 'L4': 0.15, 'L6': 0.15}
+     case 13: w[L0]=nan budget=nan rho=nan vols={'L3': 0.0, 'L5': nan, 'L1': 0.15, 'L0': None, 'L2': None, 'L4': 0.0}
+     case 29: w[L0]=nan budget=nan rho=-1.0 vols={'L3': 0.15, 'L5': inf, 'L1': -0.3, 'L0': 1e-09, 'L2': None, 'L4': 0.8}
+     case 48: w[L0]=nan budget=nan rho=1.5 vols={'L0': -0.3, 'L1': 0.15}
+     case 53: w[L0]=nan budget=nan rho=1.5 vols={'L3': 0.15, 'L5': 3.0, 'L1': 1e-09, 'L0': nan, 'L2': 0.35, 'L4': None}
+-- I3-overlay-blocked: 2984 violation(s), first 5:
+     case 0: O1 blocked='no quality score' action=LONG
+     case 0: O2 blocked='veto' action=LONG
+     case 1: O0 blocked='no quality score' action=LONG
+     case 3: O0 blocked='gate' action=LONG
+     case 4: O0 blocked='gate' action=WATCH
+-- I3-overlay-blocked-uncapped: 2861 violation(s), first 5:
+     case 0: O0 blocked conv 95.0 >= WATCH 45.0
+     case 0: O1 blocked conv 60.0 >= WATCH 45.0
+     case 0: O2 blocked conv 100.0 >= WATCH 45.0
+     case 2: O0 blocked conv 95.0 >= WATCH 45.0
+     case 3: O0 blocked conv 58.0 >= WATCH 45.0
+-- I5-future-report-NOW: 85 violation(s), first 5:
+     case 16: future event 2027-01-01 got NOW status LONG
+     case 22: future event 2027-01-01 got NOW status LONG
+     case 30: future event 2027-01-01 got NOW status LONG
+     case 38: future event 2027-01-01 got NOW status LONG
+     case 54: future event 2027-01-01 got NOW status LONG
+-- I9-exception-sizer: 75 violation(s), first 5:
+     case 65: ZeroDivisionError: float division by zero budget=1.35 rho=1.0
+     case 131: ZeroDivisionError: float division by zero budget=0.25 rho=0.999
+     case 152: ZeroDivisionError: float division by zero budget=1000000.0 rho=0.35
+     case 169: ZeroDivisionError: float division by zero budget=nan rho=1.0
+     case 189: ZeroDivisionError: float division by zero budget=1.35 rho=1.0
+
+NOTE I5 structural probe: missing-E beats bad-E in 20/20 (q, e_bad) combos — the E_MISSING_HAIRCUT 0.90 subsidy for missing data vs bad data (judged a rules finding, not a crash).

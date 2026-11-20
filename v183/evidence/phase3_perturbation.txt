@@ -1,0 +1,32 @@
+
+# evidence/phase3_perturbation.txt — PHASE 3 M2 perturbation proof
+# Date: 2026-11-13 22:54:33 UTC
+
+## 1. the permanent unittest (verbose)
+$ python3 -m unittest test_master.TestMLGatesPhase3.test_m2_selection_perturbation_test_fold_only test_master.TestFeatureCap.test_select_features_fold_cap_and_train_only -v
+test_m2_selection_perturbation_test_fold_only (test_master.TestMLGatesPhase3.test_m2_selection_perturbation_test_fold_only) ... [ml_train] head q: logistic_np · 300 train rows · 90 usable OOS rows over 6 fold(s) · 3 insufficient · embargo 1m (inner 3m)
+ok
+test_select_features_fold_cap_and_train_only (test_master.TestFeatureCap.test_select_features_fold_cap_and_train_only) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.954s
+
+OK
+
+## 2. the side-by-side evidence generator
+$ python3 scripts/phase3_perturbation_check.py
+per-fold selected feature sets (cap 20 of 26 candidates):
+test group | A selected                                                 | identical
+         4 | q_score,q_rank_pct,q_coverage,q_flag_count,q_veto,convicti | YES
+         5 | q_score,q_rank_pct,q_coverage,q_flag_count,q_veto,convicti | YES
+         6 | q_score,q_rank_pct,q_veto,conviction,macro_tilt,macro_leve | YES
+         7 | q_score,q_rank_pct,q_coverage,conviction,macro_tilt,macro_ | YES
+         8 | q_score,q_rank_pct,q_coverage,q_veto,conviction,macro_tilt | YES
+         9 | q_score,q_flag_count,conviction,macro_tilt,macro_leverage, | YES
+
+perturbed rows: last group's labels FLIPPED and q_score / macro_tilt values jittered (a test fold's rows; in no training fold's train window)
+result: EVERY fold's selected feature set is bit-identical
+final refit selection (all labeled rows, the shipped model):
+  A: conviction,macro_confidence,macro_credit_on,macro_leverage,macro_regime_defensive,macro_tilt,q_coverage,q_missing,q_rank_pct,q_score,r_conviction,r_q_score,sector_communication,sector_energy,sector_financials,sector_healthcare,sector_industrials,sector_materials,sector_specialty,sector_utilities
+  B: conviction,macro_confidence,macro_credit_on,macro_leverage,macro_tilt,q_flag_count,q_missing,q_rank_pct,q_score,q_veto,r_conviction,r_q_score,sector_communication,sector_consumer,sector_energy,sector_healthcare,sector_industrials,sector_materials,sector_reits,sector_tech
+  (may legitimately differ — the final model trains on ALL labeled rows incl. the perturbed group; the OOS judgement folds above are the leak-sensitive surface)
